@@ -46,18 +46,14 @@ npm start          # HTTP 模式：网页 + REST + MCP over HTTP，默认端口 
 
 > 想让 AI 用独立存档：在 `args` 里加 `"--profile", "ai-1"`，或设环境变量 `DEEP_ALLEY_PROFILE`。
 
-**方式二：Streamable HTTP（远程/多客户端共享同一个世界）**
+**方式二：HTTP 远程连接（服务器已常驻时）**
 
-```json
-{
-  "mcpServers": {
-    "deep-alley": {
-      "type": "http",
-      "url": "http://你的服务器:8899/mcp"
-    }
-  }
-}
-```
+| 前端里的类型 | 填的 URL |
+|---|---|
+| Streamable HTTP（新协议，推荐） | `http://你的服务器:8899/mcp` |
+| SSE（旧协议，很多前端单独提供这个类型） | `http://你的服务器:8899/sse` |
+
+> 注意 URL 要带 `http://` 前缀。两种传输都已用官方 MCP SDK 实测通过；浏览器类前端（如网页版 MCP 客户端）需要的 CORS 细节（OPTIONS 预检、`Mcp-Session-Id` 暴露头）也已处理。
 
 配置好后，对 AI 说一句「**去深巷开一晚酒吧**」即可。AI 会先调 `enter_deep_alley` 开场，然后按每个工具返回的「▸ 接下来你可以」自主推进。
 

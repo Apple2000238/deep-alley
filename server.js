@@ -11,6 +11,7 @@ const path = require("path");
 const url = require("url");
 
 const args = process.argv.slice(2);
+const crypto = require("crypto");
 const hasHttp = args.includes("--http");
 const portIdx = args.indexOf("--port");
 const PORT = portIdx >= 0 ? Number(args[portIdx + 1]) || 8899 : 8899;
@@ -33,21 +34,61 @@ const MIME = {
 if (!hasHttp) {
   runStdio(session, PROFILE);
 } else {
+  const sseSessions = new Map(); // 旧版 SSE 传输的会话表：sessionId -> SSE response sink
   const state = session.get(PROFILE); // 预热：网页与 MCP 共享这份状态
   const server = http.createServer((req, res) => {
     const parsed = url.parse(req.url, true);
     const p = decodeURIComponent(parsed.pathname);
 
+    /* ── CORS（对浏览器类前端友好：暴露会话头、按需放行请求头） ── */
+    const reqHeaders = req.headers["access-control-request-headers"];
     const cors = {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Mcp-Session-Id, Authorization",
+      "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": reqHeaders || "Content-Type, Mcp-Session-Id, Authorization, mcp-protocol-version, Last-Event-ID, X-API-Key",
+      "Access-Control-Expose-Headers": "Mcp-Session-Id, mcp-session-id",
     };
     if (req.method === "OPTIONS") { res.writeHead(204, cors); res.end(); return; }
 
+    /* ── 旧版 HTTP+SSE 传输（/sse + /messages）——兼容只认 SSE 类型的客户端 ── */
+    if (p === "/sse" && req.method === "GET") {
+      const sid = crypto.randomUUID();
+      res.writeHead(200, {
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "Cache-Control": "no-cache, no-transform",
+        "Connection": "keep-alive",
+        ...cors,
+      });
+      res.write(`event: endpoint\ndata: /messages?sessionId=${sid}\n\n`);
+      sseSessions.set(sid, res);
+      const ping = setInterval(() => { try { res.write(": ping\n\n"); } catch {} }, 25000);
+      req.on("close", () => { clearInterval(ping); sseSessions.delete(sid); });
+      return;
+    }
+    if (p === "/messages" && req.method === "POST") {
+      const sid = String(parsed.query.sessionId || "");
+      const sink = sseSessions.get(sid);
+      if (!sink) { json(res, 404, { error: "unknown sessionId（请先 GET /sse 获取会话）" }); return; }
+      let body = "";
+      req.on("data", c => body += c);
+      req.on("end", () => {
+        try {
+          const msg = JSON.parse(body);
+          const resp = handleMessage(msg, session, PROFILE);
+          if (resp) sink.write(`event: message\ndata: ${JSON.stringify(resp)}\n\n`);
+          res.writeHead(202, { ...cors, "Content-Type": "text/plain" });
+          res.end("Accepted");
+        } catch (e) {
+          json(res, 400, { error: "bad json: " + e.message });
+        }
+      });
+      return;
+    }
+
     /* ── MCP over Streamable HTTP ── */
     if (p === "/mcp") {
-      if (req.method === "GET") { res.writeHead(405, { ...cors, "Content-Type": "application/json" }); res.end(JSON.stringify({ error: "SSE not supported; use POST" })); return; }
+      if (req.method === "DELETE") { res.writeHead(200, cors); res.end(); return; } // 会话终止
+      if (req.method === "GET") { res.writeHead(405, { ...cors, "Content-Type": "application/json" }); res.end(JSON.stringify({ error: "SSE stream not offered; use POST, or /sse for legacy SSE transport" })); return; }
       if (req.method !== "POST") { res.writeHead(405, cors); res.end(); return; }
       let body = "";
       req.on("data", c => body += c);
@@ -59,12 +100,26 @@ if (!hasHttp) {
           return;
         }
         const sid = req.headers["mcp-session-id"];
-        const resp = handleMessage(msg, session, sid ? `default` : PROFILE);
+        const resp = handleMessage(msg, session, PROFILE);
         if (!resp) { res.writeHead(202, cors); res.end(); return; } // 通知
+        const sessionId = sid || "deep-alley-" + PROFILE;
+        // 有些客户端 Accept 只给 text/event-stream —— 按规范以 SSE 流的形式返回这一条响应
+        const accepts = String(req.headers.accept || "");
+        if (!accepts.includes("application/json") && accepts.includes("text/event-stream")) {
+          res.writeHead(200, {
+            ...cors,
+            "Content-Type": "text/event-stream; charset=utf-8",
+            "Cache-Control": "no-cache, no-transform",
+            "Mcp-Session-Id": sessionId,
+          });
+          res.write(`event: message\ndata: ${JSON.stringify(resp)}\n\n`);
+          res.end();
+          return;
+        }
         res.writeHead(200, {
           ...cors,
           "Content-Type": "application/json; charset=utf-8",
-          "Mcp-Session-Id": sid || "deep-alley-" + PROFILE,
+          "Mcp-Session-Id": sessionId,
         });
         res.end(JSON.stringify(resp));
       });
