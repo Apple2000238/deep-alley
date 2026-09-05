@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>酒谱图鉴 · 深巷</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="recipes">
+
+<nav class="navbar">
+  <div class="nav-left">
+    <span class="nav-icon">🪔</span>
+    <span class="nav-title">深巷</span>
+    <span id="mode-badge" class="mode-badge local">○ 检测中…</span>
+  </div>
+  <div class="nav-right">
+    <a class="nav-link" data-nav="bar" href="bar.html">吧台</a>
+    <a class="nav-link" data-nav="alley" href="alley.html">巷子</a>
+    <a class="nav-link" data-nav="recipes" href="recipes.html">酒谱</a>
+    <a class="nav-link" data-nav="npcs" href="npcs.html">名册</a>
+    <a class="nav-link" data-nav="quests" href="quests.html">委托板</a>
+    <a class="nav-link" data-nav="archive" href="archive.html">回忆</a>
+  </div>
+</nav>
+
+<main class="layout">
+  <div class="content">
+
+    <div class="page-header">
+      <p class="label-sm">RECIPE BOOK · 100</p>
+      <h1 class="page-title">酒谱图鉴</h1>
+      <p class="page-subtitle">一百杯酒，一百个没有说出口的理由。隐藏的那十五杯，条件到了自然会懂。</p>
+    </div>
+
+    <div class="filter-bar">
+      <input type="text" id="f-kw" placeholder="搜索名字…">
+      <select id="f-tier">
+        <option value="">全部稀有度</option>
+        <option value="common">常见</option>
+        <option value="uncommon">少见</option>
+        <option value="rare">稀有</option>
+        <option value="legendary">传说</option>
+      </select>
+      <select id="f-base">
+        <option value="">全部基底</option>
+        <option>伏特加</option><option>金酒</option><option>朗姆</option><option>龙舌兰</option>
+        <option>威士忌</option><option>白兰地</option><option>清酒</option><option>烧酒</option>
+        <option>无酒精基底</option><option>混合</option>
+      </select>
+      <select id="f-flavor">
+        <option value="">全部味道</option>
+        <option>甜</option><option>酸</option><option>苦</option><option>辣</option><option>咸</option>
+        <option>清爽</option><option>浓烈</option><option>温暖</option><option>烟熏</option><option>花香</option>
+        <option>果香</option><option>草本</option><option>奶味</option><option>气泡</option>
+      </select>
+      <select id="f-mood">
+        <option value="">全部氛围</option>
+        <option>疗愈</option><option>深夜</option><option>独酌</option><option>庆祝</option><option>失恋</option>
+        <option>壮胆</option><option>告白</option><option>怀旧</option><option>暴躁</option><option>迷幻</option>
+        <option>清醒</option><option>送别</option>
+      </select>
+    </div>
+
+    <div class="card-grid-3" id="recipe-grid"></div>
+
+  </div>
+  <aside class="sidebar" id="sidebar"></aside>
+</main>
+
+<footer class="footer">
+  <p>每杯酒背后都有一个人，每个人背后都有一段夜。</p>
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

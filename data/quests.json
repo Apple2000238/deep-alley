@@ -1,0 +1,3024 @@
+[
+ {
+  "id": "quest_001",
+  "title": "忘掉她的味道",
+  "type": "drink_request",
+  "difficulty": 2,
+  "giver": "西装男",
+  "giver_state": "领带松了，眼睛红的，坐在吧台最角落",
+  "request_dialogue": "给我调一杯……能让我忘掉一个人的。不要甜的。甜的会让我想起她。",
+  "success_conditions": {
+   "flavor_required": [
+    "苦",
+    "烟熏"
+   ],
+   "flavor_forbidden": [
+    "甜"
+   ],
+   "mood_required": [
+    "失恋"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "……好苦。但是好像有一点点柠檬？算了。谢了。（放下钱起身走了，没回头）",
+  "fail_dialogue": "这不是我要的。（把杯子推回来，钱还是付了，但你知道你没帮到他）",
+  "reward": {
+   "tab": 200,
+   "item": null,
+   "reputation": 5,
+   "unlock": {
+    "memory": "第一杯为别人调的苦"
+   }
+  },
+  "fail_penalty": {
+   "tab": 50,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_002",
+  "tags": [
+   "情感",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_002",
+  "title": "她最爱的一杯",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "西装男",
+  "giver_state": "西装还是那身，但今晚他带了那枚袖扣，放在台面上",
+  "request_dialogue": "上次那杯……我记住了。今天来杯甜的。就一杯。我想……练习想起她。",
+  "success_conditions": {
+   "flavor_required": [
+    "甜"
+   ],
+   "flavor_forbidden": [
+    "辣"
+   ],
+   "mood_required": [
+    "怀旧"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他喝得很慢，一口一口，像在读一封长信）……原来甜是这个味道。（他把袖扣收回了口袋，第一次）",
+  "fail_dialogue": "算了。（他没喝，把杯子和袖扣一起推远了）今晚就到这。",
+  "reward": {
+   "tab": 260,
+   "item": null,
+   "reputation": 5,
+   "unlock": {
+    "memory": "甜的练习"
+   }
+  },
+  "fail_penalty": {
+   "tab": 50,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_003",
+  "tags": [
+   "情感",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_003",
+  "title": "空杯的告别",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "西装男",
+  "giver_state": "他今晚坐得很正，领带是直的",
+  "request_dialogue": "最后一杯。要『送别』的那种。不用管我喝不喝——你调的时候，就当替我送她一程。",
+  "success_conditions": {
+   "flavor_required": [],
+   "flavor_forbidden": [],
+   "mood_required": [
+    "送别"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他端起杯子，却没有喝。他只是举着，对着空座位，很久）……好了。（他一饮而尽，放下杯子，站起来时脊背是直的）谢谢你。这几天，谢谢。",
+  "fail_dialogue": "（他看着杯子，摇了摇头）不对。告别不是这个味道。……明天我再来。",
+  "reward": {
+   "tab": 320,
+   "item": "磨旧的袖扣",
+   "reputation": 8,
+   "unlock": {
+    "memory": "一场没有人缺席的告别"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -3
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "情感",
+   "调酒",
+   "连锁",
+   "完成"
+  ]
+ },
+ {
+  "id": "quest_004",
+  "title": "表白练习",
+  "type": "drink_request",
+  "difficulty": 2,
+  "giver": "小柯",
+  "giver_state": "在门口深呼吸了三次才进来，帆布包抱在胸前",
+  "request_dialogue": "那个……我想约她。就是，明天。你能不能给我调一杯……喝了能说出那句话的？要一点点甜，太甜我会晕。",
+  "success_conditions": {
+   "flavor_required": [
+    "甜"
+   ],
+   "flavor_forbidden": [
+    "浓烈"
+   ],
+   "mood_required": [
+    "告白"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他喝了一口，又一口，然后笑了）诶……好像也没那么难。明天，就明天！（他把杯垫上的水渍用手指描了一遍，像在练习签名）",
+  "fail_dialogue": "（他喝了一口，脸皱起来）这……这个我喝了只会更紧张。（他把杯子往里推了推，红着耳朵说谢谢）",
+  "reward": {
+   "tab": 120,
+   "item": null,
+   "reputation": 3,
+   "unlock": {
+    "memory": "一杯不是勇气是糖分的酒"
+   }
+  },
+  "fail_penalty": {
+   "tab": 20,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_005",
+  "tags": [
+   "情感",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_005",
+  "title": "毕业答辩之夜",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "小柯",
+  "giver_state": "眼睛亮得吓人，也可能是哭过",
+  "request_dialogue": "她答应跟我谈谈。在答辩结束以后。……给我来杯壮胆的吧，要浓的。这次我不要糖分了，我要勇气。",
+  "success_conditions": {
+   "flavor_required": [
+    "浓烈"
+   ],
+   "flavor_forbidden": [
+    "奶味"
+   ],
+   "mood_required": [
+    "壮胆"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他一口干了，龇牙咧嘴，然后笑了）行。……不管她说什么，我都能听完了。（他站起来，把椅子推得整整齐齐）无论结果——今晚这杯，是敬完整的。",
+  "fail_dialogue": "（他抿了一小口就放下了）太……太冲了。我本来就抖，这口下去我得抖成筛子。（他苦笑）没事，我再坐会儿。",
+  "reward": {
+   "tab": 200,
+   "item": null,
+   "reputation": 5,
+   "unlock": {
+    "memory": "毕业前最后一课：听人把话说完"
+   }
+  },
+  "fail_penalty": {
+   "tab": 30,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "情感",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_006",
+  "title": "一碗炒粉的距离",
+  "type": "drink_request",
+  "difficulty": 1,
+  "giver": "老周",
+  "giver_state": "收摊前的锅还热着，围裙擦了三遍手",
+  "request_dialogue": "老板！给我配个酒的！我这新出的糖水甜汤，想配个酒卖——要温暖的，喝下去像我那碗粉一样热乎的！你说是不是这个理儿？",
+  "success_conditions": {
+   "flavor_required": [
+    "温暖"
+   ],
+   "flavor_forbidden": [
+    "浓烈"
+   ],
+   "mood_required": [
+    "疗愈"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（老周咕咚一口，眼睛眯起来，一拍大腿）好！就它了！明天起，我这摊上就挂『粉配这个』！老板，回头客人夸你，你别谦虚！",
+  "fail_dialogue": "（他咂咂嘴）嗯……配是能配，就是差点意思。跟我那粉比，它还没热乎劲儿。你再琢磨琢磨？",
+  "reward": {
+   "tab": 80,
+   "item": "炒粉一份（免费券）",
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_007",
+  "tags": [
+   "日常",
+   "调酒",
+   "连锁",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_007",
+  "title": "船上的味道",
+  "type": "drink_request",
+  "difficulty": 4,
+  "giver": "老周",
+  "giver_state": "摊子交给了阿香，他第一次坐到吧台这边的凳子上",
+  "request_dialogue": "（他难得压低了嗓门）老板……我跑了二十年船。夜里轮机舱那种咸腥味，混着柴油，还有……你给我调一杯那个味道的。咸的，烟熏的。就一杯。我想知道我还记不记得。",
+  "success_conditions": {
+   "flavor_required": [
+    "咸",
+    "烟熏"
+   ],
+   "flavor_forbidden": [
+    "奶味"
+   ],
+   "mood_required": [
+    "怀旧"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他闭上眼，一口含了很久才咽下去。再睁眼时，眼眶是红的，嗓门却还是大的）……对！就是这个！小鬼，你这杯，值我二十年的浪头！",
+  "fail_dialogue": "（他摇摇头，把杯子轻轻推开）不像。海不是这个味。……不怪你，是我老了，记岔了也说不定。（他笑，笑得有点远）",
+  "reward": {
+   "tab": 400,
+   "item": null,
+   "reputation": 8,
+   "unlock": {
+    "memory": "老周的二十年海雾"
+   }
+  },
+  "fail_penalty": {
+   "tab": 50,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_008",
+  "tags": [
+   "情感",
+   "调酒",
+   "连锁",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_008",
+  "title": "无名指的纹身",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "老周",
+  "giver_state": "他左手一直扣在台面上，无名指朝下",
+  "request_dialogue": "（沉默很久）……上回那杯海味，你调得好。今天，来杯甜的。果香的。她当年……就爱在船上啃橘子。（他顿了顿）我不说她是谁。你自己调，调对了，我自己知道。",
+  "success_conditions": {
+   "flavor_required": [
+    "甜",
+    "果香"
+   ],
+   "flavor_forbidden": [
+    "烟熏"
+   ],
+   "mood_required": [
+    "怀旧"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他看着那杯酒，很久很久，然后把左手翻过来，无名指上那个褪色的名字朝了天）……橘子头。（他小声说，像叫一个乳名）谢了，老板。（他把酒一口喝完，站起来时把围裙上的油渍拍了拍，像拍掉三十年）",
+  "fail_dialogue": "（他笑了笑，摇头）不对味。……没事，老板，这杯我自己喝。钱照付——你手艺是好的，是我这故事太挑。",
+  "reward": {
+   "tab": 350,
+   "item": null,
+   "reputation": 10,
+   "unlock": {
+    "memory": "橘子头"
+   },
+   "affinity": {
+    "老周": 3
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "情感",
+   "调酒",
+   "连锁",
+   "完成",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_009",
+  "title": "台面上的债",
+  "type": "drink_request",
+  "difficulty": 2,
+  "giver": "白手套",
+  "giver_state": "白手套摘了一只，压在一张写满数字的纸上",
+  "request_dialogue": "一杯清醒的。要苦，要干净，不要任何多余的东西。今晚我要谈一笔账，我不想我的舌头替对方说情。",
+  "success_conditions": {
+   "flavor_required": [
+    "苦",
+    "清爽"
+   ],
+   "flavor_forbidden": [
+    "甜",
+    "奶味"
+   ],
+   "mood_required": [
+    "清醒"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他饮尽，把纸对折，收好）很干净。谢谢。（他起身，忽然回头）——你这家店，账目也应该很干净。保持。",
+  "fail_dialogue": "（他抿了一下，眉头几不可见地动了一下）有甜味。（他把杯子推正）算了。我自己心里有数。",
+  "reward": {
+   "tab": 240,
+   "item": null,
+   "reputation": 4,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 40,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_010",
+  "tags": [
+   "紧张",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_010",
+  "title": "铁锤的赌约",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "白手套",
+  "giver_state": "他今晚的白手套上有一道新的裂口，他没换",
+  "request_dialogue": "今天不谈账。今晚地下室有个女孩打完了她的最后一场分期。帮我调一杯……庆祝的。放她桌上，别说是谁。她对甜的东西没抵抗力，但你别放太多糖——她赢来的，要有点烈度。",
+  "success_conditions": {
+   "flavor_required": [
+    "甜",
+    "浓烈"
+   ],
+   "flavor_forbidden": [],
+   "mood_required": [
+    "庆祝"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（那杯酒被喝空了，杯底压着一张字条：『哥，我知道是你。下次利息再减一成，我请你喝真的。』白手套看完，第一次笑了）……这个女孩。谢了，老板。",
+  "fail_dialogue": "（酒被原样端回来了）她没喝。她说，『告诉那位，我的胜利我自己庆祝。』……（白手套看着杯子，若有所思）也好。随我。",
+  "reward": {
+   "tab": 300,
+   "item": null,
+   "reputation": 6,
+   "unlock": {
+    "memory": "一副白手套的让步"
+   },
+   "affinity": {
+    "白手套": 2,
+    "铁锤": 2
+   }
+  },
+  "fail_penalty": {
+   "tab": 60,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "情感",
+   "调酒",
+   "连锁",
+   "地下室"
+  ]
+ },
+ {
+  "id": "quest_011",
+  "title": "显影液之夜",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "灰调",
+  "giver_state": "指甲缝的颜料是新鲜的，他今晚话格外少",
+  "request_dialogue": "今晚暗房要通宵。给我一杯……显影的味道。酸的，咸的，像药水，但能喝。（他顿了顿）别问我为什么。今晚那张照片，我要看着它出来。",
+  "success_conditions": {
+   "flavor_required": [
+    "酸",
+    "咸"
+   ],
+   "flavor_forbidden": [
+    "奶味"
+   ],
+   "mood_required": [
+    "清醒"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他端着酒进了暗房。凌晨两点，他出来，手里一张湿照片，灰得像全世界的灰都调好了）……成了。（他把照片翻过来给你看——是二十年前，一条亮着灯的巷子）这杯的方子，我念给你，你记下来。",
+  "fail_dialogue": "（他看着酒，摇头）不是这个颜色。（他还是付了钱，端着杯子回了暗房。那一晚，暗房的灯亮到天明）",
+  "reward": {
+   "tab": 280,
+   "item": null,
+   "reputation": 6,
+   "unlock": {
+    "recipe": "recipe_078",
+    "memory": "七种灰的第一种"
+   }
+  },
+  "fail_penalty": {
+   "tab": 50,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_012",
+  "tags": [
+   "神秘",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_012",
+  "title": "头条的最后一行",
+  "type": "drink_request",
+  "difficulty": 2,
+  "giver": "方拾",
+  "giver_state": "稿纸铺了一吧台，红笔全断了水",
+  "request_dialogue": "帮个忙，调酒师。我写了三千字，差最后一段，写不动了。给我一杯苦的、清醒的——我要在它喝完之前，把最后一个句号画上去。",
+  "success_conditions": {
+   "flavor_required": [
+    "苦",
+    "清爽"
+   ],
+   "flavor_forbidden": [
+    "甜"
+   ],
+   "mood_required": [
+    "清醒"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（她在第二口和第三口之间停住了，然后笔走如飞）……成了。（她把稿纸折好，抬头，眼睛里有光）句号画上了。敬你的吧台，敬所有催稿的鬼。",
+  "fail_dialogue": "（她喝了半杯，笔悬在半空）不行，这杯让我想睡觉。……算了，我自己跟编辑说延期。（她笑得心虚）",
+  "reward": {
+   "tab": 180,
+   "item": null,
+   "reputation": 4,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 20,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_013",
+  "title": "没写完的歌",
+  "type": "drink_request",
+  "difficulty": 4,
+  "giver": "阿猫",
+  "giver_state": "吉他抱在怀里，谱子摊在吧台上，最后一个和弦空着",
+  "request_dialogue": "嘿，调酒的。听好——这首歌差一段。我写不出来。但我尝得出来。（她敲敲吧台）给我调一杯『最后一段』：要甜，要果香，要有气泡——但是落下去要安静。你懂吗？气泡往上跑，落下来要没有声音。",
+  "success_conditions": {
+   "flavor_required": [
+    "甜",
+    "果香",
+    "气泡"
+   ],
+   "flavor_forbidden": [
+    "浓烈",
+    "辣"
+   ],
+   "mood_required": [
+    "告白"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（她喝了一口，愣住，然后笑了，笑着笑着眼圈红了）……找到了。（她抱起吉他，当场把最后一段唱完，声音很轻，像怕碰碎什么）这杯的方子归你了——它叫《雨后梨花》。别卖便宜了，它值一段歌词。",
+  "fail_dialogue": "（她认真喝完，摇摇头）不对。太吵了。最后一段不能吵。……不怪你，是我那首歌太难。改天再来。（她抱着吉他就着谱子哼到打烊）",
+  "reward": {
+   "tab": 500,
+   "item": null,
+   "reputation": 10,
+   "unlock": {
+    "recipe": "recipe_091",
+    "memory": "最后一段和声"
+   }
+  },
+  "fail_penalty": {
+   "tab": 80,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_014",
+  "tags": [
+   "情感",
+   "调酒",
+   "连锁",
+   "天台"
+  ]
+ },
+ {
+  "id": "quest_014",
+  "title": "天台合唱",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "阿猫",
+  "giver_state": "今晚天台来了十几个客人，都是她叫来的朋友",
+  "request_dialogue": "今晚天台大合唱，我开场。给我调一杯能扛全场的——庆祝的，甜的，但是要多做几杯的量！错了可要被全楼笑话！",
+  "success_conditions": {
+   "flavor_required": [
+    "甜"
+   ],
+   "flavor_forbidden": [
+    "苦",
+    "辣"
+   ],
+   "mood_required": [
+    "庆祝"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（天台上歌声一片。她下来的时候，杯垫上摞着一叠小费）全！场！跟！唱！（她比了个摇滚手势）你那杯，是今晚的伴奏，懂吗，调酒师！",
+  "fail_dialogue": "（天台的歌声停了半拍，又响起来——只是喝的人少了一杯）哈哈，没事，我用啤酒顶上了。下次！下次给我稳住！",
+  "reward": {
+   "tab": 400,
+   "item": "旧拨片",
+   "reputation": 6,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "庆祝",
+   "调酒",
+   "连锁",
+   "天台"
+  ]
+ },
+ {
+  "id": "quest_015",
+  "title": "算一卦",
+  "type": "drink_request",
+  "difficulty": 2,
+  "giver": "半仙",
+  "giver_state": "他把铜钱收起来了，今晚不用卦具",
+  "request_dialogue": "老板，老夫今天不算命，改喝命。给我调一杯『迷幻』的——要花香。老夫要看看，你这杯里，能不能卦出个前程来。",
+  "success_conditions": {
+   "flavor_required": [
+    "花香",
+    "甜"
+   ],
+   "flavor_forbidden": [
+    "浓烈",
+    "辣"
+   ],
+   "mood_required": [
+    "迷幻"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他闭眼咂摸半晌，睁眼时忽然收了那股仙气，用很正常的语气）……好酒。这杯里有雨后的意思。老板，你这店，会旺的。这话老夫白送，不要钱。",
+  "fail_dialogue": "（他喝了一口，摇头）卦不动。这杯太实，压住了虚的那口气。……再来一杯？今天老夫请你。",
+  "reward": {
+   "tab": 150,
+   "item": "上上签",
+   "reputation": 3,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_016",
+  "tags": [
+   "神秘",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_016",
+  "title": "改命的一杯",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "半仙",
+  "giver_state": "他罕见地喝了酒，脸上的从容淡了一层",
+  "request_dialogue": "（他压低声音）昨日老夫给一个年轻人算了一卦，卦象是死局。……老夫这辈子算错过一次，不想再错。给我一杯烈到能改命的——浓烈，壮胆。明天，老夫要去跟那年轻人说：命，是可以不听的。",
+  "success_conditions": {
+   "flavor_required": [
+    "浓烈"
+   ],
+   "flavor_forbidden": [
+    "奶味",
+    "气泡"
+   ],
+   "mood_required": [
+    "壮胆"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他一口饮尽，把杯子倒扣在台上，像扣住一个卦）……成了。有这一口垫底，明天那句话，老夫说得出口。老板，你今日功德无量。",
+  "fail_dialogue": "（他喝完，长叹）还是薄了。……罢了，明天老夫硬着头皮说。酒不行，人顶上。",
+  "reward": {
+   "tab": 300,
+   "item": null,
+   "reputation": 6,
+   "unlock": {
+    "memory": "卦不敢算的那一杯"
+   }
+  },
+  "fail_penalty": {
+   "tab": 40,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "神秘",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_017",
+  "title": "信·一：甜",
+  "type": "drink_request",
+  "difficulty": 1,
+  "giver": "无人",
+  "giver_state": "吧台上压着一张纸条，字迹清瘦：『第一杯。要甜的，温暖的。给一个刚进巷子的人。』",
+  "request_dialogue": "（纸条上没有署名。酒杯底下还有一行小字：『钱在杯底。』）",
+  "success_conditions": {
+   "flavor_required": [
+    "甜",
+    "温暖"
+   ],
+   "flavor_forbidden": [],
+   "mood_required": [
+    "疗愈"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（酒放上吧台。没有任何人来喝。但第二天，杯子空了，杯底压着一张新的纸条：『谢。第二杯的价，翻倍。』）",
+  "fail_dialogue": "（第二天，杯子还在，酒却馊了。纸条被换成了新的：『甜不是糖多。重调。』）",
+  "reward": {
+   "tab": 100,
+   "item": null,
+   "reputation": 2,
+   "unlock": {
+    "memory": "无人委托·其一"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_018",
+  "tags": [
+   "神秘",
+   "无人",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_018",
+  "title": "信·二：酸",
+  "type": "drink_request",
+  "difficulty": 2,
+  "giver": "无人",
+  "giver_state": "新纸条：『第二杯。要酸的，清爽的。给一个快要忘记难过的人。』",
+  "request_dialogue": "（杯底的钱，真的翻了倍。）",
+  "success_conditions": {
+   "flavor_required": [
+    "酸",
+    "清爽"
+   ],
+   "flavor_forbidden": [
+    "奶味"
+   ],
+   "mood_required": [
+    "清醒"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（第二天杯子空了。纸条上多画了一颗小星星。）",
+  "fail_dialogue": "（纸条：『酸是提醒，不是惩罚。这个人已经够苦了。重调。』）",
+  "reward": {
+   "tab": 180,
+   "item": null,
+   "reputation": 3,
+   "unlock": {
+    "memory": "无人委托·其二"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_019",
+  "tags": [
+   "神秘",
+   "无人",
+   "调酒",
+   "连锁"
+  ]
+ },
+ {
+  "id": "quest_019",
+  "title": "信·三：苦",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "无人",
+  "giver_state": "新纸条：『第三杯。要苦的。越苦越好。给一个不肯哭的人。』",
+  "request_dialogue": "（这次的纸条背面还有一行：『做不出来也没关系。但我相信你。』）",
+  "success_conditions": {
+   "flavor_required": [
+    "苦"
+   ],
+   "flavor_forbidden": [
+    "甜",
+    "奶味"
+   ],
+   "mood_required": [
+    "失恋"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（凌晨三点，杯子空了。吧台上有一小滩水渍——有人趴在吧台上哭过。纸条：『他哭了。谢谢你。』）",
+  "fail_dialogue": "（纸条：『这杯不够苦。他喝了一口，笑了。你知道吗，他笑比哭还让人难受。重调。』）",
+  "reward": {
+   "tab": 260,
+   "item": null,
+   "reputation": 5,
+   "unlock": {
+    "memory": "无人委托·其三"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": "quest_020",
+  "tags": [
+   "神秘",
+   "无人",
+   "调酒",
+   "连锁",
+   "情感"
+  ]
+ },
+ {
+  "id": "quest_020",
+  "title": "信·终：留给你",
+  "type": "drink_request",
+  "difficulty": 4,
+  "giver": "无人",
+  "giver_state": "最后一张纸条，字迹和前三张一样：『最后一杯，是给你的，调酒师。按你自己的心情调。钱在杯底——这次，是谢礼。』",
+  "request_dialogue": "（杯底的钱，是你见过的最大的一张。纸条右下角，第一次有了一个小小的落款：一个画出来的巷口路灯。）",
+  "success_conditions": {
+   "flavor_required": [],
+   "flavor_forbidden": [],
+   "mood_required": [],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（你给自己调了这一杯。喝完，杯子底下不知何时又多了一张纸条：『保持这盏灯。——署名的人』。原来那三杯，每杯都有人喝。原来写字的人，一直在巷子里。）",
+  "fail_dialogue": "（你没有给自己调。第二天，纸条还压在吧台底下，边角被人细心地压平了，像在等。）",
+  "reward": {
+   "tab": 500,
+   "item": "巷口路灯的书签",
+   "reputation": 8,
+   "unlock": {
+    "memory": "写给调酒师的第四杯"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "神秘",
+   "无人",
+   "调酒",
+   "连锁",
+   "完成",
+   "情感"
+  ]
+ },
+ {
+  "id": "quest_021",
+  "title": "下夜班的解药",
+  "type": "drink_request",
+  "difficulty": 1,
+  "giver": "江宁",
+  "giver_state": "白大褂搭在包上，碘伏味飘到吧台",
+  "request_dialogue": "甜的。奶味的。能让我一坐下就困的。……今晚走了两个人，别问。谢谢。",
+  "success_conditions": {
+   "flavor_required": [
+    "奶味",
+    "甜"
+   ],
+   "flavor_forbidden": [
+    "浓烈",
+    "辣"
+   ],
+   "mood_required": [
+    "疗愈"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（她喝到一半就开始点头，强撑着喝完，把杯子轻轻放好）……就是这个。记账上，下夜班还来。（她已经睡着了，手还搭在杯柄上）",
+  "fail_dialogue": "（她喝了两口，皱眉）太提神了，谢谢，我今晚想忘掉医院。……钱我付，酒我转给别人喝。",
+  "reward": {
+   "tab": 100,
+   "item": null,
+   "reputation": 3,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_022",
+  "title": "甲方日落",
+  "type": "drink_request",
+  "difficulty": 1,
+  "giver": "林晓",
+  "giver_state": "电脑包摔在脚边，工牌都歪了",
+  "request_dialogue": "酸！辣！越够劲越好！今晚方案第九版被毙了，理由是『没有内味儿』——我要喝到有内味儿为止！",
+  "success_conditions": {
+   "flavor_required": [
+    "酸"
+   ],
+   "flavor_forbidden": [
+    "奶味"
+   ],
+   "mood_required": [
+    "暴躁"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（她一口下去，呛得直咳，然后大喊一声『爽』，掏出电脑当场改稿）内味儿有了！老板你这杯，我写进方案里当灵感！",
+  "fail_dialogue": "（她喝了，没感觉，哭丧着脸）不行，我一点都不想改稿。……再来一杯？这次往死里酸！",
+  "reward": {
+   "tab": 90,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_023",
+  "title": "提神不提心",
+  "type": "drink_request",
+  "difficulty": 1,
+  "giver": "陈师傅",
+  "giver_state": "车停在外头，计价器还空车跑着",
+  "request_dialogue": "清爽的，草本的，别太烈——我等下还得开车，就抿两口解乏。跟你说今晚环路啊，堵得邪门……",
+  "success_conditions": {
+   "flavor_required": [
+    "清爽",
+    "草本"
+   ],
+   "flavor_forbidden": [
+    "浓烈"
+   ],
+   "mood_required": [
+    "清醒"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他抿了两口，眼睛亮了）得嘞！这口下去，环路都是畅通的！钱放这儿了，回见您呐！",
+  "fail_dialogue": "（他咂咂嘴）太烈了太烈了，我这碗饭不能砸。不怪你，怪我嘴馋。钱我照付——手艺是好的！",
+  "reward": {
+   "tab": 90,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_024",
+  "title": "应酬之后",
+  "type": "drink_request",
+  "difficulty": 1,
+  "giver": "老蒋",
+  "giver_state": "领带已经塞进公文包了，人还端着三分笑",
+  "request_dialogue": "来杯暖的，奶味的，解解酒气……哥你说说，今天那单，我是不是又没戏了？……没事，你就当没听见。酒好喝就行。",
+  "success_conditions": {
+   "flavor_required": [
+    "奶味",
+    "温暖"
+   ],
+   "flavor_forbidden": [
+    "辣"
+   ],
+   "mood_required": [
+    "疗愈"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他喝完，长长舒了一口气，肩膀塌下来，像个真人了）……好喝。真的。谢谢啊兄弟。明天，还得去。",
+  "fail_dialogue": "（他喝了，勉强笑笑）行，挺好。……哎，你说我要是有一天卖不动了，我还能干嘛？（他自嘲地摆手）瞧我，喝点酒就说胡话。",
+  "reward": {
+   "tab": 110,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_025",
+  "title": "九哥的门面",
+  "type": "drink_request",
+  "difficulty": 2,
+  "giver": "唐九",
+  "giver_state": "今晚他抢着坐了最贵的位子",
+  "request_dialogue": "老板！最烈最快的！今晚兄弟们都在——（他环顾四周，声音低下去）……其实就我一个人。烈酒，谢了。",
+  "success_conditions": {
+   "flavor_required": [
+    "浓烈"
+   ],
+   "flavor_forbidden": [
+    "奶味"
+   ],
+   "mood_required": [
+    "壮胆"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他一口干了，眼眶有点红，但声音洪亮）好酒！九哥我请——记我账上！（他大声地、快乐地、一个人把那杯酒喝出了十个人的气势）",
+  "fail_dialogue": "（他抿了抿，摇头）不够冲。（他看看四周，压低声音）……兄弟，你实话说，是不是我这单生意做黄了，你家的酒也看我不起了？（他笑，笑得很响）",
+  "reward": {
+   "tab": 150,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_026",
+  "title": "给诗的下酒菜",
+  "type": "drink_request",
+  "difficulty": 2,
+  "giver": "酒瓶张",
+  "giver_state": "诗稿摊开，钢笔别在第14页",
+  "request_dialogue": "老板！今晚这首，写的是『灯』！你给我配一杯怀旧的、暖的——喝完老朽要一气呵成！（他压低声音）别太贵。别太贵，老朽的稿费……还没来。",
+  "success_conditions": {
+   "flavor_required": [
+    "温暖",
+    "甜"
+   ],
+   "flavor_forbidden": [],
+   "mood_required": [
+    "怀旧"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他一口下去，眼睛发光，抓起笔唰唰写了半页，然后站起来当众朗诵：『灯啊——你是巷子没闭上的眼睛……』全吧台安静地听完了）",
+  "fail_dialogue": "（他喝了，皱眉）此酒不解诗意。（他放下杯子，忽然一拍大腿）罢了罢了，老朽自己背上两句，白水下酒！",
+  "reward": {
+   "tab": 130,
+   "item": "诗稿一页（写着你店名）",
+   "reputation": 3,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_027",
+  "title": "保安的热汤",
+  "type": "drink_request",
+  "difficulty": 1,
+  "giver": "老岗",
+  "giver_state": "手电筒挂在腰上，站姿笔直",
+  "request_dialogue": "不喝酒，上班呢。有热的、无酒精的就行——温暖，清醒。（他不好意思地笑）要是能顺手……给我留个座，就五分钟。",
+  "success_conditions": {
+   "flavor_required": [
+    "温暖"
+   ],
+   "flavor_forbidden": [
+    "浓烈"
+   ],
+   "mood_required": [
+    "清醒"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他捧着杯子，五分钟，一口一口喝完，站起身，把凳子摆正）好。都正常的。（他冲你点点头，走进夜色里，手电的光一晃一晃）",
+  "fail_dialogue": "（他端着杯子站在门口喝完，摆摆手）太烈了？不对，是太凉了？……嗨，是我心急了。谢了老板，我巡完了再来。",
+  "reward": {
+   "tab": 80,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_028",
+  "title": "琴键上的冰",
+  "type": "drink_request",
+  "difficulty": 2,
+  "giver": "老康",
+  "giver_state": "中场休息，手指还悬在虚空中弹",
+  "request_dialogue": "酸一点，清爽，冰要多——弹快三手心冒火。对了对了，帮我把这杯放琴上，别放谱子上，啊，那页谱子底下压着东西。",
+  "success_conditions": {
+   "flavor_required": [
+    "酸",
+    "清爽"
+   ],
+   "flavor_forbidden": [
+    "浓烈",
+    "奶味"
+   ],
+   "mood_required": [
+    "清醒"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他一口下去，转身回到琴前，弹了一段你从没听过的、又酸又亮的旋律，回头冲你眨眼）听见没？你这杯，有声音的。",
+  "fail_dialogue": "（他喝了，摇头笑了）太甜，弹出来全是慢板。（他把琴凳让给你坐了会儿）来，你也摸两下？就当酒钱抵了。",
+  "reward": {
+   "tab": 140,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_029",
+  "title": "低音的demo",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "低音",
+  "giver_state": "他今晚的耳机里有未完成的音轨，循环播放",
+  "request_dialogue": "（他递过来一张便签，上面只有一行字：『苦。浓烈。迷幻。』下面画了一道低音谱号。）",
+  "success_conditions": {
+   "flavor_required": [
+    "苦",
+    "浓烈"
+   ],
+   "flavor_forbidden": [
+    "甜",
+    "奶味"
+   ],
+   "mood_required": [
+    "迷幻"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（他听完那一口的余味，把便签翻过来，画了一道高音谱号，推给你。这是他第一次说超过三个字：）『成了。低音有了，明天写高音。』",
+  "fail_dialogue": "（他听了一口，摇摇头，在便签上打了个叉。然后他做了一件更罕见的事——把那杯酒付了钱，留下，走了。也许他只是需要一杯不对的酒。）",
+  "reward": {
+   "tab": 260,
+   "item": "demo优盘（内含半首曲子）",
+   "reputation": 5,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 40,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "神秘",
+   "调酒"
+  ]
+ },
+ {
+  "id": "quest_030",
+  "title": "王婶的台阶",
+  "type": "drink_request",
+  "difficulty": 3,
+  "giver": "王婶",
+  "giver_state": "她站在老周摊子和酒吧中间，谁也不看",
+  "request_dialogue": "（她别别扭扭地开口）那个死老周，昨天当人面说我馄饨皮厚！……你帮我调杯甜的、果香的，端过去说是你店里新品请他尝。他要说好，我、我就再给他留碗馄饨。他要说不好——那你回来告诉我！",
+  "success_conditions": {
+   "flavor_required": [
+    "甜",
+    "果香"
+   ],
+   "flavor_forbidden": [
+    "苦",
+    "辣"
+   ],
+   "mood_required": [
+    "疗愈"
+   ],
+   "specific_recipe": null,
+   "any_recipe_matching": true
+  },
+  "success_dialogue": "（二十分钟后，老周端着酒过来，站在王婶摊子前，憋了半天：『皮……皮不厚。』王婶头也不抬：『知道了，滚吧，馄饨在锅里。』——巷子第一大悬案，就此再续二十年）",
+  "fail_dialogue": "（老周喝了一口，眉头拧了半天：『这酒不行啊，酸了吧唧。』王婶脸色一沉，抄起锅铲。你昨晚的太平，就此打破）",
+  "reward": {
+   "tab": 200,
+   "item": null,
+   "reputation": 5,
+   "unlock": {
+    "memory": "皮不厚"
+   },
+   "affinity": {
+    "王婶": 2,
+    "老周": 1
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -3
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "日常",
+   "调酒",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_031",
+  "title": "老周的酱油",
+  "type": "fetch",
+  "difficulty": 1,
+  "giver": "老周",
+  "giver_state": "锅上正旺，手腾不出来",
+  "request_dialogue": "哎哟不好，老抽见底了！老板，隔壁阿伟便利店里那瓶——你帮我捎一瓶！炒粉等不了人啊！",
+  "success_conditions": {
+   "target_item": "老抽",
+   "target_location": "便利店"
+  },
+  "success_dialogue": "（他接过瓶子立刻拧开倒进锅，火苗腾地窜起来）好兄弟！这份炒粉，多给你加个蛋！",
+  "fail_dialogue": "（他探头往巷口看了三回）怎么还没到……算了算了，我拿味淋顶着！（那晚的炒粉，甜得微妙）",
+  "reward": {
+   "tab": 40,
+   "item": "炒粉（加蛋版）",
+   "reputation": 1,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "repeatable",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_032",
+  "title": "花婶的最后一束",
+  "type": "fetch",
+  "difficulty": 2,
+  "giver": "花婶",
+  "giver_state": "她抱着空桶，桶底有张字条",
+  "request_dialogue": "老板，天台婆婆订的栀子，我腿脚不便上不去。你帮我送上去——就说，就说花婶说的：『这盆开得最好，给老太太窗台。』",
+  "success_conditions": {
+   "target_item": "栀子花",
+   "target_location": "天台"
+  },
+  "success_dialogue": "（第二天她往你手里塞了一小瓶水养的栀子）婆婆让我谢你！她还说……还说天台的月亮，请你多看看。（花婶嘴上嫌麻烦，眼睛是笑的）",
+  "fail_dialogue": "（她听完，摆摆手）没送上去啊……没事没事，我明早自己爬。（她扶着腰站起来，你后悔了很久）",
+  "reward": {
+   "tab": 60,
+   "item": "栀子花一小瓶",
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "天台"
+  ]
+ },
+ {
+  "id": "quest_033",
+  "title": "纸条上的采购单",
+  "type": "fetch",
+  "difficulty": 1,
+  "giver": "无人",
+  "giver_state": "吧台底下压着一张购物清单，字迹清瘦：『苏打水两瓶，青柠三个，钱在纸条背面（是邮票）。』",
+  "request_dialogue": "（清单最后一行写着：『谢谢。巷子需要你。』）",
+  "success_conditions": {
+   "target_item": "采购物资",
+   "target_location": "酒吧"
+  },
+  "success_dialogue": "（物资放好了。第二天，吧台上的苏打水瓶子上贴着一张小小的邮票——盖着邮戳的那种，旧的，值不了钱，但很好看。）",
+  "fail_dialogue": "（清单第二天还在，背面多了一行小字：『不急。等你。』）",
+  "reward": {
+   "tab": 60,
+   "item": "一张旧邮票",
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "无人",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_034",
+  "title": "后巷的灯泡",
+  "type": "fetch",
+  "difficulty": 1,
+  "giver": "老岗",
+  "giver_state": "手电筒的光比平时弱",
+  "request_dialogue": "老板，你后巷那盏灯，昨晚我巡巷瞅着直闪。储藏室里有备用灯泡，你换一个——高处那个纸盒，踩凳子，稳当点。",
+  "success_conditions": {
+   "target_item": "灯泡",
+   "target_location": "后巷"
+  },
+  "success_dialogue": "（当晚后巷的灯稳稳地亮着。老岗巡到巷尾，冲你的店门口敬了个不标准的礼）都正常的。谢了，老板。",
+  "fail_dialogue": "（那盏灯又闪了一夜。老岗的巡巷记录本上，多了第七次『巷尾灯闪，已通知店主』）",
+  "reward": {
+   "tab": 40,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "跑腿"
+  ]
+ },
+ {
+  "id": "quest_035",
+  "title": "谁捡了红笔",
+  "type": "fetch",
+  "difficulty": 2,
+  "giver": "顾老师",
+  "giver_state": "老花镜滑到鼻尖，急得直搓手",
+  "request_dialogue": "我的红笔……批了三十年作业的那支，落在酒吧了。你帮我找找？——那支笔尖是磨圆的，全城买不到第二支。",
+  "success_conditions": {
+   "target_item": "红笔",
+   "target_location": "酒吧"
+  },
+  "success_dialogue": "（他把笔接过去，先在纸上试了一道，然后郑重地放进上衣口袋，拍了拍）找到了。谢谢你啊。……这支笔批过的学生，能坐满一个操场。",
+  "fail_dialogue": "（他找遍了所有口袋，最后叹口气）兴许是丢在出租车上了。（那晚他没喝酒，早早就回去了。第二天，你看见他用新笔批菜单，字迹没那么稳）",
+  "reward": {
+   "tab": 70,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "跑腿"
+  ]
+ },
+ {
+  "id": "quest_036",
+  "title": "两节五号电池",
+  "type": "fetch",
+  "difficulty": 1,
+  "giver": "老岗",
+  "giver_state": "他把手电筒拧开给你看——空的",
+  "request_dialogue": "去阿伟那儿，带两节五号电池。要双鹿的，别的牌子不禁用。……钱，记账上，月底一起结。",
+  "success_conditions": {
+   "target_item": "电池",
+   "target_location": "便利店"
+  },
+  "success_dialogue": "（他当场换上，一开手电，光柱笔直）好。这下，今晚两条巷子都正常了。（他多给你照了照脚下的台阶）慢点走。",
+  "fail_dialogue": "（他手电筒里空了一晚。第二天你说起这事，他摆摆手）没事没事，摸黑巡了十五年，熟。",
+  "reward": {
+   "tab": 30,
+   "item": null,
+   "reputation": 1,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_037",
+  "title": "唐九的球鞋",
+  "type": "fetch",
+  "difficulty": 2,
+  "giver": "唐九",
+  "giver_state": "他今天穿的人字拖，手一直插在兜里",
+  "request_dialogue": "兄弟！地下室的猴哥扣了我一双鞋，说抵上个月的账。你帮我取回来——就一双鞋，不值几个钱！（他笑得很用力）",
+  "success_conditions": {
+   "target_item": "二手球鞋",
+   "target_location": "地下室"
+  },
+  "success_dialogue": "（鞋拿回来了，鞋盒里有一张当票——日期是三年前。唐九看着当票，笑容淡了，然后又笑起来）……行，鞋是我的了。谢了兄弟。（你注意到，那双鞋的真假，当票上写得清清楚楚）",
+  "fail_dialogue": "（你没去取。第二天唐九自己去了，回来的时候脚上穿着那双鞋，脸上的笑比昨天淡）……没事，鞋回来了。（他把人字拖扔进了垃圾桶）",
+  "reward": {
+   "tab": 150,
+   "item": null,
+   "reputation": -1,
+   "unlock": {
+    "memory": "一双鞋的当票"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "陷阱",
+   "地下室"
+  ]
+ },
+ {
+  "id": "quest_038",
+  "title": "陈醋风波",
+  "type": "fetch",
+  "difficulty": 1,
+  "giver": "王婶",
+  "giver_state": "她锅里的面已经翻炒到一半",
+  "request_dialogue": "醋！老周的醋壶借我顶一晚！你去他摊上，就说……就说王婶说的，『借不是欠』！快！面要老了！",
+  "success_conditions": {
+   "target_item": "陈醋",
+   "target_location": "宵夜档"
+  },
+  "success_dialogue": "（她抢过醋壶倒了三滴，翻炒两下，得意地一扬下巴）看见没！这就叫化敌为锅！（老周在那头气得锅铲直响）",
+  "fail_dialogue": "（她急得直跺脚，最后冲老周喊：『老周！借个醋！』老周喊回来：『王婶你也有一天！』——醋是送过去了，但较量的面子没了）",
+  "reward": {
+   "tab": 40,
+   "item": "卤味一份",
+   "reputation": 1,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "repeatable",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_039",
+  "title": "消失的三角铁",
+  "type": "fetch",
+  "difficulty": 3,
+  "giver": "电流妹",
+  "giver_state": "她的demo今天必须出成品，手里缺一件乐器",
+  "request_dialogue": "调酒的救我！我三角铁借给跟班猴了，他说放地下室了但死活找不着！没它这首歌的高潮就是瘸的！帮我找！找到了……我把你写进歌里！",
+  "success_conditions": {
+   "target_item": "三角铁",
+   "target_location": "地下室"
+  },
+  "success_dialogue": "（三角铁敲响的那一声，她整个人跳起来录了进去。一周后她的新歌上线，2分14秒处有一声极清亮的『叮』，评论区都在问那是什么）『是你，』她说，『是我找了三小时的三角铁，也是你。』",
+  "fail_dialogue": "（demo发了，高潮处空了一拍。她把耳机塞给你听那个缺口：『听见没？这0.5秒的沉默，本来是『叮』的。』）",
+  "reward": {
+   "tab": 220,
+   "item": null,
+   "reputation": 4,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "地下室"
+  ]
+ },
+ {
+  "id": "quest_040",
+  "title": "小鱼干补给",
+  "type": "fetch",
+  "difficulty": 1,
+  "giver": "煤球",
+  "giver_state": "它把一个空的小鱼干袋子，端端正正摆在吧台正中，然后盯着你",
+  "request_dialogue": "（喵。袋子的『喵』。）",
+  "success_conditions": {
+   "target_item": "小鱼干",
+   "target_location": "便利店"
+  },
+  "success_dialogue": "（它当场吃了三根，把第四根叼走藏进了某个你永远找不到的地方。当天夜里，你的枕头边多了一片干的猫薄荷叶子）",
+  "fail_dialogue": "（它又盯了你十分钟，然后叹气似的『喵呜』了一声，跳下吧台，去便利店的方向自力更生了。你分明看见了它回头那一眼）",
+  "reward": {
+   "tab": 30,
+   "item": "猫薄荷叶",
+   "reputation": 1,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "repeatable",
+   "猫"
+  ]
+ },
+ {
+  "id": "quest_041",
+  "title": "谁的雨衣",
+  "type": "fetch",
+  "difficulty": 1,
+  "giver": "林晓",
+  "giver_state": "她指着卡座上一件湿透的荧光绿雨衣",
+  "request_dialogue": "这雨衣刚才那位客人落下的！我好像在哪见过这个荧光绿……哦对！天天在地铁上见！你帮我收好吧，别扔，人肯定回来找——我在他这个位置掉了三次伞了，都懂。",
+  "success_conditions": {
+   "target_item": "荧光绿雨衣",
+   "target_location": "后巷"
+  },
+  "success_dialogue": "（三天后，一个浑身湿透的程序员冲进来，看见雨衣的时候差点跪下。临走他买了六杯酒，说请全店——『这雨衣里有我三天没赶上的地铁』）",
+  "fail_dialogue": "（雨衣被当垃圾收走了。一周后那人来了，翻遍吧台，最后默默买了杯酒坐在原来的位置，坐到打烊）",
+  "reward": {
+   "tab": 80,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "跑腿"
+  ]
+ },
+ {
+  "id": "quest_042",
+  "title": "一枚『卒』",
+  "type": "fetch",
+  "difficulty": 2,
+  "giver": "老鬼",
+  "giver_state": "他的棋盘上，黑棋的卒位空着",
+  "request_dialogue": "（他指着棋盘上空着的卒位，又指指天台的方向，最后摊开手心——一枚卒的形状。）",
+  "success_conditions": {
+   "target_item": "棋子·卒",
+   "target_location": "天台"
+  },
+  "success_dialogue": "（你把卒放进棋盘，他盯着看了很久，然后收起棋盘，从军大衣里摸出一小包炒瓜子推给你。这是他给过最重的回礼。）",
+  "fail_dialogue": "（棋局那天没收。第二天你再上去，他的台灯比平时晚关了一小时。）",
+  "reward": {
+   "tab": 90,
+   "item": "老鬼的炒瓜子",
+   "reputation": 3,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "天台",
+   "地下室"
+  ]
+ },
+ {
+  "id": "quest_043",
+  "title": "一卷受潮的胶卷",
+  "type": "fetch",
+  "difficulty": 2,
+  "giver": "方拾",
+  "giver_state": "她抓着空胶卷盒，指甲掐进了纸盒",
+  "request_dialogue": "我昨晚在巷口拍的东西全在这一卷里！过水沟的时候掉下去了！……帮我找，可能被冲到后巷了。里面可能有——算了，先找！",
+  "success_conditions": {
+   "target_item": "胶卷",
+   "target_location": "后巷"
+  },
+  "success_dialogue": "（她把湿透的胶卷举过头顶对着灯看，然后笑出声）在！壳没裂！……老板，里面拍的是你这条巷子。下周洗出来，第一张给你。",
+  "fail_dialogue": "（后巷翻了三遍，只有一只别人的鞋。她蹲在水沟边看了很久，然后站起来，拍拍裤子）……重拍。（第二天她真的从头拍了。有些东西，她比你狠。）",
+  "reward": {
+   "tab": 180,
+   "item": "巷子的照片一张",
+   "reputation": 3,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_044",
+  "title": "退烧贴",
+  "type": "fetch",
+  "difficulty": 1,
+  "giver": "江宁",
+  "giver_state": "她看了眼手机，脸色变了半度",
+  "request_dialogue": "楼下三单元的孩子发烧，家里大人慌了神打给我。我这包里退烧贴用完了——阿伟店里应该有。麻烦你跑一趟，我这边……我得过去看着。",
+  "success_conditions": {
+   "target_item": "退烧贴",
+   "target_location": "便利店"
+  },
+  "success_dialogue": "（她接过就跑，跑两步又回头）——谢了！（凌晨她回来，在你店里坐下，长出一口气）退了。三十八度二到三十七度四。今晚第一个好消息。",
+  "fail_dialogue": "（你晚到了十分钟。她从店里拿了存货直接跑过去。第二天她路过：『孩子没事。以后这种事，』她看着你，『早十分钟，就是早十分钟的事。』）",
+  "reward": {
+   "tab": 50,
+   "item": null,
+   "reputation": 3,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "repeatable",
+   "紧张"
+  ]
+ },
+ {
+  "id": "quest_045",
+  "title": "琴筒上的红绳",
+  "type": "fetch",
+  "difficulty": 3,
+  "giver": "弦叔",
+  "giver_state": "他的二胡今晚没背来，人坐在巷口拉空气",
+  "request_dialogue": "琴筒的红绳，断了。（他伸出手指比了比长度）三十年没断过。……鞋叔那有红鞋带，一样的红。你帮我去讨一根。（他顿了顿）跟他说，弦叔用的。他会给。",
+  "success_conditions": {
+   "target_item": "红鞋带",
+   "target_location": "巷子"
+  },
+  "success_dialogue": "（鞋叔二话不说剪了自己军靴的红鞋带。弦叔把新绳缠上琴筒，当着整条巷子的面，拉了一整首《良宵》——拉到一半，巷子里的声音全静了）",
+  "fail_dialogue": "（你没去。第二天，弦叔换了根普通红绳。琴声和以前一样好，但你总觉得，差了一味。）",
+  "reward": {
+   "tab": 200,
+   "item": null,
+   "reputation": 5,
+   "unlock": {
+    "memory": "《良宵》全本"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "跑腿",
+   "情感"
+  ]
+ },
+ {
+  "id": "quest_046",
+  "title": "无人认领的信",
+  "type": "social",
+  "difficulty": 3,
+  "giver": "无名氏",
+  "giver_state": "他把一封贴足邮票却写着空地址的信，推到你面前",
+  "request_dialogue": "（他指了指信封上的空地址，又指了指老邮的方向。他的意思是：这封信，需要一个地址，和一双愿意拆开的手。）",
+  "success_conditions": {
+   "target_npc": "老邮",
+   "target_location": "巷子"
+  },
+  "success_dialogue": "（老邮看了信封很久，从网兜里取出三十七封死信，把这封放了进去，排第一位。然后他在空地址那栏，一笔一划写下：『深巷』。信寄给了巷子本身。当晚，无名氏在你店里喝了一杯——他主动付的钱。）",
+  "fail_dialogue": "（信还在你吧台上。无名氏没再出现。但每次你擦吧台，都会下意识绕开它。）",
+  "reward": {
+   "tab": 300,
+   "item": null,
+   "reputation": 8,
+   "unlock": {
+    "recipe": "recipe_052",
+    "memory": "寄给深巷的信"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "神秘",
+   "社交",
+   "传话"
+  ]
+ },
+ {
+  "id": "quest_047",
+  "title": "周三的六点半",
+  "type": "social",
+  "difficulty": 4,
+  "giver": "阿棠",
+  "giver_state": "她今晚没坐卡座，站在酒吧门口，看着巷子深处的方向",
+  "request_dialogue": "我知道他每周四、日绕这条路走。麻烦你……明天他要是来你店里，把这句话带给他——『姐不是要你回头，姐是想知道你今天吃了吗。』……就这句。别的不许加。",
+  "success_conditions": {
+   "target_npc": "赌三",
+   "target_location": "地下室"
+  },
+  "success_dialogue": "（赌三听完，转筹码的手停了整整十秒。然后他背对着你说：『……吃了。酸菜鱼。』——周四晚上，阿棠的卡座桌上多了一杯果汁，是她弟弟托你送上去的。姐弟俩谁也没出现，但那杯果汁，动过了。）",
+  "fail_dialogue": "（你把话带到了，但赌三只是笑了笑：『姐还管我呢。』他当天输得比往常多三百。有些话，早了不行，晚了也不行。）",
+  "reward": {
+   "tab": 350,
+   "item": null,
+   "reputation": 7,
+   "unlock": {
+    "memory": "酸菜鱼"
+   },
+   "affinity": {
+    "阿棠": 3,
+    "赌三": 2
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "情感",
+   "传话",
+   "家族"
+  ]
+ },
+ {
+  "id": "quest_048",
+  "title": "带句话而已",
+  "type": "social",
+  "difficulty": 1,
+  "giver": "起哄的醉客",
+  "giver_state": "几个喝高了的年轻人，笑得很大声",
+  "request_dialogue": "哥！帮个忙！你去跟隔壁炒面那个大姐说，老周说她面咸！就说老周说的！快去快去，我们等你回来笑！",
+  "success_conditions": {
+   "target_npc": "王婶",
+   "target_location": "宵夜档"
+  },
+  "success_dialogue": "（你原话带到了。王婶冷笑一声，锅铲一横：『咸？让他过来尝尝什么叫咸！』——接下来四十分钟，宵夜档上演了全巷最著名的对骂，最后以老周和王婶互相往对方锅里扔了一勺糖告终。整条巷子笑了半宿。你隐约觉得，他们俩的关系，好像反而更好了？）",
+  "fail_dialogue": "（你机智地没带这句话，回来告诉醉客『大姐说，让你自己过去说』。几个人立刻怂了，讪讪散去。全巷和平多保持了一晚。）",
+  "reward": {
+   "tab": 60,
+   "item": null,
+   "reputation": -2,
+   "unlock": {
+    "memory": "巷子的战争与糖"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "陷阱",
+   "搞笑"
+  ]
+ },
+ {
+  "id": "quest_049",
+  "title": "第十遍情书",
+  "type": "social",
+  "difficulty": 2,
+  "giver": "小柯",
+  "giver_state": "他写了九遍情书，桌上一座纸山",
+  "request_dialogue": "你帮我看看……这第十遍，行了吗？『我喜欢你，像巷子喜欢灯』——是不是太肉麻了？可是删掉又觉得不像话了……",
+  "success_conditions": {
+   "target_npc": "小柯",
+   "target_location": "酒吧"
+  },
+  "success_dialogue": "（你陪他改到第十一遍，最后只改了三个字。他看着那三个字，突然就不抖了）……就这样发。谢谢。（他把信折好，塞进信封，没有封口）",
+  "fail_dialogue": "（改到凌晨两点，纸山变成十一座。他终于说：『算了，我明天当面说。』——后来他真当面说了。信一封没用上，但那晚陪他改信的人，他记了很久。）",
+  "reward": {
+   "tab": 100,
+   "item": null,
+   "reputation": 3,
+   "unlock": {
+    "memory": "第十遍情书"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "情感"
+  ]
+ },
+ {
+  "id": "quest_050",
+  "title": "醋都放不下",
+  "type": "social",
+  "difficulty": 3,
+  "giver": "阿香",
+  "giver_state": "老周和王婶的摊子中间，气氛降到冰点",
+  "request_dialogue": "周叔和王婶吵三天了，起因是一瓶醋到底该谁拿。哥，你两边都熟……你说句话？随便说句什么，让他们有个台阶下就行。",
+  "success_conditions": {
+   "target_npc": "老周",
+   "target_location": "宵夜档"
+  },
+  "success_dialogue": "（你两头传了三句话，每一句都比你原话多了半句好话。第四天，老周摊上多了碟王婶的卤味，王婶锅边多了瓶老周的好醋。没人提那三天，但两家的火，都小了一档）",
+  "fail_dialogue": "（你把原话带过去，两个人当场又吵了一轮升级版——这次连醋是谁先拿的都翻出来了。阿香在旁边，抱着一摞碗，叹了口气）",
+  "reward": {
+   "tab": 180,
+   "item": null,
+   "reputation": 5,
+   "unlock": {
+    "memory": "一瓶醋的战争与和平"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "搞笑",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_051",
+  "title": "陪聊·deadline之夜",
+  "type": "social",
+  "difficulty": 1,
+  "giver": "林晓",
+  "giver_state": "电脑开着，进度条停在百分之三十，人在吃第三包纸巾（不是哭，是擦手汗）",
+  "request_dialogue": "别跟我说话！……不对，跟我说话！随便说点什么，只要不是『写完了吗』就行。我这方案改到第九版了，甲方要『年轻化但成熟』『热闹但安静』——你说这是人话吗？！",
+  "success_conditions": {
+   "target_npc": "林晓",
+   "target_location": "酒吧"
+  },
+  "success_dialogue": "（你陪她聊到凌晨一点。你什么都没做，只是把『写完了吗』咽了回去，换了七次水。她终于合上电脑：）『发出去了。爱毙不毙。』（她抬头，眼睛亮亮的）『谢谢你今晚没问那句话。』",
+  "fail_dialogue": "（你问了。就问了一句。她当场把电脑合上，宣布今晚罢工。第二天方案迟了，她请客给自己买了杯酒，跟你买的凑了一桌沉默）",
+  "reward": {
+   "tab": 80,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "日常",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_052",
+  "title": "白手套的提醒",
+  "type": "social",
+  "difficulty": 3,
+  "giver": "白手套",
+  "giver_state": "他今晚把两只手套都摘了，放在桌上，像一件卸下的事",
+  "request_dialogue": "铁锤今晚打完最后一场分期赛。你替我去跟她说一声：账，清了。我不管她高不高兴——你只管带到。她要是问『为什么』，你就说：『有人查过你弟弟的病历。』",
+  "success_conditions": {
+   "target_npc": "铁锤",
+   "target_location": "地下室"
+  },
+  "success_dialogue": "（你把话带到了。铁锤沉默了很久，说了句『替我谢谢他』，然后补了一句：『也告诉他——我下个月的账，不欠了，但我记住了。』白手套听完，把手套重新戴上：）『好。她记住了，就说明她懂了。这单，做完了。』",
+  "fail_dialogue": "（你擅自加了半句好话，把『有人查过病历』说成了『他其实一直想帮你』。铁锤当场把喝了一半的水推开了：『不用。我的账我自己还。』——有些善意，翻倍说出口，就成了施舍。）",
+  "reward": {
+   "tab": 300,
+   "item": null,
+   "reputation": 4,
+   "unlock": {
+    "memory": "一副手套的规则"
+   },
+   "affinity": {
+    "铁锤": -2
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "陷阱",
+   "地下室"
+  ]
+ },
+ {
+  "id": "quest_053",
+  "title": "陪聊·夜校",
+  "type": "social",
+  "difficulty": 1,
+  "giver": "阿香",
+  "giver_state": "她抱着会计习题册，笔咬得全是牙印",
+  "request_dialogue": "哥……我是不是太贪心了？白天帮周叔，晚上上课，上课还惦记着摊子。你说，一个人是不是不能什么都想要？",
+  "success_conditions": {
+   "target_npc": "阿香",
+   "target_location": "宵夜档"
+  },
+  "success_dialogue": "（你给她讲了讲巷子里那些『什么都想要』的人：老周要养她又要守摊，江宁要救人又要活着。她听着听着，把习题册翻回了第一页）『嗯。我懂了。什么都想要的人，就得什么都扛。』（她笔尖重新落在纸上，比刚才稳）",
+  "fail_dialogue": "（你说了句『要不先别上课了』。她愣了一下，很快笑了：『嗯，我再想想。』——但那晚的习题册，她一个字没写。第二天她照常去了夜校，只是再没问过你任何事。）",
+  "reward": {
+   "tab": 70,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "日常",
+   "repeatable",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_054",
+  "title": "陪聊·棋局",
+  "type": "social",
+  "difficulty": 2,
+  "giver": "老鬼",
+  "giver_state": "棋盘摆好，红方是你，他连招呼都省了",
+  "request_dialogue": "（他指指凳子，又指指棋盘。意思明确：坐。下。）",
+  "success_conditions": {
+   "target_npc": "老鬼",
+   "target_location": "地下室"
+  },
+  "success_dialogue": "（你输了，输得很难看。但他破天荒复盘了三步，指了指其中一步，点了点头——意思是『这步，走对了』。守门人的一步认可，比什么话都值钱）",
+  "fail_dialogue": "（你赢了。你后来才知道，他让棋让到了极限。那晚他收棋盘的时候，把卒摆正了很久。第七天，他的棋盘上贴了张纸：『不再对弈。』——他没生你的气，他只是怕自己再让，就教不会你真棋了）",
+  "reward": {
+   "tab": 100,
+   "item": null,
+   "reputation": 3,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "repeatable",
+   "地下室"
+  ]
+ },
+ {
+  "id": "quest_055",
+  "title": "来自省城的电话",
+  "type": "social",
+  "difficulty": 2,
+  "giver": "花婶",
+  "giver_state": "她攥着手机，屏幕亮着免提，手在围裙上擦了又擦",
+  "request_dialogue": "我儿子……在电话里说他们小区桂花开了，说跟他小时候巷口那棵一样。……我腿脚不好，你这嘴巧，你帮我回他一句？就说——就说花都开了，妈挺好，让他……让他好好吃饭。",
+  "success_conditions": {
+   "target_npc": "花婶",
+   "target_location": "宵夜档"
+  },
+  "success_dialogue": "（你把话带了，还多带了一句：『你妈的花，全巷子都抢着买。』电话那头安静了几秒，然后说：『妈，过年我回来，帮你出摊。』花婶别过脸去理花，理了很久。那天的栀子，她说什么也不要钱）",
+  "fail_dialogue": "（你说漏了嘴，提了句她腰疼。电话那头急了：『什么？腰疼？妈你别干了！』花婶抢过电话：『干什么干！好好的！』——挂了电话，娘俩各自心疼了对方一晚上，但谁也没说）",
+  "reward": {
+   "tab": 150,
+   "item": "栀子花环",
+   "reputation": 4,
+   "unlock": {
+    "memory": "省城来的桂花"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "情感",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_056",
+  "title": "琴键的忌日",
+  "type": "social",
+  "difficulty": 1,
+  "giver": "老康",
+  "giver_state": "今晚的琴声比平时慢了半拍，他手指上缠着一块崭新的护指",
+  "request_dialogue": "今天……算了，不是什么大事。就是五年前的今天，我的手还是好好的。你陪我坐会儿？不用说话。听我弹。弹得慢，别嫌。",
+  "success_conditions": {
+   "target_npc": "老康",
+   "target_location": "酒吧"
+  },
+  "success_dialogue": "（你什么都没说，只是把他的酒杯在续满之前，先捂热了。一曲弹完，他忽然说：）『你知道吗，今天来之前，我差一点就不来了。』（他把杯里剩的一口干了）『现在好了。明年今天，我还来。』",
+  "fail_dialogue": "（你说了『别难过』。他笑笑：『不难过，就是……算了。』那晚他十一点就走了，琴盖上落了点灰，第二天才有客人碰它）",
+  "reward": {
+   "tab": 120,
+   "item": null,
+   "reputation": 3,
+   "unlock": {
+    "memory": "热过的酒杯"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "情感"
+  ]
+ },
+ {
+  "id": "quest_057",
+  "title": "陪聊·流星雨",
+  "type": "social",
+  "difficulty": 1,
+  "giver": "望远镜",
+  "giver_state": "他把望远镜对准天顶，脚边摆着两把凳子",
+  "request_dialogue": "今晚英仙座流星雨，极大期！……呃，虽然城市光污染只能看见最亮那几颗。你要不要来？有凳子！我都准备好了！真的，专业观测！……好吧，业余，但很真诚的那种。",
+  "success_conditions": {
+   "target_npc": "望远镜",
+   "target_location": "天台"
+  },
+  "success_dialogue": "（凌晨一点零七分，一颗流星划过去。你俩同时『哇』了一声，然后尴尬地沉默，然后同时笑出声。他把目镜让给你：）『许愿了吗？』『——其实天文学不许愿的。但是今天，可以。』",
+  "fail_dialogue": "（你睡着了。他一个人守到三点，拍了一百多张照片，每一张的角落里都有一个睡着的人影。第二天他把最好的一张发给你：流星很小，你的睡相很大）",
+  "reward": {
+   "tab": 90,
+   "item": "流星照片",
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "repeatable",
+   "天台",
+   "浪漫"
+  ]
+ },
+ {
+  "id": "quest_058",
+  "title": "小骑的驾照",
+  "type": "social",
+  "difficulty": 2,
+  "giver": "小骑",
+  "giver_state": "他把头盔抱在怀里，像抱着最后一道防线",
+  "request_dialogue": "哥，跟你说个事你别笑——科一挂三次了。不是不会，是一进考场手就抖。外卖的风里雨里我都不怕，就怕那个考场……你说我是不是天生不适合开四个轮子的东西？",
+  "success_conditions": {
+   "target_npc": "小骑",
+   "target_location": "酒吧"
+  },
+  "success_dialogue": "（你给他讲了个道理：他能在全城没信号的地方认路，是靠一米一米骑出来的。考场那点路，才多长。他听完，眼睛慢慢亮了）『……对啊。我一天跑八十公里，怕什么四十分钟的考试？！』（他当场手机报名了下一场。一个月后，他开着自己的小面馆送外卖，亲自送——有驾照的那种送）",
+  "fail_dialogue": "（你说『那你别考了，骑电驴也挺好』。他愣了一下，说也是哦。三个月后他还在骑电驴，见到你笑得没以前那么大声了）",
+  "reward": {
+   "tab": 150,
+   "item": null,
+   "reputation": 4,
+   "unlock": {
+    "memory": "四十分钟的考场"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "成长"
+  ]
+ },
+ {
+  "id": "quest_059",
+  "title": "陪聊·烂醉如泥",
+  "type": "social",
+  "difficulty": 1,
+  "giver": "酒瓶张",
+  "giver_state": "他今晚的诗稿是白的，一个字没写，人已经先醉了半场",
+  "request_dialogue": "老朽……老朽今夜，无诗。（他趴在桌上，忽然抬头，眼睛通红）你说，写了一辈子，没人看……跟白写，有什么区别？你说啊？",
+  "success_conditions": {
+   "target_npc": "酒瓶张",
+   "target_location": "酒吧"
+  },
+  "success_dialogue": "（你没讲道理。你只是说：『念一段吧。念给这杯酒听，它没有编辑证，但它识字。』他愣了三秒，真的念了。念完，他自己把最后两句改了——改得比原稿好。全吧台的人，都听完了。）",
+  "fail_dialogue": "（你说了『写得挺好的』这种话。他摆摆手：『好？好有什么用！』然后把那页诗揉了。第二天他来道歉，说昨晚失态。那首诗，再也没有那两句了）",
+  "reward": {
+   "tab": 90,
+   "item": "一首改定的诗",
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "情感"
+  ]
+ },
+ {
+  "id": "quest_060",
+  "title": "第九天之后",
+  "type": "social",
+  "difficulty": 4,
+  "giver": "影子",
+  "giver_state": "他的笔记本摊开着，今天那一页是空白的",
+  "request_dialogue": "（他今晚没有压帽檐。他把笔记本推过来——上面九天的记录，全是那扇亮灯的窗，和窗前喂猫、送菜的身影。）『第十天，委托人催我要结论。』（他看着你）『你说……结论该怎么写？』",
+  "success_conditions": {
+   "target_npc": "影子",
+   "target_location": "酒吧"
+  },
+  "success_dialogue": "（你说：『写真相。写你拍到的。』他合上本子，给你念了他写的结论：『目标无异常。建议委托人：多回家看看。』——委托没成，但第二天，那扇窗的人收到了一束没有署名的花。影子在你店里，第一次点了杯甜的。）",
+  "fail_dialogue": "（你建议他『按委托来』。他照做了。一周后那扇窗的人拿着照片来酒吧哭——照片上是她丈夫以为的『幽会』，其实是她每天去给独居的姐姐送饭。影子没露面，但他的笔记本，从此再没开过那一页）",
+  "reward": {
+   "tab": 400,
+   "item": null,
+   "reputation": 8,
+   "unlock": {
+    "memory": "第十天的结论"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -4
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "社交",
+   "情感",
+   "紧张"
+  ]
+ },
+ {
+  "id": "quest_061",
+  "title": "后巷的灯绳",
+  "type": "explore",
+  "difficulty": 1,
+  "giver": "老岗",
+  "giver_state": "他画了张简陋的地图，画得像个孩子",
+  "request_dialogue": "后巷那盏灯，绳子卡进卷帘了。你年轻手快，去拽一把——灯亮了，全巷子的后半夜，都亮堂了。",
+  "success_conditions": {
+   "target_location": "后巷"
+  },
+  "success_dialogue": "（灯『啪』地亮了。后巷的猫、垃圾站、那扇总没锁的门，全都从黑暗里显了形。老岗在本子上划掉一行：『巷尾灯，正常。』）",
+  "fail_dialogue": "（灯没亮。你被卷帘划了道口子，老岗给你贴了张创可贴：『明天我去。上岁数的好处，是会跟灯绳道歉。』）",
+  "reward": {
+   "tab": 60,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "后巷"
+  ]
+ },
+ {
+  "id": "quest_062",
+  "title": "地下室的第四把椅子",
+  "type": "explore",
+  "difficulty": 3,
+  "giver": "方拾",
+  "giver_state": "她把录音笔放在桌上，按下了录音键",
+  "request_dialogue": "全巷子都说地下室赌桌原来有四把椅子，现在只剩三把。都说的是同一个人坐过……你去帮我看看？角落、储物间、桌子底下——找找那把椅子的影子。",
+  "success_conditions": {
+   "target_location": "地下室"
+  },
+  "success_dialogue": "（你在储物间最里面找到了它——蒙着布，四条腿完好，椅背上刻着一个小小的『归』字。方拾的稿子第二天发出来了，标题：《第四把椅子》。稿子最后一行：『椅子在等人。巷子也是。』）",
+  "fail_dialogue": "（你没找到。但你听赌三讲了半小时那把椅子的故事，版本换了三个。方拾的稿子没写成，但这个传说，多了你一个证人）",
+  "reward": {
+   "tab": 260,
+   "item": null,
+   "reputation": 6,
+   "unlock": {
+    "memory": "第四把椅子"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "神秘",
+   "地下室"
+  ]
+ },
+ {
+  "id": "quest_063",
+  "title": "婆婆的床单",
+  "type": "explore",
+  "difficulty": 2,
+  "giver": "婆婆",
+  "giver_state": "她望着天台的晾衣绳，绳子空着",
+  "request_dialogue": "床单……昨天风大，吹到天台外头去了。我知道它落在哪儿，就是下不去手去够。你年轻，腿脚利索……麻烦你了。床单不金贵，就是——是我老头子在的时候买的。",
+  "success_conditions": {
+   "target_location": "天台"
+  },
+  "success_dialogue": "（床单挂在天台边缘的水管上，安然无恙。婆婆接过去，抖了抖，闻了一下：『嗯，还有太阳味。』——她转身的时候，你在她围裙口袋里，看见一张泛黄的全家福，拍了拍，被她按了回去）",
+  "fail_dialogue": "（床单掉进了后巷的水洼。婆婆说没事没事，洗洗就好。但那天晚上，天台的藤椅空着，摇椅自己在风里摇了很久）",
+  "reward": {
+   "tab": 120,
+   "item": null,
+   "reputation": 3,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "天台",
+   "情感"
+  ]
+ },
+ {
+  "id": "quest_064",
+  "title": "屋顶上的明信片",
+  "type": "explore",
+  "difficulty": 2,
+  "giver": "老邮",
+  "giver_state": "他的邮包里有一张无法投递的明信片，边角被风磨圆了",
+  "request_dialogue": "这张明信片，是寄给『天台看月亮的人』的，没写门牌。我投了三次，都被退回来。……你帮我去天台找找？说不定，写的人就是那儿的住户。",
+  "success_conditions": {
+   "target_location": "天台"
+  },
+  "success_dialogue": "（你在天台水箱后面找到了线索——一沓没寄出的明信片，笔迹和这张一模一样。婆婆看了直摆手，最后承认：『是我写的。写给老头子。写了三十年，都不知道寄给谁。』——老邮默默把那张明信片盖了戳，投进了网兜：『这次，算寄到了。』）",
+  "fail_dialogue": "（明信片还在老邮的网兜里，排第三十八位。但婆婆那天晚上多坐了一会儿，望着月亮，像在补一个没寄出的地址）",
+  "reward": {
+   "tab": 180,
+   "item": null,
+   "reputation": 5,
+   "unlock": {
+    "recipe": "recipe_066",
+    "memory": "寄给月亮的信"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "天台",
+   "情感"
+  ]
+ },
+ {
+  "id": "quest_065",
+  "title": "雨夜的湿火柴",
+  "type": "explore",
+  "difficulty": 3,
+  "giver": "阿香",
+  "giver_state": "她收摊时在电线杆下捡到一个铁盒，湿透了",
+  "request_dialogue": "哥，你看这个……火柴盒，湿的，但是擦得干干净净。盒子里就一根火柴。……你说，是谁把它放这儿的？要不，你雨停了去后巷看看？总觉得，丢东西的人在等。",
+  "success_conditions": {
+   "target_location": "后巷"
+  },
+  "success_dialogue": "（雨夜的后巷，蓑衣人站在第三根电线杆下。你把擦干的火柴盒递过去，他接了，指腹在盒面上摩挲了很久，然后抬起手——一根干燥的火柴，划着了。火光里，你看清了他的脸，看了一秒。他把火柴盒留给了你，转身走进雨里。从此以后，雨夜的后巷，你总能闻到一点划过火柴的味道）",
+  "fail_dialogue": "（你没去。第二天，电线杆下干干净净。但蓑衣人再没在雨夜出现过——不是生气了。阿香说：『大概是，等到雨停了吧。』）",
+  "reward": {
+   "tab": 250,
+   "item": "湿火柴盒",
+   "reputation": 5,
+   "unlock": {
+    "memory": "一秒钟的火光"
+   },
+   "affinity": {
+    "蓑衣人": 2
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "神秘",
+   "后巷",
+   "雨"
+  ]
+ },
+ {
+  "id": "quest_066",
+  "title": "地下四层",
+  "type": "explore",
+  "difficulty": 3,
+  "giver": "电流妹",
+  "giver_state": "她指着地下室的旧电梯，按钮只有三个",
+  "request_dialogue": "传说这电梯有四层！B4！我打碟需要绝对安静的地方录人声——帮我试试？按住B3别松手，再双击B1！老电梯都有隐藏关！……我试过十七次了。",
+  "success_conditions": {
+   "target_location": "地下室"
+  },
+  "success_dialogue": "（第十八次，电梯『叮』了一声，多亮了一个按钮。B4是间废弃的老储藏室，墙上贴着八十年代的酒水单，角落还有一台能转的旧电唱机。电流妹当晚的demo，人声就是在B4录的。她在歌的结尾采样了那声『叮』）",
+  "fail_dialogue": "（电梯只到B3。但你和老鬼聊了半晚这栋楼的历史——原来B4是当年放酒窖的，酒搬走以后，就封了。有些门没锁，只是没人再按。）",
+  "reward": {
+   "tab": 240,
+   "item": null,
+   "reputation": 5,
+   "unlock": {
+    "area": "地下四层",
+    "memory": "第十八次尝试"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "神秘",
+   "地下室"
+  ]
+ },
+ {
+  "id": "quest_067",
+  "title": "巷口的旧邮筒",
+  "type": "explore",
+  "difficulty": 1,
+  "giver": "老笔",
+  "giver_state": "他抱着一封信，在邮筒前站了很久",
+  "request_dialogue": "这个邮筒……邮政说下个月要撤了。（他拍拍绿色的筒身）最后一封信，我想今天投。可我这手，抖得投不进去。……你帮我投一次？就一次。",
+  "success_conditions": {
+   "target_location": "巷口"
+  },
+  "success_dialogue": "（『咚』的一声，信落底。老笔听了那一声，笑了：）『四十年了，头一回听清楚。』（一个月后邮筒真撤了。巷口那块空地，后来成了酒瓶张的『朗诵角』——据说因为邮筒的座位，还在原地）",
+  "fail_dialogue": "（你手一滑，信卡在了投递口。老笔和你掏了十分钟，最后他自己投进去的。『没事，』他说，『信嘛，迟早都到。』）",
+  "reward": {
+   "tab": 80,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "怀旧",
+   "巷口"
+  ]
+ },
+ {
+  "id": "quest_068",
+  "title": "婆婆的花种",
+  "type": "explore",
+  "difficulty": 2,
+  "giver": "婆婆",
+  "giver_state": "她手里捏着个信封，已经捏软了",
+  "request_dialogue": "栀子花的种子，我老头子走那年埋在天台花坛了。后来翻了土，就……你帮我去花坛第三个角找找？我记得埋在第三角。找到别种回去——拿走，给想种的人。",
+  "success_conditions": {
+   "target_location": "天台"
+  },
+  "success_dialogue": "（铁盒就在第三角，锈了边，里面的种子居然还活着。婆婆把它们分给了花婶、阿香，和你的吧台——『一人一包，种活了，算他还在开花。』第二年春天，整条巷子都香了）",
+  "fail_dialogue": "（花坛翻了三遍没有。婆婆说没事，『兴许记岔了，兴许它们想留在土里』。但那年的天台花坛，栀子开得特别疯，谁也没种它）",
+  "reward": {
+   "tab": 160,
+   "item": "栀子花种一包",
+   "reputation": 4,
+   "unlock": {
+    "memory": "第三角的铁盒"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "天台",
+   "怀旧"
+  ]
+ },
+ {
+  "id": "quest_069",
+  "title": "大橘的纸箱",
+  "type": "explore",
+  "difficulty": 2,
+  "giver": "花婶",
+  "giver_state": "她给大橘顺毛，大橘难得没跑",
+  "request_dialogue": "这橘猫，每天晚上十一点准时往后巷跑，风雨无阻。我腿脚追不上。你去看看它去哪儿？——别吓着它，就远远跟着。",
+  "success_conditions": {
+   "target_location": "后巷"
+  },
+  "success_dialogue": "（你跟到了：后巷第三个纸箱，箱里垫着一件小毛衣，袖口绣着一个『招』字。大橘蜷进去，只露出尾巴尖。你想起鞋叔说过，隔壁街饭馆以前有只招财猫……它每晚十一点，是回『前公司』的旧宿舍看看）",
+  "fail_dialogue": "（你跟丢了。但第二天大橘在你店门口留了一片叶子——不是鱼干，是叶子。它看见你跟丢了，它表示理解）",
+  "reward": {
+   "tab": 100,
+   "item": null,
+   "reputation": 3,
+   "unlock": {
+    "memory": "绣着『招』的毛衣"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "后巷",
+   "猫"
+  ]
+ },
+ {
+  "id": "quest_070",
+  "title": "片场的夜",
+  "type": "explore",
+  "difficulty": 2,
+  "giver": "小镜头",
+  "giver_state": "她抱着相机，兴奋得像第一次进巷子",
+  "request_dialogue": "巷口在拍电影你知道吗！！剧组今晚拍夜戏，最火的那位演员会来！家人们——啊不是，老板，帮我占个能拍到的地方！就拍一个镜头！我就发一条！",
+  "success_conditions": {
+   "target_location": "巷口"
+  },
+  "success_dialogue": "（你在老槐树后找了个绝佳机位。剧组拍了七遍，她拍了七遍，最后导演喊卡时，那位演员却朝树后挥了挥手——他看见了你们俩。小镜头的这条视频没火，但她把最后那一帧『挥手』设成了头像，很久很久）",
+  "fail_dialogue": "（你们被场务请到了警戒线外。电影下个月上映，巷口那个镜头拍得很美——但据说演员的即兴挥手，剪掉了。没拍到的人，永远不知道那一下）",
+  "reward": {
+   "tab": 140,
+   "item": null,
+   "reputation": 3,
+   "unlock": {
+    "memory": "第七遍的挥手"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "探索",
+   "巷口",
+   "搞笑"
+  ]
+ },
+ {
+  "id": "quest_071",
+  "title": "速度之夜",
+  "type": "challenge",
+  "difficulty": 3,
+  "giver": "老康",
+  "giver_state": "他把节拍器摆在了吧台上，上好了弦",
+  "request_dialogue": "调酒也有节拍。今晚，三分钟，两杯——一杯快三，一杯慢板。节拍器替我数着。快的那杯要爽，慢的那杯要稳。……敢不敢？",
+  "success_conditions": {
+   "minute_limit": 3,
+   "drink_count": 2,
+   "quality_required": "良好"
+  },
+  "success_dialogue": "（节拍器停在第三分钟。两杯都在。老康各抿了一口，点点头，然后把节拍器的速度调快了一格：）『下回，两分半。』——这是他最高的表扬。",
+  "fail_dialogue": "（节拍器响到第三分钟，吧台上只有一杯。老康把那杯推给你：）『先喝。着急的手，调不出慢的酒。』（下次再练。）",
+  "reward": {
+   "tab": 300,
+   "item": null,
+   "reputation": 5,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "调酒",
+   "酒吧"
+  ]
+ },
+ {
+  "id": "quest_072",
+  "title": "盲调",
+  "type": "challenge",
+  "difficulty": 4,
+  "giver": "半仙",
+  "giver_state": "他拿出一条干净的布巾，双手奉上",
+  "request_dialogue": "老夫说一种心境，你蒙着眼调一杯。调完自己摘布尝——对不对，你的舌头比你先知道。……敢试吗，小老板？",
+  "success_conditions": {
+   "blindfold": true,
+   "quality_required": "良好"
+  },
+  "success_dialogue": "（布巾摘下来，你尝了一口自己的酒——真的是那个心境。半仙把布巾叠好收起：）『舌头通心了。老夫这行，往后见了你，得改口叫师父。』",
+  "fail_dialogue": "（你摘下布巾，尝了一口，愣住了——完全不对。半仙倒是笑了：）『不错不错，敢喝下去，比调对更难。』（他收了布巾。那杯错的酒，你自己付的钱）",
+  "reward": {
+   "tab": 350,
+   "item": "半仙的布巾",
+   "reputation": 6,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 50,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "调酒"
+  ]
+ },
+ {
+  "id": "quest_073",
+  "title": "石头剪刀布大赛",
+  "type": "challenge",
+  "difficulty": 2,
+  "giver": "赌三",
+  "giver_state": "他今天不下注，只当裁判",
+  "request_dialogue": "规矩简单：剪刀石头布，三局两胜。赢了，我给这局买酒钱；输了，你调一杯——用我这边的配方卡。敢不敢？啊不，我问错了——来都来了！",
+  "success_conditions": {
+   "rps_win": true
+  },
+  "success_dialogue": "（你三局两胜。赌三掏钱的时候嘴上一点不亏：）『让你让的！懂吗，让的！』（但他转身跟老鬼汇报时，声音明显大了八度）",
+  "fail_dialogue": "（你输了。赌三得意地把一张配方卡拍在你面前——是一张你从没见过的稀有配方的一角。按约定，今晚你得把它调出来。最后那杯酒，惊为天人，但只有今晚）",
+  "reward": {
+   "tab": 150,
+   "item": null,
+   "reputation": 2,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "搞笑",
+   "repeatable",
+   "地下室"
+  ]
+ },
+ {
+  "id": "quest_074",
+  "title": "三张嘴",
+  "type": "challenge",
+  "difficulty": 4,
+  "giver": "阿棠",
+  "giver_state": "她拉来了三个试喝员：林晓、顾老师、铁锤",
+  "request_dialogue": "酒店新菜单要一款招牌酒，三位评委：一个要够劲，一个要不辣，一个要甜。同一杯——你们都喝这一杯。调吧。调到三个人都不说话，就过了。",
+  "success_conditions": {
+   "panel": true,
+   "quality_required": "良好"
+  },
+  "success_dialogue": "（三个人同时举杯，同时放下，同时沉默。阿棠笑出声：）『成了。不说话，就是全票。』（这款酒上了酒店菜单，名字栏写着：深巷一号）",
+  "fail_dialogue": "（林晓说太淡，顾老师说太烈，铁锤说太甜。三个人的意见史无前例地一致：重调。阿棠把杯子推回来：）『不急。酒和人一样，总有一版是对的。』",
+  "reward": {
+   "tab": 400,
+   "item": null,
+   "reputation": 7,
+   "unlock": {
+    "memory": "深巷一号"
+   }
+  },
+  "fail_penalty": {
+   "tab": 50,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "调酒"
+  ]
+ },
+ {
+  "id": "quest_075",
+  "title": "无冰挑战",
+  "type": "challenge",
+  "difficulty": 4,
+  "giver": "电流妹",
+  "giver_state": "台风天，制冰机罢工，她盯着空冰桶",
+  "request_dialogue": "台风天想喝清爽的，但没冰！不许用冰箱冻水——就用你吧台上现有的东西，调一杯『听起来就凉快』的！敢应战吗！",
+  "success_conditions": {
+   "no_ice": true,
+   "flavor_required": [
+    "清爽"
+   ],
+   "quality_required": "良好"
+  },
+  "success_dialogue": "（她一口下去，眼睛瞪圆，当场给台风起了个新名字）『就它了！今晚的台风，叫这杯酒的名字！』（后来巷子里的人提起那个台风夜，都管它叫那杯酒的名字）",
+  "fail_dialogue": "（温的。确实温。她喝了半杯，坦白说：『算了，台风天，热的也行。』——但『无冰挑战』的传说，从此多了个笑话版本）",
+  "reward": {
+   "tab": 320,
+   "item": null,
+   "reputation": 5,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "调酒",
+   "台风"
+  ]
+ },
+ {
+  "id": "quest_076",
+  "title": "复刻",
+  "type": "challenge",
+  "difficulty": 5,
+  "giver": "老鬼",
+  "giver_state": "他往桌上放了一小杯东西——深巷雾灯，只有一口的量",
+  "request_dialogue": "（他指指那杯残酒，指指你，再指指吧台。意思清楚：喝一口。记住。复刻。）",
+  "success_conditions": {
+   "specific_recipe": "recipe_071",
+   "quality_required": "完美"
+  },
+  "success_dialogue": "（你的复刻端上来，他喝了一口，闭眼，睁眼，把棋盘往旁边挪了挪——腾出了一整个位子。然后他做了一件史无前例的事：从军大衣里，摸出那瓶自己藏的酒，给你满上）",
+  "fail_dialogue": "（差了点意思。他把你的酒和残酒并排放着，自己一口一口地对照着喝完。走的时候，他留下一枚『卒』——意思是：还差一步，接着走）",
+  "reward": {
+   "tab": 500,
+   "item": "老鬼的私藏酒一杯",
+   "reputation": 8,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "调酒",
+   "高难"
+  ]
+ },
+ {
+  "id": "quest_077",
+  "title": "微醺平衡",
+  "type": "challenge",
+  "difficulty": 2,
+  "giver": "酒瓶张",
+  "giver_state": "他已经喝到第五杯，诗稿上的字开始飞",
+  "request_dialogue": "老朽……还想再喝一杯。但是今晚这首诗，得写完。（他抓着你的袖子，无比严肃）所以——给我调一杯『喝了像没喝』的！有酒味，不上头！这是这个时代对调酒师最大的考验！",
+  "success_conditions": {
+   "low_alcohol": true,
+   "flavor_required": [
+    "清爽"
+   ],
+   "quality_required": "良好"
+  },
+  "success_dialogue": "（他喝完最后一杯，诗真的写完了。写完还当众朗诵，一个字没打绊。念完他鞠了个躬：）『此杯当名——〈大醉若醒〉！老朽明天裱起来！』",
+  "fail_dialogue": "（他喝完，倒头就睡。诗没写成。第二天他来道歉，说昨晚『失联』。那页诗稿上只有一行：『酒是好酒，我是不肖子孙』——他把它裱起来了，说这也是诗）",
+  "reward": {
+   "tab": 180,
+   "item": null,
+   "reputation": 3,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": 0
+  },
+  "time_limit": null,
+  "repeatable": true,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "调酒",
+   "repeatable"
+  ]
+ },
+ {
+  "id": "quest_078",
+  "title": "摇壶马拉松",
+  "type": "challenge",
+  "difficulty": 3,
+  "giver": "老周",
+  "giver_state": "他把摊子上十个熟客都领来了，人手一张点单",
+  "request_dialogue": "老板！十个客人！十杯！不许摇错一个！（他撸起袖子）摇壶跟颠勺一个道理——腕子稳，心不慌！老周我给你压阵！",
+  "success_conditions": {
+   "drink_count": 10,
+   "fail_tolerance": 0
+  },
+  "success_dialogue": "（第十杯落台，全场欢呼。老周把袖子一放，豪迈地拍了下你的肩膀——拍得你差点坐地上）『好小子！这腕子，比老周当年在货轮上颠大锅还稳！今天这十杯，我请！』",
+  "fail_dialogue": "（第七杯摇洒了，洒了他半个围裙。老周倒是笑呵呵：）『没事没事！洒的都是练习！』（但他偷偷把洒的那杯擦了又擦——那杯本来是给阿香留的）",
+  "reward": {
+   "tab": 350,
+   "item": null,
+   "reputation": 5,
+   "unlock": null
+  },
+  "fail_penalty": {
+   "tab": 50,
+   "reputation": -1
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "调酒",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "quest_079",
+  "title": "不在酒单上的那一杯",
+  "type": "challenge",
+  "difficulty": 5,
+  "giver": "无名氏",
+  "giver_state": "他坐在老位子，面前放着一张白纸。纸上什么都没写。",
+  "request_dialogue": "（他把白纸推过来，然后指了指自己的心口，再指了指你的吧台。意思是：凭心调。没有要求，就是最高的要求。）",
+  "success_conditions": {
+   "quality_required": "完美",
+   "freeform": true
+  },
+  "success_dialogue": "（他喝完，把白纸拿回去，写了两个字，推回来。纸上写着：『就是』。然后他起身，把椅子推回原位，走出了酒吧。那是他最后一次出现。后来每年这一天，你都会在吧台上，给自己调一杯。）",
+  "fail_dialogue": "（他摇了摇头，把白纸收回口袋，起身离开。三年后的某个雨夜，他又来了，还是那张白纸。他还是等。这一次，你别让他等太久）",
+  "reward": {
+   "tab": 600,
+   "item": "写着『就是』的白纸",
+   "reputation": 10,
+   "unlock": {
+    "memory": "就是"
+   }
+  },
+  "fail_penalty": {
+   "tab": 0,
+   "reputation": -3
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "神秘",
+   "高难"
+  ]
+ },
+ {
+  "id": "quest_080",
+  "title": "深巷之考",
+  "type": "challenge",
+  "difficulty": 5,
+  "giver": "半仙",
+  "giver_state": "他把全巷子的老熟人都请来了，吧台前站了一排",
+  "request_dialogue": "小老板，你名声在外，老夫今日设个局：把『深巷』那杯招牌调出来。调成了——这巷子，往后就是你的道场。调砸了——（他狡黠一笑）调砸了就明天再开，反正老夫酒管够。",
+  "success_conditions": {
+   "specific_recipe": "recipe_100",
+   "quality_required": "完美"
+  },
+  "success_dialogue": "（那杯『深巷』落台，全场安静。老周先喝了，然后是老康、婆婆、老鬼……最后半仙把杯垫收起来，郑重其事地压在酒单底下：）『过了。从今往后，你的酒单，就是这条巷子的族谱。』",
+  "fail_dialogue": "（差一口气。没人喝出问题，但你自己知道。半仙把酒钱付了：）『知道差在哪，比调出来还难得。明天再来——招牌不急，巷子等你。』",
+  "reward": {
+   "tab": 800,
+   "item": null,
+   "reputation": 12,
+   "unlock": {
+    "memory": "巷子的族谱"
+   }
+  },
+  "fail_penalty": {
+   "tab": 100,
+   "reputation": -2
+  },
+  "time_limit": null,
+  "repeatable": false,
+  "chain_next": null,
+  "tags": [
+   "挑战",
+   "终极",
+   "调酒"
+  ]
+ }
+]

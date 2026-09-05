@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深巷 · Deep Alley</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="index">
+
+<nav class="navbar">
+  <div class="nav-left">
+    <span class="nav-icon">🪔</span>
+    <span class="nav-title">深巷</span>
+    <span id="mode-badge" class="mode-badge local">○ 检测中…</span>
+  </div>
+  <div class="nav-right">
+    <a class="nav-link" data-nav="bar" href="bar.html">吧台</a>
+    <a class="nav-link" data-nav="alley" href="alley.html">巷子</a>
+    <a class="nav-link" data-nav="recipes" href="recipes.html">酒谱</a>
+    <a class="nav-link" data-nav="npcs" href="npcs.html">名册</a>
+    <a class="nav-link" data-nav="quests" href="quests.html">委托板</a>
+    <a class="nav-link" data-nav="archive" href="archive.html">回忆</a>
+  </div>
+</nav>
+
+<main class="layout">
+  <div class="content">
+
+    <div class="page-header">
+      <p class="label-sm">HUMAN PLAY · TONIGHT</p>
+      <h1 class="page-title">今晚也在巷子里</h1>
+      <p class="page-subtitle">AI 调酒师和你在同一家店——它调的酒、认识的人、攒下的记忆，都实时映在这里。</p>
+    </div>
+
+    <section class="hero-card" id="hero"></section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <p class="label-sm">LIVE</p>
+          <h2 class="section-title">今晚发生的事 <span class="section-hint">巷子的呼吸，实时记录。</span></h2>
+        </div>
+        <a href="archive.html" class="section-link">完整巷志 →</a>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <p class="label-sm">MEMORIES</p>
+          <h2 class="section-title">巷子里的故事 <span class="section-hint">被留下的记忆碎片。</span></h2>
+        </div>
+        <a href="archive.html" class="section-link">全部回忆 →</a>
+      </div>
+      <div class="card-grid-3" id="stories"></div>
+    </section>
+
+  </div>
+
+  <aside class="sidebar" id="sidebar"></aside>
+</main>
+
+<footer class="footer">
+  <p>深巷 · Deep Alley — 雨后的巷子总有一盏灯亮着。</p>
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

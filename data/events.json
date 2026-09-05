@@ -1,0 +1,4514 @@
+[
+ {
+  "id": "event_001",
+  "title": "猫跳吧台",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.12
+  },
+  "description": "煤球忽然纵身一跃，稳稳落在吧台正中央，尾巴扫过你刚擦好的台面。它环视四周，像在巡视自己的领地。",
+  "choices": [
+   {
+    "text": "顺毛，顺便给它一小碟奶",
+    "result": "它勉为其难地享受了三秒钟，然后跳走了。但今晚它一直待在店里，好几个客人都是冲着它来的。",
+    "effect": {
+     "npc_relationship": {
+      "煤球": 1
+     },
+     "tab": 20
+    }
+   },
+   {
+    "text": "把它请下去",
+    "result": "它优雅地跳下，落地无声，回头看了你一眼——那眼神你三天都忘不掉。",
+    "effect": {
+     "npc_relationship": {
+      "煤球": -1
+     }
+    }
+   },
+   {
+    "text": "假装没看见，继续干活",
+    "result": "它自讨没趣，蜷在收银机旁边睡了。收银机是全店最暖的地方，它懂行。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "煤球等了一会儿，发现没人理它，便自己找了个舒服的纸箱，睡了。",
+  "tags": [
+   "氛围",
+   "猫",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_002",
+  "title": "停电（整条巷子）",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.06
+  },
+  "description": "灯突然灭了——不止你的店，整条巷子都陷入黑暗。宵夜档老周的煤气灶火苗成了巷子里唯一的光。有人打翻了酒杯，然后是一阵笑声。",
+  "choices": [
+   {
+    "text": "点蜡烛继续营业",
+    "result": "你从柜台底下摸出蜡烛。烛光里所有人的脸都变得温柔了，连平时话少的客人都开始讲故事。今晚像换了一个人间。",
+    "effect": {
+     "drink_score_bonus": 1,
+     "unlock_memory": "烛光夜"
+    }
+   },
+   {
+    "text": "趁黑偷喝一口珍藏",
+    "result": "你摸到那瓶一直舍不得开的酒，在黑暗里喝了一口。没人看到。但你自己知道。",
+    "effect": {
+     "drunk": 10,
+     "unlock_memory": "黑暗中的一口"
+    }
+   },
+   {
+    "text": "出去看看怎么回事",
+    "result": "巷子里一片漆黑，只有老周的灶火亮着。他朝你喊：『电？我这儿从来不用电！』你在他摊上坐了一会儿，吃了碗炒粉，看星星比城里的亮。",
+    "effect": {
+     "hunger": -20,
+     "tab": -15,
+     "npc_relationship": {
+      "老周": 3
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "电在十分钟后恢复了。什么都没发生。但你总觉得黑暗里有一秒钟，整条巷子都在安静地呼吸。",
+  "tags": [
+   "氛围",
+   "大事件",
+   "酒吧"
+  ]
+ },
+ {
+  "id": "event_003",
+  "title": "停水",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.05
+  },
+  "description": "水龙头拧到底也没有水。全巷子停水了。洗杯子成了大问题，冰块开始变得珍贵。",
+  "choices": [
+   {
+    "text": "限量供应，改卖热饮",
+    "result": "你临时调整了酒单，热饮意外地受欢迎。老周送来一桶他用船上的老法子存的清水：『船上的水，金贵着喝！』",
+    "effect": {
+     "tab": 60,
+     "npc_relationship": {
+      "老周": 2
+     }
+    }
+   },
+   {
+    "text": "用存货的气泡水硬撑",
+    "result": "气泡水洗杯子，客人喝苏打。有人抱怨，也有人说『气泡洗的杯子有灵魂』。",
+    "effect": {
+     "tab": -30
+    }
+   },
+   {
+    "text": "去巷口的老井打水",
+    "result": "那口平时锁着的老井今晚开了。你打上来的水冰凉清甜，用它调的酒，好几个老客说『是小时候的味道』。",
+    "effect": {
+     "unlock_memory": "老井的水",
+     "reputation": 3
+    }
+   }
+  ],
+  "no_choice_timeout": "你在黑暗里摸索着经营了一晚。第二天水来了，你把所有的杯子都重新洗了一遍。",
+  "tags": [
+   "日常",
+   "大事件",
+   "经济"
+  ]
+ },
+ {
+  "id": "event_004",
+  "title": "酒瓶戒指",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.05
+  },
+  "description": "角落那桌的小伙子忽然单膝跪地，手里举着的不是戒指盒——是一枚用酒瓶口磨的玻璃戒指。全店安静了。",
+  "choices": [
+   {
+    "text": "送上一杯庆祝酒助兴",
+    "result": "你把酒放在姑娘面前。她哭着伸出了手。全场欢呼，那杯酒后来被他们叫做『定情酒』，每年这一天他们都来喝。",
+    "effect": {
+     "tab": -60,
+     "reputation": 3,
+     "unlock_memory": "定情酒"
+    }
+   },
+   {
+    "text": "请他先站起来，别急",
+    "result": "你按住场面，让他说完想说的话。他说得磕磕绊绊，但姑娘听完，把戒指戴上了自己手指。有些话，比戒指重要。",
+    "effect": {
+     "reputation": 2
+    }
+   },
+   {
+    "text": "备好纸巾和一杯温水",
+    "result": "她哭了，是幸福的那种哭。温水派上了用场。全场鼓掌，包括角落里偷偷抹眼泪的西装男。",
+    "effect": {
+     "npc_relationship": {
+      "西装男": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "姑娘答应了。欢呼声浪差点掀翻屋顶，你们的酒水台被庆祝的人挤满了——今晚营业额爆表。",
+  "tags": [
+   "庆祝",
+   "浪漫",
+   "酒吧"
+  ]
+ },
+ {
+  "id": "event_005",
+  "title": "镜子里的第三个人影",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.03
+  },
+  "description": "吧台后面的镜子照出常客的背影——但你数了数，镜子里多了一个人影。你回头，身后没有人。",
+  "choices": [
+   {
+    "text": "对着镜子举起酒杯",
+    "result": "镜子里那个人影，也举起了杯子。你和他碰了一下杯——玻璃杯相碰，发出只有你听得到的一声『叮』。今晚的酒，格外顺。",
+    "effect": {
+     "unlock_memory": "镜中的酒友",
+     "drink_score_bonus": 1
+    }
+   },
+   {
+    "text": "默默把他的杯子也擦了一遍",
+    "result": "你擦完那一只从没人用过的杯子。镜子里的人影淡了，像满意了。",
+    "effect": {
+     "unlock_memory": "多擦的一只杯子"
+    }
+   },
+   {
+    "text": "当成眼睛花，去后巷洗把脸",
+    "result": "冷水让你清醒。回来时镜子正常了。但那晚你打烊后检查了三遍门锁。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "人影在镜子里站了整晚。打烊时，你发现吧台一角多了一圈杯底的水渍——像有人一直坐在那里。",
+  "tags": [
+   "神秘",
+   "酒吧"
+  ]
+ },
+ {
+  "id": "event_006",
+  "title": "歌单自己变了",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.06
+  },
+  "description": "音响里放着的爵士忽然停了，换成一首老歌——你的歌单里根本没有这首歌。是黑胶的老沙哑声。客人们都安静了下来。",
+  "choices": [
+   {
+    "text": "让它放完",
+    "result": "整首歌五分五十秒，全店没人说话。放完的时候，角落里有客人轻轻鼓了掌。你后来才知道，那是已故老店主最爱的歌。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "五分五十秒"
+    }
+   },
+   {
+    "text": "换回自己的歌单",
+    "result": "你切换了歌单。但那天晚上，每个客人都点了一首老歌。有些情绪，是被那首意外勾起来的。",
+    "effect": {
+     "tab": 40
+    }
+   },
+   {
+    "text": "跟着哼两句",
+    "result": "你哼的调子竟然是对的。老康从琴那边看过来，挑了挑眉，接了上去。全店变成了大合唱。",
+    "effect": {
+     "npc_relationship": {
+      "老康": 2
+     },
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "那首歌循环放了一整晚。奇怪的是，没有一个人觉得吵。",
+  "tags": [
+   "神秘",
+   "怀旧",
+   "酒吧"
+  ]
+ },
+ {
+  "id": "event_007",
+  "title": "醉汉背诗",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.08
+  },
+  "description": "一个客人喝多了，忽然站起来朗诵自己高中时写的诗。声音很大，跑调很远，但全店都在听。",
+  "choices": [
+   {
+    "text": "给他满上一杯，听完整首",
+    "result": "诗写得其实很好。念完他自己都愣了：『我居然……还记得？』他坐回去，安安静静把那杯喝完，走的时候，脚步比来时稳。",
+    "effect": {
+     "reputation": 2
+    }
+   },
+   {
+    "text": "带头鼓掌",
+    "result": "全店掌声雷动。他红着脸鞠躬，像个真正的诗人。第二天他来道歉，说他其实是个会计——但他把那首诗装裱了，挂在了你家墙上。",
+    "effect": {
+     "tab": 50,
+     "unlock_memory": "会计的诗"
+    }
+   },
+   {
+    "text": "轻轻把酒递过去",
+    "result": "他接过酒，把诗念完了最后一句，然后说：『谢谢这杯酒，它替我收住了尾。』",
+    "effect": {
+     "tab": -30,
+     "reputation": 1
+    }
+   }
+  ],
+  "no_choice_timeout": "他念完了，没人鼓掌，也没人笑。他自己在安静里坐了一会儿，把诗稿叠好放回了口袋。有些诗，只需要一个出口。",
+  "tags": [
+   "搞笑",
+   "情感"
+  ]
+ },
+ {
+  "id": "event_008",
+  "title": "吵架的情侣",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.07
+  },
+  "description": "角落的情侣从压低声音吵到几乎拍桌。『你根本不懂我！』女孩站起来要走，男孩僵在座位上。",
+  "choices": [
+   {
+    "text": "送两杯不同的酒，『分开冷静一下』",
+    "result": "一人一杯，各喝各的。二十分钟后，两人隔着桌子碰了杯。有些和好，只需要一个台阶。",
+    "effect": {
+     "tab": -60,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "给男孩单独递一杯壮胆酒",
+    "result": "他一口干了，追了出去。十分钟后两人回来，女孩的眼睛红红的，但两人十指相扣。",
+    "effect": {
+     "tab": -40,
+     "npc_relationship": {
+      "小柯": 1
+     }
+    }
+   },
+   {
+    "text": "假装什么都没发生，继续擦杯子",
+    "result": "他们自己吵完了，自己坐回来，最后一起点了外卖。有些人吵架是习惯，不是分手。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "女孩真的走了。男孩坐到打烊。第二天他一个人来，坐在同一个位置，点了两杯酒，喝了一杯，剩了一杯。",
+  "tags": [
+   "情感",
+   "酒吧"
+  ]
+ },
+ {
+  "id": "event_009",
+  "title": "厕所的哭声",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.05
+  },
+  "description": "从洗手间传来压抑的哭声。有人把门关得很紧，但哭声是关不住的。",
+  "choices": [
+   {
+    "text": "在门口放一杯热饮和一包纸巾",
+    "result": "你什么都没问。哭声停了，东西被收走了。那人走的时候，在收银台上多放了钱，还留了张字条：『谢谢，不问的人。』",
+    "effect": {
+     "tab": 30,
+     "reputation": 2,
+     "unlock_memory": "门口的热饮"
+    }
+   },
+   {
+    "text": "敲门，问一句『需要帮忙吗』",
+    "result": "门内安静了很久，然后说：『……能给我一杯水吗。』你递进去。出来的时候，那人眼睛肿着，冲你点了点头。",
+    "effect": {
+     "reputation": 1
+    }
+   },
+   {
+    "text": "让音乐温柔一点",
+    "result": "你把歌换成了一首慢的。哭声渐渐停了。有些人需要的不是被安慰，是知道有人在。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "哭声持续了十分钟，然后是水声，然后安静。那人出去的时候，脚步很轻，像怕吵醒什么。",
+  "tags": [
+   "情感",
+   "酒吧"
+  ]
+ },
+ {
+  "id": "event_010",
+  "title": "丢失的钱包",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.07
+  },
+  "description": "一个客人走后，你在卡座发现了一个钱包。里面现金不少，身份证上是位六十多岁的先生。",
+  "choices": [
+   {
+    "text": "交给老岗，按地址送还",
+    "result": "老岗半小时就把钱包送到了。老人第二天专程来道谢，从此成了常客——他只点最便宜的酒，但每次都多给小费。",
+    "effect": {
+     "reputation": 3
+    }
+   },
+   {
+    "text": "放在吧台，等失主回来找",
+    "result": "第二天一早，老人满头大汗地冲进来，看到钱包的瞬间差点落泪：『里面是我老伴的照片……谢谢，谢谢。』",
+    "effect": {
+     "reputation": 2
+    }
+   },
+   {
+    "text": "先垫付他的账，收好钱包",
+    "result": "你发现他昨天的账还没结，原来不是故意跑单。老人回来后非要多付，你们为两百块钱推让了半小时，最后成了朋友。",
+    "effect": {
+     "tab": 40,
+     "npc_relationship": {
+      "顾老师": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "你把钱包锁进了抽屉。三天后老人来了，钱包物归原主，你的店多了一位每周三准时出现的老先生。",
+  "tags": [
+   "日常",
+   "好人好事"
+  ]
+ },
+ {
+  "id": "event_011",
+  "title": "匿名送来的酒",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.04
+  },
+  "description": "门口放着一箱酒，没有署名，只有一张卡片：『给巷子里最晚熄灯的店。』",
+  "choices": [
+   {
+    "text": "收下，给今晚的客人免费加一轮",
+    "result": "你宣布『有人请全店』。欢呼声中，每个人都在猜是谁。角落里的低音，摘下耳机，轻轻举了举杯。",
+    "effect": {
+     "reputation": 3,
+     "npc_relationship": {
+      "低音": 1
+     }
+    }
+   },
+   {
+    "text": "存着，等最需要的时刻",
+    "result": "你把它锁进了库房。三个月后停电那晚，它成了全店的光源之一——有些酒，是用来救场的。",
+    "effect": {
+     "item": "匿名的珍藏"
+    }
+   },
+   {
+    "text": "退回去",
+    "result": "你按着店规退了回去。第二天，箱子里多了一张字条：『有原则。那就换一种送法——下周五，我来喝一杯，当面谢你。』",
+    "effect": {
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "酒在门口放了一夜。第二天被大橘挠开了箱子，偷喝了两口。你好气又好笑，只好收下了这箱『猫的开箱视频』。",
+  "tags": [
+   "神秘",
+   "惊喜"
+  ]
+ },
+ {
+  "id": "event_012",
+  "title": "算命摊摆到了门口",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.05
+  },
+  "description": "半仙把摊子摆到了你店门口，正对着吧台。他朝你挤挤眼：『沾沾你的生意气。』",
+  "choices": [
+   {
+    "text": "欢迎，给摊子留一盏灯",
+    "result": "他的摊子生意意外地好，你的店也因此多了几个新面孔。他收摊时塞给你一包话梅：『旺气分你一半。』",
+    "effect": {
+     "tab": 80,
+     "npc_relationship": {
+      "半仙": 2
+     }
+    }
+   },
+   {
+    "text": "和他约定：只算命，不揽客",
+    "result": "他一口答应：『那是自然，巷有巷规。』那晚他的卦摊和你相安无事，两边的客人都很自在。",
+    "effect": {
+     "npc_relationship": {
+      "半仙": 1
+     }
+    }
+   },
+   {
+    "text": "半开玩笑地请他算算店的运势",
+    "result": "他煞有介事地起了一卦，然后收起铜钱：『上上大吉，唯一注意——下月初七，别进货。』你将信将疑。初七那天，供货商的货车果然翻了。",
+    "effect": {
+     "tab": -200,
+     "unlock_memory": "初七的警告"
+    }
+   }
+  ],
+  "no_choice_timeout": "他在你门口坐了一晚，算了一晚的命。你听见好几个客人出门时，脚步都轻快了不少。",
+  "tags": [
+   "神秘",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_013",
+  "title": "深夜市集",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.05
+  },
+  "description": "今晚不知怎么的，巷子里支起了七八个摊子：旧书、手作饰品、二手唱片、糖画……整条巷子变成了深夜市集。人流开始涌进来。",
+  "choices": [
+   {
+    "text": "出摊！把吧台搬到门口",
+    "result": "你在门口支了个小吧台，卖简易调酒。一晚上下来，你认识了一半以上的新面孔，老周直呼内行。",
+    "effect": {
+     "tab": 300,
+     "reputation": 5,
+     "unlock_memory": "市集之夜"
+    }
+   },
+   {
+    "text": "守住店内，接住市集的溢出人流",
+    "result": "市集的客人逛累了都涌进你店里。满座的夜晚，忙到你没时间看一眼市集，但账台上的钱说明了一切。",
+    "effect": {
+     "tab": 220,
+     "hunger": 10
+    }
+   },
+   {
+    "text": "自己也去逛逛",
+    "result": "你让店自顾自地忙，自己去买了串糖画、淘了张老唱片。回来时你带回两样新东西，和一个新朋友——摆摊卖手作的小妹。",
+    "effect": {
+     "item": "老唱片",
+     "npc_relationship": {
+      "老周": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "市集热热闹闹开了三小时，凌晨两点自然散场。你在店里听着外面的热闹声，擦了一晚上的杯子。",
+  "tags": [
+   "热闹",
+   "大事件",
+   "经济"
+  ]
+ },
+ {
+  "id": "event_014",
+  "title": "二手书摊",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.06
+  },
+  "description": "有人在你门口摆了个二手书摊，一盏小灯，一箱子书。摊主是个话很少的年轻人。",
+  "choices": [
+   {
+    "text": "淘两本",
+    "result": "你淘到一本1978年的调酒手册，扉页上有手写的批注——字迹清瘦。是老笔的字。你把书拿给他看，他愣了很久，然后说：『这是……我师父的。』",
+    "effect": {
+     "tab": -40,
+     "item": "1978年调酒手册",
+     "npc_relationship": {
+      "老笔": 3
+     }
+    }
+   },
+   {
+    "text": "给摊主送杯热饮",
+    "result": "他捧着热饮，第一次开口：『白天上班，晚上出来卖书……主要是想找人说话。』那晚他聊了很久，卖出去三本书，都是他自己喜欢的。",
+    "effect": {
+     "reputation": 1
+    }
+   },
+   {
+    "text": "帮他把书搬进店里避露水",
+    "result": "你借了他半面墙摆书摊。他坚持每卖一本，分你三成。到后半夜，他的书卖空了，你赚了一小叠分成，还交了个朋友。",
+    "effect": {
+     "tab": 60
+    }
+   }
+  ],
+  "no_choice_timeout": "书摊摆到十二点就收了。你望了一眼那个安静的背影，继续擦你的杯子。",
+  "tags": [
+   "怀旧",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_015",
+  "title": "夜跑者躲雨",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.06
+  },
+  "description": "一个浑身湿透的夜跑者冲进你的屋檐下，喘得像坏掉的风箱。",
+  "choices": [
+   {
+    "text": "递上一杯热姜茶",
+    "result": "他缓过来后坐下，点了碗炒粉。跑者说：『本来今天状态很差……这杯下去，好像又能跑了。』（他没跑，他坐到雨停，然后满足地走了）",
+    "effect": {
+     "tab": 40,
+     "hunger": -10
+    }
+   },
+   {
+    "text": "给他留个安静角落",
+    "result": "他坐在角落看了半小时的雨，然后起身道谢离开。第二天他送来一面锦旗？不——是一张手写的卡片：『谢谢你的屋檐。全城最好的躲雨点。』",
+    "effect": {
+     "reputation": 2
+    }
+   },
+   {
+    "text": "邀请他进来，介绍酒单",
+    "result": "他人生第一次在跑步中途喝了酒。『爽。』他说，『不过教练要杀我。』他成了你的常客，每周三跑完必到。",
+    "effect": {
+     "tab": 80,
+     "unlock_memory": "周三跑者"
+    }
+   }
+  ],
+  "no_choice_timeout": "他在屋檐下喘匀了气，看看雨，又看看表，然后一头扎回雨里继续跑。猛人。",
+  "tags": [
+   "日常",
+   "健康"
+  ]
+ },
+ {
+  "id": "event_016",
+  "title": "猫的战争",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.05
+  },
+  "description": "大橘和煤球在巷子里对峙，尾巴都炸成了鸡毛掸子。起因不明，战况胶着。",
+  "choices": [
+   {
+    "text": "各给一条小鱼干，武力调停",
+    "result": "两只猫各自叼着鱼干撤退，战争以双赢告终。全场围观群众表示：这调停水平，去联合国都屈才了。",
+    "effect": {
+     "tab": -20,
+     "npc_relationship": {
+      "煤球": 1,
+      "大橘": 1
+     }
+    }
+   },
+   {
+    "text": "抱走自己家的煤球",
+    "result": "煤球在你怀里骂骂咧咧（用猫的方式）。大橘占据了巷子口，煤球占据了你的膝头。各回各家，战线暂歇。",
+    "effect": {
+     "npc_relationship": {
+      "煤球": 1
+     }
+    }
+   },
+   {
+    "text": "不管，让它们自己解决",
+    "result": "它们吼了两声，各自让开一步，然后——同时扑向了同一只飞过的蛾子。战争转移了目标，全店笑翻。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "两只猫对峙了十分钟后，同时被一只麻雀吸引，战争就地解散。",
+  "tags": [
+   "搞笑",
+   "猫"
+  ]
+ },
+ {
+  "id": "event_017",
+  "title": "巷子翻修通知",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.04
+  },
+  "description": "巷口贴出通知：下周起整条巷子翻修管网，施工两周。工期、噪音、绕行路线，全写在一张纸上。老客们围着通知，议论纷纷。",
+  "choices": [
+   {
+    "text": "提前办一场『告别两周』大聚会",
+    "result": "你办了一场全部老客到场的大聚会。老康弹琴，阿猫唱歌，老周管饭。施工那两周，大家都在等重聚的日期。",
+    "effect": {
+     "tab": 200,
+     "reputation": 5,
+     "unlock_memory": "告别两周"
+    }
+   },
+   {
+    "text": "照常营业，施工就施工",
+    "result": "施工期间生意惨淡，你趁机盘了库、修了摇壶、换了灯。两周后重开那天，老客们说：『巷子新了，你也是。』",
+    "effect": {
+     "reputation": 2,
+     "item": "新灯"
+    }
+   },
+   {
+    "text": "把通知多贴一份在店里，让大家商量",
+    "result": "客人们在你店里开了个『巷子议事会』，最后决定施工期间轮流去各家店坐坐，『别让哪家店饿死』。巷子的情分，又深了一层。",
+    "effect": {
+     "reputation": 4,
+     "npc_relationship": {
+      "老周": 2,
+      "王婶": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "施工按部就班开始了。你戴着耳塞营业了两周，认识了几个工人，他们成了你的新客。",
+  "tags": [
+   "日常",
+   "大事件",
+   "经济"
+  ]
+ },
+ {
+  "id": "event_018",
+  "title": "全场合唱",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.05
+  },
+  "description": "老康弹起前奏，是一个所有人都会的旋律。不知是谁先开口，第二句就变成了全场合唱。",
+  "choices": [
+   {
+    "text": "也跟着唱",
+    "result": "你唱跑了调，跑得理直气壮，全场笑作一团，唱得更响了。这个瞬间后来被好几个客人写进了『为什么喜欢这家店』的理由里。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "跑调的合唱"
+    }
+   },
+   {
+    "text": "给每人桌上加一小碟小吃",
+    "result": "你悄悄给每桌上了小吃。歌到高潮，小吃到齐，有人举着小吃当麦克风。这一晚，成了店里的传说。",
+    "effect": {
+     "tab": -100,
+     "reputation": 4
+    }
+   },
+   {
+    "text": "在吧台安静地听",
+    "result": "你听完了整首歌。有些合唱是给唱歌的人的，有些是给听的人的。你两种都收到了。",
+    "effect": {
+     "drunk": -5
+    }
+   }
+  ],
+  "no_choice_timeout": "歌没唱完就散了——因为大家笑着唱不下去。散场时每个人都在哼。",
+  "tags": [
+   "庆祝",
+   "温馨",
+   "酒吧"
+  ]
+ },
+ {
+  "id": "event_019",
+  "title": "拼桌的陌生人",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.07
+  },
+  "description": "店里只剩一张空桌，两个互不相识的客人被你安排拼了桌。一个是话多的，一个是不吭声的。",
+  "choices": [
+   {
+    "text": "给他们各调一杯最对味的",
+    "result": "话多的那位喝了酒话更多了，不吭声的那位听了半小时，忽然说：『你刚才说的那个问题，我知道怎么解决。』——他们交换了名片，一个市场，一个技术。据说后来一起开了公司。",
+    "effect": {
+     "tab": 60,
+     "unlock_memory": "拼桌的合伙人"
+    }
+   },
+   {
+    "text": "随他们去，专注自己的活",
+    "result": "他们从尴尬到客气，从客气到聊天。走的时候互相留了联系方式。拼桌，是这家店的传统艺能。",
+    "effect": {}
+   },
+   {
+    "text": "上去聊两句破冰",
+    "result": "你聊了三句就撤了，留他们自己发挥。一小时后，不吭声的那位把你拉到一边：『那个话多的……能介绍给我妹吗？』",
+    "effect": {
+     "tab": 30,
+     "reputation": 1
+    }
+   }
+  ],
+  "no_choice_timeout": "两人尴尬地吃完了各自的一餐，全程没说一句话。拼桌有风险，聊天需缘分。",
+  "tags": [
+   "日常",
+   "社交"
+  ]
+ },
+ {
+  "id": "event_020",
+  "title": "电影勘景",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.04
+  },
+  "description": "几个人举着相机和图纸在巷子里量来量去，说是电影剧组来勘景。他们在你的酒吧门口站了很久。",
+  "choices": [
+   {
+    "text": "邀请剧组进来喝一杯，聊聊巷子的故事",
+    "result": "你讲的故事被记进了勘景笔记。两周后他们来正式拍摄，借你的店拍了三个镜头。上映那天，全店包场，大银幕上你的吧台亮了一分钟。",
+    "effect": {
+     "reputation": 5,
+     "unlock_memory": "大银幕上的一分钟"
+    }
+   },
+   {
+    "text": "不主动，照常营业",
+    "result": "剧组在门口拍了些空镜就走了。但你店里那晚多了几个『蹭景』的文艺青年，个个点了酒。",
+    "effect": {
+     "tab": 80
+    }
+   },
+   {
+    "text": "婉拒拍摄，巷子要安静",
+    "result": "剧组表示理解，转去了隔壁街。但副导演临走前买了一杯外带的酒：『懂了，这个决定很电影。』",
+    "effect": {
+     "reputation": 1
+    }
+   }
+  ],
+  "no_choice_timeout": "剧组拍了些外景走了。你在电视里看到这条巷子的时候，没认出来——直到镜头扫过你的店门，一秒钟。",
+  "tags": [
+   "热闹",
+   "文化"
+  ]
+ },
+ {
+  "id": "event_021",
+  "title": "书里掉出的情书",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.04
+  },
+  "description": "客人还回去的书里，掉出一封没有寄出的信。信封上写着『给阿香』，落款是十几年前的日期。",
+  "choices": [
+   {
+    "text": "交给阿香",
+    "result": "阿香拆开看了很久——是她父亲生前写的，写给『未来的她』：『等你十八岁，如果你看到这封信，爸爸没看到的话……』她那天晚上关摊关得很早，但第二天，她的糖水卖得格外多。",
+    "effect": {
+     "npc_relationship": {
+      "阿香": 3
+     },
+     "unlock_memory": "迟到十八年的信"
+    }
+   },
+   {
+    "text": "交给老笔，请他判断",
+    "result": "老笔看了落款，手抖了一下：『这是……船长兄的字。』他亲手把信封了口，转交给阿香，并替她回了一封回信，烧给了故人。",
+    "effect": {
+     "npc_relationship": {
+      "老笔": 2,
+      "阿香": 2
+     }
+    }
+   },
+   {
+    "text": "原样放回书里，谁也没打扰",
+    "result": "有些信等了十几年才被找到，也许它想再等等。你把书放回了原处。后来那本书被卖掉了，信跟着书，去了新的旅途。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "信在吧台上躺了一晚。第二天，它的主人（还书的客人）回来找书：『抱歉，那是我朋友托我还的……信？什么信？』信最终回到了它该去的地方。",
+  "tags": [
+   "情感",
+   "神秘"
+  ]
+ },
+ {
+  "id": "event_022",
+  "title": "无人认领的密码箱",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.03
+  },
+  "description": "打烊时，卡座底下多了一只银色密码箱。没有行李牌，没有名字。很轻，摇一摇，里面有东西滑动。",
+  "choices": [
+   {
+    "text": "交给老岗，走失物流程",
+    "result": "老岗登记后按规章处理。一周后，一个神色慌张的年轻人来认领——箱子里是他导师的学术手稿。他千恩万谢，说这是他『这半年唯一做对的事』。",
+    "effect": {
+     "reputation": 3
+    }
+   },
+   {
+    "text": "试着打开",
+    "result": "密码是0321——巷子路灯的编号。箱子里是一叠照片：这条巷子三十年间的样子。最后一张是今晚的酒吧门口，拍的角度，就在你店里。有人一直在拍它。",
+    "effect": {
+     "unlock_memory": "三十年的巷子照片"
+    }
+   },
+   {
+    "text": "贴张告示，等三天",
+    "result": "没人来。第四天，箱子自己消失了——监控里，是一个你从没见过的身影，凌晨三点来取走的，动作很轻，还把凳子摆正了。",
+    "effect": {
+     "unlock_memory": "凌晨三点的取件人"
+    }
+   }
+  ],
+  "no_choice_timeout": "密码箱在卡座下过了一夜。第二天被保洁收走，登记进失物柜。它的故事，就停在了那一格柜子里。",
+  "tags": [
+   "神秘",
+   "紧张"
+  ]
+ },
+ {
+  "id": "event_023",
+  "title": "借个电话",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.06
+  },
+  "description": "一个手机没电的客人想借电话，说有急事要报平安。",
+  "choices": [
+   {
+    "text": "借他手机，给他倒杯水",
+    "result": "他打给了妈妈，用两分钟说完了『我很好，工作找到了，别担心』。挂了电话他坐了很久，然后点了一杯酒，第一次喝醉了。",
+    "effect": {
+     "tab": 40,
+     "reputation": 1
+    }
+   },
+   {
+    "text": "给他手机，自己去后面忙",
+    "result": "他打完电话，非要请你喝一杯。他是个刚来这个城市的医学生，从今晚起，你的店成了他每周给自己放风的地方。",
+    "effect": {
+     "tab": -50,
+     "npc_relationship": {
+      "江宁": 1
+     }
+    }
+   },
+   {
+    "text": "让他用吧台的座机",
+    "result": "老式座机的话筒，让他打得很郑重。他说：『用这个打电话，好像说什么都算数。』他后来每周都用这个座机给家里打一次电话。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "吧台的座机"
+    }
+   }
+  ],
+  "no_choice_timeout": "他去巷口小卖部充了电，打完电话回来，还是点了杯酒——在能借到电话的地方喝酒，和别处不一样。",
+  "tags": [
+   "日常",
+   "温暖"
+  ]
+ },
+ {
+  "id": "event_024",
+  "title": "墙缝里的老照片",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.04
+  },
+  "description": "装修松动的一块墙板后面，掉出一张老照片：年轻的店主们站在刚开张的酒吧门口，笑得意气风发。照片背面写着日期，是二十年前。",
+  "choices": [
+   {
+    "text": "裱起来挂回墙上",
+    "result": "老客们发现照片后炸开了锅，一个个指认『这是老周年轻时候』『这个是……诶这是谁？』。照片成了店里的传家宝。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "二十年前的门口"
+    }
+   },
+   {
+    "text": "拿给老周看",
+    "result": "老周端详了半天，指着其中一个：『这个是我！那时候我还有腰！』（他笑完，安静了一会儿）『那时候这条巷子，就想好要做一辈子了。』",
+    "effect": {
+     "npc_relationship": {
+      "老周": 2
+     }
+    }
+   },
+   {
+    "text": "原样放回墙缝",
+    "result": "你把照片放回原处，把墙板钉好。有些时光，就该待在时光里。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "照片和墙缝一起，又被灰尘温柔地盖住了。下一次被发现，可能是下一个二十年。",
+  "tags": [
+   "怀旧",
+   "神秘"
+  ]
+ },
+ {
+  "id": "event_025",
+  "title": "点唱机坏了",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.06
+  },
+  "description": "那台老点唱机忽然罢工，唱片卡在同一句上，『哒、哒、哒』地空转。",
+  "choices": [
+   {
+    "text": "修！拆开看看",
+    "result": "你捣鼓半天没修好，但围观群众里站起来一位老师傅，三下五除二修好了，还把唱针换了新的。他是路过的退休工程师。从此你的点唱机，每周日有人保养。",
+    "effect": {
+     "reputation": 2,
+     "item": "点唱机保养服务"
+    }
+   },
+   {
+    "text": "修不了就不修，改弹琴",
+    "result": "老康顶上，琴声接管了整晚。有客人说：『点唱机坏得好，今晚是它此生最值得的一晚。』",
+    "effect": {
+     "npc_relationship": {
+      "老康": 1
+     }
+    }
+   },
+   {
+    "text": "让它哒哒哒地空转一晚",
+    "result": "奇怪的是，那『哒哒』声和爵士乐意外合拍。有几个客人专门点这『故障remix』。机器也有它的性格，你认了。",
+    "effect": {
+     "unlock_memory": "故障remix"
+    }
+   }
+  ],
+  "no_choice_timeout": "它哒哒哒转了一晚，没人修，也没人抱怨。深夜的故障，也是一种节奏。",
+  "tags": [
+   "搞笑",
+   "怀旧"
+  ]
+ },
+ {
+  "id": "event_026",
+  "title": "缺口的酒杯",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.07
+  },
+  "description": "洗杯子的时候你发现一只杯子有个缺口——不知道是谁用了一晚的。缺口边缘已经磨圆了，像被喝过很多年。",
+  "choices": [
+   {
+    "text": "把它留作店里的『传世之杯』",
+    "result": "你用马克笔在杯底写了个『传』字。从此谁抽到这只杯子，就免单一轮。这只缺口的杯子，成了店里的抽奖机。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "传世之杯"
+    }
+   },
+   {
+    "text": "找出来是哪位客人的",
+    "result": "是顾老师的。他说这支杯子跟了他五年，缺口是三年前磕的，『人老了，杯子也老了，都是要处出感情的』。你替他把缺口又磨圆了一点。",
+    "effect": {
+     "npc_relationship": {
+      "顾老师": 2
+     }
+    }
+   },
+   {
+    "text": "默默收起来，换新的",
+    "result": "杯子进了库房最深处。但奇怪的是，那晚的酒，怎么调都感觉少了点什么。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "你把杯子照常收好。缺口在灯光下闪了一下，像一个没讲完的故事。",
+  "tags": [
+   "怀旧",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_027",
+  "title": "相亲失败的客人",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.05
+  },
+  "description": "一位客人刚从隔壁餐厅的相亲战场撤下来，坐在你店里长吁短叹：『她说我的工作没有想象力。我是会计啊！』",
+  "choices": [
+   {
+    "text": "给他调一杯有想象力的酒",
+    "result": "你即兴调了一杯，名字都现编的。他喝了一口，眼睛亮了：『原来想象力长这样！』他后来每周来喝一杯，还学会了五款调酒——会计的配方卡，做得比谁都工整。",
+    "effect": {
+     "tab": 60,
+     "unlock_memory": "会计的配方卡"
+    }
+   },
+   {
+    "text": "告诉他会计很棒",
+    "result": "你认真地说会计是商业世界调酒师——把乱七八糟的科目调成一杯清爽的报表。他愣了几秒，笑出声：『这比喻我收下了。』",
+    "effect": {
+     "reputation": 1
+    }
+   },
+   {
+    "text": "给他个安静的位置和一杯烈的",
+    "result": "他喝完那杯烈酒，结账时说：『不想了。下周，去爬山。』有些安慰不需要语言，需要酒精度。",
+    "effect": {
+     "tab": 80
+    }
+   }
+  ],
+  "no_choice_timeout": "他叹了四十分钟的气，喝了两杯酒，走的时候已经盘算着下周的爬山路线了。成年人的复原力，值得敬畏。",
+  "tags": [
+   "搞笑",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_028",
+  "title": "吃辣打赌",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.05
+  },
+  "description": "两桌客人隔着过道较上劲了：比谁更能吃辣。赌注是全桌的酒钱。他们看向你的吧台——需要裁判和道具。",
+  "choices": [
+   {
+    "text": "当裁判，调制辣度阶梯酒",
+    "result": "你调了三杯，辣度递增。喝到第三杯，两人都哭了，但都没认输。最后你判：平局，酒钱五五开。两人成了朋友，每周来复赛。",
+    "effect": {
+     "tab": 120,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "拒绝参与，『巷规不劝酒不斗酒』",
+    "result": "你说出巷规，两桌客人服气地散了。老周在隔壁竖起大拇指：『有原则！』",
+    "effect": {
+     "reputation": 3,
+     "npc_relationship": {
+      "老周": 1
+     }
+    }
+   },
+   {
+    "text": "亲自下场比试",
+    "result": "你调了一杯辣椒浸液特调，一口闷了。全店倒吸凉气。你面不改色——那晚你的外号『辣神』传遍全巷，辣味酒销量翻了三倍。",
+    "effect": {
+     "tab": 200,
+     "reputation": 2,
+     "drunk": 15,
+     "unlock_memory": "辣神"
+    }
+   }
+  ],
+  "no_choice_timeout": "他们自己用老干妈决出了胜负。你的店里充满了一种诡异的香气，持续到打烊。",
+  "tags": [
+   "搞笑",
+   "热闹"
+  ]
+ },
+ {
+  "id": "event_029",
+  "title": "深夜电台点播",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.05
+  },
+  "description": "店里的收音机忽然收到一个深夜电台，主持人正在念听众来信：『送给还亮着灯的那家店——放一首〈平凡之路〉。』",
+  "choices": [
+   {
+    "text": "让电台放完这首歌",
+    "result": "全店跟着电台唱完了这首歌。主持人最后说：『那位点歌的听众说，他就在那家店里。』角落里，有人举起杯，冲你晃了晃。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "电台点歌"
+    }
+   },
+   {
+    "text": "关掉收音机，放自己的歌",
+    "result": "你换上了自己喜欢的歌。电台主持人的声音消失了，但那句点歌词，留在了很多人的心里。",
+    "effect": {}
+   },
+   {
+    "text": "打给电台，回一首歌",
+    "result": "你点了首〈海阔天空〉回敬：『送给我们巷子里所有的打工人。』主持人笑了，全城的深夜都听见了。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "电台对歌"
+    }
+   }
+  ],
+  "no_choice_timeout": "电台自顾自地放完了歌，然后信号又模糊了。深夜的电台，像一封不知道寄给谁的信，居然真的寄到了。",
+  "tags": [
+   "温馨",
+   "怀旧"
+  ]
+ },
+ {
+  "id": "event_030",
+  "title": "失眠的客人",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.06
+  },
+  "description": "凌晨一点，一位客人说他已经三天没怎么睡了。他不点酒，只要了杯热水，说『就想在有人的地方待着』。",
+  "choices": [
+   {
+    "text": "给他调一杯助眠的无酒精特调",
+    "result": "你调了杯半糖失眠。他喝完，趴在吧台上睡着了。你没叫醒他，给他盖了条毛毯。凌晨三点他醒来，说了声『这是我三周来睡得最沉的一觉』。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "吧台上的睡眠"
+    }
+   },
+   {
+    "text": "陪他聊到天亮",
+    "result": "你们从工作聊到童年，从童年聊到宇宙。天亮时他说：『聊完这顿，感觉能睡了。』他后来真的治好了失眠——他说秘诀是『找到能说话的地方』。",
+    "effect": {
+     "reputation": 2,
+     "drunk": -10
+    }
+   },
+   {
+    "text": "给他留个卡座，不多打扰",
+    "result": "他在卡座躺了半宿。走的时候轻轻带上了门。第二天他寄来一个枕头：『你店里缺个像样的。』",
+    "effect": {
+     "item": "客人的枕头"
+    }
+   }
+  ],
+  "no_choice_timeout": "他坐到凌晨四点，起身，安静地走了。热水一口没喝，但他说那杯热水救了他——『因为它冒烟的样子，像有人在等我。』",
+  "tags": [
+   "情感",
+   "深夜"
+  ]
+ },
+ {
+  "id": "event_031",
+  "title": "被尾随的姑娘",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.04
+  },
+  "description": "一位女客人神色慌张地进店，压低声音说：『外面有个人……跟了我两条街了。』",
+  "choices": [
+   {
+    "text": "让她从后巷走，老岗护送",
+    "result": "你叫来巡巷的老岗。老岗的手电在前，她跟在后，一路照到底。尾随者在巷口被老岗『恰好』拦下盘问了十分钟，悻悻走了。姑娘第二天来道谢，带了半打啤酒请老岗。",
+    "effect": {
+     "reputation": 4,
+     "npc_relationship": {
+      "老岗": 2
+     }
+    }
+   },
+   {
+    "text": "请她坐下，给尾随者上一杯",
+    "result": "你请尾随者进来喝了杯酒——他坐立不安地喝完，付钱走了。你对姑娘说：『他走了。但你的酒，喝完再走。』她喝完那杯，脚步稳了。",
+    "effect": {
+     "tab": 60,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "报警，按流程来",
+    "result": "警察十分钟后到，尾随者被带走问话。姑娘离店前在你留言簿上写：『谢谢你们的店，像堡垒。』",
+    "effect": {
+     "reputation": 3
+    }
+   }
+  ],
+  "no_choice_timeout": "老岗巡巷恰好经过，一眼看出情况，全程『恰好』护送。有些保护，是巷子的本能。",
+  "tags": [
+   "紧张",
+   "好人好事"
+  ]
+ },
+ {
+  "id": "event_032",
+  "title": "壁虎惊魂",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.05
+  },
+  "description": "酒架后面窜出一只壁虎，慌不择路，蹿上了酒单，全店女性（和一半男性）发出了尖叫。",
+  "choices": [
+   {
+    "text": "徒手抓住，放生后巷",
+    "result": "你一把扣住它，把它送去了后巷的花盆。全店掌声雷动。当晚你在客人心中评分暴涨——『勇敢的人，调的酒也好喝』。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "徒手捉壁虎"
+    }
+   },
+   {
+    "text": "用杯子扣住它，请它喝一杯",
+    "result": "你给它杯子里放了片薄荷叶，扣着杯子拍了张照发到店里群：『本店新员工，负责酒架除虫。』全店笑疯。壁虎后来真的常驻酒架，成了活招牌。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "壁虎员工"
+    }
+   },
+   {
+    "text": "叫煤球出勤",
+    "result": "煤球不情不愿地出勤，三秒钟解决——壁虎从容逃脱，煤球假装抓到了，讨了一条小鱼干。双赢（壁虎：？）。",
+    "effect": {
+     "tab": -10,
+     "npc_relationship": {
+      "煤球": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "壁虎自己爬进了灯罩，一晚没再出来。尖叫平息，酒局继续。",
+  "tags": [
+   "搞笑",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_033",
+  "title": "门口的醉汉",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.06
+  },
+  "description": "老周把一个醉得站不住的客人扶到你门口：『我们摊他不肯走，你店里有床……没有？那你看着办！』",
+  "choices": [
+   {
+    "text": "让他趴吧台睡，守着他",
+    "result": "他睡了半小时，醒了，清醒了大半，红着脸把账全结了，还给全店买了水果。『我媳妇要是知道我又喝成这样……』他匆匆走了。第二天他媳妇来了——是来道谢的。",
+    "effect": {
+     "tab": 100,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "给他叫代驾",
+    "result": "大力十分钟后到，把他扛上车。临走大力回头：『这种的，一晚上三个。你们店门口，真是个宝地。』",
+    "effect": {
+     "tab": 60,
+     "npc_relationship": {
+      "大力": 1
+     }
+    }
+   },
+   {
+    "text": "给他调一杯醒酒汤",
+    "result": "他喝完，吐了（在你精心准备的盆里），然后活了过来。他一边漱口一边说：『这汤……比我媳妇的手艺好。』（他没意识到自己说了什么，但你记住了：他媳妇的手艺，不如醒酒汤）",
+    "effect": {
+     "tab": 40,
+     "hunger": -10
+    }
+   }
+  ],
+  "no_choice_timeout": "老周又把他拖回了宵夜档，『帮我看着点』。巷子里的醉汉，从来不会被丢下。",
+  "tags": [
+   "搞笑",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_034",
+  "title": "打烊后的敲门声",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.04
+  },
+  "description": "你已经翻起了『打烊』牌子，门却被敲响了。三下，很轻。门外站着一个浑身湿透的人，问：『还能……进来喝一杯吗？最后一杯。』",
+  "choices": [
+   {
+    "text": "开门，为TA重开一盏灯",
+    "result": "你重开了一盏灯。TA喝完那杯酒，从包里拿出一副旧扑克，在吧台上摆了个很复杂的牌型，然后收起来走了。第二天你听说，老鬼的棋盘昨晚多了一局，对手是TA。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "打烊后的最后一杯"
+    }
+   },
+   {
+    "text": "给TA外带一杯，隔门相赠",
+    "result": "你调了杯外带的，从门缝递出去。TA说了声『谢谢，这就够了』，在雨里把酒喝完，杯子摆回了窗台。杯子是干净的，里面留着一张字条：『等我回来。』",
+    "effect": {
+     "unlock_memory": "窗台的杯子"
+    }
+   },
+   {
+    "text": "打烊了，指个方向",
+    "result": "你指了指宵夜档的方向。TA点点头走了。后来TA成了老周的常客，但从没进过你的店。有些缘分，就差一盏灯。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "敲门声停了。门外的人影在雨里站了一会儿，朝你熄灭的灯鞠了一躬，走了。",
+  "tags": [
+   "神秘",
+   "深夜"
+  ]
+ },
+ {
+  "id": "event_035",
+  "title": "熟客的空位",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.05
+  },
+  "description": "吧台第三个位置空了三天——那是位每周都来的老爷子的位置。他从来不说自己住哪儿，今天，连老岗都说没见过他。",
+  "choices": [
+   {
+    "text": "和老岗一起去找他",
+    "result": "你们在巷尾的旧楼里找到了他——摔了一跤，起不来。江宁赶到处理，救护车及时。老爷子出院后第一件事，是拄着拐来店里：『我就知道，空着的位置，有人会来看。』",
+    "effect": {
+     "reputation": 5,
+     "npc_relationship": {
+      "老岗": 2,
+      "江宁": 2
+     },
+     "unlock_memory": "空位找人"
+    }
+   },
+   {
+    "text": "给他留着他的位置，多等几天",
+    "result": "第五天，他来了，腿上缠着绷带，自己走进来的。『摔了一跤。』他说，『但是爬起来的动力，是这儿还有个位置是我的。』",
+    "effect": {
+     "reputation": 2
+    }
+   },
+   {
+    "text": "随缘，巷子里的人有自己的生活",
+    "result": "他第十天回来了，精神很好，还带了他孙女。『住院那几天，』他说，『我孙女问我天天去哪儿。我说，去一个有我的位置的地方。』",
+    "effect": {
+     "npc_relationship": {
+      "顾老师": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "第七天，老岗带来了消息：老爷子去外地看孙子了，摔了跤，现在好着呢，就是电话没电。空位第八天重新坐上了人。",
+  "tags": [
+   "情感",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_036",
+  "title": "小偷",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.03
+  },
+  "description": "你发现有个客人一直在角落，手一直往别人外套里摸。老岗巡巷还没到，你需要自己拿主意。",
+  "choices": [
+   {
+    "text": "大声宣布『本店失物招领处开业』",
+    "result": "你笑着宣布，全场配合地检查自己物品。那客人脸白了，放下东西，买杯酒赶紧走了。失主后来才发现少了东西又回来了，东西完好地在吧台上。",
+    "effect": {
+     "reputation": 3
+    }
+   },
+   {
+    "text": "直接上去，请他喝一杯聊聊",
+    "result": "你请他喝了杯酒，聊了十分钟人生。他二十岁，是外地来的，『就是想搞点钱回家』。你给了他老周的招工纸条。他去了宵夜档洗了一个月碗，没再偷过东西。",
+    "effect": {
+     "reputation": 2,
+     "npc_relationship": {
+      "老周": 1
+     },
+     "unlock_memory": "一个月的洗碗工"
+    }
+   },
+   {
+    "text": "悄悄通知老岗",
+    "result": "老岗巡逻『恰好』经过，把人请了出去。全程没有冲突，安静得像什么都没发生。老客们心照不宣：这家店，有巷子罩着。",
+    "effect": {
+     "reputation": 2,
+     "npc_relationship": {
+      "老岗": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "那客人得手了一次，偷走了半包烟。第二天老岗调了监控，从此巷子里多了一条『熟面孔名单』。",
+  "tags": [
+   "紧张",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_037",
+  "title": "倒在巷口的三轮车",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.05
+  },
+  "description": "拾荒伯的三轮车在巷口翻了，纸壳瓶子滚了一地。老人蹲在地上，一件一件地捡，腰弯得很低。",
+  "choices": [
+   {
+    "text": "叫上客人一起帮忙",
+    "result": "你喊了一声，店里七八个客人涌出来，五分钟收拾干净，还把纸壳重新码得整整齐齐。拾荒伯反复说『麻烦大家了』，最后被客人们按着坐进店里，喝了今晚的第一杯热茶。",
+    "effect": {
+     "reputation": 4,
+     "tab": 30
+    }
+   },
+   {
+    "text": "帮他扶车，把重的搬上",
+    "result": "你搭了把手。他坚持从车里摸出两个矿泉水瓶子换的钱，非要请你喝杯水。你用那两块钱买了瓶水，和他一人一半，在巷口喝完。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "两块钱的水"
+    }
+   },
+   {
+    "text": "给他调杯热的，让他缓缓",
+    "result": "他捧着热饮，蹲在车边喝了。喝完他站起来的动作，比来时快了些。『人老了，』他说，『摔一跤，就得喝口热的，才爬得动。』",
+    "effect": {
+     "tab": -20,
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "他一个人慢慢捡了很久。有几个路过的客人帮了把手。巷子不算冷漠，但今晚本可以更暖。",
+  "tags": [
+   "情感",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_038",
+  "title": "神秘的果篮",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.04
+  },
+  "description": "一篮包装精致的水果出现在门口，卡片上写：『感谢巷子里所有亮着的窗。』没有署名。",
+  "choices": [
+   {
+    "text": "分给全店客人",
+    "result": "水果被分了个精光。有人说这果篮的橘子特别甜，有人说不对，是今晚的氛围甜。都没错。",
+    "effect": {
+     "reputation": 2,
+     "tab": 50
+    }
+   },
+   {
+    "text": "分给巷子里所有摊贩",
+    "result": "你挨家分了一圈。第二天，你的门口多了一碗糖水、一串烤生蚝、一朵栀子花。巷子的回礼，从来不含糊。",
+    "effect": {
+     "npc_relationship": {
+      "老周": 1,
+      "王婶": 1,
+      "花婶": 1
+     },
+     "reputation": 3
+    }
+   },
+   {
+    "text": "留一半，送一半给婆婆",
+    "result": "婆婆收了水果，回送了你一篮她自己织的手套——『冬天快到了』。你把一只挂在吧台，一只自己戴了。",
+    "effect": {
+     "item": "婆婆的手套",
+     "npc_relationship": {
+      "婆婆": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "果篮在门口放到第二天早上，被大橘指挥着开箱吃掉了两个苹果。你只好收下这个『猫的谢礼』。",
+  "tags": [
+   "神秘",
+   "温馨"
+  ]
+ },
+ {
+  "id": "event_039",
+  "title": "半夜的琴声",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.03
+  },
+  "description": "凌晨两点，酒吧的旧钢琴——没有人碰它——自己响了几个音。断断续续，像有人在试琴。店里只剩你和两位熟客。",
+  "choices": [
+   {
+    "text": "走过去，接着弹",
+    "result": "你的指法很生疏，但你接着弹了。琴声顿了顿，然后像有人接住了你的调子，两个音变成了四个。你们合奏了一首没有名字的曲子。那晚的琴声，两个熟客说记了很多年。",
+    "effect": {
+     "unlock_memory": "四个音的合奏",
+     "reputation": 2
+    }
+   },
+   {
+    "text": "在琴键上放一杯酒",
+    "result": "你把酒放在琴盖上。琴声停了。第二天早上，酒杯空了，杯底压着一枚旧琴键的象牙白钮扣。",
+    "effect": {
+     "item": "琴键钮扣",
+     "unlock_memory": "琴上的一杯酒"
+    }
+   },
+   {
+    "text": "起身检查窗户",
+    "result": "是风。风把窗吹开了一条缝，吹动了什么。你关好窗，琴安静了。但那几个音，在空气里停留了很久。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "琴声响了一会儿，停了。像一段回忆自己走出来散了个步，又自己回去了。",
+  "tags": [
+   "神秘",
+   "怀旧"
+  ]
+ },
+ {
+  "id": "event_040",
+  "title": "和半仙赌天气",
+  "trigger": "random",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.05
+  },
+  "description": "半仙喝到兴起，指天发誓：『明晚有雨！』你看了看天气预报：晴。全巷子的人都来围观这场世纪赌局。",
+  "choices": [
+   {
+    "text": "赌！赌注是一桌酒",
+    "result": "明晚，晴。天气预报赢了。你赢了半仙一桌酒——但他死不承认，说是『你店里人气太旺，云都被烘干了』。全巷笑了三天。",
+    "effect": {
+     "tab": 150,
+     "reputation": 2,
+     "unlock_memory": "赢过半仙的一天"
+    }
+   },
+   {
+    "text": "赌！但赌注改成：输的人闭嘴一天",
+    "result": "明晚，雨。半夜十一点开始的，谁也没预料到的雨。半仙在巷子里嚎了一夜他的胜利。你心服口服地闭嘴了一天——虽然你怀疑他提前看了云图。",
+    "effect": {
+     "unlock_memory": "半仙的云图"
+    }
+   },
+   {
+    "text": "不赌，请他喝酒让他预测别的",
+    "result": "他不预测了，改给你讲云的二十种名字。你们聊到打烊。赌局没成，但你的气象知识，多了一整个章节。",
+    "effect": {
+     "tab": -40,
+     "npc_relationship": {
+      "半仙": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "赌局没开成，因为天气预报中途改了：雨转多云，多云转雨。半仙非常得意。气象学在深巷，不敌一个喝醉的卦师。",
+  "tags": [
+   "搞笑",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_041",
+  "title": "台风登陆",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "台风",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.5
+  },
+  "description": "台风真的来了。整条巷子的招牌在风里哐哐作响，雨是横着走的。你把『营业中』的牌子挂稳，看着窗外——这条巷子要在风里守一整夜。",
+  "choices": [
+   {
+    "text": "照常营业，做全巷的风雨收容所",
+    "result": "被风吹进来的人一波接一波：巡夜的老岗、收摊的老周、抱着猫的花婶、迷路的游客。你的店挤满了人和湿雨衣，热气腾腾。那一晚，你的店是这条巷子的心跳。",
+    "effect": {
+     "tab": 250,
+     "reputation": 6,
+     "unlock_memory": "台风夜的满座",
+     "unlock_recipe": "recipe_096"
+    }
+   },
+   {
+    "text": "早早打烊，加固门窗",
+    "result": "你钉好窗、收好桌、把摇壶锁进柜子。风声里你喝了杯自己调的酒，守着空店过了一夜。第二天巷子满地狼藉，但你的店毫发无伤，还顺手帮隔壁扶正了招牌。",
+    "effect": {
+     "drunk": 10,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "组织巷子互助队",
+    "result": "你带人加固了老周的棚、接了婆婆的天台漏点、把花婶的三轮车推进了店里。风最狂的那两个小时，全巷的人都挤在你的店里，谁也不认识谁，谁都在帮忙。",
+    "effect": {
+     "reputation": 8,
+     "npc_relationship": {
+      "老周": 2,
+      "婆婆": 2,
+      "花婶": 2
+     },
+     "unlock_memory": "巷子互助队"
+    }
+   }
+  ],
+  "no_choice_timeout": "你守着店过了一夜。风把门吹开三次，你起来关了三次。天亮时巷子很狼狈，但都活着。",
+  "tags": [
+   "紧张",
+   "大事件",
+   "台风"
+  ]
+ },
+ {
+  "id": "event_042",
+  "title": "雨中告白",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "雨",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.15
+  },
+  "description": "窗外大雨，一个人浑身湿透地冲进店里，掏出手机就说：『帮我放首歌，随便什么歌——她在对面咖啡店躲雨，我练了三个月的话，要说了！』",
+  "choices": [
+   {
+    "text": "放一首慢歌，递一杯壮胆酒",
+    "result": "歌放起来，酒喝下去，人冲进雨里。十分钟后，两个人手挽着手跑回来避雨，湿透了，笑得像疯子。那杯酒的名字，他们记了十年。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "雨里的三个月"
+    }
+   },
+   {
+    "text": "先给TA擦头，再递酒",
+    "result": "『淋病了说什么都不算数。』你把毛巾扔过去。TA擦干头发，喝了酒，慢慢说完了那句话——不是冲进雨里喊的，是隔着一条街打电话说的。也成了。",
+    "effect": {
+     "reputation": 2,
+     "tab": 40
+    }
+   },
+   {
+    "text": "把店里最后一朵花给TA",
+    "result": "你把花婶留的栀子递过去：『拿稳了，雨里别摔。』TA攥着花冲进雨幕。后来每年雨季，TA都来买花——给同一个人。",
+    "effect": {
+     "tab": -20,
+     "reputation": 3,
+     "npc_relationship": {
+      "花婶": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "TA在门口来回踱了二十分钟，雨小了，对面的咖啡店打烊了。TA没说出口，喝了杯最烈的酒，走了。第二天TA又来了，说下次一定。",
+  "tags": [
+   "浪漫",
+   "雨",
+   "情感"
+  ]
+ },
+ {
+  "id": "event_043",
+  "title": "大雾迷路客",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "雾",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.2
+  },
+  "description": "雾大得像牛奶。一个外地口音的人摸进店里：『请问……这是哪？我导航说我在江边。』",
+  "choices": [
+   {
+    "text": "请TA喝杯热茶，画张地图",
+    "result": "你在餐巾纸上画了张歪歪扭扭的地图，雾散后TA照着走回了酒店。第二天TA专程来致谢，说你画的『江边』是条巷子——『但我按巷子走，反而先看到了最美的街景。』",
+    "effect": {
+     "reputation": 2,
+     "tab": 30
+    }
+   },
+   {
+    "text": "给TA调一杯『深巷雾灯』",
+    "result": "雾夜正好调得出这杯。TA看着杯中渐变的颜色，忽然说：『我其实……不是迷路。我是辞职了，在到处走走。』你们聊到雾散。有些迷路，是主动的。",
+    "effect": {
+     "unlock_recipe": "recipe_071",
+     "reputation": 2
+    }
+   },
+   {
+    "text": "叫老岗送TA出巷",
+    "result": "老岗的手电在雾里开路，人送到了大路上。TA临走回头拍了张照：手电光、雾、和你店门口的灯。那张照片后来成了TA的社交头像。",
+    "effect": {
+     "reputation": 2,
+     "npc_relationship": {
+      "老岗": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "雾散了，客人自己找到方向走了。走前TA在留言簿上写：『谢谢你们，迷路也迷得很安心。』",
+  "tags": [
+   "氛围",
+   "雾",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_044",
+  "title": "月圆之夜",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "月圆",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.15
+  },
+  "description": "月亮大得不讲道理，整条巷子泡在银光里。天台的猫躁动了，婆婆的藤椅吱呀作响，客人说话都轻了半度。",
+  "choices": [
+   {
+    "text": "把酒搬到天台卖",
+    "result": "天台上，望远镜的望远镜排起了队，阿猫抱着吉他轻轻弹，婆婆织着毛衣看月亮。今晚的酒卖得慢，但每个人都说：是这些年最好喝的。",
+    "effect": {
+     "tab": 180,
+     "reputation": 4,
+     "npc_relationship": {
+      "婆婆": 1,
+      "阿猫": 1,
+      "望远镜": 1
+     }
+    }
+   },
+   {
+    "text": "在店里关小灯，让月光进来",
+    "result": "你调暗所有的灯，月光从窗户涌进来，吧台像铺了一层银。客人不说话，酒一杯杯地空。月圆之夜，安静就是最好的服务。",
+    "effect": {
+     "drunk": -5,
+     "reputation": 3
+    }
+   },
+   {
+    "text": "给每桌客人讲一个月亮的故事",
+    "result": "你把老周讲过的海上的月、婆婆等过的月、望远镜镜头里的月，各讲了一遍。客人们听完，都抬头看了看今晚的月亮。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "三个月亮"
+    }
+   }
+  ],
+  "no_choice_timeout": "月亮自己挂了一整夜。你打烊时抬头看了一眼——它也正在看你。",
+  "tags": [
+   "氛围",
+   "浪漫",
+   "月圆"
+  ]
+ },
+ {
+  "id": "event_045",
+  "title": "台风夜独饮者",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "台风",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.3
+  },
+  "description": "台风夜，店里人都躲完了，只剩一个客人坐在窗边，点了一杯最烈的，不说话，看着雨横着飞。",
+  "choices": [
+   {
+    "text": "陪TA坐一会儿",
+    "result": "你也没说话，只是把灯调亮了一格。两杯酒的工夫，TA说：『我买了明早六点的机票。走的。』——你把那杯酒换成热的：『那今晚，喝慢点。』",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "台风夜的登机牌"
+    }
+   },
+   {
+    "text": "给TA换一杯热的，说『台风天，胃要暖』",
+    "result": "TA愣了一下，笑了：『好。』那杯热饮喝完，TA把机票的事说了——不是走，是回家。台风留住了所有航班，也留住了TA在这个城市最后一个完整的夜晚。",
+    "effect": {
+     "tab": 60
+    }
+   },
+   {
+    "text": "留TA住店里的沙发",
+    "result": "航班取消了，TA在你店里睡了台风夜。第二天TA执意留下清扫费，还在墙上签了名——后来TA每年来住一晚，墙上的签名排成了一列。",
+    "effect": {
+     "tab": 100,
+     "unlock_memory": "台风夜的签名墙"
+    }
+   }
+  ],
+  "no_choice_timeout": "TA喝完那杯，自己走了。风里TA的伞翻了两把。第二天你听说TA改签成功，走得干脆。",
+  "tags": [
+   "情感",
+   "台风",
+   "深夜"
+  ]
+ },
+ {
+  "id": "event_046",
+  "title": "雨停后的水洼",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "雨后",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.25
+  },
+  "description": "雨停了。巷子里的水洼没干，倒映着灯和招牌。有客人踩着水洼进来，说：『巷子现在的样子，像掉进了另一个世界。』",
+  "choices": [
+   {
+    "text": "出去看一眼",
+    "result": "你站在门口看了很久：灯在水洼里晃，风一过，整条巷子的倒影都碎了又拼上。你拍了张照——那张照片后来成了你的店招灵感。",
+    "effect": {
+     "reputation": 1,
+     "unlock_memory": "水洼里的巷子"
+    }
+   },
+   {
+    "text": "请客人喝『雨后限定』",
+    "result": "你即兴调了杯清爽的气泡特调，取名『雨停』。那晚所有人都点了同一杯。限定饮品卖出三十杯，你记下方子——后来成了常驻酒单。",
+    "effect": {
+     "tab": 150,
+     "unlock_recipe": "recipe_056",
+     "reputation": 2
+    }
+   },
+   {
+    "text": "在门口摆上『小心地滑』的牌子，顺便放把伞",
+    "result": "没滑到人。但有位客人雨伞落在你店里，第二天来取时说：『就冲这把伞的待遇，以后常来。』",
+    "effect": {
+     "reputation": 1
+    }
+   }
+  ],
+  "no_choice_timeout": "水洼第二天干了。倒影的世界收工了，巷子继续做巷子。",
+  "tags": [
+   "氛围",
+   "雨后",
+   "诗意"
+  ]
+ },
+ {
+  "id": "event_047",
+  "title": "冰雹",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "冰雹",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.4
+  },
+  "description": "天变了脸，冰雹噼里啪啦砸下来，比鸽蛋小，比钢镚大。全巷的人都在往屋里跑，屋顶的声音像一场免费打击乐。",
+  "choices": [
+   {
+    "text": "开门收留躲避的人",
+    "result": "店里瞬间挤满了人，连窗台都坐了。有人用冰雹冰镇了酒，你默许了。那个下午店里比过年还热闹，冰雹停了都舍不得走。",
+    "effect": {
+     "tab": 200,
+     "reputation": 4
+    }
+   },
+   {
+    "text": "收集冰雹做创意冰饮",
+    "result": "你真收了一盆，化出来的水调了三杯『天降特调』。客人们喝得战战兢兢又兴致勃勃。你从此有了个外号：『连天上掉下来的都要调成酒的』。",
+    "effect": {
+     "tab": 80,
+     "unlock_memory": "天降特调"
+    }
+   },
+   {
+    "text": "关好窗，保护酒和灯",
+    "result": "一盏门口的灯被砸碎了，你心疼了很久。但酒没事。第二天老岗巡查时特意来看你的灯：『我给你带了个备用的。』",
+    "effect": {
+     "npc_relationship": {
+      "老岗": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "冰雹下了二十分钟就停了。全巷子白了头。你踩着满地的『子弹』出去看了半天热闹。",
+  "tags": [
+   "紧张",
+   "搞笑",
+   "极端天气"
+  ]
+ },
+ {
+  "id": "event_048",
+  "title": "骤降温",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "降温",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.3
+  },
+  "description": "一夜入秋。早上还穿着短袖，晚上就有人裹着外套进店了。全巷的人都在打喷嚏，热饮订单翻了三倍。",
+  "choices": [
+   {
+    "text": "推出热饮限时菜单",
+    "result": "你连夜改了菜单，五款热饮上线。第一个喝到的人说：『你的吧台是有暖气的。』热饮卖到脱销，你被叫作『巷子里的炉子』。",
+    "effect": {
+     "tab": 250,
+     "reputation": 3
+    }
+   },
+   {
+    "text": "给老熟客每人送一杯热的",
+    "result": "进店的熟客，一人一杯免费的姜茶。有人不好意思，你说『换季福利』。那晚你的酒没赚什么钱，但全巷都在说你的好话。",
+    "effect": {
+     "tab": -60,
+     "reputation": 5,
+     "npc_relationship": {
+      "老周": 1,
+      "婆婆": 1
+     }
+    }
+   },
+   {
+    "text": "把毯子翻出来，借给怕冷的客人",
+    "result": "你的沙发多了三条毯子。有个客人裹着毯子喝到打烊，走前说：『这条毯子的位置，我记住了。』",
+    "effect": {
+     "reputation": 2,
+     "item": "借出的毯子"
+    }
+   }
+  ],
+  "no_choice_timeout": "寒潮里你的店里依旧热闹——人类在降温时的第一反应是抱团，第二反应是喝点热的。",
+  "tags": [
+   "日常",
+   "温暖",
+   "经济"
+  ]
+ },
+ {
+  "id": "event_049",
+  "title": "雾中人影",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "雾",
+   "drunk_level": "any",
+   "location": "后巷",
+   "probability": 0.3
+  },
+  "description": "后巷的雾里站着一个人影，不动，不近，影影绰绰。像在等谁，也像只是站着。",
+  "choices": [
+   {
+    "text": "走近看看",
+    "result": "雾散了一角——是蓑衣人。他不躲雨也不躲雾，就那么站着。你递了杯热酒过去，他接了。杯空的时候，雾更深了，他不见了。杯底留着几粒桂花。",
+    "effect": {
+     "unlock_memory": "雾中的酒",
+     "npc_relationship": {
+      "蓑衣人": 2
+     }
+    }
+   },
+   {
+    "text": "不靠近，远远举杯示意",
+    "result": "你隔着雾举了举杯。那边的人影顿了顿，也抬起了手——像举了举什么。然后雾合上了。",
+    "effect": {
+     "unlock_memory": "隔雾碰杯"
+    }
+   },
+   {
+    "text": "回店里，把这事记下来",
+    "result": "你在店志上写：『雾夜，后巷有人。』写完抬头，镜子里那个人影仿佛也刚放下笔。",
+    "effect": {
+     "unlock_memory": "店志的一行"
+    }
+   }
+  ],
+  "no_choice_timeout": "人影在雾里站到你打烊。第二天雾散了，那儿什么都没有，只有一圈干的水渍，像有人放过一杯酒。",
+  "tags": [
+   "神秘",
+   "雾"
+  ]
+ },
+ {
+  "id": "event_050",
+  "title": "雨棚撑不住的夜晚",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "大雨",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.25
+  },
+  "description": "暴雨，你门口的雨棚积了水，支架咯吱作响，眼看要塌。",
+  "choices": [
+   {
+    "text": "撑伞出去排水",
+    "result": "你用长杆把积水捅下来，雨棚松了口气。围观客人鼓掌。鞋叔第二天送来一根加固的撑杆：『送你的。雨棚塌了，我这鞋垫给谁看去。』",
+    "effect": {
+     "reputation": 2,
+     "item": "雨棚撑杆"
+    }
+   },
+   {
+    "text": "把客人请进店里，随雨棚去",
+    "result": "雨棚『哗』地垮了下来，水浇了一地。你店里挤满了人，笑声比雨声大。第二天你换了新雨棚——这次买了个大的，能多躲四个人。",
+    "effect": {
+     "tab": 100,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "摆接水桶，搞『听雨位』",
+    "result": "桶接水的滴答声和雨声成了天然BGM。你索性在桶边标了个座位叫『听雨位』，那晚这个位置成了最抢手的。",
+    "effect": {
+     "tab": 60,
+     "unlock_memory": "听雨位"
+    }
+   }
+  ],
+  "no_choice_timeout": "雨棚塌了，浇了半个门面。你举着伞守了半晚，第二天换了新的。旧的没扔，剪开当了抹布。",
+  "tags": [
+   "日常",
+   "搞笑"
+  ]
+ },
+ {
+  "id": "event_051",
+  "title": "难得晴天",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "晴",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.2
+  },
+  "description": "难得的大晴天，全城的人都出来了。你的店门口晒进了太阳，连猫都在光斑里摊成了一张饼。",
+  "choices": [
+   {
+    "text": "把吧台擦得锃亮，迎客",
+    "result": "阳光下的吧台像新的，酒的颜色都被照得透亮。满座，加座，连窗台都坐了人。晴天的生意，是老天爷给的赏。",
+    "effect": {
+     "tab": 200,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "推出『晒太阳专座』",
+    "result": "你把门口光最好的位置标成『晒太阳专座，限坐一位，坐满为止』。那个位置全晚有人排队——人类对太阳的执念，可爱又好笑。",
+    "effect": {
+     "tab": 100,
+     "unlock_memory": "晒太阳专座"
+    }
+   },
+   {
+    "text": "歇业半天，自己晒晒",
+    "result": "你把店交给老周照看，自己去晒了太阳。回来时店里被老周经营得红红火火，炒粉都卖出去了三十份。你看着他数钱的样子，忽然明白这巷子为什么离不开任何人。",
+    "effect": {
+     "tab": 80,
+     "npc_relationship": {
+      "老周": 2
+     },
+     "hunger": -30
+    }
+   }
+  ],
+  "no_choice_timeout": "晴天过去的路上，你的店门口始终有人。阳光是最好的营销。",
+  "tags": [
+   "日常",
+   "经济"
+  ]
+ },
+ {
+  "id": "event_052",
+  "title": "大风天招牌",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "大风",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.3
+  },
+  "description": "风把你的招牌吹得哐哐响，一颗螺丝已经松了，摇摇欲坠。",
+  "choices": [
+   {
+    "text": "现在就去加固",
+    "result": "你爬上梯子拧紧了螺丝。风还在吹，但招牌稳了。鞋叔路过竖了个大拇指：『自己动手的店，倒不了。』",
+    "effect": {
+     "reputation": 1
+    }
+   },
+   {
+    "text": "找鞋叔帮忙",
+    "result": "鞋叔带着家伙来了，不光拧了螺丝，还给招牌加了道斜撑：『这叫风撑。修鞋和修招牌，一个理——吃住劲，才长久。』",
+    "effect": {
+     "npc_relationship": {
+      "鞋叔": 2
+     }
+    }
+   },
+   {
+    "text": "明天再说",
+    "result": "半夜『哐』的一声，招牌掉下来砸歪了台阶。你连夜装回去，第二天买了整整一盒螺丝。",
+    "effect": {
+     "tab": -50
+    }
+   }
+  ],
+  "no_choice_timeout": "招牌撑过了那晚，第二天自己掉在了花坛里——没砸到人，砸歪了两棵葱。",
+  "tags": [
+   "日常",
+   "后巷"
+  ]
+ },
+ {
+  "id": "event_053",
+  "title": "连日阴雨",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "连雨",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.25
+  },
+  "description": "雨下了一周，全巷子都是潮气。墙角冒出可疑的霉点，客人们的情绪也像受潮的火柴，怎么都点不着。",
+  "choices": [
+   {
+    "text": "除湿大作战",
+    "result": "你买来除湿盒、干燥剂，把全店的角落都布置了。婆婆教你用旧报纸塞鞋柜，老周送你一包石灰。一周后，你的店成了全巷最干燥的堡垒，大家轮流来你店里『烘干心情』。",
+    "effect": {
+     "tab": -40,
+     "reputation": 3,
+     "npc_relationship": {
+      "婆婆": 1,
+      "老周": 1
+     }
+    }
+   },
+   {
+    "text": "顺势办『雨天特饮周』",
+    "result": "连续七天，每天一款雨主题特饮。客人们天天来打卡，阴雨成了营业卖点——全巷只有你的生意在下雨天越下越旺。",
+    "effect": {
+     "tab": 220,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "什么都不做，等天晴",
+    "result": "霉点长到了酒单上。你重印了酒单，顺便换了个防潮的牌子。天终于晴了，你把所有桌椅搬出去晒了一天，那条巷子闻起来都是太阳的味道。",
+    "effect": {
+     "tab": -30
+    }
+   }
+  ],
+  "no_choice_timeout": "雨一直下。你在潮乎乎的店里卖了七天热酒，认识了三副新拐杖和五个新喷嚏。",
+  "tags": [
+   "日常",
+   "经济"
+  ]
+ },
+ {
+  "id": "event_054",
+  "title": "伞架满了",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "大雨",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.3
+  },
+  "description": "雨夜，你的伞架塞满了伞，后来的客人只能把伞撑在店里。满地的伞像一朵朵收拢的花。",
+  "choices": [
+   {
+    "text": "给每把伞编号，写上号码牌",
+    "result": "你给伞们排好了号。走的时候客人凭号取伞，一把不差。第二天发现伞架满得溢出来——大家说『这儿的伞不会丢』，雨夜都改道来你店里了。",
+    "effect": {
+     "reputation": 3
+    }
+   },
+   {
+    "text": "借伞给没带伞的客人",
+    "result": "你的备用伞借出去五把，回来四把。没回来那把，一周后被还了，伞柄上多了个刻的小猫——借伞的人说：『伞很好用，猫是添头。』",
+    "effect": {
+     "reputation": 2,
+     "item": "刻猫的伞"
+    }
+   },
+   {
+    "text": "把伞摆整齐，拍照发到巷子群里",
+    "result": "照片配文：『本店雨夜盛况。』全巷点赞，第二天老周非要跟你比谁家摆的伞更整齐。",
+    "effect": {
+     "tab": 50,
+     "npc_relationship": {
+      "老周": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "伞架爆了，伞们东倒西歪。客人们自己整理好了才走——巷子里的人，对秩序有一种默契。",
+  "tags": [
+   "日常",
+   "雨"
+  ]
+ },
+ {
+  "id": "event_055",
+  "title": "月虹",
+  "trigger": "weather",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "月圆",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.1
+  },
+  "description": "雨后月圆，天上挂起一道淡淡的月虹——月光做的彩虹，灰白色，一百年里没几个人见过。望远镜在天台上发出了杀猪般的欢呼。",
+  "choices": [
+   {
+    "text": "招呼所有客人上天台",
+    "result": "全店的人都上天台了。望远镜指挥大家排队看，阿猫弹了首慢歌，婆婆说这是她这辈子第二次看见月虹。那一晚，整条巷子的人都记住了同一个画面。",
+    "effect": {
+     "reputation": 5,
+     "unlock_memory": "月虹之夜",
+     "npc_relationship": {
+      "望远镜": 2,
+      "婆婆": 1
+     }
+    }
+   },
+   {
+    "text": "留在店里看，透过窗户",
+    "result": "你隔着玻璃看完了月虹。有个没上天的客人陪着你：『你也怕挤啊？』两个『怕挤的人』碰了碰杯。透过窗看的月虹，也是完整的。",
+    "effect": {
+     "tab": 40,
+     "unlock_memory": "怕挤的人"
+    }
+   },
+   {
+    "text": "给望远镜送一杯热的上去",
+    "result": "他守着望远镜忘了冷，接热饮的时候手都在抖——不是冷的，是激动。『三十年一遇！我拍到了！』那晚他拍的照片，后来印在了你店的酒单背面。",
+    "effect": {
+     "tab": -30,
+     "npc_relationship": {
+      "望远镜": 3
+     },
+     "item": "月虹照片"
+    }
+   }
+  ],
+  "no_choice_timeout": "月虹挂了半小时。你在店里忙，一个客人跑来说『快出来看』——你看了，很淡，很好看。",
+  "tags": [
+   "浪漫",
+   "月圆",
+   "稀有"
+  ]
+ },
+ {
+  "id": "event_056",
+  "title": "三点钟停摆的钟",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "03:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.3
+  },
+  "description": "店里那台老挂钟，指针走到三点整，停了。滴答声消失的那一秒，全店忽然安静得能听见气泡上升的声音。",
+  "choices": [
+   {
+    "text": "给它上弦",
+    "result": "钟走了起来，但比原来慢了两分钟。你决定不调准——『差两分钟』从此成了店里的梗：『几点了？』『差两分钟。』",
+    "effect": {
+     "unlock_memory": "慢两分钟的钟"
+    }
+   },
+   {
+    "text": "随它停着",
+    "result": "那晚的酒都喝得很慢，像时间真的停了。凌晨四点，钟自己『咔』了一声，走了起来。没有人解释，钟自己修好了自己。",
+    "effect": {
+     "reputation": 1,
+     "unlock_memory": "自己修好的钟"
+    }
+   },
+   {
+    "text": "把停摆的时刻记进店志",
+    "result": "『三点整，钟停了。』你写。第二天老笔看到这行字，说：『三点整停的钟，巷子里只有一台——它停的时刻，正好是二十年前那位店主放下钥匙的时刻。』",
+    "effect": {
+     "unlock_memory": "放下钥匙的时刻",
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "钟停了五分钟，自己走了。时间在深巷，偶尔打个盹。",
+  "tags": [
+   "神秘",
+   "时间"
+  ]
+ },
+ {
+  "id": "event_057",
+  "title": "零点的烟花",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "00:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.25
+  },
+  "description": "零点整，江对岸放起了烟花——不知道是谁在庆祝什么。巷子里的人纷纷跑到巷口仰头看。",
+  "choices": [
+   {
+    "text": "让全店都去看",
+    "result": "你把酒瓶盖拧好，招呼所有人去巷口。烟花放了八分钟，全巷的人仰着头，像一片安静的向日葵。回来后每个人都说：『这酒钱花得值。』",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "巷口的八分钟"
+    }
+   },
+   {
+    "text": "在店里给每桌续一小口酒",
+    "result": "『敬零点。』你给每桌续了杯。烟花在天上炸，酒在杯里晃，有人举杯对着窗。这更像是深巷的过法。",
+    "effect": {
+     "tab": -80,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "继续干活，从窗口看",
+    "result": "你隔着玻璃看完了烟花。有个客人在你旁边站了一会儿，说了句：『忙的人也该看烟花。』然后他把你的杯子拿走，替你洗了。",
+    "effect": {
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "烟花放完了，巷子重新安静。你没看见烟花，但你听见了全巷的欢呼。",
+  "tags": [
+   "庆祝",
+   "时间"
+  ]
+ },
+ {
+  "id": "event_058",
+  "title": "不肯走的客人",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "03:30",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.25
+  },
+  "description": "三点半，客人走完了，只剩一个还坐在角落，杯里的酒早喝完了，人一动不动。『巷规：天亮前必须走』——可TA看起来不是不想走，是走不动。",
+  "choices": [
+   {
+    "text": "坐到TA对面，问一句『要聊聊吗』",
+    "result": "TA抬起头，眼睛是干的，声音是哑的：『我失业了。今天。』你们聊到四点，天没亮，但TA的肩膀松了。走的时候TA说：『明晚我还来。作为客人，不是失业的人。』",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "天亮前的失业者"
+    }
+   },
+   {
+    "text": "调一杯热的放TA面前，不多话",
+    "result": "热饮冒了十分钟的烟。TA喝完，把杯子洗了，扣好，走了。第二天TA来结昨晚的账，还多付了三倍——附言：『谢谢那杯不说教的酒。』",
+    "effect": {
+     "tab": 120,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "按巷规请TA离开",
+    "result": "你温和地请TA走了。TA很配合，走前说：『规矩是对的，谢谢你还守着规矩。』——但TA再也没来过。规矩和人心，有时候只隔一个时机。",
+    "effect": {
+     "reputation": 1
+    }
+   }
+  ],
+  "no_choice_timeout": "四点，TA自己站起来走了，把椅子摆正。你收拾杯子的时候，发现杯底压着一张折好的纸：一张简历，和一行字『帮我看看，哪里可以改』。",
+  "tags": [
+   "情感",
+   "深夜",
+   "时间"
+  ]
+ },
+ {
+  "id": "event_059",
+  "title": "早班人的第一单",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "05:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.3
+  },
+  "description": "五点，你刚打烊，一个人推门进来，是个刚下夜班的护士——不，是刚上早班的环卫工。TA看见『打烊』的牌子，犹豫着问：『有热的东西吗？』",
+  "choices": [
+   {
+    "text": "开门，请TA喝一杯热豆浆",
+    "result": "你重开半扇门，给TA冲了杯热豆浆。TA捧着杯子坐在台阶上喝完，说：『干这行八年，头一回有人为我开门。』——从此你的店门口，每天早上都放着一壶豆浆。",
+    "effect": {
+     "reputation": 5,
+     "unlock_memory": "门口的豆浆壶"
+    }
+   },
+   {
+    "text": "给TA一杯热的外带，隔门递出",
+    "result": "TA双手接过，郑重地鞠了一躬。你说『顺路』——其实不顺。第二天，你的门口多了一小束放在纸杯里的野花。",
+    "effect": {
+     "reputation": 3,
+     "item": "纸杯野花"
+    }
+   },
+   {
+    "text": "打烊了就是打烊了",
+    "result": "TA点点头走了。你关上门，忽然觉得那杯热的东西，应该递出去。第二天你在门口放了壶免费的热水——迟到的补课。",
+    "effect": {
+     "reputation": 1
+    }
+   }
+  ],
+  "no_choice_timeout": "TA朝你笑了笑，走了，去扫那条天亮前的街。你的灯，陪着TA扫完了第一个路口。",
+  "tags": [
+   "温暖",
+   "时间",
+   "职业"
+  ]
+ },
+ {
+  "id": "event_060",
+  "title": "凌晨四点的日出",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "04:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "天台",
+   "probability": 0.4
+  },
+  "description": "你在天台收椅子，天边泛起了鱼肚白。日出开始了——在城市的楼缝里，那道金红色笨拙又用力地挤出来。",
+  "choices": [
+   {
+    "text": "叫上还没走的人一起看",
+    "result": "打烊没走的客人全上了天台。日出看了三分钟，谁都没说话。回去的路上，酒瓶张说：『此景值诗一首。』所有人都说：『闭嘴，再看一会儿。』",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "天台的日出"
+    }
+   },
+   {
+    "text": "给每个熬夜的人调一杯『长夜将尽』",
+    "result": "你下到吧台，调出了传说里那杯——长夜将尽。喝过的人都说不出话。那一晚之后，你的配方卡上多了一行别人抄不走的东西。",
+    "effect": {
+     "unlock_recipe": "recipe_093",
+     "reputation": 4,
+     "unlock_memory": "长夜将尽"
+    }
+   },
+   {
+    "text": "一个人看",
+    "result": "你坐在天台边沿，看完了整场日出。城市的轮廓被镀了一层金，你的巷子还睡在阴影里，但马上就要亮了。",
+    "effect": {
+     "drunk": -20,
+     "unlock_memory": "一个人的日出"
+    }
+   }
+  ],
+  "no_choice_timeout": "日出完成了。你收完椅子下楼，新的一天在城市醒来的声音里，正式上线。",
+  "tags": [
+   "氛围",
+   "时间",
+   "天台"
+  ]
+ },
+ {
+  "id": "event_061",
+  "title": "零点生日",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "00:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.15
+  },
+  "description": "有个客人一直看表。零点整，TA举杯对自己说：『生日快乐。』——一个人给自己过的生日。",
+  "choices": [
+   {
+    "text": "带头唱生日歌",
+    "result": "全店跟着唱了。TA又哭又笑，说这是『三十年来最吵的生日』。你送的那杯小甜酒，TA舍不得喝，拍完照才喝的。",
+    "effect": {
+     "tab": -40,
+     "reputation": 3,
+     "unlock_memory": "全店的生日歌"
+    }
+   },
+   {
+    "text": "送TA一块小蛋糕",
+    "result": "老周从隔壁拿来一块糖水做的『蛋糕』，插了根蜡烛。TA许愿的时候，全店都很配合地安静了三秒。",
+    "effect": {
+     "tab": -30,
+     "npc_relationship": {
+      "老周": 1
+     }
+    }
+   },
+   {
+    "text": "给TA的酒免费，说『生日的规矩』",
+    "result": "『什么规矩？』『我店的规矩。』TA笑了。后来TA每年生日都来，还带朋友——『去那家过生日免单的店！』",
+    "effect": {
+     "tab": -60,
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "TA自己喝完了那杯，对着空气碰了个杯，买单走了。生日快乐，陌生人。",
+  "tags": [
+   "温馨",
+   "时间"
+  ]
+ },
+ {
+  "id": "event_062",
+  "title": "周一忧郁夜",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "22:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.2
+  },
+  "description": "周一晚上的客人，眼神都是同一种空。『明天又是周一』的气压，低得压弯了每个人的背。",
+  "choices": [
+   {
+    "text": "给每杯酒起个响亮的名字",
+    "result": "今晚的菜单临时手写：『怒斥老板』『提前退休』『辞职幻想』。客人们点单点得哈哈大笑，忧郁夜变成段子夜。",
+    "effect": {
+     "tab": 150,
+     "reputation": 2,
+     "unlock_memory": "周一菜单"
+    }
+   },
+   {
+    "text": "放一整晚的老歌",
+    "result": "老歌治忧郁。有客人跟着哼，有客人眯着眼听。周一晚上你店里安静得像疗养院——但走的时候，每个人的脚步都轻了。",
+    "effect": {
+     "reputation": 1
+    }
+   },
+   {
+    "text": "推出『周一第二杯半价』",
+    "result": "半价救不了周一，但能救周一的钱包。生意意外地好，你的店成了『周一不加班的理由』。",
+    "effect": {
+     "tab": 100
+    }
+   }
+  ],
+  "no_choice_timeout": "周一的夜晚按部就班地忧郁着。好在还有四个工作日，可以慢慢期待周五。",
+  "tags": [
+   "日常",
+   "经济"
+  ]
+ },
+ {
+  "id": "event_063",
+  "title": "月末账单日",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "23:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.2
+  },
+  "description": "月末的最后一晚。有客人对着手机银行叹气，有客人潇洒地刷卡——『都到这份上了，最后几天当富人』。",
+  "choices": [
+   {
+    "text": "推出月末爱心套餐",
+    "result": "三十块的套餐：一碗热汤面加一杯小酒。你说『月末了，都别硬撑』。那个月，你的店多了七个新常客，都是月底来吃套餐、月初来喝酒的。",
+    "effect": {
+     "tab": -20,
+     "reputation": 5
+    }
+   },
+   {
+    "text": "给叹气的客人免单",
+    "result": "那位客人愣了很久，说『我记住了』。三个月后TA升职加薪，回来把那个月全店的账都结了。",
+    "effect": {
+     "tab": -100,
+     "reputation": 4
+    }
+   },
+   {
+    "text": "照常营业",
+    "result": "有人挥霍，有人节俭，有人只喝水。月末的众生相，你隔着吧台看了一整晚。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "月末就这样过完了。银行的短信声此起彼伏，像一场大型的成年礼。",
+  "tags": [
+   "日常",
+   "经济"
+  ]
+ },
+ {
+  "id": "event_064",
+  "title": "节日彩灯",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "19:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.2
+  },
+  "description": "不知道谁先挂的，巷子里一夜之间亮起了彩灯——昏黄的、暖绿的、一串一串，从巷口挂到巷尾。全巷的人都出来看。",
+  "choices": [
+   {
+    "text": "给店里也挂一串",
+    "result": "你的吧台上方挂了彩灯。客人们说『瞬间不像来喝酒，像来过节』。彩灯成了常驻装修——毕竟没人舍得摘。",
+    "effect": {
+     "tab": 120,
+     "reputation": 3,
+     "item": "彩灯"
+    }
+   },
+   {
+    "text": "出去看热闹",
+    "result": "你和老周、花婶站在巷口看灯，像三个孩子。花婶说：『要是有孙子……』老周说：『要是有酒……』你有：『我有。』你回去拿了三杯出来，站在灯下喝完了。",
+    "effect": {
+     "npc_relationship": {
+      "老周": 1,
+      "花婶": 1
+     },
+     "reputation": 2
+    }
+   },
+   {
+    "text": "搞个巷子灯光投票",
+    "result": "你在群里发起『最亮摊位』投票，最后婆婆的天台赢了——她的彩灯挂了三十年，今天才被发现。婆婆赢得了全巷的致敬和一整晚的果子酒。",
+    "effect": {
+     "reputation": 3,
+     "npc_relationship": {
+      "婆婆": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "彩灯亮了一整夜。没人知道是谁挂的——后来才知道，是阿伟，『便利店也要有节日气氛』。",
+  "tags": [
+   "温馨",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_065",
+  "title": "每月十五的旧俗",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "21:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.2
+  },
+  "description": "每月十五，老一辈的巷子居民有个旧俗：在门口放一小杯酒，说是『给晚归的人喝的』。今晚你又看到了——婆婆门口、老周摊边、你自己的店门口，各一杯。",
+  "choices": [
+   {
+    "text": "在自己门口也放一杯",
+    "result": "你放了一杯。第二天早上，杯子空了，杯底有一片桂花瓣。不知道是谁喝的——巷子里没人承认。这个习俗，你从此守了一年。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "给晚归者的酒"
+    }
+   },
+   {
+    "text": "问婆婆这是什么讲究",
+    "result": "婆婆说：『早年间巷子穷，夜里干活的人没酒喝。开店的人放一杯，不问是谁。——这杯酒的名字，后来就叫『巷口的灯』。』你把这个名字记进了酒单。",
+    "effect": {
+     "npc_relationship": {
+      "婆婆": 2
+     },
+     "unlock_recipe": "recipe_040"
+    }
+   },
+   {
+    "text": "把十五杯酒全补满",
+    "result": "你把巷子里所有放出来的杯子都续满了。当晚有六个『晚归的人』喝到了酒。第二天全巷的十五号，变成了固定的『一杯酒节』。",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "一杯酒节"
+    }
+   }
+  ],
+  "no_choice_timeout": "十五杯酒摆了一夜，收走了几杯没人数得清。旧俗的意义不在数字，在有人还愿意摆。",
+  "tags": [
+   "怀旧",
+   "日常"
+  ]
+ },
+ {
+  "id": "event_066",
+  "title": "整点报时",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "22:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.2
+  },
+  "description": "老康看了眼表，十点整。他忽然在琴上敲了一段报时钟声——当当当当——然后说：『各位，十点了，夜班开始了。』",
+  "choices": [
+   {
+    "text": "跟着敲酒杯应和",
+    "result": "你用调羹敲了敲杯子，客人们跟着敲桌。十点整，全店敲成一片。这个『十点报时』成了店里的固定节目，精确到让人想笑。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "十点报时"
+    }
+   },
+   {
+    "text": "宣布『十点特调』半价",
+    "result": "整点特制，过时不候。每晚十点，吧台前排起小队，你调酒的手速又精进了。",
+    "effect": {
+     "tab": 150
+    }
+   },
+   {
+    "text": "让他弹一整首『时间』",
+    "result": "老康即兴弹了一首叫《十点》的曲子，前面像钟摆，后面像奔跑。客人走的时候，都在哼那个钟摆的开头。",
+    "effect": {
+     "npc_relationship": {
+      "老康": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "十点过了，琴声停了，客人该走的走了。夜班的深巷，从十点才算真的醒。",
+  "tags": [
+   "日常",
+   "音乐"
+  ]
+ },
+ {
+  "id": "event_067",
+  "title": "末班车过境",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "23:45",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.2
+  },
+  "description": "十一点四十五，远处传来末班地铁过境的轰隆声。店里的客人都不约而同看了眼表——赶末班的开始收拾，赶不上的安坐下来。",
+  "choices": [
+   {
+    "text": "帮赶车的客人打包外带",
+    "result": "你把没喝完的酒打包成外带杯，三个人揣着酒冲向地铁口。十分钟后老岗发来消息：『三人都上车了。』你比他们本人还高兴。",
+    "effect": {
+     "reputation": 3,
+     "npc_relationship": {
+      "老岗": 1
+     }
+    }
+   },
+   {
+    "text": "给留下的客人续杯，『末班车后是另一个世界』",
+    "result": "留下的人笑了。你说：『赶不上末班的人，由本店负责送到天亮。』那晚留下了五个人，聊到三点，五个人成了朋友。",
+    "effect": {
+     "tab": 120,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "什么都不做",
+    "result": "有人走了，有人留了。轰隆声过去了，巷子重新安静。地铁这种东西，提醒所有人：夜再深，也有路回家。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "末班车过境，轰隆声像潮水退去。留在巷子里的，都是今晚的自己人。",
+  "tags": [
+   "日常",
+   "时间"
+  ]
+ },
+ {
+  "id": "event_068",
+  "title": "傍晚翻台高峰",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "20:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.2
+  },
+  "description": "晚饭点过了，喝酒的人还没来，翻台的空档像给店做了个深呼吸。你有机会盘点、补货、擦三遍吧台。",
+  "choices": [
+   {
+    "text": "趁机研发新配方",
+    "result": "这个空档你试了三种新配比，调废了五杯，但第六杯——成了。你记下方子，取名『空档』。后来它成了酒单上销量第三的酒。",
+    "effect": {
+     "unlock_recipe": "recipe_041",
+     "reputation": 2
+    }
+   },
+   {
+    "text": "给隔壁摊送杯水",
+    "result": "你给老周和王婶各送了杯凉茶——他们正是翻台最忙的时候。两人在各自的摊位后头举杯致意，场面一度和平。",
+    "effect": {
+     "npc_relationship": {
+      "老周": 1,
+      "王婶": 1
+     }
+    }
+   },
+   {
+    "text": "盘点补货",
+    "result": "你数清楚了所有的酒瓶、冰块和杯子，把快过期的果汁挪到了前排。无聊但必要，店里像上了发条。",
+    "effect": {
+     "tab": 30
+    }
+   }
+  ],
+  "no_choice_timeout": "空档过去了，喝酒的夜班客人陆续进场。你的吧台锃亮，冰块整齐得像阅兵。",
+  "tags": [
+   "日常",
+   "经济"
+  ]
+ },
+ {
+  "id": "event_069",
+  "title": "换季第一晚",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "21:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.2
+  },
+  "description": "季节换了。夏天的冰饮还在酒单上，客人们已经点起了热饮。你翻着酒单，像看着一个还没换完衣服的季节。",
+  "choices": [
+   {
+    "text": "连夜更新酒单",
+    "result": "你把酒单一页页改过来，冰饮退场、热饮登场。第一个看新酒单的客人说：『你的店比我先入秋了。』",
+    "effect": {
+     "tab": 100,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "办『告别夏天』之夜",
+    "result": "最后一晚卖冰饮，你给每杯都配了块冰雕的太阳。客人们举着『太阳』合影。夏天结束了，但照片会记得。",
+    "effect": {
+     "tab": 80,
+     "unlock_memory": "冰雕太阳"
+    }
+   },
+   {
+    "text": "季节照常，营业照常",
+    "result": "有人点冰的你照做，点热的你也照做。季节的过渡期，就该让人自己选。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "换季的第一晚过去了。店里的气味从防晒霜变成了风油精，人类真善变。",
+  "tags": [
+   "日常"
+  ]
+ },
+ {
+  "id": "event_070",
+  "title": "第二次十二点",
+  "trigger": "time",
+  "trigger_condition": {
+   "time": "00:00",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.15
+  },
+  "description": "店里的老挂钟坏了，十二点敲了两次。第二次钟声响起时，有个客人说：『时间重叠了。今晚有两个人生可以过。』",
+  "choices": [
+   {
+    "text": "顺着梗玩下去",
+    "result": "你宣布：『第二个十二点，全场换身份。』客人们随机交换了职业设定，互相聊了一晚对方的人生。散场时有个客人说：『我明天要去做律师。』——半年后，TA真去考了。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "第二个人生"
+    }
+   },
+   {
+    "text": "给每桌补一次酒",
+    "result": "『第二次十二点，按店规——重喝。』你给每桌续了杯。有人举杯说『敬错乱的时间』，有人举杯说『敬白来的第二杯』。",
+    "effect": {
+     "tab": -80,
+     "reputation": 1
+    }
+   },
+   {
+    "text": "找半仙修钟",
+    "result": "半仙捣鼓半天，钟修好了——但报时永远快五分钟。他说：『这样好，你们永远比全城先一步下班。』",
+    "effect": {
+     "tab": -30,
+     "item": "快五分钟的钟"
+    }
+   }
+  ],
+  "no_choice_timeout": "第二次十二点敲完，钟不敲了。它把一整晚的额度都花在了这个错误的十二点上。",
+  "tags": [
+   "搞笑",
+   "神秘"
+  ]
+ },
+ {
+  "id": "event_071",
+  "title": "微醺的真心话",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "微醺",
+   "location": "any",
+   "probability": 0.3
+  },
+  "description": "微醺的客人凑过来，压低声音：『跟你说个事，你别告诉别人……』TA的耳朵红了。",
+  "choices": [
+   {
+    "text": "认真听完，守口如瓶",
+    "result": "TA说的是TA暗恋了七年的同事的名字。你点了点头。TA长出一口气，像卸下了七年的行李。三个月后TA带着婚礼请柬来了——你被安排在『重要朋友』桌。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "七年的名字"
+    }
+   },
+   {
+    "text": "笑着问『是不是喜欢谁』",
+    "result": "TA被你一句戳穿，恼羞成怒地笑了，索性全说了。微醺的人经不起洞察。说完TA说：『你这家店危险，会读心。』",
+    "effect": {
+     "reputation": 1
+    }
+   },
+   {
+    "text": "给TA递杯水：『说之前先喝水』",
+    "result": "TA喝了水，清醒了一点，把话咽了回去。第二天TA来道谢：『幸亏那杯水。那话说出去，饭碗就没了。』有些真心话，更适合烂在微醺里。",
+    "effect": {
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "TA的真心话对着自己的酒杯说完了。杯子听完了，什么都没说——杯子最擅长保密。",
+  "tags": [
+   "情感",
+   "微醺"
+  ]
+ },
+ {
+  "id": "event_072",
+  "title": "大醉断片",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "大醉",
+   "location": "酒吧",
+   "probability": 0.3
+  },
+  "description": "常客彻底醉了，趴在吧台上，嘴里念叨着谁也听不懂的话。江宁说：『侧卧！记住了吗！』——你把TA扶成了侧卧。",
+  "choices": [
+   {
+    "text": "守到TA醒",
+    "result": "TA半夜醒了，清醒得像什么都没发生，但看见你还在守，愣了很久。『我不记得我怎么回家的。』——TA没回家，在你店里睡到了天亮，走的时候留下双倍的酒钱和一句『以后醉了，还来你这儿』。",
+    "effect": {
+     "reputation": 3,
+     "tab": 100
+    }
+   },
+   {
+    "text": "联系TA的紧急联系人",
+    "result": "手机通讯录里是TA妈。你打过去，他妈感激得不行。第二天TA红着脸来了：『我妈说你是好人……也是，说你要是坏人，我早搬家了。』",
+    "effect": {
+     "reputation": 2
+    }
+   },
+   {
+    "text": "让代驾送回家",
+    "result": "大力来了，扛起就走。第二天TA什么都不记得，只觉得『昨晚睡得特别好』。大力则多了一个免单账号。",
+    "effect": {
+     "tab": -30,
+     "npc_relationship": {
+      "大力": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "TA睡了一整晚。天亮时你给TA盖了毯子，倒了水。TA醒来第一句话：『我是谁？』第二句：『这店真暖。』",
+  "tags": [
+   "紧张",
+   "大醉"
+  ]
+ },
+ {
+  "id": "event_073",
+  "title": "点错单",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "微醺",
+   "location": "酒吧",
+   "probability": 0.3
+  },
+  "description": "微醺的客人指着酒单：『就它了！』——TA指的是菜单最底下那行『以上价格均含税』。",
+  "choices": [
+   {
+    "text": "笑着点破，帮TA重新点",
+    "result": "TA盯着那行字看了十秒，全场爆笑。TA最后点了一杯『含税』——你真给它上了杯酒，标签写的『含税特调』。TA喝完说：『这是我点过最贵的字。』",
+    "effect": {
+     "tab": 60,
+     "unlock_memory": "含税特调"
+    }
+   },
+   {
+    "text": "将错就错上杯酒",
+    "result": "你上了一杯合理的酒，TA喝得很满意，结账时还夸：『你们这『含税』调得好！』全场憋笑到内伤。",
+    "effect": {
+     "tab": 80
+    }
+   },
+   {
+    "text": "推荐一款合适的",
+    "result": "你推荐得体，TA满意买单。只有TA不知道自己刚才指着税字点了三十秒。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "TA对着『含税』研究了半分钟，最后说：『这酒名字挺特别，来一杯！』你上了杯正经酒，TA给了五星好评。",
+  "tags": [
+   "搞笑",
+   "微醺"
+  ]
+ },
+ {
+  "id": "event_074",
+  "title": "吐了",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "大醉",
+   "location": "酒吧",
+   "probability": 0.25
+  },
+  "description": "吧台边一位客人脸色骤变，捂着嘴冲向门口——没冲到，吐在了你刚拖的地板上。全店安静，所有的目光都聚过来。",
+  "choices": [
+   {
+    "text": "默默收拾，给TA递水漱口",
+    "result": "你什么都没说，拖地、递水、开窗。TA缓过来后非要加倍结账，你说『巷规：打翻的酒自己擦——但没说吐的』。全店笑了，TA红着耳朵留了双倍的小费。",
+    "effect": {
+     "reputation": 2,
+     "tab": 80
+    }
+   },
+   {
+    "text": "让TA付清洁费",
+    "result": "你按规矩收了五十块清洁费。TA付了，走得很快。从此TA成了别的店的常客。规矩没错，但巷子里更好的规矩是：先递水，再谈钱。",
+    "effect": {
+     "tab": 50
+    }
+   },
+   {
+    "text": "喊江宁过来",
+    "result": "江宁三步到位，检查、漱口、侧卧一条龙：『没事，喝急了。』专业的就是不一样。TA缓过来后，认了江宁当『编外家庭医生』。",
+    "effect": {
+     "npc_relationship": {
+      "江宁": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "TA自己收拾了，收拾得很狼狈。走的时候TA在门口的洗手液上按了两下——多按的那两下，是愧疚。",
+  "tags": [
+   "大醉",
+   "搞笑"
+  ]
+ },
+ {
+  "id": "event_075",
+  "title": "清醒者的舌头",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "清醒",
+   "location": "酒吧",
+   "probability": 0.3
+  },
+  "description": "一位从头到尾没喝酒的客人，忽然说：『你今晚这杯的柚子糖浆，比昨天多放了半勺。』——TA说得对。",
+  "choices": [
+   {
+    "text": "承认，请TA当『首席品鉴官』",
+    "result": "TA的舌头一夜成名。此后你出新配方都先请TA试。TA给你纠正过三次配比，三次都对。TA只收一样报酬：永远的免单热水。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "首席品鉴官"
+    }
+   },
+   {
+    "text": "请教TA怎么练的",
+    "result": "『不吃辣，不抽烟，每天一杯白水，是我爸教的。』TA说TA爸是老调酒师。你意识到你面前坐着一位隐世高手，你们聊了三小时味觉哲学。",
+    "effect": {
+     "drunk": -5,
+     "unlock_memory": "味觉哲学"
+    }
+   },
+   {
+    "text": "半开玩笑：『那是玄学』",
+    "result": "TA笑了笑没再说话，走了。三天后TA寄来一张手写的『酒体分析笔记』，专业得吓人。你把笔记裱在了酒架上——用玄学打败玄学的，是另一门玄学。",
+    "effect": {
+     "item": "酒体分析笔记",
+     "unlock_memory": "玄学笔记"
+    }
+   }
+  ],
+  "no_choice_timeout": "TA喝完热水走了。你第二天检查了糖浆罐——真的多放了半勺。世外高人，就在热水席上。",
+  "tags": [
+   "日常",
+   "清醒"
+  ]
+ },
+ {
+  "id": "event_076",
+  "title": "酒后的电话",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "微醺",
+   "location": "酒吧",
+   "probability": 0.3
+  },
+  "description": "微醺的客人盯着手机看了很久，手指悬在拨号键上：『你说……我该打吗？分手后我一次都没打过。』",
+  "choices": [
+   {
+    "text": "说『打』",
+    "result": "TA打了。响了三声，接了。电话只说了三分钟，挂掉时TA在笑，笑着笑着哭了。『她说……她也想打。』微醺的胆子，有时候刚刚好够真话。",
+    "effect": {
+     "reputation": 2,
+     "unlock_memory": "三分钟的电话"
+    }
+   },
+   {
+    "text": "说『明天清醒了再打』",
+    "result": "TA把手机收了，把酒喝完了。第二天TA没来。第七天TA来了，带着一束花：『打过了。说开了。谢你那句『明天』——有些电话，就该在清醒里打。』",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "清醒的电话"
+    }
+   },
+   {
+    "text": "说『你的事，你自己定』",
+    "result": "TA盯着手机，最终没打，也没放下。TA坐到打烊，把那杯酒喝出了人生百味。有些电话，不接不通，才是答案。",
+    "effect": {
+     "tab": 40
+    }
+   }
+  ],
+  "no_choice_timeout": "TA的手机最终没响。TA结账走了，走前说：『今晚不打。今晚喝了酒，说的话不作数。』——你看，清醒的人最懂微醺。",
+  "tags": [
+   "情感",
+   "微醺"
+  ]
+ },
+ {
+  "id": "event_077",
+  "title": "朋友的托付",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "微醺",
+   "location": "酒吧",
+   "probability": 0.25
+  },
+  "description": "微醺的客人把车钥匙推过来：『帮我保管，今晚我肯定打不着车，明天来拿。』——TA要坐地铁回家。钥匙上挂着一个旧玩偶。",
+  "choices": [
+   {
+    "text": "收下钥匙，挂进柜子",
+    "result": "第二天TA来取，精神饱满：『昨晚地铁上睡过站了，坐到终点又坐回来。还好车在。』你把钥匙还TA，TA盯着玩偶看了两秒，说：『我闺女挑的。谢谢啊。』",
+    "effect": {
+     "reputation": 2
+    }
+   },
+   {
+    "text": "收下钥匙，再给TA叫辆代驾",
+    "result": "TA说『不用不用』，你坚持叫了。大力把TA安全送回。第二天TA来道谢，顺带把代驾也夸了：『那师傅把我从车座上扛下来，跟扛米袋似的，专业。』",
+    "effect": {
+     "tab": 60,
+     "npc_relationship": {
+      "大力": 1
+     }
+    }
+   },
+   {
+    "text": "劝TA打车，钥匙随TA走",
+    "result": "TA说好，出门打了个车。三天后TA来喝酒，车钥匙上的玩偶换成了新的——『旧的送闺女了，新的替它值班。』你被这个细节暖到了。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "TA把钥匙揣回兜里，晃晃悠悠走了。你后来在巷口看见TA的车——稳稳停在车位上，人走路都比车稳。",
+  "tags": [
+   "日常",
+   "微醺"
+  ]
+ },
+ {
+  "id": "event_078",
+  "title": "醉酒探险",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "大醉",
+   "location": "酒吧",
+   "probability": 0.25
+  },
+  "description": "一位大醉的客人指着地下室的方向：『下面是什么？我要下去看看！』TA的同伴拉都拉不住。",
+  "choices": [
+   {
+    "text": "让老鬼陪同TA下去",
+    "result": "老鬼带着TA转了一圈，钟声一样地说了三个字：『看完了？』TA点头，老实上楼了。第二天TA什么都不记得，只觉得『做了个很稳的梦』。",
+    "effect": {
+     "npc_relationship": {
+      "老鬼": 1
+     }
+    }
+   },
+   {
+    "text": "骗TA：『下面在装修，臭不可闻』",
+    "result": "TA嫌弃地缩回了脚，改喝了一杯水，被同伴拉走了。善意的谎言，价值一个安全的夜晚。",
+    "effect": {}
+   },
+   {
+    "text": "陪着TA下去，盯着TA",
+    "result": "你陪TA看了十分钟的地下室——赌桌、拳台、旧电梯。TA看得眼睛发亮，指着电梯问：『这个能到几层？』你说：『能到明天早上。』TA若有所思地点头，上楼睡觉去了。",
+    "effect": {
+     "reputation": 1,
+     "unlock_memory": "能到明天早上"
+    }
+   }
+  ],
+  "no_choice_timeout": "TA自己往下走，被老鬼一堵——不是堵路，是堵话：『下面没酒。』TA立刻没兴趣了。酒鬼的软肋，全国统一。",
+  "tags": [
+   "搞笑",
+   "大醉",
+   "地下室"
+  ]
+ },
+ {
+  "id": "event_079",
+  "title": "酒后真言",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "大醉",
+   "location": "酒吧",
+   "probability": 0.25
+  },
+  "description": "常客大醉，忽然拍着你的肩膀说了个秘密：『这巷子……你看那盏灯……』TA指了指巷口的路灯，『我爷爷说，灯亮着，巷子就有人。人有人，巷子就不老。』",
+  "choices": [
+   {
+    "text": "把这话记进店志",
+    "result": "你抄了下来。老笔看到后补了一句评注：『此言可作巷训。』从此『灯亮着，巷子就有人』成了深巷的口头禅，刻在了重修后的巷口石碑上。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "巷训"
+    }
+   },
+   {
+    "text": "当场给TA满上：『敬你爷爷』",
+    "result": "TA举杯，一饮而尽，然后安静下来：『他走了十年了。就爱在灯底下喝酒。』那晚你们没再说话，但那杯酒，很重，也很轻。",
+    "effect": {
+     "unlock_memory": "灯下的人"
+    }
+   },
+   {
+    "text": "认真问他：『那这条巷子谁在守？』",
+    "result": "TA想了想，指指你：『你啊。』又指指自己：『我。』再指指所有人：『都算。』——这是那晚最像哲学的一句醉话。",
+    "effect": {
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "TA说完就趴下了，睡颜安详。第二天TA什么都不记得，但你记得。巷训这种东西，总要有人先说一次。",
+  "tags": [
+   "怀旧",
+   "大醉",
+   "神秘"
+  ]
+ },
+ {
+  "id": "event_080",
+  "title": "醒酒汤之夜",
+  "trigger": "drunk",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "大醉",
+   "location": "酒吧",
+   "probability": 0.3
+  },
+  "description": "今晚喝高的人格外多，三个大醉的客人东倒西歪。老周闻讯提着一锅醒酒汤过来：『每人一碗！不喝不准走！』",
+  "choices": [
+   {
+    "text": "帮老周分汤",
+    "result": "你一人一碗分下去，醉鬼们喝完一个个活过来了，开始抢着结账。老周得意：『看到没，我汤比我炒粉还灵！』那锅汤的配方，你偷师了个七成。",
+    "effect": {
+     "tab": 150,
+     "npc_relationship": {
+      "老周": 2
+     },
+     "unlock_memory": "醒酒汤七成方"
+    }
+   },
+   {
+    "text": "给他们调醒酒特饮",
+    "result": "你用蜂蜜、柠檬、姜汁调了三杯无酒精特饮。醉鬼们说：『比汤好喝！』老周不服气，跟你比试了一晚——最后结论：汤治胃，特饮治心，都留下了。",
+    "effect": {
+     "reputation": 3,
+     "unlock_recipe": "recipe_006"
+    }
+   },
+   {
+    "text": "劝他们都回家睡觉",
+    "result": "你和大力一人架一个，全送回家了。店里瞬间清净。老周把汤分给了没醉的客人：『他们喝不着了，你们补上。』——那晚清醒的人，喝走了所有的汤。",
+    "effect": {
+     "npc_relationship": {
+      "大力": 1,
+      "老周": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "老周的汤全喂给了醉鬼。凌晨三点，他们仨在店里齐声打了个嗝，然后各自醒了。",
+  "tags": [
+   "搞笑",
+   "大醉"
+  ]
+ },
+ {
+  "id": "event_081",
+  "title": "老周的故事",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.3,
+   "min_affinity": {
+    "老周": 5
+   }
+  },
+  "description": "老周难得收摊早，拎着一瓶酒坐到你的吧台：『老板，今晚不聊炒粉。』他给你讲了二十年船上的事——风暴、港口、一个总在码头等他的背影。",
+  "choices": [
+   {
+    "text": "静静听完，敬他一杯",
+    "result": "他说到那个背影时停了很久。最后他说：『人这辈子，总有一段路是回不去的。但记得，就不算丢。』——那晚之后，你听懂了他炒粉里的火候。",
+    "effect": {
+     "npc_relationship": {
+      "老周": 2
+     },
+     "unlock_memory": "码头的背影",
+     "unlock_recipe": "recipe_058"
+    }
+   },
+   {
+    "text": "给他调一杯修船人的假期",
+    "result": "他喝了一口，愣住了，然后大笑：『你小子怎么知道的？！』——这杯是他当年在船上的私藏。他喝了三杯，讲到了半夜，走的时候把那瓶酒留在了你店里。",
+    "effect": {
+     "npc_relationship": {
+      "老周": 3
+     },
+     "item": "老周的酒",
+     "unlock_memory": "船上的私藏"
+    }
+   },
+   {
+    "text": "反过来讲讲你的故事",
+    "result": "你讲了你是怎么开这家店的。老周听完，说了句让你记到今天的话：『开店和跑船一样——浪大的日子守住锅，没浪的日子守得住心，就都成了。』",
+    "effect": {
+     "reputation": 3,
+     "npc_relationship": {
+      "老周": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "老周讲了一半就去收摊了——摊子是他的另一半人生。故事没讲完，但明天还有明天。",
+  "tags": [
+   "情感",
+   "关系",
+   "宵夜档"
+  ]
+ },
+ {
+  "id": "event_082",
+  "title": "熟客的回请",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.3,
+   "min_affinity_any": 5
+  },
+  "description": "一位好感很深的熟客今天一反常态，进门就说：『今天不许你动手——我请客，但你调的，只能给你自己喝。』",
+  "choices": [
+   {
+    "text": "接受，给自己调一杯",
+    "result": "你给自己调了杯一直想做没做的。TA坐在对面看你调完，说：『看，这才是开店的人该有的样子。』那杯酒你喝了四十分钟，聊了一晚上——你和熟客第一次以朋友而非店主与客人相对。",
+    "effect": {
+     "drunk": 15,
+     "reputation": 2,
+     "unlock_memory": "给自己的一杯"
+    }
+   },
+   {
+    "text": "推辞：『开店的不喝酒』",
+    "result": "TA急了：『谁定的规矩！』你笑着收下了那杯酒。规矩这东西，偶尔要为自己的客人破一次。",
+    "effect": {
+     "drunk": 10,
+     "reputation": 1
+    }
+   },
+   {
+    "text": "提议换成对饮",
+    "result": "『我一杯你一杯，谁也不欠谁。』TA笑着同意了。你们对饮到打烊，喝掉了三瓶的量，聊掉了半个人生。走出店门时你们互相扶着——这是深巷最好的友谊形态。",
+    "effect": {
+     "drunk": 20,
+     "reputation": 3,
+     "unlock_memory": "对饮之夜"
+    }
+   }
+  ],
+  "no_choice_timeout": "TA把那杯酒推给你，先走了。酒放在吧台上，你在打烊后喝掉了它，在满室的安静里。",
+  "tags": [
+   "情感",
+   "关系"
+  ]
+ },
+ {
+  "id": "event_083",
+  "title": "消失的熟客",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.3,
+   "max_visit_gap": 7
+  },
+  "description": "一位每周必来的熟客，两个星期没出现了。TA的位置空着，老岗说也没在巷子里见过。",
+  "choices": [
+   {
+    "text": "主动联系TA",
+    "result": "电话接通了，TA的声音很意外：『你居然……找我了？』TA生病了，一个人在家躺着，不好意思来。你送了三天汤。第四天TA出现在吧台前，红着眼说：『以后每星期都来。给你添麻烦，是一种相信。』",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "三天的汤"
+    }
+   },
+   {
+    "text": "托老岗打听",
+    "result": "老岗第二天带来消息：TA家里有事，回老家了，得一阵子。你松了口气，让老岗带话：『位置留着。』一个月后TA回来了，第一句是：『听说你给我留位置了？』",
+    "effect": {
+     "reputation": 2,
+     "npc_relationship": {
+      "老岗": 1
+     }
+    }
+   },
+   {
+    "text": "等着，把TA的空位留到下个月",
+    "result": "第三周，TA来了，瘦了一圈，但精神不错：『处理完了。回来喝一杯。』——有些关系不需要维护动作，只需要一个不会消失的位置。",
+    "effect": {
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "第四周，你几乎习惯了那个空位。第五周，TA回来了，像什么都没发生：『老样子。』——深巷的深情，是不追问。",
+  "tags": [
+   "情感",
+   "关系"
+  ]
+ },
+ {
+  "id": "event_084",
+  "title": "争风吃醋",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.25,
+   "min_affinity_any": 4
+  },
+  "description": "两位都自称『你最好朋友』的熟客同时到场，隔着吧台互相打量。气氛微妙得像两杯没搅拌的分层酒。",
+  "choices": [
+   {
+    "text": "给两人调同款酒，宣布『并列第一』",
+    "result": "两位同时举杯瞪你，然后同时被彼此的表情逗笑。『行吧，并列。』——从此你店里多了两位互相较劲又互相扶持的常客，你的酒销量是最大的赢家。",
+    "effect": {
+     "tab": 100,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "说真话：『你们都是我重要的人』",
+    "result": "两位愣了一下，居然握了手。成人的友谊有时候就是需要一句直白的排序否定。那晚他们拼了桌，成了朋友。",
+    "effect": {
+     "reputation": 3
+    }
+   },
+   {
+    "text": "装傻，专心调酒",
+    "result": "两人各自喝着酒，各自找你聊天，全程没正面交锋。但他们离开时的时间隔了三分钟——精准的错峰。成人的醋，连味道都是礼貌的。",
+    "effect": {}
+   }
+  ],
+  "no_choice_timeout": "两人各坐一端，各喝各的，像两座隔海相望的灯塔。你隐约觉得，他们下个月会拼桌。",
+  "tags": [
+   "搞笑",
+   "关系"
+  ]
+ },
+ {
+  "id": "event_085",
+  "title": "巷子调解员",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.25
+  },
+  "description": "两位熟客在你店里吵起来了——起因是上次合作的项目没谈拢，今天的酒桌上旧事重提。全店都在假装没在看。",
+  "choices": [
+   {
+    "text": "给他们调一杯『各退一步』",
+    "result": "你调了两杯，一杯清一杯烈，让他们交换着喝。喝完各自皱眉又各自笑场。『行，我让半步。』『我也是。』——交换着喝的酒，天生带着谈判属性。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "各退一步"
+    }
+   },
+   {
+    "text": "请老周过来评理",
+    "result": "老周端着炒粉过来，听两边各说十分钟，最后说：『都别吵了，粉要坨了。』——两个人在他逼视下把粉吃了，吃完居然和好了。炒粉外交，深巷传统。",
+    "effect": {
+     "npc_relationship": {
+      "老周": 2
+     },
+     "reputation": 2
+    }
+   },
+   {
+    "text": "让他们自己吵完",
+    "result": "他们吵了四十分钟，把三年的旧账都翻平了，最后互相签了张『休战协议』写在餐巾纸上。有些矛盾，吵透了才健康。",
+    "effect": {
+     "unlock_memory": "餐巾纸协议"
+    }
+   }
+  ],
+  "no_choice_timeout": "他们不欢而散。但第二周，两个人出现在同一张桌上——成熟的关系都有弹性，你的店是弹性的现场。",
+  "tags": [
+   "关系",
+   "搞笑"
+  ]
+ },
+ {
+  "id": "event_086",
+  "title": "熟客的生日",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.3,
+   "birthday": true
+  },
+  "description": "今天是那位熟客的生日。TA没说，但你看出来了——TA点的还是老三样，眼神却一直瞟着你，像在等什么。",
+  "choices": [
+   {
+    "text": "假装忘了，暗中准备",
+    "result": "十一点整，你端出藏在冰柜的蛋糕，全店灯一关一开。TA愣了三秒，捂着脸没出声。生日歌后TA说：『我谁都没告诉……你怎么知道的？』你说：『去年你许愿的时候，我听见了。』",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "去年许的愿"
+    }
+   },
+   {
+    "text": "直球祝福：『生日快乐，这杯我请』",
+    "result": "TA笑了：『我自己都忘了。』——但TA眼里的光说明没忘。那杯免单的酒，TA喝得特别慢。",
+    "effect": {
+     "tab": -60,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "给TA调一杯『新的一岁』",
+    "result": "你即兴调了一杯，告诉TA：『去年的味道加了一点新的东西。岁数也一样。』TA说这是TA喝过最有道理的酒。",
+    "effect": {
+     "reputation": 3
+    }
+   }
+  ],
+  "no_choice_timeout": "TA喝完老三样，买单时多留了句话：『下次生日，想换个口味试试。』——TA明年还会来的，你确定。",
+  "tags": [
+   "温馨",
+   "关系"
+  ]
+ },
+ {
+  "id": "event_087",
+  "title": "带新朋友来",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.3,
+   "min_affinity_any": 4
+  },
+  "description": "老熟客今天带了个新面孔来：『给你介绍，我发小，刚搬来这条街。』新面孔有点拘谨。",
+  "choices": [
+   {
+    "text": "给新面孔调杯欢迎酒",
+    "result": "你调了杯温和的，取名『入巷』。新面孔喝了一口就放松了：『这酒像……像欢迎词。』一晚过后，TA成了周三固定的新常客。",
+    "effect": {
+     "tab": 80,
+     "reputation": 2,
+     "unlock_memory": "入巷酒"
+    }
+   },
+   {
+    "text": "把TA俩的旧故事挖出来",
+    "result": "你起哄让他们讲发小的黑历史。两个人互相爆料了半小时，笑声比酒劲大。新面孔离开时已经完全不拘谨了，还预付了下次的酒钱。",
+    "effect": {
+     "tab": 120,
+     "reputation": 1
+    }
+   },
+   {
+    "text": "让他们自己聊，你当背景板",
+    "result": "你安静地调酒。熟人的店是最好的破冰场——你自己做好背景，别人的故事自己长出来。",
+    "effect": {
+     "reputation": 1
+    }
+   }
+  ],
+  "no_choice_timeout": "新面孔走的时候，在你留言簿上写了第一笔：『这家店的老板不吵，酒不错，人更好。』",
+  "tags": [
+   "温馨",
+   "关系"
+  ]
+ },
+ {
+  "id": "event_088",
+  "title": "要出远门的熟客",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.25,
+   "min_affinity_any": 5
+  },
+  "description": "熟客说：『下个月我要去外地工作了。今晚是这段时间最后一杯。』TA把杯子举起来，又放下，有点说不下去。",
+  "choices": [
+   {
+    "text": "给TA调一杯『送别』",
+    "result": "你调了杯 mood 为送别的酒。TA喝完，站得笔直：『好酒。走的时候，鞋是干的，心是热的。』——TA留了张明信片：『到了寄给你。』半年后你真的收到了，邮戳是海边。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "干鞋热酒",
+     "item": "海边的明信片"
+    }
+   },
+   {
+    "text": "请全店的熟客来送行",
+    "result": "你把TA的朋友们请了来，办了场小型送行会。TA喝了很多，说了很多，最后说：『这条巷子我不担心——因为不管我什么时候回来，它都亮着。』",
+    "effect": {
+     "tab": 150,
+     "reputation": 4,
+     "unlock_memory": "小型送行会"
+    }
+   },
+   {
+    "text": "给TA打包一份巷子的味道",
+    "result": "你把老周的炒粉酱、花婶的干花、还有一小瓶你调的酒，打了个包：『到了新地方，想巷子了就闻闻。』TA真的带走了。据说那包东西TA用到搬家三次都没扔。",
+    "effect": {
+     "reputation": 3,
+     "npc_relationship": {
+      "老周": 1,
+      "花婶": 1
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "TA喝完最后一杯，把杯子倒扣在吧台上——巷子的规矩：倒扣的杯子，等人回来翻。",
+  "tags": [
+   "情感",
+   "关系",
+   "送别"
+  ]
+ },
+ {
+  "id": "event_089",
+  "title": "熟客的回礼",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.3,
+   "min_affinity_any": 5
+  },
+  "description": "熟客神秘兮兮地掏出一个布包：『上次帮你忙的谢礼——自己做的，别嫌弃。』打开是一套手工杯垫，磨砂的木头上烙着巷子的地图。",
+  "choices": [
+   {
+    "text": "当场用上",
+    "result": "你把杯垫铺在吧台最显眼的位置。客人们看见了都问，TA在旁边被夸得耳朵通红：『我做的！』——从此TA成了店里的『御用杯垫师』，逢年过节都有新作品。",
+    "effect": {
+     "reputation": 2,
+     "item": "巷子地图杯垫"
+    }
+   },
+   {
+    "text": "郑重收下，回赠一杯",
+    "result": "你说：『杯垫收了，但谢礼不对等。』你调了杯TA从没喝过的，说：『这个方子送你——你以后在别的城市，也能调出这杯。』TA眼圈红了。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "外带的方子"
+    }
+   },
+   {
+    "text": "说要装裱起来",
+    "result": "你真装裱了——挂在吧台正后方。TA每次来都假装不经意地看一眼。『你的手艺在店里供着』，这比什么夸奖都实在。",
+    "effect": {
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "布包在吧台上放了一晚。第二天你打开——杯垫做得真好。有些谢意，手比嘴诚实。",
+  "tags": [
+   "温馨",
+   "关系"
+  ]
+ },
+ {
+  "id": "event_090",
+  "title": "主动说出的秘密",
+  "trigger": "relationship",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.25,
+   "min_affinity_any": 6
+  },
+  "description": "打烊前，一位好感很深的熟客留到最后，忽然说：『有件事，跟别人我从没说过。你要听吗？』",
+  "choices": [
+   {
+    "text": "坐下来：『说吧，我在』",
+    "result": "TA说的是TA藏了十年的事。你听完了，没评判，只说：『谢谢你信我。』TA走的时候，背比来时直。有些秘密说出来不是为了被解决，是为了被接住。",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "接住秘密的人"
+    }
+   },
+   {
+    "text": "先给TA续杯，再说『想好了？』",
+    "result": "TA喝了口酒，点了点头，把秘密说了。说完后，你们沉默了很久，然后TA笑了：『说出来，就轻了。』——续杯的作用是给决定留一段缓冲。",
+    "effect": {
+     "reputation": 3
+    }
+   },
+   {
+    "text": "说『不用现在。想说了再说』",
+    "result": "TA愣了愣，把话收了回去。但一个月后TA回来了，说：『想说了。』——你给的等待，让秘密有了自己的时间。",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "秘密的时间"
+    }
+   }
+  ],
+  "no_choice_timeout": "TA把话咽了回去，结账走了。三个月后，TA在一个雨夜说了那个秘密——时机这种东西，急不来。",
+  "tags": [
+   "情感",
+   "关系",
+   "深夜"
+  ]
+ },
+ {
+  "id": "event_091",
+  "title": "停电之后：烛光夜",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.5,
+   "prerequisite_event": "event_002"
+  },
+  "description": "上次停电那晚的烛光，客人们一直念念不忘。今晚，不知谁带的头，好几桌客人都点了蜡烛——『停电那晚的氛围，再来一次！』",
+  "choices": [
+   {
+    "text": "配合，全场烛光",
+    "result": "你熄了大灯，烛光重新接管了店。有人提议轮流讲鬼故事，讲到一半煤球窜上桌，全场尖叫着笑作一团。『停电改装节』从此成为每月一次的固定活动。",
+    "effect": {
+     "tab": 120,
+     "reputation": 3,
+     "unlock_memory": "每月停电节"
+    }
+   },
+   {
+    "text": "笑着拒绝：『电还亮着呢，好好用电』",
+    "result": "客人蔫蔫地把蜡烛收了。但你记住了这个偏好——下次停电，你店里会有一百根蜡烛待命。",
+    "effect": {}
+   },
+   {
+    "text": "提出交换：烛光换故事",
+    "result": "每人一支蜡烛，上台讲一个自己的故事。那晚你听了七个故事，其中一个是老蒋讲他最难的那年——全店安静得能听见蜡烛燃烧的声音。",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "七个故事"
+    }
+   }
+  ],
+  "no_choice_timeout": "客人自己点了蜡烛自己吹了。你家的电费省了一晚——被动节能，也很深巷。",
+  "tags": [
+   "温馨",
+   "连锁"
+  ]
+ },
+ {
+  "id": "event_092",
+  "title": "信的回音",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.5,
+   "prerequisite_event": "event_021"
+  },
+  "description": "那封书里掉出来的情书有了下文：今晚，一位陌生的老人来到店里，问：『听说……有一封信，是从书里掉出来的？』",
+  "choices": [
+   {
+    "text": "把信的经过告诉他",
+    "result": "老人听完，眼眶湿了：『那是我写的。写给她，她走在我前面了。后来那本书捐了，我以为信丢在时间里了。』你把老笔帮忙封好的回信给了他——是阿香托老笔写的：『爸爸的信，收到了。』",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "时间里的信",
+     "npc_relationship": {
+      "老笔": 2
+     }
+    }
+   },
+   {
+    "text": "请老人坐下，倒杯热茶",
+    "result": "老人捧着茶，讲了他和她的一生。你听着，觉得这条巷子像一条河——故事在上游掉进去的，总会在下游浮出来。",
+    "effect": {
+     "reputation": 3
+    }
+   },
+   {
+    "text": "带他去见老笔",
+    "result": "老笔和老人对坐了一个小时，一个写了一辈子信的人和一个等了一辈子信的人。临走老人说：『谢谢这条巷子——连信丢了，都有人接着。』",
+    "effect": {
+     "reputation": 3,
+     "npc_relationship": {
+      "老笔": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "老人喝了杯茶走了，说『下个月十五号，我再来』。你没有他的名字，但你有了他的日子。",
+  "tags": [
+   "情感",
+   "连锁",
+   "怀旧"
+  ]
+ },
+ {
+  "id": "event_093",
+  "title": "猫的报恩",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.5,
+   "prerequisite_event": "event_016"
+  },
+  "description": "上次猫大战之后，煤球和大橘的关系缓和了。今晚它们竟然并排睡在你门口的坐垫上，中间隔着的距离，只有一片树叶——那是大橘留下的礼物。",
+  "choices": [
+   {
+    "text": "给它们正式『停战协议』：一人一碟猫粮",
+    "result": "两只猫头也不抬地吃完。从此它们在你门口轮流值班：白天大橘，晚上煤球。你的店门口从此有了二十四小时猫保安。",
+    "effect": {
+     "tab": -20,
+     "reputation": 3,
+     "unlock_memory": "猫保安"
+    }
+   },
+   {
+    "text": "把树叶塑封起来挂墙上",
+    "result": "大橘的礼物被郑重装裱。客人问起，你说：『外交成果。』——两只猫听了都假装没听见，但尾巴都翘高了一厘米。",
+    "effect": {
+     "reputation": 2,
+     "item": "塑封树叶"
+    }
+   },
+   {
+    "text": "拍下来发给花婶",
+    "result": "花婶回了五十个感叹号和一张照片：她家窗台上，大橘小时候的照片。『它刚来的时候就这么懂事。』原来每一只猫，都有自己的来处。",
+    "effect": {
+     "npc_relationship": {
+      "花婶": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "两只猫睡醒了，各自走了，像什么都没发生过。猫的和平，比人类的简单，也比人类的短暂——但明天它们还会来。",
+  "tags": [
+   "温馨",
+   "猫",
+   "连锁"
+  ]
+ },
+ {
+  "id": "event_094",
+  "title": "电影上映了",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.5,
+   "prerequisite_event": "event_020"
+  },
+  "description": "那部在巷口拍的电影上映了。你的店在某个转场镜头里出现了整整四秒——一个客人的背影，和你挂在墙上的灯。",
+  "choices": [
+   {
+    "text": "包一场，请全店熟客看",
+    "result": "你包了放映厅。当那四秒出现时，全场熟客集体欢呼，邻座观众一脸懵。散场后你们在放映厅门口合影，背景是海报——海报角落，你的店门真的在。",
+    "effect": {
+     "tab": -300,
+     "reputation": 5,
+     "unlock_memory": "四秒的巷子"
+    }
+   },
+   {
+    "text": "截图打印，挂进店里",
+    "result": "你把那四秒的截图洗出来挂上墙，旁边写：『本店银幕首秀：4秒。』客人问起就讲一遍——这个故事你讲了三年，每讲一遍，那四秒就更长一点。",
+    "effect": {
+     "reputation": 3,
+     "item": "银幕截图"
+    }
+   },
+   {
+    "text": "低调，不声张",
+    "result": "你告诉了两位常客，他们告诉了两位……三个月后全巷都知道了，你的店成了『电影里那家』。有些低调，比高调跑得还快。",
+    "effect": {
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "电影下映了，你的四秒留在了硬盘里。但那晚来看电影的熟客，从四秒变成了四年的常客。",
+  "tags": [
+   "热闹",
+   "连锁"
+  ]
+ },
+ {
+  "id": "event_095",
+  "title": "市集清算",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.5,
+   "prerequisite_event": "event_013"
+  },
+  "description": "深夜市集之后一个月，那天摆摊的人们忽然聚齐在你的店里——他们商量：市集要不要变成固定的？",
+  "choices": [
+   {
+    "text": "提议每月最后一个周六",
+    "result": "全票通过。从此『深巷市集』每月一次，成了城市的都市传说。你的店永远是市集的指挥部，你永远是那个说话没人听但最后都听的人。",
+    "effect": {
+     "reputation": 6,
+     "unlock_memory": "深巷市集创立",
+     "tab": 100
+    }
+   },
+   {
+    "text": "提议先试三个月再说",
+    "result": "三个月后市集变成了月度。谨慎的巷子，走得最稳。第一任『市集长』是花婶，她管钱，一分不差。",
+    "effect": {
+     "reputation": 4
+    }
+   },
+   {
+    "text": "建议搞『主题市集』",
+    "result": "第一次主题是『怀旧』，第二次是『夜宵』，第三次是『宠物』——大橘在宠物市集上被围观得怀疑猫生。主题市集让每家摊主都动了起来，你的店里每周都在开会。",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "主题市集"
+    }
+   }
+  ],
+  "no_choice_timeout": "他们聊到打烊，没结论。但第二次市集还是来了——巷子的共识，从来不需要会议纪要。",
+  "tags": [
+   "热闹",
+   "经济",
+   "连锁"
+  ]
+ },
+ {
+  "id": "event_096",
+  "title": "和好如初",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.5,
+   "prerequisite_event": "event_085"
+  },
+  "description": "上次在你店里吵架的那两位熟客，今晚一起进了门——不是碰巧，是一起来的。他们有一搭没一搭地聊着，像什么都没发生过。",
+  "choices": [
+   {
+    "text": "假装什么都没发生，上酒",
+    "result": "你像往常一样上酒。『老样子？』『老样子。』——深巷最高级的和解，是不提。那晚他们聊到打烊，走的时候互相等着对方先起身。",
+    "effect": {
+     "reputation": 2,
+     "tab": 100
+    }
+   },
+   {
+    "text": "给他们调当年那杯『各退一步』",
+    "result": "两人对视一眼，都笑了：『这杯就不喝了吧。』——但笑出来的那一刻，账就清了。你把酒收回去，换成了庆祝的和好酒。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "不喝的那杯"
+    }
+   },
+   {
+    "text": "让老周送两碗炒粉过来",
+    "result": "炒粉一上桌，两个人抢得跟真吵起来似的——然后同时笑了。炒粉外交第二次生效。老周隔空比了个大拇指。",
+    "effect": {
+     "npc_relationship": {
+      "老周": 2
+     },
+     "tab": 80
+    }
+   }
+  ],
+  "no_choice_timeout": "他们喝完了酒，一前一后走了——三分钟的错峰又出现了。但这次，出门前他们碰了拳。",
+  "tags": [
+   "温馨",
+   "关系",
+   "连锁"
+  ]
+ },
+ {
+  "id": "event_097",
+  "title": "小骑的拜师",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.5,
+   "prerequisite_event": "event_019"
+  },
+  "description": "那位总迷路的外卖小哥推门进来，郑重其事地脱帽（其实是他头盔）：『老板！我想拜师学调酒！不为转行——就想给同事调一杯！他们天天喝冰可乐，太惨了！』",
+  "choices": [
+   {
+    "text": "收下这个徒弟",
+    "result": "每周一他跑完午高峰就来学一小时。他学的第一杯是可乐桶——『从熟悉的世界开始』。三个月后他给全站的外卖员调了一轮，站点成了全城最有味道的站点。",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "外卖员学徒"
+    }
+   },
+   {
+    "text": "教他一杯，但不收徒",
+    "result": "你教了他一杯『巷尾薄荷』，告诉他：『调酒的门，永远开着。』他真的常来，成了你的编外学徒兼免费外卖——不，是付费外卖，但他在你这儿花的钱，都变成了酒。",
+    "effect": {
+     "tab": 80,
+     "reputation": 2
+    }
+   },
+   {
+    "text": "告诉他：『先学会认路』",
+    "result": "他涨红了脸：『我认识路！……好吧，是认识个大概。』——半年后，他考了驾照，不迷路了，还成了你的常客。人生这种事，都是曲线救国。",
+    "effect": {
+     "reputation": 2
+    }
+   }
+  ],
+  "no_choice_timeout": "他喝完自带的冰可乐，看了看你的吧台，在手机备忘录里写了行字：『攒钱，买摇壶。』——梦想这个东西，来的时候很安静。",
+  "tags": [
+   "温馨",
+   "成长",
+   "连锁"
+  ]
+ },
+ {
+  "id": "event_098",
+  "title": "蓑衣人的真相",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "后巷",
+   "probability": 0.5,
+   "prerequisite_event": "event_049"
+  },
+  "description": "又是一个雾夜。蓑衣人今天没有站在第三根电线杆下——他站在你店门口，手里拿着那双擦得干干净净的鞋。",
+  "choices": [
+   {
+    "text": "请他进门",
+    "result": "他站在门槛上犹豫了很久，最后进来坐了十分钟——没脱蓑衣，只喝了半杯热酒。临走他说：『鞋是备着的。船早没了，等的人也没了。但我还备着——习惯了。』你送他出门，雾里，他走得很轻。",
+    "effect": {
+     "reputation": 4,
+     "unlock_memory": "备鞋的人",
+     "npc_relationship": {
+      "蓑衣人": 3
+     }
+    }
+   },
+   {
+    "text": "把鞋擦干净还给他",
+    "result": "你蹲下来，帮他把左脚那只重新擦了一遍——左脚趾那里，有一道旧划痕。他看着你擦，忽然说：『你是第一个擦对地方的人。』——那道痕，是他最后一次登船时留下的。",
+    "effect": {
+     "reputation": 5,
+     "unlock_memory": "左脚的划痕"
+    }
+   },
+   {
+    "text": "不问，只是把门口的灯调亮一点",
+    "result": "他在灯下站了一会儿，把鞋放在了你台阶上——然后走了。那双鞋你收着。第二年清明，鞋不见了，台阶上放着一枚锈掉的船钉。",
+    "effect": {
+     "item": "锈船钉",
+     "unlock_memory": "台阶上的鞋"
+    }
+   }
+  ],
+  "no_choice_timeout": "他在灯下站到雾散，提着鞋走了。你到现在不知道他是谁——但你给他留了灯，他给你留了故事，两清了。",
+  "tags": [
+   "神秘",
+   "情感",
+   "连锁"
+  ]
+ },
+ {
+  "id": "event_099",
+  "title": "密码箱的失主",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "酒吧",
+   "probability": 0.5,
+   "prerequisite_event": "event_022"
+  },
+  "description": "密码箱事件过去几个月。今晚打烊时，门口放着一只一模一样的箱子，上面贴着字条：『上次没来得及道谢。这次的是回礼。』",
+  "choices": [
+   {
+    "text": "打开箱子",
+    "result": "箱子里是一整套装裱好的照片——你这条巷子三十年间的样子，每一张背面都写了拍摄日期和一行小字。最后一张是今晚你的店门口，背面写：『给守灯的人。』",
+    "effect": {
+     "reputation": 5,
+     "item": "三十年巷影相册",
+     "unlock_memory": "给守灯的人"
+    }
+   },
+   {
+    "text": "不打开，给巷子办展览",
+    "result": "你联系了老笔和方拾，在巷口办了场『巷子三十年』露天展。那一晚全巷的人都来了，指着照片认自己年轻时候的样子。展览结束，照片捐给了街道办——巷子的记忆有了公家户口。",
+    "effect": {
+     "reputation": 8,
+     "unlock_memory": "巷子三十年展"
+    }
+   },
+   {
+    "text": "把箱子转交给老岗，走流程",
+    "result": "老岗这次没登记——他抱着箱子看了很久：『这里面……有我二十岁的照片。』那个拍照的人，老岗好像知道是谁。他没说，你也没问。巷子的悬念，留着比解开好看。",
+    "effect": {
+     "reputation": 3,
+     "npc_relationship": {
+      "老岗": 2
+     }
+    }
+   }
+  ],
+  "no_choice_timeout": "箱子在门口放了一夜，第二天由你保管。那份相册后来成了店里的镇店之宝——比任何酒都值钱。",
+  "tags": [
+   "神秘",
+   "怀旧",
+   "连锁"
+  ]
+ },
+ {
+  "id": "event_100",
+  "title": "翻修完工的灯",
+  "trigger": "chain",
+  "trigger_condition": {
+   "time": "any",
+   "weather": "any",
+   "drunk_level": "any",
+   "location": "any",
+   "probability": 0.5,
+   "prerequisite_event": "event_017"
+  },
+  "description": "巷子翻修完工了。脚手架拆掉的那天，施工队在巷口留了个东西：一盏新路灯——灯柱上刻着一行字：『给这条巷子里所有不睡觉的人。』",
+  "choices": [
+   {
+    "text": "办一场『点灯仪式』",
+    "result": "你把全巷的人都请来了。零点整，新路灯第一次亮起，全巷欢呼。婆婆说：『这灯，比三十年前那盏还亮。』酒瓶张当场作诗，老康配了曲——《点灯》。",
+    "effect": {
+     "reputation": 8,
+     "unlock_memory": "点灯仪式"
+    }
+   },
+   {
+    "text": "在新灯下开一晚外场",
+    "result": "你把吧台搬到了灯下，营业到凌晨四点。新灯的光落在每一杯酒上。有个客人说：『以后这条巷子的地标，就是这盏灯加这杯酒。』",
+    "effect": {
+     "tab": 200,
+     "reputation": 5
+    }
+   },
+   {
+    "text": "默默记下，给它拍照",
+    "result": "你给新灯拍了张照，设成了店的招牌。有些里程碑不需要仪式，需要的是被记住。",
+    "effect": {
+     "reputation": 3,
+     "unlock_memory": "新灯"
+    }
+   }
+  ],
+  "no_choice_timeout": "新灯亮了一夜。你打烊时抬头看了看——它不比旧灯亮多少，但它是新的，路是重修的，巷子还在。",
+  "tags": [
+   "温馨",
+   "大事件",
+   "连锁"
+  ]
+ }
+]

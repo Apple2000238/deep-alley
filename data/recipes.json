@@ -1,0 +1,3694 @@
+[
+ {
+  "id": "recipe_001",
+  "name": "琥珀落日",
+  "name_en": "Amber Sunset",
+  "emoji": "🥃",
+  "tier": "common",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "威士忌 45ml",
+   "蜂蜜糖浆 15ml",
+   "柠檬汁 10ml",
+   "橙皮"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "橙皮卷",
+  "flavor_tags": [
+   "甜",
+   "温暖",
+   "烟熏"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "深夜",
+   "独酌"
+  ],
+  "difficulty": 2,
+  "cost": 35,
+  "sell_price": 80,
+  "description": "像把黄昏装进杯子里。蜂蜜的甜裹着威士忌的烟，最后一口是柠檬的微酸。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": "据说这是深巷第一任老板每天打烊前给自己调的最后一杯。"
+ },
+ {
+  "id": "recipe_002",
+  "name": "苏打晚风",
+  "name_en": "Soda Evening Breeze",
+  "emoji": "🌬️",
+  "tier": "common",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 40ml",
+   "苏打水 适量",
+   "青柠角 2块",
+   "薄荷叶"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "薄荷枝",
+  "flavor_tags": [
+   "清爽",
+   "气泡",
+   "草本"
+  ],
+  "mood_tags": [
+   "清醒",
+   "独酌"
+  ],
+  "difficulty": 1,
+  "cost": 15,
+  "sell_price": 45,
+  "description": "什么都别想，先喝一口有风的味道。青柠和薄荷把夜吹得很轻。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_003",
+  "name": "柑月",
+  "name_en": "Citrus Moon",
+  "emoji": "🍊",
+  "tier": "common",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 40ml",
+   "鲜橙汁 60ml",
+   "柠檬汁 10ml",
+   "糖水 5ml"
+  ],
+  "method": "摇和",
+  "glass": "碟形杯",
+  "garnish": "橙片",
+  "flavor_tags": [
+   "酸",
+   "甜",
+   "果香"
+  ],
+  "mood_tags": [
+   "庆祝",
+   "疗愈"
+  ],
+  "difficulty": 1,
+  "cost": 18,
+  "sell_price": 50,
+  "description": "圆滚滚的一轮橙月挂在杯沿。酸得干净，甜得老实。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_004",
+  "name": "夜风可乐桶",
+  "name_en": "Night Wind Bucket",
+  "emoji": "🥤",
+  "tier": "common",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "朗姆 40ml",
+   "可乐 适量",
+   "青柠角 2块",
+   "冰块"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "青柠角",
+  "flavor_tags": [
+   "甜",
+   "气泡",
+   "清爽"
+  ],
+  "mood_tags": [
+   "庆祝",
+   "深夜"
+  ],
+  "difficulty": 1,
+  "cost": 14,
+  "sell_price": 40,
+  "description": "最不讲究的一杯，也是最快交到朋友的一杯。气泡一响，话匣子就开。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": "宵夜档的老周用这杯招待过每一个刚搬进巷子的人。"
+ },
+ {
+  "id": "recipe_005",
+  "name": "海盐汽水时光",
+  "name_en": "Sea Salt Soda Time",
+  "emoji": "🧂",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "海盐 1撮",
+   "柠檬汁 15ml",
+   "苏打水 适量",
+   "糖水 10ml"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "盐边",
+  "flavor_tags": [
+   "咸",
+   "酸",
+   "气泡",
+   "清爽"
+  ],
+  "mood_tags": [
+   "清醒",
+   "怀旧"
+  ],
+  "difficulty": 1,
+  "cost": 8,
+  "sell_price": 30,
+  "description": "小时候夏天的味道，长大后在杯子里又找到了一次。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_006",
+  "name": "一杯清晨",
+  "name_en": "Cup of Morning",
+  "emoji": "🌅",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "蜂蜜 15ml",
+   "柚子茶 20ml",
+   "气泡水 适量",
+   "热水 少许"
+  ],
+  "method": "兑和",
+  "glass": "马克杯",
+  "garnish": "柚子皮",
+  "flavor_tags": [
+   "甜",
+   "温暖",
+   "果香"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "清醒"
+  ],
+  "difficulty": 1,
+  "cost": 10,
+  "sell_price": 32,
+  "description": "给通宵之后的人。喝下去像有人替你把窗帘拉开了。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_007",
+  "name": "猫爪棉花糖",
+  "name_en": "Cat Paw Marshmallow",
+  "emoji": "🐾",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "棉花糖 3颗",
+   "牛奶 150ml",
+   "香草糖浆 10ml"
+  ],
+  "method": "兑和",
+  "glass": "马克杯",
+  "garnish": "猫爪棉花糖",
+  "flavor_tags": [
+   "甜",
+   "奶味",
+   "温暖"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "独酌"
+  ],
+  "difficulty": 1,
+  "cost": 12,
+  "sell_price": 38,
+  "description": "热牛奶泡开棉花糖，甜得毫无攻击性。适合被生活咬过一口的人。",
+  "unlock": {
+   "type": "item",
+   "value": "猫毛"
+  },
+  "unlock_condition": "让煤球在吧台睡过一夜后领悟",
+  "hidden": true,
+  "story": "煤球第一次在吧台上睡着那晚，老板顺手发明了这杯。"
+ },
+ {
+  "id": "recipe_008",
+  "name": "姜茶夜行",
+  "name_en": "Ginger Night Walk",
+  "emoji": "🫚",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "姜汁 20ml",
+   "黑糖 15ml",
+   "热水 150ml",
+   "柠檬片 1片"
+  ],
+  "method": "兑和",
+  "glass": "马克杯",
+  "garnish": "柠檬片",
+  "flavor_tags": [
+   "辣",
+   "温暖",
+   "甜"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "送别"
+  ],
+  "difficulty": 1,
+  "cost": 9,
+  "sell_price": 30,
+  "description": "辣喉咙，暖胃，驱寒气。深夜要走远路的人，出门前来一杯。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_009",
+  "name": "檐下听雨",
+  "name_en": "Rain Under Eaves",
+  "emoji": "🌧️",
+  "tier": "common",
+  "base_spirit": "清酒",
+  "ingredients": [
+   "清酒 60ml",
+   "梅子酒 15ml",
+   "气泡水 适量"
+  ],
+  "method": "兑和",
+  "glass": "柯林杯",
+  "garnish": "腌渍梅子",
+  "flavor_tags": [
+   "酸",
+   "甜",
+   "果香",
+   "气泡"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "独酌"
+  ],
+  "difficulty": 2,
+  "cost": 22,
+  "sell_price": 58,
+  "description": "雨点敲在遮雨棚上，这杯在舌头上敲出同样的节奏。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_010",
+  "name": "铁皮齿轮",
+  "name_en": "Tin Gear",
+  "emoji": "⚙️",
+  "tier": "common",
+  "base_spirit": "烧酒",
+  "ingredients": [
+   "烧酒 45ml",
+   "腌梅 2颗",
+   "梅子汁 15ml",
+   "冰块"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "腌梅",
+  "flavor_tags": [
+   "酸",
+   "咸",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "壮胆",
+   "深夜"
+  ],
+  "difficulty": 2,
+  "cost": 18,
+  "sell_price": 48,
+  "description": "地下室那些人管这叫机油。咬一口腌梅，再闷一口，能扛到天亮。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_011",
+  "name": "白昼梦",
+  "name_en": "Daydream",
+  "emoji": "🫧",
+  "tier": "common",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 40ml",
+   "荔枝汁 30ml",
+   "柠檬汁 10ml",
+   "苏打水 适量"
+  ],
+  "method": "摇和",
+  "glass": "柯林杯",
+  "garnish": "荔枝 1颗",
+  "flavor_tags": [
+   "甜",
+   "果香",
+   "清爽",
+   "气泡"
+  ],
+  "mood_tags": [
+   "告白",
+   "迷幻"
+  ],
+  "difficulty": 2,
+  "cost": 20,
+  "sell_price": 55,
+  "description": "荔枝的甜很轻，轻得像没说出口的那句话。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_012",
+  "name": "台风天警报",
+  "name_en": "Typhoon Alert",
+  "emoji": "🌀",
+  "tier": "common",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "黑朗姆 45ml",
+   "姜汁啤酒 适量",
+   "青柠汁 10ml",
+   "黑糖浆 5ml"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "青柠片",
+  "flavor_tags": [
+   "辣",
+   "甜",
+   "浓烈",
+   "气泡"
+  ],
+  "mood_tags": [
+   "壮胆",
+   "暴躁"
+  ],
+  "difficulty": 2,
+  "cost": 20,
+  "sell_price": 52,
+  "description": "风暴在外面，烈度在杯子里。喝完你就敢对着雨幕喊话了。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_013",
+  "name": "青巷汤力",
+  "name_en": "Green Alley Tonic",
+  "emoji": "🥒",
+  "tier": "common",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 40ml",
+   "汤力水 适量",
+   "青柠角 2块",
+   "黄瓜片 3片"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "黄瓜卷",
+  "flavor_tags": [
+   "清爽",
+   "苦",
+   "草本",
+   "气泡"
+  ],
+  "mood_tags": [
+   "清醒",
+   "独酌"
+  ],
+  "difficulty": 1,
+  "cost": 20,
+  "sell_price": 55,
+  "description": "黄瓜片沉在气泡里，像巷子里长出来的绿。苦得刚刚好。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_014",
+  "name": "打烊前最后一杯",
+  "name_en": "Last Call",
+  "emoji": "🚪",
+  "tier": "common",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "威士忌 50ml",
+   "方糖 1颗",
+   "苦精 2滴"
+  ],
+  "method": "兑和",
+  "glass": "古典杯",
+  "garnish": "无",
+  "flavor_tags": [
+   "浓烈",
+   "苦",
+   "烟熏"
+  ],
+  "mood_tags": [
+   "深夜",
+   "送别"
+  ],
+  "difficulty": 1,
+  "cost": 30,
+  "sell_price": 65,
+  "description": "方糖压在杯底，最后一滴苦精淋上去。没有装饰，没有废话。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_015",
+  "name": "蜂蜡信封",
+  "name_en": "Beeswax Envelope",
+  "emoji": "✉️",
+  "tier": "common",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "威士忌 40ml",
+   "蜂蜜 20ml",
+   "蜂蜡浸糖浆 5ml",
+   "柠檬汁 5ml"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "蜂巢糖片",
+  "flavor_tags": [
+   "甜",
+   "温暖",
+   "花香"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "疗愈"
+  ],
+  "difficulty": 3,
+  "cost": 28,
+  "sell_price": 70,
+  "description": "蜡封住的不是信，是一句没好意思说的话。甜里带一点点涩。",
+  "unlock": {
+   "type": "fail_streak",
+   "value": 3
+  },
+  "unlock_condition": "连续调失败3次之后，随手一摇就对了",
+  "hidden": true,
+  "story": "调酒这行没有白摔的跟头——摔多了，手就自己记住了。"
+ },
+ {
+  "id": "recipe_016",
+  "name": "汽水银河",
+  "name_en": "Soda Galaxy",
+  "emoji": "🌌",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "蓝橙糖浆 10ml",
+   "柠檬汽水 适量",
+   "冰珠 适量",
+   "柠檬汁 10ml"
+  ],
+  "method": "直调",
+  "glass": "柯林杯",
+  "garnish": "可食用亮片",
+  "flavor_tags": [
+   "甜",
+   "气泡",
+   "清爽"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "庆祝"
+  ],
+  "difficulty": 1,
+  "cost": 10,
+  "sell_price": 35,
+  "description": "蓝橙糖浆沉底，气泡升起来像星星。搅一搅，银河就散了。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_017",
+  "name": "旧报纸",
+  "name_en": "Old Newspaper",
+  "emoji": "📰",
+  "tier": "common",
+  "base_spirit": "龙舌兰",
+  "ingredients": [
+   "龙舌兰 40ml",
+   "番茄汁 60ml",
+   "柠檬汁 10ml",
+   "黑胡椒 少许",
+   "芹菜杆 1根"
+  ],
+  "method": "摇和",
+  "glass": "柯林杯",
+  "garnish": "芹菜杆",
+  "flavor_tags": [
+   "咸",
+   "辣",
+   "酸"
+  ],
+  "mood_tags": [
+   "暴躁",
+   "清醒"
+  ],
+  "difficulty": 2,
+  "cost": 18,
+  "sell_price": 50,
+  "description": "新闻越旧越有嚼头，这杯越咸越提神。喝完该翻篇的都翻篇。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_018",
+  "name": "楼梯间的烟",
+  "name_en": "Smoke in the Stairwell",
+  "emoji": "🚬",
+  "tier": "common",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "泥煤威士忌 45ml",
+   "苏打水 适量",
+   "柠檬皮 1条"
+  ],
+  "method": "兑和",
+  "glass": "高球杯",
+  "garnish": "柠檬皮",
+  "flavor_tags": [
+   "烟熏",
+   "浓烈",
+   "清爽"
+  ],
+  "mood_tags": [
+   "独酌",
+   "深夜"
+  ],
+  "difficulty": 2,
+  "cost": 32,
+  "sell_price": 68,
+  "description": "不敢在楼道里抽的烟，都化在这杯里了。一口下去全是心事。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_019",
+  "name": "邮票大小的月亮",
+  "name_en": "Stamp-sized Moon",
+  "emoji": "🌙",
+  "tier": "common",
+  "base_spirit": "清酒",
+  "ingredients": [
+   "清酒 50ml",
+   "柚子蜜 15ml",
+   "苏打水 适量"
+  ],
+  "method": "兑和",
+  "glass": "郁金香杯",
+  "garnish": "柚子皮屑",
+  "flavor_tags": [
+   "甜",
+   "果香",
+   "气泡",
+   "清爽"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "送别"
+  ],
+  "difficulty": 2,
+  "cost": 20,
+  "sell_price": 55,
+  "description": "想家的时候，月亮就只有邮票那么大。贴在杯口上。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_020",
+  "name": "五点半的地铁",
+  "name_en": "The 5:30 Metro",
+  "emoji": "🚇",
+  "tier": "common",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 40ml",
+   "咖啡利口酒 20ml",
+   "冰块"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "咖啡豆 3颗",
+  "flavor_tags": [
+   "浓烈",
+   "苦",
+   "甜"
+  ],
+  "mood_tags": [
+   "清醒",
+   "深夜"
+  ],
+  "difficulty": 2,
+  "cost": 22,
+  "sell_price": 56,
+  "description": "挤过晚高峰的人喝这个最快。苦咖啡底下埋着一段伏特加的隧道。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_021",
+  "name": "冰镇告别",
+  "name_en": "Iced Farewell",
+  "emoji": "🧊",
+  "tier": "common",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "白兰地 40ml",
+   "冰红茶 60ml",
+   "柠檬片 1片",
+   "冰块"
+  ],
+  "method": "兑和",
+  "glass": "高球杯",
+  "garnish": "柠檬片",
+  "flavor_tags": [
+   "清爽",
+   "甜",
+   "果香"
+  ],
+  "mood_tags": [
+   "送别",
+   "独酌"
+  ],
+  "difficulty": 1,
+  "cost": 20,
+  "sell_price": 52,
+  "description": "告别要体面，像这杯一样：不加冰块声张，凉透了就好。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_022",
+  "name": "起重机之梦",
+  "name_en": "Crane Dream",
+  "emoji": "🏗️",
+  "tier": "common",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "白朗姆 45ml",
+   "菠萝汁 30ml",
+   "椰子水 20ml",
+   "青柠汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "柯林杯",
+  "garnish": "菠萝角",
+  "flavor_tags": [
+   "甜",
+   "果香",
+   "清爽"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "庆祝"
+  ],
+  "difficulty": 2,
+  "cost": 22,
+  "sell_price": 58,
+  "description": "码头工人说，起重机吊起最后一箱货的时候，做的就是这一个梦。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_023",
+  "name": "半糖失眠",
+  "name_en": "Half-sugar Insomnia",
+  "emoji": "🥛",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "牛奶 150ml",
+   "蜂蜜 10ml",
+   "肉桂粉 少许",
+   "热水 少许"
+  ],
+  "method": "兑和",
+  "glass": "马克杯",
+  "garnish": "肉桂棒",
+  "flavor_tags": [
+   "奶味",
+   "甜",
+   "温暖"
+  ],
+  "mood_tags": [
+   "独酌",
+   "疗愈"
+  ],
+  "difficulty": 1,
+  "cost": 10,
+  "sell_price": 34,
+  "description": "只放一半糖，因为睡不着的人不需要全部的安慰。",
+  "unlock": {
+   "type": "drunk",
+   "value": 70
+  },
+  "unlock_condition": "清醒度跌破30那晚，突然就懂了怎么调",
+  "hidden": true,
+  "story": "失眠的人都喝过类似的杯子，只是没有人承认。"
+ },
+ {
+  "id": "recipe_024",
+  "name": "修灯人",
+  "name_en": "The Lamplighter",
+  "emoji": "💡",
+  "tier": "common",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 40ml",
+   "蜂蜜糖浆 10ml",
+   "柠檬汁 15ml",
+   "蛋清 1个"
+  ],
+  "method": "摇和",
+  "glass": "碟形杯",
+  "garnish": "无",
+  "flavor_tags": [
+   "酸",
+   "清爽",
+   "草本"
+  ],
+  "mood_tags": [
+   "清醒",
+   "疗愈"
+  ],
+  "difficulty": 3,
+  "cost": 22,
+  "sell_price": 58,
+  "description": "蛋清把酒面拍成一层柔光。修灯人说，光要软，人才不刺眼。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_025",
+  "name": "海风电台",
+  "name_en": "Sea Breeze Radio",
+  "emoji": "📻",
+  "tier": "common",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 40ml",
+   "西柚汁 45ml",
+   "海盐 1撮",
+   "苏打水 适量"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "西柚角",
+  "flavor_tags": [
+   "咸",
+   "酸",
+   "清爽",
+   "果香"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "独酌"
+  ],
+  "difficulty": 1,
+  "cost": 18,
+  "sell_price": 50,
+  "description": "调频调到一半的杂音里，偶尔有一段海浪。盐是那片海。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_026",
+  "name": "童话镇",
+  "name_en": "Fairytale Town",
+  "emoji": "🏰",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "草莓糖浆 15ml",
+   "橙汁 40ml",
+   "苏打水 适量",
+   "跳跳糖 1包"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "草莓 1颗",
+  "flavor_tags": [
+   "甜",
+   "果香",
+   "气泡"
+  ],
+  "mood_tags": [
+   "庆祝",
+   "迷幻"
+  ],
+  "difficulty": 1,
+  "cost": 12,
+  "sell_price": 38,
+  "description": "杯口抹一圈跳跳糖，喝的时候会噼啪响。每个人的童话都吵得很。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_027",
+  "name": "巷尾薄荷",
+  "name_en": "Mint at Alley's End",
+  "emoji": "🌿",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "鲜薄荷 10片",
+   "青柠汁 20ml",
+   "糖水 15ml",
+   "苏打水 适量"
+  ],
+  "method": "兑和",
+  "glass": "高球杯",
+  "garnish": "薄荷枝",
+  "flavor_tags": [
+   "清爽",
+   "酸",
+   "草本",
+   "气泡"
+  ],
+  "mood_tags": [
+   "清醒",
+   "疗愈"
+  ],
+  "difficulty": 1,
+  "cost": 8,
+  "sell_price": 30,
+  "description": "巷尾长的薄荷没人管，反而长得最好。捣碎它，别客气。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_028",
+  "name": "老唱机",
+  "name_en": "Gramophone",
+  "emoji": "🎼",
+  "tier": "common",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "白兰地 40ml",
+   "苹果汁 40ml",
+   "蜂蜜 5ml",
+   "肉桂粉 少许"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "苹果薄片",
+  "flavor_tags": [
+   "甜",
+   "温暖",
+   "果香"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "独酌"
+  ],
+  "difficulty": 2,
+  "cost": 24,
+  "sell_price": 60,
+  "description": "唱片转一圈，苹果香就转出来一圈。总有一天唱针会磨平，先喝。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_029",
+  "name": "出租车收音机",
+  "name_en": "Taxi Radio",
+  "emoji": "🚕",
+  "tier": "common",
+  "base_spirit": "烧酒",
+  "ingredients": [
+   "烧酒 45ml",
+   "西柚汁 45ml",
+   "蜂蜜 10ml",
+   "冰块"
+  ],
+  "method": "摇和",
+  "glass": "高球杯",
+  "garnish": "西柚皮",
+  "flavor_tags": [
+   "酸",
+   "甜",
+   "清爽",
+   "果香"
+  ],
+  "mood_tags": [
+   "深夜",
+   "疗愈"
+  ],
+  "difficulty": 1,
+  "cost": 18,
+  "sell_price": 48,
+  "description": "夜班司机说，电台放什么不重要，重要的是有人在听。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_030",
+  "name": "雨刷",
+  "name_en": "Wipers",
+  "emoji": "🚗",
+  "tier": "common",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 40ml",
+   "黄瓜汁 30ml",
+   "柠檬汁 10ml",
+   "糖水 10ml"
+  ],
+  "method": "摇和",
+  "glass": "碟形杯",
+  "garnish": "黄瓜片",
+  "flavor_tags": [
+   "清爽",
+   "草本",
+   "酸"
+  ],
+  "mood_tags": [
+   "清醒",
+   "疗愈"
+  ],
+  "difficulty": 2,
+  "cost": 20,
+  "sell_price": 52,
+  "description": "一下，一下，把心上的雨刷干净。视野好起来之前先别开车。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_031",
+  "name": "加班英雄",
+  "name_en": "Overtime Hero",
+  "emoji": "💻",
+  "tier": "common",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "威士忌 40ml",
+   "浓缩咖啡 30ml",
+   "糖水 10ml",
+   "橙皮"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "橙皮",
+  "flavor_tags": [
+   "苦",
+   "浓烈",
+   "甜"
+  ],
+  "mood_tags": [
+   "深夜",
+   "壮胆"
+  ],
+  "difficulty": 2,
+  "cost": 26,
+  "sell_price": 62,
+  "description": "敬每一个十一点还在改方案的人。这杯下去，甲方的需求都是浮云。",
+  "unlock": {
+   "type": "time",
+   "from": "02:00"
+  },
+  "unlock_condition": "凌晨两点以后才调得出那种狠劲",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_032",
+  "name": "药房橱窗",
+  "name_en": "Pharmacy Window",
+  "emoji": "⚗️",
+  "tier": "common",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 40ml",
+   "薄荷糖浆 15ml",
+   "柠檬汁 15ml",
+   "苏打水 适量"
+  ],
+  "method": "摇和",
+  "glass": "柯林杯",
+  "garnish": "薄荷糖片",
+  "flavor_tags": [
+   "清爽",
+   "甜",
+   "草本",
+   "气泡"
+  ],
+  "mood_tags": [
+   "清醒",
+   "疗愈"
+  ],
+  "difficulty": 2,
+  "cost": 18,
+  "sell_price": 48,
+  "description": "绿得像老药房的橱窗玻璃。包治百病是假的，透心凉是真的。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_033",
+  "name": "青竹酒",
+  "name_en": "Green Bamboo",
+  "emoji": "🎍",
+  "tier": "common",
+  "base_spirit": "清酒",
+  "ingredients": [
+   "清酒 60ml",
+   "竹叶 3片",
+   "糖水 5ml",
+   "冰块"
+  ],
+  "method": "搅拌",
+  "glass": "郁金香杯",
+  "garnish": "竹叶",
+  "flavor_tags": [
+   "草本",
+   "清爽",
+   "甜"
+  ],
+  "mood_tags": [
+   "独酌",
+   "清醒"
+  ],
+  "difficulty": 2,
+  "cost": 20,
+  "sell_price": 52,
+  "description": "竹叶在冰上立着，像一小片没被砍掉的安静。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_034",
+  "name": "消防栓红",
+  "name_en": "Hydrant Red",
+  "emoji": "🧯",
+  "tier": "common",
+  "base_spirit": "龙舌兰",
+  "ingredients": [
+   "龙舌兰 40ml",
+   "西瓜汁 60ml",
+   "青柠汁 10ml",
+   "盐 1撮"
+  ],
+  "method": "摇和",
+  "glass": "高球杯",
+  "garnish": "西瓜角",
+  "flavor_tags": [
+   "甜",
+   "果香",
+   "咸",
+   "清爽"
+  ],
+  "mood_tags": [
+   "庆祝",
+   "暴躁"
+  ],
+  "difficulty": 1,
+  "cost": 18,
+  "sell_price": 50,
+  "description": "红得像巷口那只消防栓，甜得像被夏天没收的西瓜。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_035",
+  "name": "缝纫机",
+  "name_en": "Sewing Machine",
+  "emoji": "🧵",
+  "tier": "common",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "白兰地 40ml",
+   "蜂蜜柠檬茶 60ml",
+   "丁香 2粒"
+  ],
+  "method": "兑和",
+  "glass": "高球杯",
+  "garnish": "柠檬皮结",
+  "flavor_tags": [
+   "温暖",
+   "甜",
+   "果香"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "疗愈"
+  ],
+  "difficulty": 2,
+  "cost": 22,
+  "sell_price": 55,
+  "description": "一针一线缝补的晚上，配一杯温吞吞的甜。针脚很密，心事很疏。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_036",
+  "name": "六楼的风",
+  "name_en": "Wind on the Sixth Floor",
+  "emoji": "🍃",
+  "tier": "common",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "白朗姆 40ml",
+   "椰子水 50ml",
+   "青柠汁 15ml",
+   "苏打水 适量"
+  ],
+  "method": "直调",
+  "glass": "柯林杯",
+  "garnish": "青柠叶",
+  "flavor_tags": [
+   "清爽",
+   "甜",
+   "果香",
+   "气泡"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "独酌"
+  ],
+  "difficulty": 2,
+  "cost": 20,
+  "sell_price": 52,
+  "description": "六楼的天台没有电梯直达，风倒是很愿意来。清清爽爽不留口子。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_037",
+  "name": "铅笔画",
+  "name_en": "Pencil Sketch",
+  "emoji": "✏️",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "紫葡萄汁 40ml",
+   "苏打水 适量",
+   "柠檬汁 10ml",
+   "盐 1撮"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "葡萄串小串",
+  "flavor_tags": [
+   "酸",
+   "清爽",
+   "果香",
+   "气泡"
+  ],
+  "mood_tags": [
+   "独酌",
+   "怀旧"
+  ],
+  "difficulty": 1,
+  "cost": 12,
+  "sell_price": 36,
+  "description": "灰紫色的气泡，像橡皮屑没擦干净的一张素描。淡淡的，但看得见。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_038",
+  "name": "深夜公交",
+  "name_en": "Night Bus",
+  "emoji": "🚌",
+  "tier": "common",
+  "base_spirit": "烧酒",
+  "ingredients": [
+   "烧酒 45ml",
+   "冷萃乌龙 60ml",
+   "蜂蜜 10ml",
+   "冰块"
+  ],
+  "method": "兑和",
+  "glass": "高球杯",
+  "garnish": "无",
+  "flavor_tags": [
+   "清爽",
+   "甜",
+   "草本"
+  ],
+  "mood_tags": [
+   "深夜",
+   "独酌"
+  ],
+  "difficulty": 1,
+  "cost": 16,
+  "sell_price": 45,
+  "description": "末班车摇摇晃晃，这杯也是。坐过站没关系，巷子很小。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_039",
+  "name": "橡皮擦",
+  "name_en": "Eraser",
+  "emoji": "🧽",
+  "tier": "common",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 40ml",
+   "椰子水 40ml",
+   "菠萝汁 20ml",
+   "柠檬汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "碟形杯",
+  "garnish": "无",
+  "flavor_tags": [
+   "清爽",
+   "酸",
+   "果香"
+  ],
+  "mood_tags": [
+   "失恋",
+   "清醒"
+  ],
+  "difficulty": 2,
+  "cost": 20,
+  "sell_price": 54,
+  "description": "想擦掉的擦不掉，但至少这一口很干净。干净也是一种了断。",
+  "unlock": {
+   "type": "affinity",
+   "npc": "小柯",
+   "value": 3
+  },
+  "unlock_condition": "陪一个失恋的人喝到第三杯，你就会了",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_040",
+  "name": "巷口的灯",
+  "name_en": "The Light at Alley's Mouth",
+  "emoji": "🏮",
+  "tier": "common",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "蜂蜜 20ml",
+   "柠檬汁 25ml",
+   "热水 100ml",
+   "红茶包 1个"
+  ],
+  "method": "兑和",
+  "glass": "马克杯",
+  "garnish": "柠檬轮",
+  "flavor_tags": [
+   "甜",
+   "酸",
+   "温暖"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "送别"
+  ],
+  "difficulty": 1,
+  "cost": 10,
+  "sell_price": 35,
+  "description": "深巷的招牌饮品。不会喝酒的人进巷子，第一杯永远是它。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": "每个第一次走进深巷的人，喝的都是这杯。喝完就不好意思走了。"
+ },
+ {
+  "id": "recipe_041",
+  "name": "青柠信笺",
+  "name_en": "Lime Letter",
+  "emoji": "💌",
+  "tier": "uncommon",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 45ml",
+   "青柠汁 20ml",
+   "薄荷糖浆 10ml",
+   "蛋清 1个"
+  ],
+  "method": "摇和",
+  "glass": "碟形杯",
+  "garnish": "青柠皮卷",
+  "flavor_tags": [
+   "酸",
+   "清爽",
+   "草本"
+  ],
+  "mood_tags": [
+   "告白",
+   "独酌"
+  ],
+  "difficulty": 3,
+  "cost": 30,
+  "sell_price": 90,
+  "description": "写了一半的信折进杯子里。酸味在纸上洇开，字迹就成了心事。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_042",
+  "name": "玻璃海",
+  "name_en": "Glass Sea",
+  "emoji": "🌊",
+  "tier": "uncommon",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 45ml",
+   "蓝橙利口酒 15ml",
+   "柠檬汁 15ml",
+   "糖水 10ml"
+  ],
+  "method": "摇和",
+  "glass": "马天尼杯",
+  "garnish": "柠檬皮结",
+  "flavor_tags": [
+   "清爽",
+   "酸",
+   "甜"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "独酌"
+  ],
+  "difficulty": 3,
+  "cost": 32,
+  "sell_price": 95,
+  "description": "蓝得发亮，静得像一片凝固的海。喝之前先看一会儿。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_043",
+  "name": "咸风盐雾",
+  "name_en": "Salt Spray",
+  "emoji": "🌫️",
+  "tier": "uncommon",
+  "base_spirit": "龙舌兰",
+  "ingredients": [
+   "龙舌兰 45ml",
+   "西柚汁 30ml",
+   "海盐糖浆 10ml",
+   "青柠汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "半盐边",
+  "flavor_tags": [
+   "咸",
+   "酸",
+   "果香",
+   "清爽"
+  ],
+  "mood_tags": [
+   "壮胆",
+   "独酌"
+  ],
+  "difficulty": 3,
+  "cost": 30,
+  "sell_price": 88,
+  "description": "海雾扑在脸上又退回去，留下细细的盐。风大，站稳了再喝。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_044",
+  "name": "半夜修表人",
+  "name_en": "The Midnight Watchmaker",
+  "emoji": "⌚",
+  "tier": "uncommon",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "白兰地 40ml",
+   "冷萃咖啡 25ml",
+   "黑糖浆 10ml",
+   "橙皮"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "橙皮",
+  "flavor_tags": [
+   "苦",
+   "甜",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "深夜",
+   "独酌"
+  ],
+  "difficulty": 3,
+  "cost": 38,
+  "sell_price": 100,
+  "description": "在所有齿轮都睡着的时候，只有他还醒着，给时间上油。",
+  "unlock": {
+   "type": "time",
+   "from": "00:00"
+  },
+  "unlock_condition": "过了半夜十二点，才调得出钟表匠的那口苦",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_045",
+  "name": "桂花巷",
+  "name_en": "Osmanthus Alley",
+  "emoji": "🌼",
+  "tier": "uncommon",
+  "base_spirit": "清酒",
+  "ingredients": [
+   "清酒 50ml",
+   "桂花糖浆 15ml",
+   "米酿 20ml",
+   "冰块"
+  ],
+  "method": "摇和",
+  "glass": "郁金香杯",
+  "garnish": "干桂花",
+  "flavor_tags": [
+   "甜",
+   "花香",
+   "温暖"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "疗愈"
+  ],
+  "difficulty": 3,
+  "cost": 30,
+  "sell_price": 92,
+  "description": "八月巷子里那棵桂树开的时候，整条巷子都是这个味道。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_046",
+  "name": "落跑新娘",
+  "name_en": "Runaway Bride",
+  "emoji": "👰",
+  "tier": "uncommon",
+  "base_spirit": "龙舌兰",
+  "ingredients": [
+   "龙舌兰 45ml",
+   "荔枝酒 20ml",
+   "玫瑰糖浆 5ml",
+   "柠檬汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "马天尼杯",
+  "garnish": "食用玫瑰瓣",
+  "flavor_tags": [
+   "花香",
+   "甜",
+   "果香"
+  ],
+  "mood_tags": [
+   "庆祝",
+   "壮胆"
+  ],
+  "difficulty": 3,
+  "cost": 36,
+  "sell_price": 105,
+  "description": "花冠还戴着，鞋跟已经脱了。甜味底下藏着一路跑过来的风。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_047",
+  "name": "硬币的另一面",
+  "name_en": "Other Side of the Coin",
+  "emoji": "🪙",
+  "tier": "uncommon",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "黑麦威士忌 45ml",
+   "苦精 3滴",
+   "橙皮",
+   "蜂蜜 5ml"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "橙皮",
+  "flavor_tags": [
+   "苦",
+   "浓烈",
+   "温暖"
+  ],
+  "mood_tags": [
+   "壮胆",
+   "清醒"
+  ],
+  "difficulty": 3,
+  "cost": 36,
+  "sell_price": 98,
+  "description": "正面是运气，反面是本事。抛起来之前先喝这杯。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_048",
+  "name": "台风眼的安静",
+  "name_en": "Calm in the Eye",
+  "emoji": "☁️",
+  "tier": "uncommon",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "椰奶 60ml",
+   "菠萝汁 30ml",
+   "蜂蜜 10ml",
+   "碎冰"
+  ],
+  "method": "摇和",
+  "glass": "高球杯",
+  "garnish": "菠萝叶",
+  "flavor_tags": [
+   "奶味",
+   "甜",
+   "清爽",
+   "果香"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "独酌"
+  ],
+  "difficulty": 2,
+  "cost": 18,
+  "sell_price": 55,
+  "description": "外面风声鹤唳，杯子里纹丝不动。总得有个地方喘口气。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_049",
+  "name": "磁带A面",
+  "name_en": "Tape Side A",
+  "emoji": "📼",
+  "tier": "uncommon",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "朗姆 45ml",
+   "可乐 适量",
+   "青柠汁 15ml",
+   "冰块"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "青柠片",
+  "flavor_tags": [
+   "甜",
+   "气泡",
+   "清爽"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "庆祝"
+  ],
+  "difficulty": 1,
+  "cost": 18,
+  "sell_price": 55,
+  "description": "A面永远是最喜欢的那几首。倒带是B面的事，今晚只管单曲循环。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_050",
+  "name": "白桦林",
+  "name_en": "Birch Grove",
+  "emoji": "🌲",
+  "tier": "uncommon",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 45ml",
+   "黄瓜汁 25ml",
+   "莳萝 1小枝",
+   "柠檬汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "高球杯",
+  "garnish": "莳萝",
+  "flavor_tags": [
+   "草本",
+   "清爽",
+   "酸"
+  ],
+  "mood_tags": [
+   "独酌",
+   "清醒"
+  ],
+  "difficulty": 3,
+  "cost": 28,
+  "sell_price": 85,
+  "description": "冷冽干净，像走进一片白桦林。风穿过的时候，叶子说得很少。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_051",
+  "name": "橘皮火车",
+  "name_en": "Orange Peel Train",
+  "emoji": "🚂",
+  "tier": "uncommon",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "白兰地 45ml",
+   "橘子汁 30ml",
+   "肉桂糖浆 10ml",
+   "丁香 2粒"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "橘皮螺旋",
+  "flavor_tags": [
+   "温暖",
+   "甜",
+   "果香"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "送别"
+  ],
+  "difficulty": 3,
+  "cost": 30,
+  "sell_price": 92,
+  "description": "绿皮车摇摇晃晃穿过橘子园。靠窗的座位，永远留给舍不得说再见的人。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_052",
+  "name": "拆信刀",
+  "name_en": "Letter Opener",
+  "emoji": "🗡️",
+  "tier": "uncommon",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 45ml",
+   "柠檬汁 20ml",
+   "苦精 2滴",
+   "白葡萄酒 15ml"
+  ],
+  "method": "搅拌",
+  "glass": "马天尼杯",
+  "garnish": "柠檬皮",
+  "flavor_tags": [
+   "酸",
+   "苦",
+   "清爽"
+  ],
+  "mood_tags": [
+   "清醒",
+   "送别"
+  ],
+  "difficulty": 4,
+  "cost": 35,
+  "sell_price": 105,
+  "description": "锋利、干净、直截了当。有些信早晚要拆，晚拆不如现在。",
+  "unlock": {
+   "type": "quest",
+   "value": "quest_046"
+  },
+  "unlock_condition": "替无名氏拆完那封没人敢拆的信",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_053",
+  "name": "老虎机老虎",
+  "name_en": "Jackpot Tiger",
+  "emoji": "🎰",
+  "tier": "uncommon",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "黑朗姆 45ml",
+   "百香果 1个",
+   "莱姆汁 15ml",
+   "黑糖浆 10ml"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "百香果壳",
+  "flavor_tags": [
+   "甜",
+   "酸",
+   "浓烈",
+   "果香"
+  ],
+  "mood_tags": [
+   "暴躁",
+   "庆祝"
+  ],
+  "difficulty": 3,
+  "cost": 30,
+  "sell_price": 95,
+  "description": "百香果籽沉在杯底像没开出来的奖。摇三下，再摇三下。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_054",
+  "name": "潮汐边界",
+  "name_en": "Tide Line",
+  "emoji": "〰️",
+  "tier": "uncommon",
+  "base_spirit": "清酒",
+  "ingredients": [
+   "清酒 50ml",
+   "海盐 1撮",
+   "昆布茶 15ml",
+   "冰块"
+  ],
+  "method": "搅拌",
+  "glass": "郁金香杯",
+  "garnish": "盐渍海带结",
+  "flavor_tags": [
+   "咸",
+   "清爽",
+   "草本"
+  ],
+  "mood_tags": [
+   "独酌",
+   "清醒"
+  ],
+  "difficulty": 3,
+  "cost": 30,
+  "sell_price": 90,
+  "description": "潮水退到最远的那条线。咸味停在舌根，像海停在脚下。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_055",
+  "name": "深潜",
+  "name_en": "Deep Dive",
+  "emoji": "🤿",
+  "tier": "uncommon",
+  "base_spirit": "烧酒",
+  "ingredients": [
+   "烧酒 45ml",
+   "抹茶 8g",
+   "牛奶 40ml",
+   "蜂蜜 10ml"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "无",
+  "flavor_tags": [
+   "奶味",
+   "苦",
+   "浓烈",
+   "草本"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "独酌"
+  ],
+  "difficulty": 3,
+  "cost": 28,
+  "sell_price": 88,
+  "description": "沉下去，再沉下去。抹茶的绿压在牛奶白上面，像潜进另一片海。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_056",
+  "name": "星期天的鸽子",
+  "name_en": "Sunday Pigeon",
+  "emoji": "🕊️",
+  "tier": "uncommon",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "苹果汁 50ml",
+   "鼠尾草糖浆 10ml",
+   "柠檬汁 10ml",
+   "苏打水 适量"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "苹果切片",
+  "flavor_tags": [
+   "清爽",
+   "果香",
+   "草本",
+   "气泡"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "清醒"
+  ],
+  "difficulty": 2,
+  "cost": 14,
+  "sell_price": 45,
+  "description": "鸽群在天台上起落。周日就该这样，什么都不干，偶尔咕咕叫。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_057",
+  "name": "蒸汽波情书",
+  "name_en": "Vaporwave Love Letter",
+  "emoji": "📼",
+  "tier": "uncommon",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 40ml",
+   "荔枝酒 20ml",
+   "玫瑰糖浆 5ml",
+   "苏打水 适量"
+  ],
+  "method": "摇和",
+  "glass": "柯林杯",
+  "garnish": "玫瑰瓣",
+  "flavor_tags": [
+   "花香",
+   "甜",
+   "气泡",
+   "果香"
+  ],
+  "mood_tags": [
+   "告白",
+   "迷幻"
+  ],
+  "difficulty": 3,
+  "cost": 32,
+  "sell_price": 95,
+  "description": "霓虹色的甜，慢一拍的糖。像一封在老电脑里存了二十年的情书。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_058",
+  "name": "修船人的假期",
+  "name_en": "Shipwright's Day Off",
+  "emoji": "⚓",
+  "tier": "uncommon",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "黑朗姆 45ml",
+   "黑糖 15ml",
+   "冷萃咖啡 20ml",
+   "海盐 1撮"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "无",
+  "flavor_tags": [
+   "浓烈",
+   "甜",
+   "苦",
+   "咸"
+  ],
+  "mood_tags": [
+   "深夜",
+   "怀旧"
+  ],
+  "difficulty": 3,
+  "cost": 34,
+  "sell_price": 100,
+  "description": "木头、沥青和海。修了二十年船的人，休假那天喝的就是这个。",
+  "unlock": {
+   "type": "affinity",
+   "npc": "老周",
+   "value": 5
+  },
+  "unlock_condition": "听完老周跑船的故事，他会亲手给你倒一杯",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_059",
+  "name": "苔藓",
+  "name_en": "Moss",
+  "emoji": "🌱",
+  "tier": "uncommon",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 45ml",
+   "接骨木花糖浆 10ml",
+   "黄瓜汁 20ml",
+   "柠檬汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "马天尼杯",
+  "garnish": "嫩绿叶片",
+  "flavor_tags": [
+   "草本",
+   "清爽",
+   "花香",
+   "酸"
+  ],
+  "mood_tags": [
+   "清醒",
+   "疗愈"
+  ],
+  "difficulty": 3,
+  "cost": 32,
+  "sell_price": 95,
+  "description": "长在墙根的绿，安静，耐活，被踩过也照样绿。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_060",
+  "name": "焰火余温",
+  "name_en": "Afterglow of Fireworks",
+  "emoji": "🎆",
+  "tier": "uncommon",
+  "base_spirit": "龙舌兰",
+  "ingredients": [
+   "龙舌兰 45ml",
+   "辣椒糖浆 5ml",
+   "西柚汁 30ml",
+   "青柠汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "辣椒粉盐边",
+  "flavor_tags": [
+   "辣",
+   "酸",
+   "果香",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "庆祝",
+   "壮胆"
+  ],
+  "difficulty": 3,
+  "cost": 30,
+  "sell_price": 92,
+  "description": "炸开之前是安静的，炸开之后也是安静的。只有中间那几秒，是热的。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_061",
+  "name": "打字机",
+  "name_en": "Typewriter",
+  "emoji": "⌨️",
+  "tier": "uncommon",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "波本威士忌 45ml",
+   "黑咖啡 20ml",
+   "橙皮",
+   "糖 1块"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "橙皮",
+  "flavor_tags": [
+   "苦",
+   "浓烈",
+   "温暖"
+  ],
+  "mood_tags": [
+   "深夜",
+   "独酌"
+  ],
+  "difficulty": 3,
+  "cost": 32,
+  "sell_price": 95,
+  "description": "每按一个键，就落一个字。写到第一千个字，故事自己会拐弯。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_062",
+  "name": "星期五的伞",
+  "name_en": "Friday's Umbrella",
+  "emoji": "☂️",
+  "tier": "uncommon",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "白兰地 40ml",
+   "黑莓利口酒 20ml",
+   "柠檬汁 15ml",
+   "糖水 5ml"
+  ],
+  "method": "摇和",
+  "glass": "碟形杯",
+  "garnish": "黑莓 2颗",
+  "flavor_tags": [
+   "酸",
+   "甜",
+   "果香"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "庆祝"
+  ],
+  "difficulty": 3,
+  "cost": 34,
+  "sell_price": 98,
+  "description": "周五的雨再大也吓不到人，因为明晚不用上班。伞借你，明早还。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_063",
+  "name": "猫的九命",
+  "name_en": "Nine Lives",
+  "emoji": "🐈‍⬛",
+  "tier": "uncommon",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "椰子朗姆 45ml",
+   "抹茶利口酒 10ml",
+   "椰奶 20ml",
+   "青柠汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "高球杯",
+  "garnish": "薄荷猫爪装饰",
+  "flavor_tags": [
+   "奶味",
+   "甜",
+   "草本",
+   "清爽"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "疗愈"
+  ],
+  "difficulty": 3,
+  "cost": 32,
+  "sell_price": 96,
+  "description": "据说猫有九条命，每一条都活得比你潇洒。这杯是它们的下酒菜。",
+  "unlock": {
+   "type": "affinity",
+   "npc": "煤球",
+   "value": 5
+  },
+  "unlock_condition": "和煤球混熟到第五次，它领你去储藏室闻到的味道",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_064",
+  "name": "地下四层",
+  "name_en": "Level B4",
+  "emoji": "🕳️",
+  "tier": "uncommon",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "泥煤威士忌 45ml",
+   "黑巧克力碎 5g",
+   "橙子苦酒 2滴",
+   "冰球"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "巧克力屑",
+  "flavor_tags": [
+   "苦",
+   "浓烈",
+   "烟熏",
+   "甜"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "深夜"
+  ],
+  "difficulty": 4,
+  "cost": 40,
+  "sell_price": 108,
+  "description": "地下室的电梯按钮只到三层。第四层，得靠这杯自己往下走。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_065",
+  "name": "巷语",
+  "name_en": "Alley Whispers",
+  "emoji": "🤫",
+  "tier": "uncommon",
+  "base_spirit": "清酒",
+  "ingredients": [
+   "清酒 50ml",
+   "青梅酒 20ml",
+   "气泡水 适量",
+   "薄荷叶 2片"
+  ],
+  "method": "兑和",
+  "glass": "柯林杯",
+  "garnish": "青梅 1颗",
+  "flavor_tags": [
+   "酸",
+   "甜",
+   "果香",
+   "气泡"
+  ],
+  "mood_tags": [
+   "告白",
+   "独酌"
+  ],
+  "difficulty": 2,
+  "cost": 28,
+  "sell_price": 88,
+  "description": "凑近了才听得清的那种话。气泡声越小，说的事越重要。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_066",
+  "name": "假日邮戳",
+  "name_en": "Holiday Postmark",
+  "emoji": "📮",
+  "tier": "uncommon",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "白兰地 40ml",
+   "菠萝汁 30ml",
+   "椰子糖浆 15ml",
+   "橙汁 15ml"
+  ],
+  "method": "摇和",
+  "glass": "高球杯",
+  "garnish": "纸伞签",
+  "flavor_tags": [
+   "甜",
+   "果香",
+   "清爽"
+  ],
+  "mood_tags": [
+   "庆祝",
+   "疗愈"
+  ],
+  "difficulty": 3,
+  "cost": 32,
+  "sell_price": 95,
+  "description": "一张没寄出去的明信片，邮票都没贴。有些地方不抵达也挺好。",
+  "unlock": {
+   "type": "quest",
+   "value": "quest_064"
+  },
+  "unlock_condition": "找到天台那张寄给自己的明信片",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_067",
+  "name": "夜校",
+  "name_en": "Night School",
+  "emoji": "📚",
+  "tier": "uncommon",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 40ml",
+   "浓缩咖啡 25ml",
+   "可可利口酒 15ml",
+   "冰块"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "可可粉",
+  "flavor_tags": [
+   "苦",
+   "浓烈",
+   "甜"
+  ],
+  "mood_tags": [
+   "清醒",
+   "壮胆"
+  ],
+  "difficulty": 3,
+  "cost": 30,
+  "sell_price": 92,
+  "description": "白天上课打瞌睡的人，晚上都来夜校。这里的课本全是苦的。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_068",
+  "name": "无名指",
+  "name_en": "Ring Finger",
+  "emoji": "💍",
+  "tier": "uncommon",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 45ml",
+   "荔枝酒 20ml",
+   "柠檬汁 10ml",
+   "盐边"
+  ],
+  "method": "摇和",
+  "glass": "马天尼杯",
+  "garnish": "荔枝 1颗",
+  "flavor_tags": [
+   "甜",
+   "咸",
+   "果香",
+   "酸"
+  ],
+  "mood_tags": [
+   "告白",
+   "失恋"
+  ],
+  "difficulty": 3,
+  "cost": 30,
+  "sell_price": 90,
+  "description": "戒指戴过又摘掉的那根手指，端起这杯的时候还是会抖一下。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_069",
+  "name": "纸月亮",
+  "name_en": "Paper Moon",
+  "emoji": "🌕",
+  "tier": "uncommon",
+  "base_spirit": "无酒精基底",
+  "ingredients": [
+   "柚子蜜 25ml",
+   "蜂蜜 10ml",
+   "乌龙茶 80ml",
+   "热水 适量"
+  ],
+  "method": "兑和",
+  "glass": "马克杯",
+  "garnish": "柚子皮",
+  "flavor_tags": [
+   "甜",
+   "果香",
+   "温暖"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "怀旧"
+  ],
+  "difficulty": 1,
+  "cost": 12,
+  "sell_price": 42,
+  "description": "孩子画的月亮总是圆的，纸剪的月亮不会缺角。别长大太快。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_070",
+  "name": "倒带",
+  "name_en": "Rewind",
+  "emoji": "⏪",
+  "tier": "uncommon",
+  "base_spirit": "烧酒",
+  "ingredients": [
+   "烧酒 45ml",
+   "柚子茶 20ml",
+   "冷萃绿茶 30ml",
+   "冰块"
+  ],
+  "method": "摇和",
+  "glass": "高球杯",
+  "garnish": "柚子片",
+  "flavor_tags": [
+   "清爽",
+   "酸",
+   "果香",
+   "草本"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "清醒"
+  ],
+  "difficulty": 2,
+  "cost": 24,
+  "sell_price": 85,
+  "description": "如果能倒带，你想回到哪一年？先把这杯的柚子味记住。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_071",
+  "name": "深巷雾灯",
+  "name_en": "Mist Lantern of Deep Alley",
+  "emoji": "🏮",
+  "tier": "rare",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 45ml",
+   "接骨木花糖浆 15ml",
+   "蝶豆花糖浆 5ml",
+   "苏打水 适量",
+   "柠檬汁 10ml"
+  ],
+  "method": "直调",
+  "glass": "柯林杯",
+  "garnish": "干雾冰",
+  "flavor_tags": [
+   "花香",
+   "清爽",
+   "气泡",
+   "酸"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "独酌"
+  ],
+  "difficulty": 4,
+  "cost": 45,
+  "sell_price": 160,
+  "description": "只有起雾的晚上才调得出这个味道。柠檬汁淋下去的那一瞬，蓝雾变紫。",
+  "unlock": {
+   "type": "weather",
+   "value": "雾"
+  },
+  "unlock_condition": "起雾的夜晚才会想起来怎么调",
+  "hidden": false,
+  "story": "雾天的深巷只剩一盏灯亮着，这杯就是那盏灯。"
+ },
+ {
+  "id": "recipe_072",
+  "name": "十字路口的风",
+  "name_en": "Crossroad Wind",
+  "emoji": "🧭",
+  "tier": "rare",
+  "base_spirit": "龙舌兰",
+  "ingredients": [
+   "烟熏龙舌兰 45ml",
+   "辣椒盐 1撮",
+   "青柠汁 20ml",
+   "龙舌兰花蜜 10ml"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "烤青柠角",
+  "flavor_tags": [
+   "烟熏",
+   "辣",
+   "酸",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "壮胆",
+   "暴躁"
+  ],
+  "difficulty": 4,
+  "cost": 50,
+  "sell_price": 170,
+  "description": "站在十字路口不知道往哪走的时候，先喝。风会替你选。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_073",
+  "name": "潮湿的火柴",
+  "name_en": "Damp Match",
+  "emoji": "🔥",
+  "tier": "rare",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "泥煤威士忌 50ml",
+   "海盐糖浆 8ml",
+   "柠檬汁 15ml",
+   "蛋清 1个"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "炭烤柠檬片",
+  "flavor_tags": [
+   "烟熏",
+   "咸",
+   "酸",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "深夜",
+   "独酌"
+  ],
+  "difficulty": 5,
+  "cost": 55,
+  "sell_price": 185,
+  "description": "划了三次才划着的火柴。烟味里有一点点没放弃的甜。",
+  "unlock": {
+   "type": "item",
+   "value": "湿火柴盒"
+  },
+  "unlock_condition": "雨夜在后巷捡到那个湿透的火柴盒之后",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_074",
+  "name": "十九点零三分",
+  "name_en": "19:03",
+  "emoji": "🕖",
+  "tier": "rare",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "黑朗姆 50ml",
+   "黑糖浆 15ml",
+   "烟熏水雾 3喷",
+   "橙皮"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "烟熏橙皮",
+  "flavor_tags": [
+   "烟熏",
+   "甜",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "深夜"
+  ],
+  "difficulty": 4,
+  "cost": 48,
+  "sell_price": 165,
+  "description": "下班路上抬头看表的那一刻：还有整座夜晚没用完。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_075",
+  "name": "蓝鲸挽歌",
+  "name_en": "Blue Whale Elegy",
+  "emoji": "🐋",
+  "tier": "rare",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 45ml",
+   "蝶豆花浸金酒 15ml",
+   "汤力水 适量",
+   "柠檬汁 10ml"
+  ],
+  "method": "直调",
+  "glass": "柯林杯",
+  "garnish": "柠檬螺旋",
+  "flavor_tags": [
+   "清爽",
+   "苦",
+   "气泡",
+   "酸"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "送别"
+  ],
+  "difficulty": 4,
+  "cost": 45,
+  "sell_price": 160,
+  "description": "柠檬汁下去的一瞬，海就变深了。鲸落下去，没有声音。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_076",
+  "name": "地铁末班",
+  "name_en": "The Last Metro",
+  "emoji": "🚇",
+  "tier": "rare",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 45ml",
+   "咖啡利口酒 20ml",
+   "榛子糖浆 10ml",
+   "奶盖 少许"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "榛子碎",
+  "flavor_tags": [
+   "苦",
+   "甜",
+   "奶味",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "深夜",
+   "独酌"
+  ],
+  "difficulty": 4,
+  "cost": 42,
+  "sell_price": 155,
+  "description": "末班车关门的那一声。没赶上的人不难过，他们只是决定走回去。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_077",
+  "name": "空椅子",
+  "name_en": "Empty Chair",
+  "emoji": "🪑",
+  "tier": "rare",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "白兰地 50ml",
+   "雪莉酒 15ml",
+   "橙子苦酒 2滴",
+   "方糖 1颗"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "无",
+  "flavor_tags": [
+   "温暖",
+   "苦",
+   "甜",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "送别",
+   "独酌"
+  ],
+  "difficulty": 4,
+  "cost": 50,
+  "sell_price": 168,
+  "description": "对面的椅子空着，但你还是把菜单转过去给他看。习惯比人走得慢。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_078",
+  "name": "显影液",
+  "name_en": "Developer Fluid",
+  "emoji": "📷",
+  "tier": "rare",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 45ml",
+   "黑柠檬汁 20ml",
+   "盐渍梅汁 10ml",
+   "苏打水 适量"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "黑柠檬片",
+  "flavor_tags": [
+   "酸",
+   "咸",
+   "清爽",
+   "气泡"
+  ],
+  "mood_tags": [
+   "清醒",
+   "怀旧"
+  ],
+  "difficulty": 4,
+  "cost": 40,
+  "sell_price": 150,
+  "description": "照片在暗房里一点一点显出来。有些东西急不得，泡一泡就清楚了。",
+  "unlock": {
+   "type": "quest",
+   "value": "quest_011"
+  },
+  "unlock_condition": "帮灰调把那卷胶卷冲出来",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_079",
+  "name": "宵禁后的钟",
+  "name_en": "The Curfew Bell",
+  "emoji": "🕰️",
+  "tier": "rare",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "高酒精度朗姆 50ml",
+   "火烤橙片 1片",
+   "黑糖浆 10ml",
+   "苦精 2滴"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "燃烧橙皮",
+  "flavor_tags": [
+   "浓烈",
+   "烟熏",
+   "甜",
+   "温暖"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "深夜"
+  ],
+  "difficulty": 5,
+  "cost": 52,
+  "sell_price": 178,
+  "description": "凌晨三点，整条巷子只剩一口钟还没睡。喝完这杯，别回头。",
+  "unlock": {
+   "type": "time",
+   "value": "03:00"
+  },
+  "unlock_condition": "凌晨三点整，用刚好睡着的脑子调",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_080",
+  "name": "玫瑰刺",
+  "name_en": "Rose Thorn",
+  "emoji": "🌹",
+  "tier": "rare",
+  "base_spirit": "龙舌兰",
+  "ingredients": [
+   "龙舌兰 45ml",
+   "玫瑰糖浆 10ml",
+   "辣椒浸蜂蜜 5ml",
+   "柠檬汁 15ml"
+  ],
+  "method": "摇和",
+  "glass": "马天尼杯",
+  "garnish": "干辣椒玫瑰盐边",
+  "flavor_tags": [
+   "花香",
+   "辣",
+   "酸",
+   "甜"
+  ],
+  "mood_tags": [
+   "告白",
+   "暴躁"
+  ],
+  "difficulty": 4,
+  "cost": 45,
+  "sell_price": 165,
+  "description": "送花之前想清楚：刺是留给自己的。这一口辣，就是刺的味道。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_081",
+  "name": "苔与石",
+  "name_en": "Moss and Stone",
+  "emoji": "🪨",
+  "tier": "rare",
+  "base_spirit": "清酒",
+  "ingredients": [
+   "清酒 50ml",
+   "玉露茶 25ml",
+   "米糖浆 8ml",
+   "冰块"
+  ],
+  "method": "搅拌",
+  "glass": "郁金香杯",
+  "garnish": "无",
+  "flavor_tags": [
+   "草本",
+   "清爽",
+   "甜"
+  ],
+  "mood_tags": [
+   "独酌",
+   "清醒"
+  ],
+  "difficulty": 4,
+  "cost": 42,
+  "sell_price": 158,
+  "description": "苔不说话，石头也不说话。它们认识四百年了。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_082",
+  "name": "探照灯",
+  "name_en": "Searchlight",
+  "emoji": "🔦",
+  "tier": "rare",
+  "base_spirit": "烧酒",
+  "ingredients": [
+   "烧酒 45ml",
+   "柚子胡椒糖浆 15ml",
+   "青柠汁 15ml",
+   "苏打水 适量"
+  ],
+  "method": "摇和",
+  "glass": "高球杯",
+  "garnish": "柚子皮火箭",
+  "flavor_tags": [
+   "辣",
+   "清爽",
+   "酸",
+   "气泡"
+  ],
+  "mood_tags": [
+   "壮胆",
+   "清醒"
+  ],
+  "difficulty": 4,
+  "cost": 40,
+  "sell_price": 152,
+  "description": "一道很亮的光扫过水面。被照到的时候，别躲，站直。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_083",
+  "name": "黑胶密纹",
+  "name_en": "Black Vinyl",
+  "emoji": "💿",
+  "tier": "rare",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "雪莉桶威士忌 50ml",
+   "无花果糖浆 12ml",
+   "黑巧克力苦精 1滴",
+   "橙皮"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "无花果干",
+  "flavor_tags": [
+   "甜",
+   "烟熏",
+   "温暖",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "深夜"
+  ],
+  "difficulty": 4,
+  "cost": 55,
+  "sell_price": 180,
+  "description": "密纹里藏着第三十三圈的一声轻叹。资深乐迷才听得见。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_084",
+  "name": "剪刀石头布",
+  "name_en": "Rock Paper Scissors",
+  "emoji": "✂️",
+  "tier": "rare",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 45ml",
+   "青柠汁 20ml",
+   "黄瓜汁 15ml",
+   "辣椒糖浆 5ml"
+  ],
+  "method": "摇和",
+  "glass": "烈酒杯×3",
+  "garnish": "三色杯垫",
+  "flavor_tags": [
+   "辣",
+   "酸",
+   "清爽"
+  ],
+  "mood_tags": [
+   "庆祝",
+   "暴躁"
+  ],
+  "difficulty": 4,
+  "cost": 38,
+  "sell_price": 148,
+  "description": "三小杯一口一个：一个辣，一个酸，一个凉。输了的人选顺序。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_085",
+  "name": "迟到二十年的情书",
+  "name_en": "Love Letter Twenty Years Late",
+  "emoji": "💌",
+  "tier": "rare",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "陈年白兰地 50ml",
+   "蜂蜜 15ml",
+   "橙花水 5ml",
+   "金箔 少许"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "金箔",
+  "flavor_tags": [
+   "花香",
+   "甜",
+   "温暖",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "告白",
+   "送别"
+  ],
+  "difficulty": 5,
+  "cost": 60,
+  "sell_price": 195,
+  "description": "字迹已经洇了，但每一个字都还是烫的。迟到没关系，到了就好。",
+  "unlock": {
+   "type": "affinity",
+   "npc": "婆婆",
+   "value": 5
+  },
+  "unlock_condition": "听完婆婆天台上的那个故事，她会让你尝一口",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_086",
+  "name": "玻璃幕墙",
+  "name_en": "Glass Curtain Wall",
+  "emoji": "🏢",
+  "tier": "rare",
+  "base_spirit": "伏特加",
+  "ingredients": [
+   "伏特加 45ml",
+   "接骨木花糖浆 12ml",
+   "白葡萄汁 25ml",
+   "柠檬汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "马天尼杯",
+  "garnish": "白葡萄 2颗",
+  "flavor_tags": [
+   "清爽",
+   "酸",
+   "花香",
+   "果香"
+  ],
+  "mood_tags": [
+   "清醒",
+   "独酌"
+  ],
+  "difficulty": 4,
+  "cost": 42,
+  "sell_price": 155,
+  "description": "写字楼三十层的反光。看起来干净，其实每块玻璃都有一道擦不掉的印。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_087",
+  "name": "消逝的电波",
+  "name_en": "Fading Signal",
+  "emoji": "📡",
+  "tier": "rare",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 45ml",
+   "紫苏叶 4片",
+   "柚子汁 20ml",
+   "汤力水 适量"
+  ],
+  "method": "摇和",
+  "glass": "高球杯",
+  "garnish": "紫苏叶",
+  "flavor_tags": [
+   "草本",
+   "酸",
+   "清爽",
+   "气泡"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "独酌"
+  ],
+  "difficulty": 4,
+  "cost": 42,
+  "sell_price": 158,
+  "description": "信号时有时无，像一段快断联的频率。调准了，全是心事。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_088",
+  "name": "煤油灯",
+  "name_en": "Kerosene Lamp",
+  "emoji": "🪔",
+  "tier": "rare",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "威士忌 50ml",
+   "蜂蜜 15ml",
+   "烟熏水雾 3喷",
+   "橙皮卷"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "火烤橙皮卷",
+  "flavor_tags": [
+   "烟熏",
+   "甜",
+   "温暖",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "疗愈"
+  ],
+  "difficulty": 4,
+  "cost": 50,
+  "sell_price": 172,
+  "description": "停电那晚唯一的光源。火苗很小，但整条巷子看得见。",
+  "unlock": {
+   "type": "event",
+   "value": "event_002"
+  },
+  "unlock_condition": "停电那晚，用烛光和火苗调出来的",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_089",
+  "name": "深巷传呼",
+  "name_en": "Deep Alley Pager",
+  "emoji": "📟",
+  "tier": "rare",
+  "base_spirit": "烧酒",
+  "ingredients": [
+   "烧酒 45ml",
+   "杨梅酒 20ml",
+   "盐渍杨梅 2颗",
+   "苏打水 适量"
+  ],
+  "method": "直调",
+  "glass": "高球杯",
+  "garnish": "盐渍杨梅",
+  "flavor_tags": [
+   "酸",
+   "咸",
+   "果香",
+   "清爽"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "庆祝"
+  ],
+  "difficulty": 4,
+  "cost": 40,
+  "sell_price": 155,
+  "description": "BB机响一声，整条巷子的人都回头。现在已经没人呼你了，但酒还在。",
+  "unlock": {
+   "type": "hidden_met",
+   "value": 4
+  },
+  "unlock_condition": "和这条巷子里所有躲着的人都打过照面",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_090",
+  "name": "星图",
+  "name_en": "Star Chart",
+  "emoji": "✨",
+  "tier": "rare",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "黑朗姆 45ml",
+   "黑莓利口酒 20ml",
+   "茴香糖浆 5ml",
+   "柠檬汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "星形八角",
+  "flavor_tags": [
+   "甜",
+   "果香",
+   "草本",
+   "浓烈"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "独酌"
+  ],
+  "difficulty": 4,
+  "cost": 45,
+  "sell_price": 162,
+  "description": "把夜空倒过来放。每一颗黑莓是一颗星，茴香是连它们的线。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_091",
+  "name": "雨后梨花",
+  "name_en": "Pear Blossom After Rain",
+  "emoji": "🍐",
+  "tier": "legendary",
+  "base_spirit": "清酒",
+  "ingredients": [
+   "清酒 45ml",
+   "梨汁 30ml",
+   "蜂蜜 15ml",
+   "气泡水 适量"
+  ],
+  "method": "摇和",
+  "glass": "郁金香杯",
+  "garnish": "梨薄片",
+  "flavor_tags": [
+   "甜",
+   "果香",
+   "气泡",
+   "清爽"
+  ],
+  "mood_tags": [
+   "告白",
+   "疗愈"
+  ],
+  "difficulty": 4,
+  "cost": 80,
+  "sell_price": 260,
+  "description": "甜得刚好，像有人在雨里等你。梨花落地没有声音，这杯入口也没有。",
+  "unlock": {
+   "type": "quest",
+   "value": "quest_013"
+  },
+  "unlock_condition": "帮阿猫把那首没写完的歌写完",
+  "hidden": false,
+  "story": "天台的歌手说，这杯的味道，是她没写完的那首歌的最后一段。"
+ },
+ {
+  "id": "recipe_092",
+  "name": "巷子的名字",
+  "name_en": "The Alley's Own Name",
+  "emoji": "🏮",
+  "tier": "legendary",
+  "base_spirit": "混合",
+  "ingredients": [
+   "威士忌 10ml",
+   "清酒 10ml",
+   "金酒 10ml",
+   "朗姆 10ml",
+   "伏特加 10ml",
+   "龙舌兰 10ml",
+   "白兰地 10ml",
+   "烧酒 10ml",
+   "话梅 1颗"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "话梅",
+  "flavor_tags": [
+   "浓烈",
+   "烟熏",
+   "甜",
+   "酸"
+  ],
+  "mood_tags": [
+   "庆祝",
+   "怀旧"
+  ],
+  "difficulty": 5,
+  "cost": 180,
+  "sell_price": 520,
+  "description": "九种基底都认了，才算真正住进这条巷子。名字不用问，喝完就知道。",
+  "unlock": {
+   "type": "mastery",
+   "value": 99
+  },
+  "unlock_condition": "把图鉴里另外九十九杯全部调过一遍",
+  "hidden": true,
+  "story": "没有第二个人调出过。据说调出来的人，会在酒里看见整条巷子的灯。"
+ },
+ {
+  "id": "recipe_093",
+  "name": "长夜将尽",
+  "name_en": "The Long Night Ends",
+  "emoji": "🌗",
+  "tier": "legendary",
+  "base_spirit": "白兰地",
+  "ingredients": [
+   "陈年白兰地 60ml",
+   "焦糖橙 15ml",
+   "陈年朗姆 10ml",
+   "橙皮"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "火烤橙皮",
+  "flavor_tags": [
+   "温暖",
+   "甜",
+   "浓烈",
+   "烟熏"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "送别",
+   "深夜"
+  ],
+  "difficulty": 5,
+  "cost": 120,
+  "sell_price": 380,
+  "description": "给撑到天亮的人。太阳升起来之前的最后一口，什么委屈都值了。",
+  "unlock": {
+   "type": "all_night"
+  },
+  "unlock_condition": "营业到凌晨四点，天亮那一刻自然懂了",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_094",
+  "name": "候鸟",
+  "name_en": "Migration",
+  "emoji": "🦅",
+  "tier": "legendary",
+  "base_spirit": "清酒",
+  "ingredients": [
+   "清酒 45ml",
+   "杨梅酒 20ml",
+   "青梅酒 15ml",
+   "气泡水 适量"
+  ],
+  "method": "摇和",
+  "glass": "柯林杯",
+  "garnish": "青梅杨梅各一",
+  "flavor_tags": [
+   "酸",
+   "甜",
+   "果香",
+   "气泡"
+  ],
+  "mood_tags": [
+   "送别",
+   "怀旧"
+  ],
+  "difficulty": 4,
+  "cost": 85,
+  "sell_price": 270,
+  "description": "每年这时候路过的那群鸟。它们记得这条路，就像你记得这杯的酸。",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_095",
+  "name": "万花筒",
+  "name_en": "Kaleidoscope",
+  "emoji": "🔮",
+  "tier": "legendary",
+  "base_spirit": "混合",
+  "ingredients": [
+   "接骨木花糖浆 10ml",
+   "紫罗兰利口酒 10ml",
+   "蓝橙 10ml",
+   "蜜瓜利口酒 10ml",
+   "石榴糖浆 10ml",
+   "柠檬汁 15ml",
+   "蛋清 1个"
+  ],
+  "method": "分层",
+  "glass": "高球杯",
+  "garnish": "可食用花瓣",
+  "flavor_tags": [
+   "花香",
+   "甜",
+   "清爽"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "庆祝"
+  ],
+  "difficulty": 5,
+  "cost": 110,
+  "sell_price": 350,
+  "description": "转一下杯子换一个颜色。七个彩层，没有两层是妥协的。",
+  "unlock": {
+   "type": "perfect_streak",
+   "value": 3
+  },
+  "unlock_condition": "连续三杯获得客人『完美』评价",
+  "hidden": true,
+  "story": null
+ },
+ {
+  "id": "recipe_096",
+  "name": "潮汐岛",
+  "name_en": "Tidal Island",
+  "emoji": "🏝️",
+  "tier": "legendary",
+  "base_spirit": "朗姆",
+  "ingredients": [
+   "陈年朗姆 50ml",
+   "海盐焦糖 15ml",
+   "椰青水 30ml",
+   "青柠汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "焦糖海盐边",
+  "flavor_tags": [
+   "咸",
+   "甜",
+   "浓烈",
+   "果香"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "疗愈"
+  ],
+  "difficulty": 5,
+  "cost": 100,
+  "sell_price": 330,
+  "description": "隔壁街那家老店的招牌。听说巷子的人以前都去那儿喝。",
+  "unlock": {
+   "type": "weather",
+   "value": "台风"
+  },
+  "unlock_condition": "台风夜营业，窗子被吹得哐哐响的时候突然就会了",
+  "hidden": true,
+  "story": "牌子摘了很多年，方子跟着一位老调酒师搬进了深巷。"
+ },
+ {
+  "id": "recipe_097",
+  "name": "第七盏灯",
+  "name_en": "The Seventh Lamp",
+  "emoji": "🪔",
+  "tier": "legendary",
+  "base_spirit": "金酒",
+  "ingredients": [
+   "金酒 50ml",
+   "七种花草浸液 各5ml",
+   "蜂蜜 10ml",
+   "柠檬汁 10ml"
+  ],
+  "method": "摇和",
+  "glass": "郁金香杯",
+  "garnish": "七种香草",
+  "flavor_tags": [
+   "草本",
+   "花香",
+   "甜",
+   "酸"
+  ],
+  "mood_tags": [
+   "迷幻",
+   "疗愈"
+  ],
+  "difficulty": 5,
+  "cost": 95,
+  "sell_price": 320,
+  "description": "巷子里有七盏没人注意过的灯。全点亮的那晚，你就调出了它。",
+  "unlock": {
+   "type": "hidden_met",
+   "value": 4
+  },
+  "unlock_condition": "遇见所有藏起来的人，把七盏灯都点亮",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_098",
+  "name": "白鲸白",
+  "name_en": "White Whale White",
+  "emoji": "🐋",
+  "tier": "legendary",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "威士忌 45ml",
+   "椰奶 30ml",
+   "香草糖浆 10ml",
+   "蛋清 1个"
+  ],
+  "method": "摇和",
+  "glass": "古典杯",
+  "garnish": "香草荚",
+  "flavor_tags": [
+   "奶味",
+   "甜",
+   "浓烈",
+   "温暖"
+  ],
+  "mood_tags": [
+   "独酌",
+   "迷幻"
+  ],
+  "difficulty": 5,
+  "cost": 90,
+  "sell_price": 310,
+  "description": "追了一辈子没追上的那抹白。喝到的人，算是追上了吗？",
+  "unlock": {
+   "type": "default"
+  },
+  "unlock_condition": "默认解锁",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_099",
+  "name": "凌晨四点的天台",
+  "name_en": "Rooftop, 4 A.M.",
+  "emoji": "🌄",
+  "tier": "legendary",
+  "base_spirit": "烧酒",
+  "ingredients": [
+   "烧酒 45ml",
+   "柚子蜜 20ml",
+   "蜂蜜 10ml",
+   "苏打水 适量"
+  ],
+  "method": "兑和",
+  "glass": "高球杯",
+  "garnish": "柚子皮",
+  "flavor_tags": [
+   "甜",
+   "酸",
+   "清爽",
+   "气泡"
+  ],
+  "mood_tags": [
+   "疗愈",
+   "独酌"
+  ],
+  "difficulty": 4,
+  "cost": 70,
+  "sell_price": 240,
+  "description": "天快亮了，风把天台的音量调小。最后一个音符，留给还醒着的人。",
+  "unlock": {
+   "type": "affinity",
+   "npc": "阿猫",
+   "value": 4
+  },
+  "unlock_condition": "陪天台的阿猫唱到凌晨四点",
+  "hidden": false,
+  "story": null
+ },
+ {
+  "id": "recipe_100",
+  "name": "深巷",
+  "name_en": "Deep Alley",
+  "emoji": "🏮",
+  "tier": "legendary",
+  "base_spirit": "威士忌",
+  "ingredients": [
+   "威士忌 30ml",
+   "清酒 20ml",
+   "话梅 2颗",
+   "烟熏水雾 3喷",
+   "蜂蜜 10ml"
+  ],
+  "method": "搅拌",
+  "glass": "古典杯",
+  "garnish": "话梅+橙皮",
+  "flavor_tags": [
+   "烟熏",
+   "甜",
+   "酸",
+   "浓烈",
+   "温暖"
+  ],
+  "mood_tags": [
+   "怀旧",
+   "庆祝",
+   "疗愈"
+  ],
+  "difficulty": 5,
+  "cost": 140,
+  "sell_price": 450,
+  "description": "店名就是它。有人问这条巷子是什么味道——喏，就是这个味道。",
+  "unlock": {
+   "type": "reputation",
+   "value": 40
+  },
+  "unlock_condition": "声望达到40，整条巷子都认你了",
+  "hidden": false,
+  "story": "老客人说，能喝到这杯的人，说明巷子已经把你当成自己人了。"
+ }
+]

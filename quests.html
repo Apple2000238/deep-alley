@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>委托板 · 深巷</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="quests">
+
+<nav class="navbar">
+  <div class="nav-left">
+    <span class="nav-icon">🪔</span>
+    <span class="nav-title">深巷</span>
+    <span id="mode-badge" class="mode-badge local">○ 检测中…</span>
+  </div>
+  <div class="nav-right">
+    <a class="nav-link" data-nav="bar" href="bar.html">吧台</a>
+    <a class="nav-link" data-nav="alley" href="alley.html">巷子</a>
+    <a class="nav-link" data-nav="recipes" href="recipes.html">酒谱</a>
+    <a class="nav-link" data-nav="npcs" href="npcs.html">名册</a>
+    <a class="nav-link" data-nav="quests" href="quests.html">委托板</a>
+    <a class="nav-link" data-nav="archive" href="archive.html">回忆</a>
+  </div>
+</nav>
+
+<main class="layout">
+  <div class="content">
+
+    <div class="page-header">
+      <p class="label-sm">QUEST BOARD · 老槐树下</p>
+      <h1 class="page-title">委托板</h1>
+      <p class="page-subtitle">字条被夜风吹得哗哗响。有些委托是惊喜，有些——未必如你所想。</p>
+    </div>
+
+    <div id="quest-box"></div>
+
+  </div>
+  <aside class="sidebar" id="sidebar"></aside>
+</main>
+
+<footer class="footer">
+  <p>把别人的事办好了，自己的夜才算完整。</p>
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吧台 · 深巷</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="bar">
+
+<nav class="navbar">
+  <div class="nav-left">
+    <span class="nav-icon">🪔</span>
+    <span class="nav-title">深巷</span>
+    <span id="mode-badge" class="mode-badge local">○ 检测中…</span>
+  </div>
+  <div class="nav-right">
+    <a class="nav-link" data-nav="bar" href="bar.html">吧台</a>
+    <a class="nav-link" data-nav="alley" href="alley.html">巷子</a>
+    <a class="nav-link" data-nav="recipes" href="recipes.html">酒谱</a>
+    <a class="nav-link" data-nav="npcs" href="npcs.html">名册</a>
+    <a class="nav-link" data-nav="quests" href="quests.html">委托板</a>
+    <a class="nav-link" data-nav="archive" href="archive.html">回忆</a>
+  </div>
+</nav>
+
+<main class="layout">
+  <div class="content">
+
+    <div class="page-header">
+      <p class="label-sm">THE BAR</p>
+      <h1 class="page-title">吧台</h1>
+      <p class="page-subtitle">选酒谱，或自由搭配。摇匀，递出去——委托就在这一递之间。</p>
+    </div>
+
+    <div id="bar-event"></div>
+
+    <section class="mixer" id="mixer"></section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <p class="label-sm">STORY</p>
+          <h2 class="section-title">刚才发生了什么</h2>
+        </div>
+      </div>
+      <div class="narrative-panel" id="narrative"></div>
+    </section>
+
+  </div>
+  <aside class="sidebar" id="sidebar"></aside>
+</main>
+
+<footer class="footer">
+  <p>摇壶要贴着手腕走，别用胳膊。—— 前任店主</p>
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

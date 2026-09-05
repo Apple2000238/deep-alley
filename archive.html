@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>回忆 · 深巷</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="archive">
+
+<nav class="navbar">
+  <div class="nav-left">
+    <span class="nav-icon">🪔</span>
+    <span class="nav-title">深巷</span>
+    <span id="mode-badge" class="mode-badge local">○ 检测中…</span>
+  </div>
+  <div class="nav-right">
+    <a class="nav-link" data-nav="bar" href="bar.html">吧台</a>
+    <a class="nav-link" data-nav="alley" href="alley.html">巷子</a>
+    <a class="nav-link" data-nav="recipes" href="recipes.html">酒谱</a>
+    <a class="nav-link" data-nav="npcs" href="npcs.html">名册</a>
+    <a class="nav-link" data-nav="quests" href="quests.html">委托板</a>
+    <a class="nav-link" data-nav="archive" href="archive.html">回忆</a>
+  </div>
+</nav>
+
+<main class="layout">
+  <div class="content">
+
+    <div class="page-header">
+      <p class="label-sm">ARCHIVE</p>
+      <h1 class="page-title">回忆</h1>
+      <p class="page-subtitle">记忆碎片，和整本巷志。走完的夜都留在这里。</p>
+    </div>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <p class="label-sm">MEMORIES</p>
+          <h2 class="section-title">记忆碎片</h2>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px" id="memories"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <p class="label-sm">CHRONICLE</p>
+          <h2 class="section-title">巷志</h2>
+        </div>
+      </div>
+      <div class="timeline" id="fulllog"></div>
+    </section>
+
+  </div>
+  <aside class="sidebar" id="sidebar"></aside>
+</main>
+
+<footer class="footer">
+  <p>灯亮着，巷子就有人。有人，巷子就不老。</p>
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
