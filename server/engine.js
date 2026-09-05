@@ -325,6 +325,7 @@ function failQuest(st, q, msgs) {
 /* ── 事件系统 ── */
 function rollEvent(st) {
   if (st.pendingEvent) return null;
+  const doneToday = st.flags.doneEventsToday || (st.flags.doneEventsToday = []);
   const clock = st.clock % 1440;
   const candidates = DATA.events.filter(e => {
     const c = e.trigger_condition || {};
@@ -332,6 +333,7 @@ function rollEvent(st) {
     if (c.weather && c.weather !== "any" && c.weather !== st.weather) return false;
     if (c.time && c.time !== "any" && c.time !== fmtSlot(clock)) return false;
     if (c.prerequisite_event) { if (!st.flags.doneEvents || !st.flags.doneEvents.includes(c.prerequisite_event)) return false; }
+    if (doneToday.includes(e.id)) return false; // 同一夜不重复——防止事件循环卡死
     if (c.min_affinity) {
       for (const [n, v] of Object.entries(c.min_affinity)) if ((st.relationships[n] || {}).affinity < v) return false;
     }
@@ -362,7 +364,7 @@ function rollEvent(st) {
   const total = weighted.reduce((s, [, w]) => s + w, 0);
   let roll = rnd() * Math.min(total, 55); // 控制事件频率
   for (const [e, w] of weighted) {
-    if (roll < w) { st.pendingEvent = e.id; return e; }
+    if (roll < w) { st.pendingEvent = e.id; doneToday.push(e.id); return e; }
     roll -= w;
   }
   return null;
@@ -402,6 +404,7 @@ function advanceTime(st, minutes) {
     st.flags.failStreak = 0; st.flags.perfectStreak = 0;
     st.barTop = null;
     st.flags.birthdayTonight = false;
+    st.flags.doneEventsToday = []; // 新的一夜，事件池重置
     // 换天气
     const bag = [];
     for (const [w, wt] of Object.entries(WEATHER_WEIGHTS)) bag.push(...Array(wt).fill(w));
@@ -811,8 +814,7 @@ const Engine = {
     let narrative = `⚡ ${e.title}\n\n${e.description}\n\n你选择：${choice.text}\n\n${choice.result}`;
     if (lines.length) narrative += `\n\n（${lines.join("｜")}）`;
     if (t) narrative += "\n\n" + t;
-    const ev = rollEvent(st);
-    if (ev) narrative += "\n\n" + eventBlock(st, ev);
+    // 不在这里立刻掷下一个事件——让这一段余韵落地，下一个动作再掷
     return pack(st, narrative);
   },
 

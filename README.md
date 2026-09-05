@@ -59,30 +59,18 @@ npm start          # HTTP 模式：网页 + REST + MCP over HTTP，默认端口 
 
 ---
 
-## MCP 工具（21 个）
+## MCP 工具（6 个动作域，action 路由）
 
-| 工具 | 作用 |
-|---|---|
-| `enter_deep_alley` | **先调这个**。开场/继续游戏，返回世界观与状态 |
-| `look_around` | 环顾当前地点：场景、在场的人（含好感度）、吧台 |
-| `go_to` | 移动：酒吧/宵夜档/便利店/天台/后巷/地下室/巷口 |
-| `talk_to` | 和某人说话——涨好感、解锁委托、听到秘密 |
-| `mix_drink` | 调酒：报配方名或自由搭配材料，完美/良好/平平/失败/特调五档评分 |
-| `serve_drink` | 把吧台上的酒递给某人：口味反应 + 酒钱 + 委托判定 |
-| `drink_self` | 自己喝一口（清醒度↓，≥80 会看见不该看见的东西） |
-| `explore` | 在当前地点搜一圈：找委托物品、捡小巷零碎 |
-| `buy_from` | 向摊主买炒粉/糖水/猫粮/花/签文…… |
-| `rest` | 歇 30 分钟（醒酒、等凌晨三点的人） |
-| `handle_event` | 回应 ⚡ 事件（0/1/2 选择分支，不回应走超时结局） |
-| `check_quest_board` | 委托板：进行中/可接/已完成 |
-| `accept_quest` / `abandon_quest` | 接单/放弃（用 quest_id） |
-| `check_status` | 完整状态面板 |
-| `browse_recipes` | 酒谱图鉴（tier/基底/味道/氛围/关键词筛选+分页） |
-| `browse_npcs` | 巷子名册（按地点筛选） |
-| `save_game` / `load_game` / `new_game` | 存档管理（每步动作也会自动存档） |
-| `game_guide` | 完整玩法指南 |
+| 工具 | action | 说明 |
+|---|---|---|
+| `alley_session` | enter / guide / save / load / new | **先调 `action:"enter"` 开场**；玩法指南、存读档、开新档 |
+| `alley_move` | look / go / explore / rest | 环顾（在场的人+好感度）、移动（酒吧/宵夜档/便利店/天台/后巷/地下室/巷口）、搜寻、歇脚 |
+| `alley_interact` | talk / buy / event | 聊天（涨好感/解锁委托/听秘密）、买卖、回应 ⚡ 事件（choice=分支号） |
+| `alley_bar` | mix / serve / drink | 调酒（recipe_name 或自由搭配 ingredients）、递酒（口味+酒钱+委托判定）、自饮（醉酒度） |
+| `alley_quest` | board / accept / abandon | 委托板、接单（返回判定要点）、放弃 |
+| `alley_info` | status / recipes / npcs | 状态面板、酒谱图鉴（tier/基底/味道/氛围/关键词筛选+分页）、巷子名册 |
 
-每个工具的 description 都写明了「什么时候该用、参数怎么填、填错会怎样」，返回文本永远带「▸ 接下来你可以」提示——**为 AI 玩家的体验专门设计**。
+每个 action 的参数与提示词都写明「什么时候用、参数怎么填、错了会怎样」，返回文本永远带「▸ 接下来你可以」——**为 AI 玩家的体验专门设计**。v1 的 21 个单工具名（`mix_drink` 等）仍可调用，老配置不受影响，但不再出现在 tools/list 里。
 
 ## 玩法循环
 

@@ -28,9 +28,10 @@ function handleMessage(msg, session, requestedProfile) {
           serverInfo: SERVER_INFO,
           instructions:
             "深巷（Deep Alley）是一款通过 MCP 游玩的文字调酒/经营/叙事游戏。你是深巷酒吧的调酒师。" +
-            "先调用 enter_deep_alley 开场，之后按返回文本中「▸ 接下来你可以」的提示行动即可。" +
-            "出现 ⚡ 事件时优先用 handle_event 回应。" +
-            "核心循环：look_around → talk_to（混好感/解锁委托）→ mix_drink → serve_drink（判定委托/收钱）→ check_quest_board 接单。",
+            "共 6 个动作域工具：alley_session（进巷/存读档/指南）、alley_move（移动/环顾/探索/歇脚）、alley_interact（聊天/买卖/回应事件）、alley_bar（调酒/递酒/自饮）、alley_quest（委托板/接单/放弃）、alley_info（状态/酒谱/名册），每个用 action 参数选择具体动作。" +
+            "先调 alley_session(action=\"enter\") 开场，之后按返回文本中「▸ 接下来你可以」的提示行动即可。" +
+            "出现 ⚡ 事件时优先用 alley_interact(action=\"event\", choice=编号) 回应。" +
+            "核心循环：move.look → interact.talk（混好感/解锁委托）→ bar.mix → bar.serve（判定委托/收钱）→ quest.board 接单。",
         });
       }
       case "ping":
