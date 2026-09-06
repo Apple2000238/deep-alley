@@ -14,6 +14,7 @@ const DATA = {
   npcs: JSON.parse(fs.readFileSync(path.join(DATA_DIR, "npcs.json"), "utf8")),
   quests: JSON.parse(fs.readFileSync(path.join(DATA_DIR, "quests.json"), "utf8")),
   events: JSON.parse(fs.readFileSync(path.join(DATA_DIR, "events.json"), "utf8")),
+  memoryLinks: JSON.parse(fs.readFileSync(path.join(DATA_DIR, "memory_links.json"), "utf8")),
 };
 DATA.recipesById = Object.fromEntries(DATA.recipes.map(r => [r.id, r]));
 DATA.npcsByName = Object.fromEntries(DATA.npcs.map(n => [n.name, n]));
@@ -25,6 +26,20 @@ const WEATHER_WEIGHTS = { "晴": 24, "微雨": 18, "月圆": 12, "雾": 10, "大
 const OPEN_MIN = 21 * 60;      // 21:00 开店
 const CLOSE_MIN = 28 * 60;     // 04:00 打烊（+7h）
 const MAX_AFFINITY = 10;
+
+/* ── 夜的时段结构 ── */
+const PHASES = [
+  { id: "dusk", name: "入夜", from: 21 * 60, to: 23 * 60, maxActions: 4 },
+  { id: "deep", name: "深夜", from: 23 * 60, to: 25 * 60, maxActions: 4 },
+  { id: "late", name: "凌晨", from: 25 * 60, to: 27 * 60, maxActions: 3 },
+  { id: "dawn", name: "将明", from: 27 * 60, to: 28 * 60, maxActions: 2 },
+];
+function currentPhase(clock) {
+  for (const p of PHASES) if (clock >= p.from && clock < p.to) return p;
+  return PHASES[3];
+}
+
+const ABSENT_WORDS = ["没来", "走了", "不在", "不存在"];
 
 const LEVELS = [
   [0, "LV1 新客"], [8, "LV2 熟脸"], [18, "LV3 帮工"], [30, "LV4 吧台助手"],
@@ -62,6 +77,9 @@ function newGame(profile = "default") {
     location: "酒吧",
     inventory: [{ name: "旧唱片", note: "老康送的，说有时候放放。" }],
     flags: { areas: ["酒吧", "宵夜档", "便利店", "天台", "后巷", "巷口"], metHidden: [], failStreak: 0, perfectStreak: 0, mastery: 0, allNightDone: false, mixCount: 0, serveCount: 0 },
+    phaseActions: 0, lastPhase: "dusk",
+    customRecipes: [],       // 自创特调 { id, name, ingredients, emotion, servedTo, servedCount, createdDay, famous }
+    gossipLeaks: [],         // { from, to, day }
     recipesUnlocked: DATA.recipes.filter(r => r.unlock.type === "default").map(r => r.id),
     recipesCrafted: {},
     relationships: {},      // name -> {affinity, visits, met, lastDay}
@@ -110,6 +128,18 @@ function addMemory(st, text) {
   if (st.memories.includes(text)) return;
   st.memories.push(text);
   st.eventLog.unshift({ day: st.day, time: fmtClock(st.clock), text: `🪶 记忆碎片：「${text}」` });
+  checkMemoryLinks(st);
+}
+/* ── 记忆碎片关联：拼出『调酒师是谁』的暗线 ── */
+function checkMemoryLinks(st) {
+  for (const link of DATA.memoryLinks || []) {
+    if ((link.pair || []).every(m => st.memories.includes(m)) && !st.memories.includes(link.unlock)) {
+      st.memories.push(link.unlock);
+      st.eventLog.unshift({ day: st.day, time: fmtClock(st.clock), text: `🪶 记忆碎片：「${link.unlock}」` });
+      st.flags.lastLinkNarrative = `💫 ${link.trigger_memory}\n🪶 新的记忆碎片浮上来：「${link.unlock}」`;
+      return;
+    }
+  }
 }
 function addLog(st, text) {
   st.eventLog.unshift({ day: st.day, time: fmtClock(st.clock), text });
@@ -139,6 +169,7 @@ function unlockRecipe(st, id, silent) {
 }
 function visibleNpcsAt(st, loc) {
   const clock = st.clock % (24 * 60);
+  const phase = currentPhase(st.clock);
   return DATA.npcs.filter(n => {
     if (n.location === "隐藏") {
       // 隐藏 NPC 出现条件
@@ -149,9 +180,11 @@ function visibleNpcsAt(st, loc) {
       return false;
     }
     if (n.location !== loc && !(n.name === "大橘" || n.name === "煤球")) return false;
-    // 猫：煤球常驻酒吧，大橘常驻巷子，特殊
+    // 猫：煤球常驻酒吧，大橘常驻巷子
     if ((n.name === "煤球" || n.name === "大橘") && n.location !== loc) return false;
-    // 简化的作息：夜间营业时段基本都在
+    // 时段过滤：schedule 里该时段写了「没来/走了/不在/不存在」就不在场
+    const slot = n.schedule && n.schedule[phase.id];
+    if (slot && ABSENT_WORDS.some(w => slot.includes(w))) return false;
     return true;
   });
 }
@@ -393,8 +426,10 @@ function applyEffect(st, effect) {
 /* ── 时间推进 ── */
 function advanceTime(st, minutes) {
   st.clock += minutes;
-  const crossed4am = st.clock >= CLOSE_MIN;
-  if (crossed4am) {
+  st.actionCount = (st.actionCount || 0) + 1;
+
+  // 打烊优先：跨过 04:00 直接进入下一夜
+  if (st.clock >= CLOSE_MIN) {
     st.flags.allNightDone = true;
     checkUnlockConditions(st, "silent");
     st.day += 1;
@@ -405,12 +440,45 @@ function advanceTime(st, minutes) {
     st.barTop = null;
     st.flags.birthdayTonight = false;
     st.flags.doneEventsToday = []; // 新的一夜，事件池重置
+    st.phaseActions = 0; st.lastPhase = "dusk";
     // 换天气
     const bag = [];
     for (const [w, wt] of Object.entries(WEATHER_WEIGHTS)) bag.push(...Array(wt).fill(w));
     st.weather = pick(bag);
     addLog(st, `———— 第 ${st.day} 夜 · ${st.weather} ————`);
     return `🌙 天亮了。你打烊、锁门、睡下。一觉醒来是第 ${st.day} 夜，今晚${st.weather}。`;
+  }
+
+  // 时段切换检查
+  const phase = currentPhase(st.clock);
+  if (st.lastPhase === undefined) st.lastPhase = phase.id; // 旧存档兜底
+  if (phase.id !== st.lastPhase) {
+    st.lastPhase = phase.id;
+    st.phaseActions = 0;
+    if (phase.id === "deep") {
+      const line = "——钟过了十一点。巷子安静了一层，但酒吧里反而热闹起来。";
+      addLog(st, `🕐 深夜。${line.slice(2)}`);
+      return line;
+    }
+    if (phase.id === "late") {
+      const line = "——过了凌晨。来的人少了，留下的人话多了。";
+      addLog(st, `🕐 凌晨。${line.slice(2)}`);
+      return line;
+    }
+    if (phase.id === "dawn") {
+      let dawn = "——天快亮了。最后的客人走了，巷子安静下来。\n\n吧台上还有你擦到一半的杯子。窗外的天边开始发白。\n\n▸ 你可以：\n· alley_interact(action=\"talk\", npc_name=\"自己\") — 翻翻今晚的记忆碎片\n· alley_bar(action=\"mix\") — 给自己调一杯收工酒\n· alley_move(action=\"rest\") — 什么都不做，等天亮";
+      if ((st.weather === "雨后" || st.weather === "微雨") && rnd() < 0.4) {
+        dawn += "\n\n门口的铜铃轻轻响了一下——这个时候还有人来？";
+      }
+      addLog(st, "🌅 将明");
+      return dawn;
+    }
+  }
+
+  // 时段动作上限（软提示，不阻止）
+  st.phaseActions = (st.phaseActions || 0) + 1;
+  if (st.phaseActions > phase.maxActions) {
+    return `（${phase.name}已经做了 ${st.phaseActions} 件事，时间所剩不多——想好先做什么。）`;
   }
   return null;
 }
@@ -422,8 +490,13 @@ function pack(st, narrative, hints, extra = {}) {
   if (newlyUnlocked.length) {
     narrative += `\n\n📖 恍惚间，你记下了新配方：${newlyUnlocked.map(r => `「${r.name}」(${r.name_en})`).join("、")}。`;
   }
+  if (st.flags.lastLinkNarrative) {
+    narrative += `\n\n${st.flags.lastLinkNarrative}`;
+    st.flags.lastLinkNarrative = null;
+  }
   const lv = levelOf(st.reputation);
-  const text = `【深巷 · 第${st.day}夜 ${fmtClock(st.clock)} · ${st.location} · ${st.weather}】\n\n${narrative}\n\n——\n状态：Tab ${st.tab} ｜ 清醒度 ${100 - st.drunk}/100 ｜ 饱腹 ${st.hunger} ｜ 声望 ${st.reputation}（${lv}）\n${st.pendingEvent ? "⚡ 正有事件等待回应：用 handle_event 选择。" : ""}`;
+  const phase = currentPhase(st.clock);
+  const text = `【深巷 · 第${st.day}夜 ${fmtClock(st.clock)} · ${phase.name} · ${st.location} · ${st.weather}】\n\n${narrative}\n\n——\n状态：Tab ${st.tab} ｜ 清醒度 ${100 - st.drunk}/100 ｜ 饱腹 ${st.hunger} ｜ 声望 ${st.reputation}（${lv}）\n${st.pendingEvent ? "⚡ 正有事件等待回应：用 alley_interact(action=\"event\") 选择。" : ""}`;
   persist(st);
   return {
     text,
@@ -435,14 +508,14 @@ function pack(st, narrative, hints, extra = {}) {
 }
 function defaultHints(st) {
   const h = [];
-  if (st.pendingEvent) h.push("handle_event：回应正在发生的事件（优先）");
+  if (st.pendingEvent) h.push("alley_interact(action=\"event\")：回应正在发生的事件（优先）");
   else {
-    h.push("look_around：看看四周有什么人");
-    h.push("mix_drink：调一杯酒（可报配方名，或自由搭配材料）");
-    if (st.barTop) h.push(`serve_drink：把「${st.barTop.name}」递给某位客人`);
-    h.push("check_quest_board：委托板可能有新单子");
+    h.push("alley_move(action=\"look\")：看看四周有什么人");
+    h.push("alley_bar(action=\"mix\")：调一杯酒（可报配方名，或自由搭配材料）");
+    if (st.barTop) h.push(`alley_bar(action="serve")：把「${st.barTop.name}」递给某位客人`);
+    h.push("alley_quest(action=\"board\")：委托板可能有新单子");
   }
-  h.push("go_to：换个地方走走（" + LOCATIONS.join("/") + "）");
+  h.push("alley_move(action=\"go\")：换个地方走走（" + LOCATIONS.join("/") + "）");
   return h.slice(0, 5);
 }
 function publicState(st) {
@@ -476,6 +549,49 @@ const Engine = {
     const fresh = !st.introDone;
     if (!st.playerName) st.playerName = playerName || "调酒师";
     if (fresh) { st.introDone = true; st.playerName = playerName || st.playerName; }
+
+    // 缺席后果：你三天没来，巷子不会冻住等你
+    const absenceEffects = [];
+    if (!fresh) {
+      const lastPlay = st.updatedAt || Date.now();
+      const daysSinceLastPlay = Math.floor((Date.now() - lastPlay) / 86400000);
+      if (daysSinceLastPlay >= 1) {
+        const skipDays = Math.min(daysSinceLastPlay, 7);
+        st.day += skipDays;
+        // 好感衰减：中间层缓慢疏远（极高和极低不变）
+        for (const [, data] of Object.entries(st.relationships)) {
+          if (data.affinity > 3 && data.affinity < 9) {
+            data.affinity = Math.max(3, data.affinity - Math.min(skipDays * 0.3, 2));
+          }
+        }
+        if (skipDays >= 3) {
+          absenceEffects.push(`你有 ${skipDays} 天没来了。`);
+          if ((st.relationships["煤球"] || {}).met) {
+            absenceEffects.push("煤球瘦了一圈——没人给它喂小鱼干。");
+            addAffinity(st, "煤球", -1);
+          }
+          const talkers = Object.entries(st.relationships)
+            .filter(([n, d]) => d.affinity >= 4 && d.met && n !== "煤球" && n !== "大橘")
+            .sort((a, b) => b[1].affinity - a[1].affinity);
+          if (talkers.length) {
+            absenceEffects.push(`${talkers[0][0]}看见你回来，说了句：「还以为你不干了。」`);
+          }
+        }
+        if (skipDays >= 5) {
+          const expired = st.quests.accepted.filter(a => { const q = DATA.questsById[a.id]; return q && !q.repeatable; });
+          if (expired.length) {
+            const q = DATA.questsById[expired[0].id];
+            st.quests.accepted = st.quests.accepted.filter(a => a.id !== expired[0].id);
+            st.quests.failed.push(expired[0].id);
+            absenceEffects.push(`委托「${q.title}」过期了——${q.giver}等不到你，自己想办法了。`);
+          }
+        }
+        const bag = [];
+        for (const [w, wt] of Object.entries(WEATHER_WEIGHTS)) bag.push(...Array(wt).fill(w));
+        st.weather = pick(bag);
+      }
+    }
+
     refreshBoard(st);
     const intro = fresh
       ? `门上的铜铃「叮铃」一响。你把围裙系上，擦亮吧台，抬头看了看墙上的老挂钟——21:05，开店了。
@@ -483,14 +599,14 @@ const Engine = {
 这里是深巷（Deep Alley），一条地图上搜不到的小巷：尽头是你的酒吧，中间是老周的宵夜档、阿伟的便利店，楼上有人唱歌，楼下有人打拳，巷子里还有猫。巷规三条：不问来路，不劝酒，天亮前必须走。
 
 你是这里的调酒师。今晚${st.weather}。客人会来，委托会来，事件也会来——把它们接住，就是这一夜的全部。`
-      : `铜铃一响，你回到吧台。第 ${st.day} 夜，${st.weather}。上次的进度都还在：Tab ${st.tab}，声望 ${st.reputation}（${levelOf(st.reputation)}），已解锁配方 ${st.recipesUnlocked.length}/${DATA.recipes.length}，记忆碎片 ${st.memories.length} 条。`;
+      : `铜铃一响，你回到吧台。第 ${st.day} 夜，${st.weather}。上次的进度都还在：Tab ${st.tab}，声望 ${st.reputation}（${levelOf(st.reputation)}），已解锁配方 ${st.recipesUnlocked.length}/${DATA.recipes.length}，记忆碎片 ${st.memories.length} 条。${absenceEffects.length ? "\n\n" + absenceEffects.join("\n") : ""}`;
     const tips = fresh
       ? [
-          "『新手四步』：look_around 看看谁在场 → talk_to 聊天混脸熟（解锁委托）→ mix_drink 调酒 → serve_drink 递给客人",
-          "调酒可以报配方名（如 mix_drink recipe_name=琥珀落日），也可以自由搭配材料",
-          "出现 ⚡ 事件时优先用 handle_event 回应；酒谱、名册、状态都能随时查",
+          "『新手四步』：alley_move(look) 看看谁在场 → alley_interact(talk) 聊天混脸熟（解锁委托）→ alley_bar(mix) 调酒 → alley_bar(serve) 递给客人",
+          "调酒可以报配方名（如 alley_bar action=mix recipe_name=琥珀落日），也可以自由搭配材料",
+          "出现 ⚡ 事件时优先用 alley_interact(action=\"event\") 回应；酒谱、名册、状态都能随时查",
         ]
-      : ["看看 check_quest_board 和委托进度", "去不同地点会遇到不同的人和事件"];
+      : ["看看 alley_quest(action=\"board\") 和委托进度", "去不同地点会遇到不同的人和事件", "夜分四个时段：入夜/深夜/凌晨/将明——不是所有人整晚都在"];
     return pack(st, intro, tips);
   },
 
@@ -554,10 +670,26 @@ const Engine = {
   },
 
   talk_to(st, name, say) {
+    // 将明独处：跟自己聊聊
+    if (name === "自己" || name === "调酒师" || name === st.playerName) {
+      const phase = currentPhase(st.clock);
+      if (phase.id !== "dawn") {
+        return pack(st, "现在不是自言自语的时候——吧台前还有客人。", ["look"]);
+      }
+      const todayLog = (st.eventLog || []).filter(e => e.day === st.day).slice(0, 8);
+      let solo = "你靠在吧台后面，回想今晚的事：\n\n";
+      solo += todayLog.map(e => `${e.time} ${e.text}`).join("\n") || "（今晚安静得像一张白纸。）";
+      if (st.memories?.length) {
+        solo += `\n\n🪶 记忆碎片（共${st.memories.length}条）：\n`;
+        solo += st.memories.slice(-5).map(m => `  「${m}」`).join("\n");
+      }
+      solo += "\n\n天快亮了。今晚就到这里。";
+      return pack(st, solo, ["rest：等天亮"]);
+    }
     const npc = DATA.npcsByName[name];
     if (!npc) {
       const known = Object.keys(st.relationships).filter(k => (st.relationships[k] || {}).met);
-      return pack(st, `你环顾四周——巷子里没有叫「${name}」的人。${known.length ? `你认识的人里或许有TA：${known.slice(0, 6).join("、")}。` : "先 look_around 看看谁在场吧。"}`, ["look_around"]);
+      return pack(st, `你环顾四周——巷子里没有叫「${name}」的人。${known.length ? `你认识的人里或许有TA：${known.slice(0, 6).join("、")}。` : "先 look_around 看看谁在场吧。"}`, ["look"]);
     }
     if (!visibleNpcsAt(st, st.location).some(n => n.name === name)) {
       const where = npc.location === "隐藏" ? "……TA不在这个时候、这个地方出现。" : `${npc.name}现在不在${st.location}。TA常在${npc.location}（${npcOnDutyNote(npc, st)}）。`;
@@ -569,15 +701,50 @@ const Engine = {
     const gain = r.affinity < 3 ? 1 : (r.affinity < 6 ? 1 : rnd() < 0.4 ? 1 : 0);
     if (gain) addAffinity(st, name, gain);
 
-    const greet = pick(npc.greetings);
+    const greet = pickDialogue(npc, r.affinity);
     const extra = [];
     if (say) extra.push(`你说了：「${say}」`);
+    // say 命中 NPC 的喜好/秘密关键词 → 额外反馈
+    if (say && r.affinity >= 5) {
+      const keywords = [...(npc.likes || []), ...String(npc.secret || "").split(/[，。,.、]/).filter(w => w.length > 2)];
+      if (keywords.some(k => say.includes(k))) {
+        extra.push(`${npc.name}看了你一眼，像是在重新认识你：「你怎么知道这个？」`);
+        addAffinity(st, name, 1);
+      }
+    }
+    // 嘴碎：说漏了别人的秘密 → 巷子传得很快
+    if (say) {
+      st.gossipLeaks = st.gossipLeaks || [];
+      for (const [other, data] of Object.entries(st.relationships)) {
+        if (other === name || !data.met) continue;
+        const otherNpc = DATA.npcsByName[other];
+        if (!otherNpc || !otherNpc.secret || !st.flags[`secret_${other}`]) continue;
+        const secretWords = String(otherNpc.secret).split(/[，。,.、]/).filter(w => w.length > 3);
+        if (secretWords.some(w => say.includes(w))) {
+          if (!st.gossipLeaks.some(l => l.from === other && l.to === name)) {
+            st.gossipLeaks.push({ from: other, to: name, day: st.day });
+            addAffinity(st, other, -2);
+            extra.push("（你说漏嘴了。这种事在巷子里传得很快。）");
+          }
+        }
+      }
+    }
     // 关系节点
     if (r.affinity >= 3 && r.visits % 4 === 0) extra.push(`${npc.name}难得多说了一句：『${npc.relationship_unlock}。』`);
     if (r.affinity >= 6 && !st.flags[`secret_${name}`]) { st.flags[`secret_${name}`] = true; extra.push(`（趁人少，${npc.name}凑近说了件小事——${npc.secret}）`); addMemory(st, `${name}的秘密`); }
+    // 点『老样子』：喝过你的自创酒，会主动提
+    st.customRecipes = st.customRecipes || [];
+    const drunkCustom = st.customRecipes.filter(x => x.servedTo.includes(name));
+    if (drunkCustom.length && rnd() < 0.3) {
+      const fav = pick(drunkCustom);
+      extra.push(`「上次那杯『${fav.name}』……还有吗？」`);
+    }
     // 喜好提示
     extra.push(`（TA喜欢：${npc.likes.join("、")}｜讨厌：${npc.dislikes.join("、")}）`);
     let narrative = `${npc.emoji || ""} ${npc.name}｜${npc.title}\n\n${greet}\n${extra.length ? "\n" + extra.join("\n") : ""}`;
+    // gossip：关系网里的风吹草动
+    const gossip = checkGossip(st, name, "talk");
+    if (gossip) narrative += gossip;
     // social 委托判定
     const msgs = tryCompleteQuests(st, { talkedTo: name });
     if (msgs.length) narrative += "\n\n" + msgs.join("\n\n");
@@ -595,7 +762,7 @@ const Engine = {
         }
       }
     }
-    const hints = [`再聊一句 talk_to ${name}`, npc.sells ? `buy_from ${name}（TA卖：${npc.sells.join("、")}）` : `serve_drink ${name}：把吧台上的酒递给TA`];
+    const hints = [`再聊一句 alley_interact(action="talk", npc_name="${name}")`, npc.sells ? `alley_interact(action="buy")（TA卖：${npc.sells.join("、")}）` : `alley_bar(action="serve")：把吧台上的酒递给TA`];
     return pack(st, narrative, hints);
   },
 
@@ -632,9 +799,28 @@ const Engine = {
         // 真正的黑暗料理/特调
         st.flags.mixCount++; st.tab = Math.max(0, st.tab - 15);
         const grade = "特调";
-        st.barTop = { recipeId: null, name: custom_name || "无名特调", quality: grade, flavor_tags: guessFlavors(ingredients), mood_tags: [], lowAlcohol: true };
+        const customId = `custom_${Date.now()}`;
+        const emo = guessEmotion(ingredients);
+        st.barTop = {
+          recipeId: null, customId, name: custom_name || "无名特调", quality: grade,
+          flavor_tags: guessFlavors(ingredients), mood_tags: [], lowAlcohol: guessLowAlcohol(ingredients),
+          emotion: emo, ingredients: [...ingredients],
+        };
+        // 有名字的特调进私房酒单
+        let namedLine = "";
+        if (custom_name) {
+          st.customRecipes = st.customRecipes || [];
+          if (!st.customRecipes.find(x => x.name === custom_name)) {
+            st.customRecipes.push({
+              id: customId, name: custom_name, ingredients: [...ingredients], emotion: emo,
+              servedTo: [], servedCount: 0, createdDay: st.day, famous: false,
+            });
+            addLog(st, `🍸 新特调「${custom_name}」加入你的私房酒单`);
+            namedLine = `\n\n🍸 你把它写进了私房酒单。名字一旦留下，这杯就不只是 drank 过的一次性事故了。`;
+          }
+        }
         advanceTime(st, 15);
-        return pack(st, `你把${ingredients.join("、")}一股脑摇在一起。喝了一口——说不上好喝，但绝对是独一无二的特调。你给它起名「${st.barTop.name}」（特调）。也许有哪位客人就吃这一套？`, [`serve_drink：把它递给某位客人试试`]);
+        return pack(st, `你把${ingredients.join("、")}一股脑摇在一起。喝了一口——说不上好喝，但绝对是独一无二的特调。你给它起名「${st.barTop.name}」（特调）。也许有哪位客人就吃这一套？${namedLine}`, [`alley_bar(action="serve")：把它递给某位客人试试`]);
       }
     }
     const grade = gradeOf(matchScore);
@@ -645,7 +831,7 @@ const Engine = {
     else { st.flags.failStreak = 0; st.flags.perfectStreak = 0; }
     if (!st.recipesCrafted[target.id]) { st.flags.mastery++; st.recipesCrafted[target.id] = 1; }
     else st.recipesCrafted[target.id]++;
-    st.barTop = { recipeId: target.id, name: custom_name || target.name, quality: grade, flavor_tags: target.flavor_tags, mood_tags: target.mood_tags, lowAlcohol: target.base_spirit === "无酒精基底" };
+    st.barTop = { recipeId: target.id, name: custom_name || target.name, quality: grade, flavor_tags: target.flavor_tags, mood_tags: target.mood_tags, lowAlcohol: target.base_spirit === "无酒精基底", emotion: target.emotion || { warmth: 0, weight: 0, nostalgia: 0 } };
     const t = advanceTime(st, 18);
     const proc = mixNarrative(target, grade);
     let narrative = `${proc}\n\n吧台上是「${st.barTop.name}」——${grade}。${t ? "\n\n" + t : ""}`;
@@ -657,9 +843,9 @@ const Engine = {
   },
 
   serve_drink(st, npcName) {
-    if (!st.barTop) return pack(st, "吧台上没有调好的酒。先 mix_drink 一杯。", ["mix_drink"]);
+    if (!st.barTop) return pack(st, "吧台上没有调好的酒。先 alley_bar(action=\"mix\") 一杯。", ["mix"]);
     const npc = DATA.npcsByName[npcName];
-    if (!npc) return pack(st, `这里没有「${npcName}」。在场的人用 look_around 看。`, ["look_around"]);
+    if (!npc) return pack(st, `这里没有「${npcName}」。在场的人用 look_around 看。`, ["look"]);
     const drink = st.barTop;
     let narrative;
     const r = rel(st, npcName);
@@ -672,6 +858,39 @@ const Engine = {
     const tasteLine = taste > 0 ? `${npc.name}眼睛亮了一下：「${pick(["这个味道……有点东西。", "诶，你怎么知道我吃这套？", "再来一杯——不是，记我账上也要再来一杯。"])}」`
       : taste < 0 ? `${npc.name}喝了一小口，礼貌地放下：「……嗯。挺特别的。」（TA好像不太喜欢）`
       : `${npc.name}端起来喝了一口：「嗯，谢谢。夜里就需要这么一杯。」`;
+    // 情绪色谱反应
+    const emo = drink.emotion || { warmth: 0, weight: 0, nostalgia: 0 };
+    let emotionLine = "";
+    if (emo.warmth > 0.5 && emo.nostalgia > 0.5) {
+      emotionLine = pick([
+        `${npc.name}端着杯子没说话，指尖在杯壁上划了一下。过了一会儿才说：「……有点像以前的味道。」`,
+        `${npc.name}喝了一口，放下杯子的动作很慢：「你怎么知道要调这种的。」`,
+      ]);
+    } else if (emo.warmth < -0.3 && emo.weight < -0.3) {
+      emotionLine = pick([
+        `${npc.name}被冰得微微眯了一下眼：「够劲。今晚需要这个。」`,
+        `${npc.name}一口气喝了半杯：「爽快。别跟我说什么慢慢品。」`,
+      ]);
+    } else if (emo.weight > 0.5) {
+      emotionLine = pick([
+        `${npc.name}端起来闻了闻，没有马上喝：「这杯很重。」不是说不好——是承认它有重量。`,
+        `${npc.name}喝了一小口就放下了。不是不喜欢，是需要消化。`,
+      ]);
+    } else if (emo.nostalgia < -0.3) {
+      emotionLine = pick([
+        `${npc.name}挑了挑眉：「新东西？没见你做过这种。」语气里有好奇。`,
+        `「这个配法没见过。」${npc.name}又喝了一口，像在琢磨。`,
+      ]);
+    }
+    // 命中 emotion_preference：特殊台词 + 额外好感
+    if (npc.emotion_preference) {
+      const pref = npc.emotion_preference;
+      const val = emo[pref.responds_to] || 0;
+      if (Math.abs(val) >= (pref.threshold || 0.5) && pref.special_lines?.length) {
+        emotionLine = pick(pref.special_lines);
+        addAffinity(st, npcName, 1);
+      }
+    }
     // 收入
     const base = DATA.recipesById[drink.recipeId];
     const mult = drink.quality === "完美" ? 1.2 : drink.quality === "良好" ? 1 : drink.quality === "平平" ? 0.7 : 0.4;
@@ -679,8 +898,27 @@ const Engine = {
     st.tab += earn;
     st.flags.serveCount++;
     st.barTop = null;
+    // 自创酒：被世界记住
+    let customLine = "";
+    if (drink.customId) {
+      st.customRecipes = st.customRecipes || [];
+      const custom = st.customRecipes.find(x => x.id === drink.customId || x.name === drink.name);
+      if (custom) {
+        if (!custom.servedTo.includes(npcName)) custom.servedTo.push(npcName);
+        custom.servedCount++;
+        if (custom.servedTo.length >= 3 && !custom.famous) {
+          custom.famous = true;
+          addLog(st, `🌟「${custom.name}」传开了——巷子里的人开始主动点你的特调`);
+          addMemory(st, `你的特调「${custom.name}」成了巷子口碑`);
+          customLine = `\n\n🌟「${custom.name}」已经有 ${custom.servedTo.length} 个人喝过了——它在传开。`;
+        }
+      }
+    }
     const t = advanceTime(st, 15);
-    narrative = `你把「${drink.name}」（${drink.quality}）推到${npc.name}面前。\n\n${tasteLine}\n\nTA付了 ${earn} Tab。${t ? "\n\n" + t : ""}`;
+    narrative = `你把「${drink.name}」（${drink.quality}）推到${npc.name}面前。\n\n${tasteLine}${emotionLine ? "\n\n" + emotionLine : ""}\n\nTA付了 ${earn} Tab。${customLine}${t ? "\n\n" + t : ""}`;
+    // 关系网 gossip
+    const gossip = checkGossip(st, npcName, "serve");
+    if (gossip) narrative += gossip;
     // 委托判定
     const msgs = tryCompleteQuests(st, { servedTo: npcName, drink });
     if (msgs.length) narrative += "\n\n" + msgs.join("\n\n");
@@ -820,17 +1058,21 @@ const Engine = {
 
   check_status(st) {
     refreshBoard(st);
+    const phase = currentPhase(st.clock);
     const rels = Object.entries(st.relationships).filter(([, v]) => v.met)
       .sort((a, b) => b[1].affinity - a[1].affinity)
       .slice(0, 8)
       .map(([k, v]) => `${k} ${v.affinity}/${MAX_AFFINITY}`).join("｜") || "还没有熟人";
     let narrative = `🏷️ ${st.playerName || "调酒师"}（${levelOf(st.reputation)}）
-第 ${st.day} 夜 · ${fmtClock(st.clock)} · ${st.weather} · 在${st.location}
+第 ${st.day} 夜 · ${fmtClock(st.clock)} · ${phase.name} · ${st.weather} · 在${st.location}
 Tab ${st.tab} ｜ 清醒度 ${100 - st.drunk}/100 ｜ 饱腹 ${st.hunger}/100
 声望 ${st.reputation} ｜ 配方 ${st.recipesUnlocked.length}/${DATA.recipes.length}（调过 ${Object.keys(st.recipesCrafted).length} 种）｜ 委托完成 ${st.quests.completed.length} ｜ 记忆 ${st.memories.length}
 行囊：${st.inventory.map(i => i.name).join("、") || "空的"}
 熟人：${rels}
 进行中委托：${st.quests.accepted.map(a => DATA.questsById[a.id].title).join("、") || "无"}`;
+    if (st.customRecipes?.length) {
+      narrative += `\n私房酒单：${st.customRecipes.map(x => `「${x.name}」(被${x.servedCount}人点过${x.famous ? "·巷子口碑" : ""})`).join("、")}`;
+    }
     if (st.memories.length) narrative += `\n\n🪶 最近的记忆：${st.memories.slice(-3).map(m => `「${m}」`).join("")}`;
     return pack(st, narrative);
   },
@@ -924,6 +1166,65 @@ Tab ${st.tab} ｜ 清醒度 ${100 - st.drunk}/100 ｜ 饱腹 ${st.hunger}/100
   },
 };
 
+/* ── 对话分层：按好感度选层 ── */
+const LAYER_RANGES = { stranger: [0, 2], familiar: [3, 5], close: [6, 8], trust: [9, 10] };
+function pickDialogue(npc, affinity) {
+  if (npc.dialogue_layers) {
+    const aff = Math.floor(Math.max(0, Math.min(MAX_AFFINITY, affinity)));
+    for (const [layerName, layer] of Object.entries(npc.dialogue_layers)) {
+      const range = layer.range || LAYER_RANGES[layerName] || [0, MAX_AFFINITY];
+      if (aff >= range[0] && aff <= range[1] && layer.lines?.length) return pick(layer.lines);
+    }
+  }
+  return pick(npc.greetings);
+}
+
+/* ── 情绪色谱：从材料推算 ── */
+function guessEmotion(ingredients) {
+  const text = (ingredients || []).join(" ");
+  let warmth = 0, weight = 0, nostalgia = 0;
+  if (/威士忌|朗姆|白兰地|蜂蜜|肉桂|姜/.test(text)) warmth += 0.4;
+  if (/金酒|伏特加|柠檬|青柠|苦精|薄荷/.test(text)) warmth -= 0.3;
+  if (/龙舌兰|清酒/.test(text)) warmth += 0.1;
+  if (/威士忌|白兰地|利口酒|奶油|巧克力|可可/.test(text)) weight += 0.4;
+  if (/苏打|气泡|汤力|果汁|椰子水|茶/.test(text)) weight -= 0.3;
+  if (/威士忌|苦精|橙皮|樱桃|话梅|梅/.test(text)) nostalgia += 0.4;
+  if (/气泡|能量|百香果|荔枝|跳跳糖/.test(text)) nostalgia -= 0.3;
+  const c = v => Math.round(Math.max(-1, Math.min(1, v)) * 100) / 100;
+  return {
+    warmth: c(warmth + (rnd() - 0.5) * 0.1),
+    weight: c(weight + (rnd() - 0.5) * 0.1),
+    nostalgia: c(nostalgia + (rnd() - 0.5) * 0.1),
+  };
+}
+function guessLowAlcohol(ingredients) {
+  return !/(威士忌|朗姆|金酒|伏特加|龙舌兰|白兰地|烧酒|清酒|利口酒|特基拉|龙舌兰)/.test((ingredients || []).join(" "));
+}
+
+/* ── 关系网 gossip：你的行为会在巷子里传开 ── */
+function checkGossip(st, npcName, actionType) {
+  const npc = DATA.npcsByName[npcName];
+  if (!npc || !npc.relation) return null;
+  for (const relLink of npc.relation) {
+    const other = DATA.npcsByName[relLink.with];
+    if (!other) continue;
+    const otherRel = st.relationships[relLink.with];
+    if (!otherRel || !otherRel.met) continue;
+    if (rnd() > 0.3) continue;
+    const type = relLink.type || "";
+    if (type.includes("前恋人") || type.includes("暗恋")) {
+      return `\n\n（你没注意到，${relLink.with}在角落看了你们这边一眼。）`;
+    }
+    if ((type.includes("朋友") || type.includes("兄弟") || type.includes("姐妹") || type.includes("搭档")) && actionType === "serve" && rnd() < 0.5) {
+      return `\n\n过了一会儿，${relLink.with}凑过来：「你刚给${npcName}调的那杯，也给我来一个？」`;
+    }
+    if ((type.includes("对头") || type.includes("冤家") || type.includes("债主")) && (st.relationships[npcName]?.affinity || 0) >= 7) {
+      return `\n\n${relLink.with}皱了皱眉：「你跟${npcName}走得挺近啊。」语气说不上友善。`;
+    }
+  }
+  return null;
+}
+
 /* ── 调酒匹配 ── */
 function evalIngredients(given, target) {
   const g = new Set(given.map(stripQty).filter(Boolean));
@@ -968,4 +1269,4 @@ Engine.loadGame = loadGame;
 Engine.newGame = newGame;
 Engine.persist = persist;
 Engine.publicState = publicState;
-Engine._internal = { tryCompleteQuests, rollEvent, eventBlock, refreshBoard, acceptQuest, checkUnlockConditions };
+Engine._internal = { tryCompleteQuests, rollEvent, eventBlock, refreshBoard, acceptQuest, checkUnlockConditions, checkMemoryLinks, checkGossip, guessEmotion, currentPhase };

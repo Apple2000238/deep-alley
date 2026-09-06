@@ -34,7 +34,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": "据说这是深巷第一任老板每天打烊前给自己调的最后一杯。"
+  "story": "据说这是深巷第一任老板每天打烊前给自己调的最后一杯。",
+  "emotion": {
+   "warmth": 0.8,
+   "weight": 0.3,
+   "nostalgia": 0.7
+  }
  },
  {
   "id": "recipe_002",
@@ -70,7 +75,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.4,
+   "weight": -0.5,
+   "nostalgia": -0.2
+  }
  },
  {
   "id": "recipe_003",
@@ -106,7 +116,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.26,
+   "weight": -0.13,
+   "nostalgia": -0.2
+  }
  },
  {
   "id": "recipe_004",
@@ -142,7 +157,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": "宵夜档的老周用这杯招待过每一个刚搬进巷子的人。"
+  "story": "宵夜档的老周用这杯招待过每一个刚搬进巷子的人。",
+  "emotion": {
+   "warmth": 0.5,
+   "weight": -0.49,
+   "nostalgia": -0.2
+  }
  },
  {
   "id": "recipe_005",
@@ -179,7 +199,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.2,
+   "weight": -0.4,
+   "nostalgia": 0.5
+  }
  },
  {
   "id": "recipe_006",
@@ -215,7 +240,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.52,
+   "weight": -0.33,
+   "nostalgia": 0.0
+  }
  },
  {
   "id": "recipe_007",
@@ -251,7 +281,12 @@
   },
   "unlock_condition": "让煤球在吧台睡过一夜后领悟",
   "hidden": true,
-  "story": "煤球第一次在吧台上睡着那晚，老板顺手发明了这杯。"
+  "story": "煤球第一次在吧台上睡着那晚，老板顺手发明了这杯。",
+  "emotion": {
+   "warmth": 0.9,
+   "weight": -0.4,
+   "nostalgia": 0.1
+  }
  },
  {
   "id": "recipe_008",
@@ -287,7 +322,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.67,
+   "weight": -0.23,
+   "nostalgia": 0.33
+  }
  },
  {
   "id": "recipe_009",
@@ -323,7 +363,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.22,
+   "weight": -0.42,
+   "nostalgia": 0.23
+  }
  },
  {
   "id": "recipe_010",
@@ -359,7 +404,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.02,
+   "weight": 0.17,
+   "nostalgia": 0.05
+  }
  },
  {
   "id": "recipe_011",
@@ -396,7 +446,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.3,
+   "weight": -0.45,
+   "nostalgia": -0.4
+  }
  },
  {
   "id": "recipe_012",
@@ -433,7 +488,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.5,
+   "weight": -0.16,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_013",
@@ -470,7 +530,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.53,
+   "weight": -0.59,
+   "nostalgia": -0.08
+  }
  },
  {
   "id": "recipe_014",
@@ -505,7 +570,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.1,
+   "weight": 0.5,
+   "nostalgia": 0.6
+  }
  },
  {
   "id": "recipe_015",
@@ -542,7 +612,12 @@
   },
   "unlock_condition": "连续调失败3次之后，随手一摇就对了",
   "hidden": true,
-  "story": "调酒这行没有白摔的跟头——摔多了，手就自己记住了。"
+  "story": "调酒这行没有白摔的跟头——摔多了，手就自己记住了。",
+  "emotion": {
+   "warmth": 0.97,
+   "weight": -0.05,
+   "nostalgia": 0.53
+  }
  },
  {
   "id": "recipe_016",
@@ -578,7 +653,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.2,
+   "weight": -0.54,
+   "nostalgia": -0.45
+  }
  },
  {
   "id": "recipe_017",
@@ -615,7 +695,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.23,
+   "weight": -0.09,
+   "nostalgia": 0.0
+  }
  },
  {
   "id": "recipe_018",
@@ -650,7 +735,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.5,
+   "weight": 0.0,
+   "nostalgia": 0.37
+  }
  },
  {
   "id": "recipe_019",
@@ -686,7 +776,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.3,
+   "weight": -0.6,
+   "nostalgia": 0.51
+  }
  },
  {
   "id": "recipe_020",
@@ -721,7 +816,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.43,
+   "weight": 0.3,
+   "nostalgia": 0.07
+  }
  },
  {
   "id": "recipe_021",
@@ -757,7 +857,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.55,
+   "weight": -0.46,
+   "nostalgia": 0.48
+  }
  },
  {
   "id": "recipe_022",
@@ -793,7 +898,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.62,
+   "weight": -0.27,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_023",
@@ -830,7 +940,12 @@
   },
   "unlock_condition": "清醒度跌破30那晚，突然就懂了怎么调",
   "hidden": true,
-  "story": "失眠的人都喝过类似的杯子，只是没有人承认。"
+  "story": "失眠的人都喝过类似的杯子，只是没有人承认。",
+  "emotion": {
+   "warmth": 0.7,
+   "weight": -0.2,
+   "nostalgia": 0.2
+  }
  },
  {
   "id": "recipe_024",
@@ -866,7 +981,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.41,
+   "weight": -0.23,
+   "nostalgia": 0.0
+  }
  },
  {
   "id": "recipe_025",
@@ -903,7 +1023,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.48,
+   "weight": -0.41,
+   "nostalgia": 0.18
+  }
  },
  {
   "id": "recipe_026",
@@ -939,7 +1064,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.2,
+   "weight": -0.41,
+   "nostalgia": -0.5
+  }
  },
  {
   "id": "recipe_027",
@@ -976,7 +1106,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.09,
+   "weight": -0.64,
+   "nostalgia": -0.1
+  }
  },
  {
   "id": "recipe_028",
@@ -1012,7 +1147,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.8,
+   "weight": -0.09,
+   "nostalgia": 0.48
+  }
  },
  {
   "id": "recipe_029",
@@ -1049,7 +1189,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.24,
+   "weight": -0.26,
+   "nostalgia": 0.05
+  }
  },
  {
   "id": "recipe_030",
@@ -1085,7 +1230,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.41,
+   "weight": -0.27,
+   "nostalgia": 0.0
+  }
  },
  {
   "id": "recipe_031",
@@ -1122,7 +1272,12 @@
   },
   "unlock_condition": "凌晨两点以后才调得出那种狠劲",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.5,
+   "weight": 0.4,
+   "nostalgia": -0.4
+  }
  },
  {
   "id": "recipe_032",
@@ -1159,7 +1314,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.23,
+   "weight": -0.45,
+   "nostalgia": -0.15
+  }
  },
  {
   "id": "recipe_033",
@@ -1195,7 +1355,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.25,
+   "weight": -0.09,
+   "nostalgia": 0.15
+  }
  },
  {
   "id": "recipe_034",
@@ -1232,7 +1397,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.1,
+   "weight": -0.31,
+   "nostalgia": -0.2
+  }
  },
  {
   "id": "recipe_035",
@@ -1267,7 +1437,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.92,
+   "weight": -0.24,
+   "nostalgia": 0.53
+  }
  },
  {
   "id": "recipe_036",
@@ -1304,7 +1479,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.62,
+   "weight": -0.55,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_037",
@@ -1341,7 +1521,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.02,
+   "weight": -0.59,
+   "nostalgia": 0.08
+  }
  },
  {
   "id": "recipe_038",
@@ -1377,7 +1562,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.2,
+   "weight": -0.36,
+   "nostalgia": 0.05
+  }
  },
  {
   "id": "recipe_039",
@@ -1415,7 +1605,12 @@
   },
   "unlock_condition": "陪一个失恋的人喝到第三杯，你就会了",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.4,
+   "weight": -0.3,
+   "nostalgia": -0.5
+  }
  },
  {
   "id": "recipe_040",
@@ -1451,7 +1646,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": "每个第一次走进深巷的人，喝的都是这杯。喝完就不好意思走了。"
+  "story": "每个第一次走进深巷的人，喝的都是这杯。喝完就不好意思走了。",
+  "emotion": {
+   "warmth": 0.8,
+   "weight": -0.3,
+   "nostalgia": 0.6
+  }
  },
  {
   "id": "recipe_041",
@@ -1487,7 +1687,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.48,
+   "weight": -0.18,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_042",
@@ -1523,7 +1728,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.38,
+   "weight": -0.18,
+   "nostalgia": -0.2
+  }
  },
  {
   "id": "recipe_043",
@@ -1560,7 +1770,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.18,
+   "weight": -0.23,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_044",
@@ -1597,7 +1812,12 @@
   },
   "unlock_condition": "过了半夜十二点，才调得出钟表匠的那口苦",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.2,
+   "weight": 0.5,
+   "nostalgia": 0.6
+  }
  },
  {
   "id": "recipe_045",
@@ -1633,7 +1853,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.67,
+   "weight": -0.05,
+   "nostalgia": 0.43
+  }
  },
  {
   "id": "recipe_046",
@@ -1669,7 +1894,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.0,
+   "weight": -0.1,
+   "nostalgia": -0.25
+  }
  },
  {
   "id": "recipe_047",
@@ -1705,7 +1935,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.62,
+   "weight": 0.29,
+   "nostalgia": 0.37
+  }
  },
  {
   "id": "recipe_048",
@@ -1742,7 +1977,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.42,
+   "weight": -0.11,
+   "nostalgia": 0.0
+  }
  },
  {
   "id": "recipe_049",
@@ -1778,7 +2018,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.5,
+   "weight": -0.54,
+   "nostalgia": 0.08
+  }
  },
  {
   "id": "recipe_050",
@@ -1814,7 +2059,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.53,
+   "weight": -0.23,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_051",
@@ -1850,7 +2100,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.8,
+   "weight": -0.05,
+   "nostalgia": 0.76
+  }
  },
  {
   "id": "recipe_052",
@@ -1887,7 +2142,12 @@
   },
   "unlock_condition": "替无名氏拆完那封没人敢拆的信",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.61,
+   "weight": -0.01,
+   "nostalgia": 0.35
+  }
  },
  {
   "id": "recipe_053",
@@ -1924,7 +2184,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.32,
+   "weight": 0.11,
+   "nostalgia": -0.1
+  }
  },
  {
   "id": "recipe_054",
@@ -1960,7 +2225,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.15,
+   "weight": -0.05,
+   "nostalgia": 0.15
+  }
  },
  {
   "id": "recipe_055",
@@ -1997,7 +2267,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.12,
+   "weight": 0.32,
+   "nostalgia": 0.02
+  }
  },
  {
   "id": "recipe_056",
@@ -2034,7 +2309,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.17,
+   "weight": -0.6,
+   "nostalgia": -0.15
+  }
  },
  {
   "id": "recipe_057",
@@ -2071,7 +2351,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.3,
+   "weight": -0.28,
+   "nostalgia": -0.45
+  }
  },
  {
   "id": "recipe_058",
@@ -2110,7 +2395,12 @@
   },
   "unlock_condition": "听完老周跑船的故事，他会亲手给你倒一杯",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.5,
+   "weight": 0.6,
+   "nostalgia": 0.8
+  }
  },
  {
   "id": "recipe_059",
@@ -2147,7 +2437,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.41,
+   "weight": -0.28,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_060",
@@ -2184,7 +2479,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.08,
+   "weight": 0.11,
+   "nostalgia": -0.2
+  }
  },
  {
   "id": "recipe_061",
@@ -2220,7 +2520,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.67,
+   "weight": 0.39,
+   "nostalgia": 0.37
+  }
  },
  {
   "id": "recipe_062",
@@ -2256,7 +2561,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.59,
+   "weight": -0.05,
+   "nostalgia": 0.1
+  }
  },
  {
   "id": "recipe_063",
@@ -2295,7 +2605,12 @@
   },
   "unlock_condition": "和煤球混熟到第五次，它领你去储藏室闻到的味道",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.3,
+   "weight": -0.3,
+   "nostalgia": -0.2
+  }
  },
  {
   "id": "recipe_064",
@@ -2332,7 +2647,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.52,
+   "weight": 0.59,
+   "nostalgia": 0.34
+  }
  },
  {
   "id": "recipe_065",
@@ -2369,7 +2689,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.22,
+   "weight": -0.42,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_066",
@@ -2406,7 +2731,12 @@
   },
   "unlock_condition": "找到天台那张寄给自己的明信片",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.67,
+   "weight": -0.23,
+   "nostalgia": 0.1
+  }
  },
  {
   "id": "recipe_067",
@@ -2442,7 +2772,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.43,
+   "weight": 0.11,
+   "nostalgia": 0.07
+  }
  },
  {
   "id": "recipe_068",
@@ -2479,7 +2814,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.53,
+   "weight": -0.05,
+   "nostalgia": 0.0
+  }
  },
  {
   "id": "recipe_069",
@@ -2515,7 +2855,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.57,
+   "weight": -0.28,
+   "nostalgia": 0.28
+  }
  },
  {
   "id": "recipe_070",
@@ -2552,7 +2897,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.03,
+   "weight": -0.32,
+   "nostalgia": 0.28
+  }
  },
  {
   "id": "recipe_071",
@@ -2591,7 +2941,12 @@
   },
   "unlock_condition": "起雾的夜晚才会想起来怎么调",
   "hidden": false,
-  "story": "雾天的深巷只剩一盏灯亮着，这杯就是那盏灯。"
+  "story": "雾天的深巷只剩一盏灯亮着，这杯就是那盏灯。",
+  "emotion": {
+   "warmth": -0.2,
+   "weight": -0.4,
+   "nostalgia": 0.3
+  }
  },
  {
   "id": "recipe_072",
@@ -2628,7 +2983,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.18,
+   "weight": 0.44,
+   "nostalgia": 0.17
+  }
  },
  {
   "id": "recipe_073",
@@ -2666,7 +3026,12 @@
   },
   "unlock_condition": "雨夜在后巷捡到那个湿透的火柴盒之后",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.1,
+   "weight": 0.4,
+   "nostalgia": 0.5
+  }
  },
  {
   "id": "recipe_074",
@@ -2702,7 +3067,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.5,
+   "weight": 0.67,
+   "nostalgia": 0.55
+  }
  },
  {
   "id": "recipe_075",
@@ -2739,7 +3109,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.44,
+   "weight": -0.34,
+   "nostalgia": 0.3
+  }
  },
  {
   "id": "recipe_076",
@@ -2776,7 +3151,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.28,
+   "weight": 0.49,
+   "nostalgia": 0.12
+  }
  },
  {
   "id": "recipe_077",
@@ -2814,7 +3194,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.72,
+   "weight": 0.46,
+   "nostalgia": 0.98
+  }
  },
  {
   "id": "recipe_078",
@@ -2852,7 +3237,12 @@
   },
   "unlock_condition": "帮灰调把那卷胶卷冲出来",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.4,
+   "weight": -0.1,
+   "nostalgia": 0.4
+  }
  },
  {
   "id": "recipe_079",
@@ -2890,7 +3280,12 @@
   },
   "unlock_condition": "凌晨三点整，用刚好睡着的脑子调",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.75,
+   "weight": 0.71,
+   "nostalgia": 0.12
+  }
  },
  {
   "id": "recipe_080",
@@ -2927,7 +3322,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.08,
+   "weight": 0.07,
+   "nostalgia": 0.0
+  }
  },
  {
   "id": "recipe_081",
@@ -2963,7 +3363,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.25,
+   "weight": 0.07,
+   "nostalgia": 0.2
+  }
  },
  {
   "id": "recipe_082",
@@ -3000,7 +3405,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.07,
+   "weight": -0.29,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_083",
@@ -3037,7 +3447,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.85,
+   "weight": 0.67,
+   "nostalgia": 0.7
+  }
  },
  {
   "id": "recipe_084",
@@ -3073,7 +3488,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.48,
+   "weight": -0.06,
+   "nostalgia": -0.15
+  }
  },
  {
   "id": "recipe_085",
@@ -3113,7 +3533,12 @@
   },
   "unlock_condition": "听完婆婆天台上的那个故事，她会让你尝一口",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.7,
+   "weight": 0.4,
+   "nostalgia": 0.9
+  }
  },
  {
   "id": "recipe_086",
@@ -3150,7 +3575,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.53,
+   "weight": -0.21,
+   "nostalgia": -0.1
+  }
  },
  {
   "id": "recipe_087",
@@ -3187,7 +3617,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": -0.48,
+   "weight": -0.24,
+   "nostalgia": -0.3
+  }
  },
  {
   "id": "recipe_088",
@@ -3225,7 +3660,12 @@
   },
   "unlock_condition": "停电那晚，用烛光和火苗调出来的",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.97,
+   "weight": 0.62,
+   "nostalgia": 0.75
+  }
  },
  {
   "id": "recipe_089",
@@ -3263,7 +3703,12 @@
   },
   "unlock_condition": "和这条巷子里所有躲着的人都打过照面",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.02,
+   "weight": -0.21,
+   "nostalgia": 0.18
+  }
  },
  {
   "id": "recipe_090",
@@ -3300,7 +3745,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.5,
+   "weight": 0.23,
+   "nostalgia": -0.05
+  }
  },
  {
   "id": "recipe_091",
@@ -3338,7 +3788,12 @@
   },
   "unlock_condition": "帮阿猫把那首没写完的歌写完",
   "hidden": false,
-  "story": "天台的歌手说，这杯的味道，是她没写完的那首歌的最后一段。"
+  "story": "天台的歌手说，这杯的味道，是她没写完的那首歌的最后一段。",
+  "emotion": {
+   "warmth": 0.6,
+   "weight": -0.5,
+   "nostalgia": -0.1
+  }
  },
  {
   "id": "recipe_092",
@@ -3381,7 +3836,12 @@
   },
   "unlock_condition": "把图鉴里另外九十九杯全部调过一遍",
   "hidden": true,
-  "story": "没有第二个人调出过。据说调出来的人，会在酒里看见整条巷子的灯。"
+  "story": "没有第二个人调出过。据说调出来的人，会在酒里看见整条巷子的灯。",
+  "emotion": {
+   "warmth": 0.3,
+   "weight": 0.7,
+   "nostalgia": 0.9
+  }
  },
  {
   "id": "recipe_093",
@@ -3419,7 +3879,12 @@
   },
   "unlock_condition": "营业到凌晨四点，天亮那一刻自然懂了",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.8,
+   "weight": 0.5,
+   "nostalgia": 0.4
+  }
  },
  {
   "id": "recipe_094",
@@ -3456,7 +3921,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.22,
+   "weight": -0.11,
+   "nostalgia": 0.56
+  }
  },
  {
   "id": "recipe_095",
@@ -3496,7 +3966,12 @@
   },
   "unlock_condition": "连续三杯获得客人『完美』评价",
   "hidden": true,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.1,
+   "weight": -0.4,
+   "nostalgia": -0.5
+  }
  },
  {
   "id": "recipe_096",
@@ -3534,7 +4009,12 @@
   },
   "unlock_condition": "台风夜营业，窗子被吹得哐哐响的时候突然就会了",
   "hidden": true,
-  "story": "牌子摘了很多年，方子跟着一位老调酒师搬进了深巷。"
+  "story": "牌子摘了很多年，方子跟着一位老调酒师搬进了深巷。",
+  "emotion": {
+   "warmth": 0.7,
+   "weight": 0.4,
+   "nostalgia": 0.8
+  }
  },
  {
   "id": "recipe_097",
@@ -3572,7 +4052,12 @@
   },
   "unlock_condition": "遇见所有藏起来的人，把七盏灯都点亮",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.4,
+   "weight": -0.2,
+   "nostalgia": 0.5
+  }
  },
  {
   "id": "recipe_098",
@@ -3609,7 +4094,12 @@
   },
   "unlock_condition": "默认解锁",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.95,
+   "weight": 0.48,
+   "nostalgia": 0.15
+  }
  },
  {
   "id": "recipe_099",
@@ -3648,7 +4138,12 @@
   },
   "unlock_condition": "陪天台的阿猫唱到凌晨四点",
   "hidden": false,
-  "story": null
+  "story": null,
+  "emotion": {
+   "warmth": 0.5,
+   "weight": -0.4,
+   "nostalgia": 0.2
+  }
  },
  {
   "id": "recipe_100",
@@ -3689,6 +4184,11 @@
   },
   "unlock_condition": "声望达到40，整条巷子都认你了",
   "hidden": false,
-  "story": "老客人说，能喝到这杯的人，说明巷子已经把你当成自己人了。"
+  "story": "老客人说，能喝到这杯的人，说明巷子已经把你当成自己人了。",
+  "emotion": {
+   "warmth": 0.4,
+   "weight": 0.7,
+   "nostalgia": 0.95
+  }
  }
 ]
