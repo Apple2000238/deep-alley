@@ -37,6 +37,7 @@ const DA = {
     }
     this.renderSidebar();
     this.renderModeBadge();
+    this.applyPhaseTheme();
     const page = document.body.dataset.page;
     const fn = this["page_" + page];
     if (fn) await fn.call(this);
@@ -53,6 +54,7 @@ const DA = {
         const oldEvent = this.state && this.state.pendingEvent;
         this.state = r.state;
         this.renderSidebar();
+        this.applyPhaseTheme();
         if (r.state.pendingEvent && !oldEvent) {
           toast("⚡ 巷子里发生了新事件——去回应它");
         }
@@ -95,6 +97,11 @@ const DA = {
       : "○ 图鉴模式 · 服务器未启动";
   },
 
+  applyPhaseTheme() {
+    if (!this.state || !this.state.time) { document.body.removeAttribute("data-phase"); return; }
+    document.body.setAttribute("data-phase", this.state.phase || phaseName(this.state.time));
+  },
+
   markNav() {
     const page = document.body.dataset.page;
     document.querySelectorAll(".nav-link[data-nav]").forEach(a => {
@@ -132,7 +139,8 @@ const DA = {
       <div class="sidebar-card">
         <p class="label-sm">AMBIENCE</p>
         <h3 class="sidebar-title">氛围</h3>
-        <p class="sidebar-text">${s.weather || ""} · ${s.time || ""} · 你在${s.location || ""}</p>
+        <p class="sidebar-text">${s.weather || ""} · ${s.time || ""} · ${s.phase || phaseName(s.time)} · 你在${s.location || ""}</p>
+        <div class="phase-meter"><span class="phase-meter-label">${s.phase || phaseName(s.time)}动作</span><span class="phase-meter-val">${s.phaseActions || 0} / ${s.phaseMax || phaseMax(s.time)}</span></div>
         <p class="sidebar-sub">配方 ${s.recipesUnlocked}/${s.recipesTotal} · 记忆 ${(s.memories || []).length} 条</p>
       </div>
       <div class="sidebar-card">
@@ -222,7 +230,16 @@ const DA = {
     const tl = document.getElementById("timeline");
     if (tl) {
       const logs = s ? (s.eventLog || []).slice(0, 8) : this.data.events.slice(0, 5).map(e => ({ time: "巷闻", text: `【${e.title}】${e.description}` }));
-      tl.innerHTML = logs.map(l => `<div class="timeline-item"><span class="timeline-time">${l.time || ""}</span><p class="timeline-text">${l.text || ""}</p></div>`).join("") || `<div class="empty-hint">还没有故事。第一杯酒调下去，就有了。</div>`;
+      tl.innerHTML = logs.length
+        ? logs.map((l, i) => {
+            const icon = l.time === "巷闻" ? "🏮" : logIcon(l.text || "");
+            const prevPhase = i > 0 ? logPhase(logs[i - 1].time) : null;
+            const thisPhase = logPhase(l.time);
+            const divider = (prevPhase && thisPhase && prevPhase !== thisPhase)
+              ? `<div class="timeline-divider">${thisPhase}</div>` : "";
+            return `${divider}<div class="timeline-item"><span class="timeline-time">${icon} ${l.time || ""}</span><p class="timeline-text">${l.text || ""}</p></div>`;
+          }).join("")
+        : `<div class="empty-hint">还没有故事。第一杯酒调下去，就有了。</div>`;
     }
     // 记忆/故事
     const stories = document.getElementById("stories");
@@ -272,6 +289,24 @@ const DA = {
         </div>
       </div>`;
     document.getElementById("bar-event").innerHTML = this.eventCardHTML(s.pendingEvent);
+    // 私房酒单
+    const crSection = document.getElementById("custom-recipes-section");
+    const crBox = document.getElementById("custom-recipes");
+    if (crSection && crBox && s && s.customRecipes && s.customRecipes.length) {
+      crSection.style.display = "";
+      crBox.innerHTML = s.customRecipes.map(x => `
+        <div class="recipe-card ${x.famous ? "custom-famous" : ""}">
+          <div class="recipe-header">
+            <span class="recipe-id">特调</span>
+            ${x.famous ? '<span class="badge badge-legendary">⭐ 巷子口碑</span>' : '<span class="badge badge-uncommon">私房</span>'}
+          </div>
+          <h3 class="recipe-name">🍸 ${x.name}</h3>
+          <p class="recipe-desc">材料：${(x.ingredients || []).join("、")}</p>
+          <p class="recipe-detail">被点过 ${x.servedCount || 0} 次${x.servedTo && x.servedTo.length ? "｜喝过的人：" + x.servedTo.join("、") : ""}｜创于第 ${x.createdDay || "?"} 夜</p>
+        </div>`).join("");
+    } else if (crSection) {
+      crSection.style.display = "none";
+    }
   },
 
   addIngRow() {
@@ -323,13 +358,15 @@ const DA = {
         ["后巷", "ALLEY", "捡东西、遇见人、或者什么都不做。"],
         ["巷口", "EXIT", "走出去就是另一个世界了。"],
       ];
+      const isDawn = s && (s.phase || phaseName(s.time)) === "将明";
       places.innerHTML = locs.map(([name, tag, desc]) => {
         const here = s && s.location === name;
+        const locked = !s || (isDawn && name !== "酒吧" && name !== "天台");
         return `<div class="place-card">
           <p class="label-sm">${tag}</p>
           <h3 class="place-name">${name}${here ? " · 你在这" : ""}</h3>
           <p class="place-desc">${desc}</p>
-          <button class="btn-sm" onclick="DA.doGo('${name}')" ${!s ? "disabled" : ""}>前往</button>
+          <button class="btn-sm" onclick="DA.doGo('${name}')" ${locked ? "disabled" : ""}>${isDawn && locked && s ? "天快亮了" : "前往"}</button>
         </div>`;
       }).join("");
     }
@@ -366,7 +403,7 @@ const DA = {
   /* ═══ 页面：酒谱 ═══ */
   async page_recipes() {
     this.renderRecipes();
-    for (const id of ["f-tier", "f-flavor", "f-mood", "f-base", "f-kw"]) {
+    for (const id of ["f-tier", "f-flavor", "f-mood", "f-base", "f-emo", "f-kw"]) {
       const el = document.getElementById(id);
       if (el) el.addEventListener("change", () => this.renderRecipes());
       if (el && el.type === "text") el.addEventListener("input", () => this.renderRecipes());
@@ -379,27 +416,34 @@ const DA = {
     const flavor = document.getElementById("f-flavor")?.value || "";
     const mood = document.getElementById("f-mood")?.value || "";
     const base = document.getElementById("f-base")?.value || "";
+    const emo = document.getElementById("f-emo")?.value || "";
     const kw = (document.getElementById("f-kw")?.value || "").toLowerCase();
-    const unlocked = this.state ? (this.state.recipesUnlockedIds || null) : null;
     const list = this.data.recipes.filter(r =>
       (!tier || r.tier === tier) &&
       (!flavor || r.flavor_tags.includes(flavor)) &&
       (!mood || r.mood_tags.includes(mood)) &&
       (!base || r.base_spirit === base) &&
+      (!emo || matchEmo(r.emotion, emo)) &&
       (!kw || (r.name + r.name_en).toLowerCase().includes(kw))
     );
     const totalCN = { common: "常见", uncommon: "少见", rare: "稀有", legendary: "传说" };
     box.innerHTML = list.map(r => {
-      const locked = this.state && !(this.state.recipesUnlockedKnown || []).includes?.(r.id);
-      const isHidden = r.hidden;
-      return `<div class="recipe-card ${isHidden && !this.state ? "hidden-recipe" : ""}">
+      const isHidden = r.hidden && !this.state;
+      const emoBars = r.emotion && !isHidden ? `
+        <div class="emotion-bar-group">
+          ${emotionBar("温度", "warmth", r.emotion.warmth)}
+          ${emotionBar("重量", "weight", r.emotion.weight)}
+          ${emotionBar("时间", "nostalgia", r.emotion.nostalgia)}
+        </div>` : "";
+      return `<div class="recipe-card ${isHidden ? "hidden-recipe" : ""}">
         <div class="recipe-header">
           <span class="recipe-id">${r.id.replace("recipe_", "酒谱 ")}</span>
           <span class="badge badge-${r.tier}">${totalCN[r.tier] || r.tier}</span>
         </div>
-        <h3 class="recipe-name">${r.emoji || "🥃"} ${isHidden && !this.state ? "？？" : r.name}</h3>
-        <p class="recipe-desc">${isHidden && !this.state ? "隐藏配方——条件到了，自然会懂。" : r.description}</p>
-        <p class="recipe-detail">${isHidden && !this.state ? "解锁提示：" + r.unlock_condition : `${r.base_spirit}｜${r.method}｜${r.glass}｜难度 ${r.difficulty}<br>材料：${r.ingredients.join("、")}<br>味道：${r.flavor_tags.join("/")}｜氛围：${r.mood_tags.join("/")}<br>成本 ${r.cost} · 售价 ${r.sell_price} Tab${r.story ? `<br><br>📖 ${r.story}` : ""}`}</p>
+        <h3 class="recipe-name">${r.emoji || "🥃"} ${isHidden ? "？？" : r.name}</h3>
+        <p class="recipe-desc">${isHidden ? "隐藏配方——条件到了，自然会懂。" : r.description}</p>
+        <p class="recipe-detail">${isHidden ? "解锁提示：" + r.unlock_condition : `${r.base_spirit}｜${r.method}｜${r.glass}｜难度 ${r.difficulty}<br>材料：${r.ingredients.join("、")}<br>味道：${r.flavor_tags.join("/")}｜氛围：${r.mood_tags.join("/")}<br>成本 ${r.cost} · 售价 ${r.sell_price} Tab${r.story ? `<br><br>📖 ${r.story}` : ""}`}</p>
+        ${emoBars}
       </div>`;
     }).join("") || `<div class="empty-hint">没有匹配的酒谱——换个筛法试试。</div>`;
   },
@@ -433,8 +477,9 @@ const DA = {
         </div>
         ${met ? `
           <p class="recipe-desc">${n.appearance}</p>
-          <p class="recipe-detail">性格：${n.personality.join("/")}<br>喜欢：${n.likes.join("/")}｜讨厌：${n.dislikes.join("/")}<br>说话风格：${n.dialogue_style}</p>
+          <p class="recipe-detail">性格：${n.personality.join("/")}<br>喜欢：${n.likes.join("/")}｜讨厌：${n.dislikes.join("/")}<br>说话风格：${n.dialogue_style}${n.relation && n.relation.length ? `<br>关系网：${n.relation.map(r => `${r.with}（${r.type}）`).join("、")}` : ""}${n.schedule ? `<br>出没：${scheduleOneLiner(n.schedule)}` : ""}</p>
           <div class="affinity-bar"><div class="affinity-fill" style="width:${aff * 10}%"></div></div>
+          <span class="dialogue-layer">${dialogueLayer(aff)}</span>
           <p class="mixer-note" style="margin-top:4px">好感 ${aff}/10${n.sells ? " · 卖：" + n.sells.join("/") : ""}</p>
         ` : `
           <p class="recipe-desc">${n.title}——你们还没打过照面。${n.location === "隐藏" ? "出现条件藏在雨里、雾里、凌晨三点里。" : `TA 常在${locCN[n.location] || n.location}。`}</p>
@@ -466,7 +511,18 @@ const DA = {
     // 可接
     html += `<div class="section-header" style="margin-top:32px"><div><p class="label-sm">OPEN</p><h2 class="section-title">可接</h2></div></div>`;
     const openIds = ids.filter(id => !accIds.includes(id));
-    html += openIds.length ? openIds.map(id => questCard(qById[id], "open")).join("") : `<div class="empty-hint">板上暂时没有新字条——多和巷子里的人聊聊，委托会找上门。</div>`;
+    if (openIds.length) {
+      const grouped = groupChains(openIds, qById);
+      html += grouped.map(chain => {
+        if (chain.length === 1) return questCard(qById[chain[0]], "open");
+        return `<div class="chain-group">
+          <p class="chain-label">⛓ 连锁委托（${chain.length}环）</p>
+          ${chain.map(id => `<div class="chain-step">${questCard(qById[id], "open")}</div>`).join("")}
+        </div>`;
+      }).join("");
+    } else {
+      html += `<div class="empty-hint">板上暂时没有新字条——多和巷子里的人聊聊，委托会找上门。</div>`;
+    }
     // 已完成
     html += `<div class="section-header" style="margin-top:32px"><div><p class="label-sm">DONE · ${done.length}</p><h2 class="section-title">已完成</h2></div></div>`;
     html += done.length ? done.map(id => questCard(qById[id], "done")).join("") : `<div class="empty-hint">还没有完成的委托。</div>`;
@@ -491,18 +547,129 @@ const DA = {
     if (memBox) {
       const mems = s ? (s.memories || []).slice().reverse() : [];
       memBox.innerHTML = mems.length
-        ? mems.map(m => `<span class="memory-chip">🪶 ${m}</span>`).join("")
+        ? mems.map(m => {
+            const isLinked = m.startsWith("💫") || m.includes("浮上来");
+            return `<span class="memory-chip ${isLinked ? "memory-linked" : ""}">${isLinked ? "💫" : "🪶"} ${m.replace(/^💫\s*/, "")}</span>`;
+          }).join("")
         : `<div class="empty-hint">${s ? "还没有记忆碎片。" : "连接服务器后，这里会落满这一夜一夜攒下的记忆。"}</div>`;
     }
     const logBox = document.getElementById("fulllog");
     if (logBox) {
       const logs = s ? (s.eventLog || []) : [];
       logBox.innerHTML = logs.length
-        ? logs.map(l => `<div class="timeline-item"><span class="timeline-time">第${l.day}夜 ${l.time}</span><p class="timeline-text">${l.text}</p></div>`).join("")
+        ? logs.map((l, i) => {
+            const icon = logIcon(l.text || "");
+            const prevPhase = i > 0 ? logPhase(logs[i - 1].time) : null;
+            const thisPhase = logPhase(l.time);
+            const divider = (prevPhase && thisPhase && prevPhase !== thisPhase)
+              ? `<div class="timeline-divider">第${l.day}夜 · ${thisPhase}</div>` : "";
+            return `${divider}<div class="timeline-item"><span class="timeline-time">第${l.day}夜 ${icon} ${l.time}</span><p class="timeline-text">${l.text}</p></div>`;
+          }).join("")
         : `<div class="empty-hint">巷志还是空白的。</div>`;
     }
   },
 };
+
+/* ── v2 精修辅助 ── */
+function emotionBar(label, dim, val) {
+  const pct = Math.abs(val || 0) * 50;
+  const cls = (val || 0) >= 0 ? dim + "-pos" : dim + "-neg";
+  const leftLabel = { warmth: "锐利", weight: "轻盈", nostalgia: "当下" }[dim];
+  const rightLabel = { warmth: "温暖", weight: "沉重", nostalgia: "怀旧" }[dim];
+  return `<div class="emotion-bar-row">
+    <span class="emotion-bar-label">${leftLabel}</span>
+    <div class="emotion-bar-track">
+      <div class="emotion-bar-center"></div>
+      <div class="emotion-bar-fill ${cls}" style="width:${pct}%"></div>
+    </div>
+    <span class="emotion-bar-label" style="text-align:left">${rightLabel}</span>
+  </div>`;
+}
+function matchEmo(e, filter) {
+  if (!e) return false;
+  switch (filter) {
+    case "warm": return e.warmth > 0.3;
+    case "cold": return e.warmth < -0.3;
+    case "heavy": return e.weight > 0.3;
+    case "light": return e.weight < -0.3;
+    case "old": return e.nostalgia > 0.3;
+    case "now": return e.nostalgia < -0.3;
+    default: return true;
+  }
+}
+function phaseName(t) {
+  if (!t) return "";
+  const h = parseInt(t.split(":")[0]);
+  const m = parseInt(t.split(":")[1]) || 0;
+  const mins = h * 60 + m + (h < 6 ? 24 * 60 : 0);
+  if (mins < 23 * 60) return "入夜";
+  if (mins < 25 * 60) return "深夜";
+  if (mins < 27 * 60) return "凌晨";
+  return "将明";
+}
+function phaseMax(t) {
+  const p = phaseName(t);
+  return { "入夜": 4, "深夜": 4, "凌晨": 3, "将明": 2 }[p] || 3;
+}
+function dialogueLayer(aff) {
+  if (aff === undefined) return "";
+  if (aff <= 2) return "🔒 陌生人";
+  if (aff <= 5) return "🪑 熟客";
+  if (aff <= 8) return "🫂 知己";
+  return "🔑 信任";
+}
+function briefSchedule(s) {
+  if (!s) return "?";
+  if (s.includes("没来") || s.includes("不在") || s.includes("走了") || s.includes("不存在")) return "✗";
+  return "✓";
+}
+function scheduleOneLiner(sch) {
+  if (!sch) return "";
+  const parts = [];
+  if (sch.dusk) parts.push("入夜·" + briefSchedule(sch.dusk));
+  if (sch.deep) parts.push("深夜·" + briefSchedule(sch.deep));
+  if (sch.late) parts.push("凌晨·" + briefSchedule(sch.late));
+  if (sch.dawn) parts.push("将明·" + briefSchedule(sch.dawn));
+  if (!parts.length && sch.night) return sch.night;
+  return parts.join(" → ") || sch.night || "";
+}
+function logIcon(text) {
+  if (text.includes("配方") || text.includes("解锁")) return "📖";
+  if (text.includes("记忆碎片") || text.includes("🪶")) return "🪶";
+  if (text.includes("将明") || text.includes("🌅")) return "🌅";
+  if (text.includes("委托")) return "📋";
+  if (text.includes("调") || text.includes("mix") || text.includes("吧台")) return "🍸";
+  return "💬";
+}
+function logPhase(t) {
+  if (!t) return null;
+  const h = parseInt(t.split(":")[0]);
+  if (isNaN(h)) return null;
+  const m = parseInt(t.split(":")[1]) || 0;
+  const mins = h * 60 + m + (h < 6 ? 24 * 60 : 0);
+  if (mins < 23 * 60) return "入夜";
+  if (mins < 25 * 60) return "深夜";
+  if (mins < 27 * 60) return "凌晨";
+  return "将明";
+}
+function groupChains(ids, qById) {
+  const used = new Set();
+  const groups = [];
+  for (const id of ids) {
+    if (used.has(id)) continue;
+    const chain = [id];
+    used.add(id);
+    let cur = id;
+    while (qById[cur] && qById[cur].chain_next && ids.includes(qById[cur].chain_next)) {
+      cur = qById[cur].chain_next;
+      if (used.has(cur)) break;
+      chain.push(cur);
+      used.add(cur);
+    }
+    groups.push(chain);
+  }
+  return groups;
+}
 
 function questCard(q, status) {
   if (!q) return "";

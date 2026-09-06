@@ -939,3 +939,171 @@ h1, h2, h3 {
 .hidden-recipe {
   background: repeating-linear-gradient(45deg, var(--bg-card), var(--bg-card) 10px, var(--bg) 10px, var(--bg) 20px);
 }
+
+/* ═══════════════════════════════════════════
+   v2 精修追加：情绪色谱 / 时段 / 关系网 / 私房酒单 / 将明主题
+   ═══════════════════════════════════════════ */
+
+/* ── 情绪色谱条 ── */
+.emotion-bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+.emotion-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.emotion-bar-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  width: 56px;
+  flex-shrink: 0;
+  text-align: right;
+}
+.emotion-bar-track {
+  flex: 1;
+  height: 4px;
+  background: var(--bg-hover);
+  border-radius: 999px;
+  position: relative;
+  overflow: visible;
+}
+.emotion-bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease, left 0.4s ease;
+}
+.emotion-bar-fill.warmth-pos { background: #c4956a; left: 50%; }
+.emotion-bar-fill.warmth-neg { background: #6a8fa8; right: 50%; left: auto; }
+.emotion-bar-fill.weight-pos { background: #8a7a6a; left: 50%; }
+.emotion-bar-fill.weight-neg { background: #7a9e8e; right: 50%; left: auto; }
+.emotion-bar-fill.nostalgia-pos { background: var(--badge-legendary); left: 50%; }
+.emotion-bar-fill.nostalgia-neg { background: #6ab89a; right: 50%; left: auto; }
+.emotion-bar-center {
+  position: absolute;
+  top: -2px;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 8px;
+  background: rgba(0,0,0,0.15);
+  border-radius: 1px;
+}
+
+/* ── 时段计量 ── */
+.phase-meter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  padding: 6px 10px;
+  background: var(--bg-hover);
+  border-radius: var(--radius-sm);
+}
+.phase-meter-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.phase-meter-val {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ── 对话层级标签 ── */
+.dialogue-layer {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  margin-top: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* ── 私房酒单口碑高亮 ── */
+.custom-famous {
+  border-color: rgba(184,134,11,0.3);
+  box-shadow: 0 0 0 1px rgba(184,134,11,0.1), var(--shadow-card);
+}
+
+/* ── 时段分隔线 ── */
+.timeline-divider {
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 10px 0 6px;
+  border-top: 1px dashed rgba(90,122,110,0.3);
+  margin-top: 8px;
+}
+
+/* ── 关联记忆碎片 ── */
+.memory-linked {
+  border-color: rgba(184,134,11,0.5);
+  background: rgba(184,134,11,0.06);
+  color: var(--text-primary);
+}
+
+/* ── chain 分组 ── */
+.chain-group {
+  border-left: 3px solid var(--badge-rare);
+  padding-left: 16px;
+  margin: 12px 0;
+}
+.chain-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--badge-rare);
+  margin-bottom: 8px;
+}
+.chain-step {
+  position: relative;
+  margin-bottom: 8px;
+}
+.chain-step::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--badge-rare);
+}
+
+/* ── 将明 / 深夜 视觉主题 ── */
+body[data-phase="将明"] {
+  --bg: #ebeef0;
+  --bg-card: #f2f4f5;
+  --bg-sidebar: #eef0f2;
+  --bg-hover: #e2e5e8;
+}
+body[data-phase="将明"] .navbar {
+  background: rgba(235, 238, 240, 0.92);
+}
+body[data-phase="将明"] .hero-bg {
+  background: linear-gradient(135deg, #7a8a94 0%, #a8aaa0 100%);
+}
+body[data-phase="将明"] .footer {
+  color: #8a8e94;
+}
+body[data-phase="深夜"] {
+  --bg: #f0ede7;
+}
+body[data-phase="深夜"] .hero-bg {
+  background: linear-gradient(135deg, #6a7e76 0%, #a5a481 100%);
+}

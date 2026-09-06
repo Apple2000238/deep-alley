@@ -35,6 +35,7 @@ if (!hasHttp) {
   runStdio(session, PROFILE);
 } else {
   const sseSessions = new Map(); // 旧版 SSE 传输的会话表：sessionId -> SSE response sink
+  const sidProfiles = new Map(); // MCP 会话 → 存档档位（一次会话绑定一个世界，AI 不必每次传 profile）
   const state = session.get(PROFILE); // 预热：网页与 MCP 共享这份状态
   const server = http.createServer((req, res) => {
     const parsed = url.parse(req.url, true);
@@ -74,7 +75,10 @@ if (!hasHttp) {
       req.on("end", () => {
         try {
           const msg = JSON.parse(body);
-          const resp = handleMessage(msg, session, PROFILE);
+          if (msg && msg.method === "tools/call" && msg.params?.arguments?.profile) {
+            sidProfiles.set(sid, msg.params.arguments.profile);
+          }
+          const resp = handleMessage(msg, session, sidProfiles.get(sid) || PROFILE);
           if (resp) sink.write(`event: message\ndata: ${JSON.stringify(resp)}\n\n`);
           res.writeHead(202, { ...cors, "Content-Type": "text/plain" });
           res.end("Accepted");
@@ -99,8 +103,11 @@ if (!hasHttp) {
           res.end(JSON.stringify({ jsonrpc: "2.0", id: null, error: { code: -32700, message: "Parse error" } }));
           return;
         }
-        const sid = req.headers["mcp-session-id"];
-        const resp = handleMessage(msg, session, PROFILE);
+        const sid = req.headers["mcp-session-id"] || "no-session";
+        if (msg.method === "tools/call" && msg.params?.arguments?.profile) {
+          sidProfiles.set(sid, msg.params.arguments.profile);
+        }
+        const resp = handleMessage(msg, session, sidProfiles.get(sid) || PROFILE);
         if (!resp) { res.writeHead(202, cors); res.end(); return; } // 通知
         const sessionId = sid || "deep-alley-" + PROFILE;
         // 有些客户端 Accept 只给 text/event-stream —— 按规范以 SSE 流的形式返回这一条响应

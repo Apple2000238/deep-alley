@@ -519,11 +519,15 @@ function defaultHints(st) {
   return h.slice(0, 5);
 }
 function publicState(st) {
+  const phase = currentPhase(st.clock);
   return {
+    profile: st.profile,
     day: st.day, time: fmtClock(st.clock), weather: st.weather, location: st.location,
+    phase: phase.name, phaseActions: st.phaseActions || 0, phaseMax: phase.maxActions,
     tab: st.tab, sobriety: 100 - st.drunk, hunger: st.hunger,
     reputation: st.reputation, level: levelOf(st.reputation),
     inventory: st.inventory, barTop: st.barTop,
+    customRecipes: (st.customRecipes || []).map(x => ({ name: x.name, ingredients: x.ingredients, servedCount: x.servedCount, servedTo: x.servedTo, createdDay: x.createdDay, famous: !!x.famous })),
     recipesUnlocked: st.recipesUnlocked.length, recipesTotal: DATA.recipes.length,
     memories: st.memories, eventLog: st.eventLog.slice(0, 12),
     quests: { accepted: st.quests.accepted.map(a => qBrief(DATA.questsById[a.id])), completedCount: st.quests.completed.length },
@@ -599,7 +603,7 @@ const Engine = {
 这里是深巷（Deep Alley），一条地图上搜不到的小巷：尽头是你的酒吧，中间是老周的宵夜档、阿伟的便利店，楼上有人唱歌，楼下有人打拳，巷子里还有猫。巷规三条：不问来路，不劝酒，天亮前必须走。
 
 你是这里的调酒师。今晚${st.weather}。客人会来，委托会来，事件也会来——把它们接住，就是这一夜的全部。`
-      : `铜铃一响，你回到吧台。第 ${st.day} 夜，${st.weather}。上次的进度都还在：Tab ${st.tab}，声望 ${st.reputation}（${levelOf(st.reputation)}），已解锁配方 ${st.recipesUnlocked.length}/${DATA.recipes.length}，记忆碎片 ${st.memories.length} 条。${absenceEffects.length ? "\n\n" + absenceEffects.join("\n") : ""}`;
+      : `铜铃一响，你回到吧台。第 ${st.day} 夜，${st.weather}。上次的进度都还在：Tab ${st.tab}，声望 ${st.reputation}（${levelOf(st.reputation)}），已解锁配方 ${st.recipesUnlocked.length}/${DATA.recipes.length}，记忆碎片 ${st.memories.length} 条。${st.barTop ? `\n\n吧台上还放着你上次没递出去的「${st.barTop.name}」（${st.barTop.quality}）——今晚的客人有口福。` : ""}${absenceEffects.length ? "\n\n" + absenceEffects.join("\n") : ""}\n\n（当前存档档位：${st.profile}）`;
     const tips = fresh
       ? [
           "『新手四步』：alley_move(look) 看看谁在场 → alley_interact(talk) 聊天混脸熟（解锁委托）→ alley_bar(mix) 调酒 → alley_bar(serve) 递给客人",
@@ -631,8 +635,9 @@ const Engine = {
         }).join("\n")
       : "（此刻没人。夜还长。）";
     const narrative = `${locDesc}\n\n在场：\n${present}\n\n${st.barTop ? `吧台上放着你调的「${st.barTop.name}」（${st.barTop.quality}）——还没递出去。` : "吧台干净，随时可以开摇。"}`;
-    return pack(st, narrative, [
-      ...(npcs.length ? [`talk_to：和 ${names.slice(0, 3).join(" / ")} 聊聊`] : []),
+    const tLook = advanceTime(st, 5); // 环顾也过时间
+    return pack(st, narrative + (tLook ? "\n\n" + tLook : ""), [
+      ...(npcs.length ? [`alley_interact(action="talk")：和 ${names.slice(0, 3).join(" / ")} 聊聊`] : []),
       "go_to：去别处逛逛",
       "explore：在这儿搜一搜",
     ]);
@@ -700,6 +705,7 @@ const Engine = {
     r.visits++; r.lastDay = st.day;
     const gain = r.affinity < 3 ? 1 : (r.affinity < 6 ? 1 : rnd() < 0.4 ? 1 : 0);
     if (gain) addAffinity(st, name, gain);
+    const tTalk = advanceTime(st, 10); // 聊天也过时间——夜是流动的
 
     const greet = pickDialogue(npc, r.affinity);
     const extra = [];
@@ -763,6 +769,7 @@ const Engine = {
       }
     }
     const hints = [`再聊一句 alley_interact(action="talk", npc_name="${name}")`, npc.sells ? `alley_interact(action="buy")（TA卖：${npc.sells.join("、")}）` : `alley_bar(action="serve")：把吧台上的酒递给TA`];
+    if (tTalk) narrative += "\n\n" + tTalk;
     return pack(st, narrative, hints);
   },
 
@@ -1063,7 +1070,7 @@ const Engine = {
       .sort((a, b) => b[1].affinity - a[1].affinity)
       .slice(0, 8)
       .map(([k, v]) => `${k} ${v.affinity}/${MAX_AFFINITY}`).join("｜") || "还没有熟人";
-    let narrative = `🏷️ ${st.playerName || "调酒师"}（${levelOf(st.reputation)}）
+    let narrative = `🏷️ ${st.playerName || "调酒师"}（${levelOf(st.reputation)}）｜档位：${st.profile}
 第 ${st.day} 夜 · ${fmtClock(st.clock)} · ${phase.name} · ${st.weather} · 在${st.location}
 Tab ${st.tab} ｜ 清醒度 ${100 - st.drunk}/100 ｜ 饱腹 ${st.hunger}/100
 声望 ${st.reputation} ｜ 配方 ${st.recipesUnlocked.length}/${DATA.recipes.length}（调过 ${Object.keys(st.recipesCrafted).length} 种）｜ 委托完成 ${st.quests.completed.length} ｜ 记忆 ${st.memories.length}
