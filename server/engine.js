@@ -838,13 +838,16 @@ const Engine = {
     else { st.flags.failStreak = 0; st.flags.perfectStreak = 0; }
     if (!st.recipesCrafted[target.id]) { st.flags.mastery++; st.recipesCrafted[target.id] = 1; }
     else st.recipesCrafted[target.id]++;
-    st.barTop = { recipeId: target.id, name: custom_name || target.name, quality: grade, flavor_tags: target.flavor_tags, mood_tags: target.mood_tags, lowAlcohol: target.base_spirit === "无酒精基底", emotion: target.emotion || { warmth: 0, weight: 0, nostalgia: 0 } };
+    // 用局部引用持有这杯酒：若 advanceTime 跨过 04:00 打烊，barTop 会被清空，
+    // 但这杯酒已经调出来了——叙事与挑战判定都应使用局部对象
+    const barDrink = { recipeId: target.id, name: custom_name || target.name, quality: grade, flavor_tags: target.flavor_tags, mood_tags: target.mood_tags, lowAlcohol: target.base_spirit === "无酒精基底", emotion: target.emotion || { warmth: 0, weight: 0, nostalgia: 0 } };
+    st.barTop = barDrink;
     const t = advanceTime(st, 18);
     const proc = mixNarrative(target, grade);
-    let narrative = `${proc}\n\n吧台上是「${st.barTop.name}」——${grade}。${t ? "\n\n" + t : ""}`;
-    const hints = [`serve_drink 某人：递出去`, "check_quest_board：看看有没有对口委托", "drink_self：自己尝一口"];
+    let narrative = `${proc}\n\n吧台上是「${barDrink.name}」——${grade}。${t ? "\n\n" + t : ""}`;
+    const hints = t ? [] : ["alley_bar(action=\"serve\")：递出去", "alley_quest(action=\"board\")：看看有没有对口委托", "alley_bar(action=\"drink\")：自己尝一口"];
     // 挑战类委托判定（把这次调制交给挑战任务）
-    const msgs = tryCompleteQuests(st, { drink: st.barTop });
+    const msgs = tryCompleteQuests(st, { drink: barDrink });
     if (msgs.length) narrative += "\n\n" + msgs.join("\n\n");
     return pack(st, narrative, hints);
   },
